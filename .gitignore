@@ -1,2 +1,20 @@
-# 
+# IDE configurations
+.idea/
 .vscode/
+
+# Videos (large media files)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Audios (large media files)
+*.mp3
+# *.wav
+# *.flac
+
+# # Images (large media files)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
