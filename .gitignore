@@ -1,8 +1,7 @@
-# IDE configurations
-.idea/
-.vscode/
 
-
+################################################################
+# General Ignores (Large Media Files & Common File Types)
+################################################################ 
 # Videos (large media files)
 *.mp4
 *.avi
@@ -30,15 +29,21 @@
 
 
 
-# Executables (Windows)
-*.exe
 
 
 ################################################################
 # System Specific Ignores
 ################################################################
+
+# IDE configurations
+.idea/
+.vscode/
+
 # System files
+dist/
 ext/
+bin/
+*.exe
 .DS_Store
 Thumbs.db
 *.lnk

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DB" basedir="." default="run">
+    <!-- filenames for build automation -->
+    <property name="main.class" value="DatabaseManager"/> <!-- ************* main class ************* -->
+    <property name="module.name" value="app"/>
+    <property name="current.dir" location="."/>
+    <basename property="package.name" file="${current.dir}"/>
+    <!-- directories for build automation -->
+    <property name="src.dir" value="src" />
+    <property name="lib.dir" value="lib" />
+    <property name="build.dir" value="build" />
+    <property name="classes.dir" value="${build.dir}/classes" />
+    <property name="database.dir" value="res/db" />
+    <!-- ################################################# 
+         ################## compilation ##################
+         ################################################# -->
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${classes.dir}" />
+    </target>
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false">
+            <!-- Add Dependencies Here -->
+            <classpath>
+                <fileset dir="${lib.dir}/javafx-sdk-11.0.2/lib" includes="**/*.jar" />
+                <fileset dir="${lib.dir}/db-derby-10.14.2.0-bin/lib" includes="**/*.jar" />
+            </classpath>
+        </javac>
+    </target>
+    <!-- ################################################# 
+         ################### archive #####################
+         ################################################# -->
+    <target name="archive">
+        <jar destfile="${current.dir}/${package.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}" />
+                <!-- Add Dependencies Here (without module dependency) -->
+                <attribute name="Class-Path" value="
+                    ${lib.dir}/db-derby-10.14.2.0-bin/lib/derby.jar 
+                " />
+            </manifest>
+        </jar>
+    </target>
+    <!-- ################################################# 
+         ###################### run ######################
+         ################################################# -->
+    <target name="run">
+        <java classname="${main.class}" classpath="${classes.dir}">
+            <!-- Add Dependencies Here -->
+            <classpath>
+                <fileset dir="${lib.dir}/javafx-sdk-11.0.2/lib" includes="**/*.jar" />
+                <fileset dir="${lib.dir}/db-derby-10.14.2.0-bin/lib" includes="**/*.jar" />
+            </classpath>
+        </java>
+    </target>
+    <!-- ################################################# 
+         ##################### clean #####################
+         ################################################# -->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${database.dir}" />
+        <delete file="${basedir}/derby.log" />
+        <echo message="Clean target completed." />
+    </target>
+</project>
