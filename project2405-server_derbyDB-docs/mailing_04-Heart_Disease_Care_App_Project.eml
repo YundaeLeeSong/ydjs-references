@@ -1,0 +1,398 @@
+Received: from CY8PR07MB9594.namprd07.prod.outlook.com (2603:10b6:930:56::5)
+ by DM8PR07MB8949.namprd07.prod.outlook.com with HTTPS; Tue, 2 Apr 2024
+ 23:11:18 +0000
+Received: from BY3PR10CA0019.namprd10.prod.outlook.com (2603:10b6:a03:255::24)
+ by CY8PR07MB9594.namprd07.prod.outlook.com (2603:10b6:930:56::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.46; Tue, 2 Apr
+ 2024 23:11:15 +0000
+Received: from DS1PEPF00017094.namprd03.prod.outlook.com
+ (2603:10b6:a03:255:cafe::db) by BY3PR10CA0019.outlook.office365.com
+ (2603:10b6:a03:255::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7409.46 via Frontend
+ Transport; Tue, 2 Apr 2024 23:11:15 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.221.172)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 209.85.221.172 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.221.172; helo=mail-vk1-f172.google.com; pr=C
+Received: from mail-vk1-f172.google.com (209.85.221.172) by
+ DS1PEPF00017094.mail.protection.outlook.com (10.167.17.137) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.7452.22
+ via Frontend Transport; Tue, 2 Apr 2024 23:11:15 +0000
+Received: by mail-vk1-f172.google.com with SMTP id 71dfb90a1353d-4affeacaff9so1558870e0c.3;
+        Tue, 02 Apr 2024 16:11:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1712099474; x=1712704274; darn=gatech.edu;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=zmMRZW4J6sElFOa1+VBx1QLpQyXvx9r1kE4Xmr4vBVg=;
+        b=LrM1I53uB25XmKpofyi78XcPXNKlx0DAr1InPG/Po8mRiNgtnEEq0kMYJTbYcbdk3q
+         quT2AyIvHBARtCNCGYd1XlLjGIy5LwdC2l3QqN+PwdMHGliM2O/MHLDRWV5Vtyp2Byd7
+         Qr7Rdzhk2WKy3boPoLkPBbIWiw7VfFnHTzHkI8jV7Pghn9FCKzaZnFLYeGid53QtS94d
+         cOAUHH4H4AYq+EWRV4B9kPf2Qfp3VqslLNgicMenGCkD4p3Wj14jHHDtx3pyr/hvcvBZ
+         LVzNCdpQynsANwfDOgLF4Vfh78rC0Lm158UjDNXv3OUYcAsFaCVNqDbWldhhpad1PHC3
+         W/1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1712099474; x=1712704274;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=zmMRZW4J6sElFOa1+VBx1QLpQyXvx9r1kE4Xmr4vBVg=;
+        b=e7t88QmtHV2sG+doMVYSuPqSFQiRNQ2EBzEmu/e3QlZdMenx7XxLOfEnD62JHRLBNM
+         nP/i4AIUwoBiqbA9mPHuW9pM53I6VFe9mk3buysVYS58TlH8bocmAF6ZyPqVTw2JIJeS
+         Idsq3U8FgpAOIJwflKYcfH6OOzqXraeaN5ALAB7f8Jclocdu93T663RDIWcMbvAH3Ewc
+         FurNNKfbsV0UDe5jwm4PZK4RaJ/aFue3kbIAqkf5Z4w7Eu8Y192OysRIXHQmf68iF7Sx
+         1PvQtSa8/LFXRNGOOCDDUaxF0rXWtum5l5Yd6ZianSFOVyvgI5lgSi+LS7KFXGF9T5X+
+         bQqA==
+X-Forwarded-Encrypted: i=1; AJvYcCXsuKRQuNky7kIjBWLXTBvStQNjDT15j2BPmkKHDS3MqI8TN0SLxPneTCV6w8OdelgHR2ktlnQBS6Yu9RohGluTnWP7zrW+SJ5Co8xxnP/RHU6XEHBqkcxfoDuNwDGmJB4P57l0amdzrq3TEg==
+X-Gm-Message-State: AOJu0YxpsdVlXlJBBG+H7QSPf90K6MVdnfl7lxTXSr5deZu97bGYQJG3
+	cnz5B1h1lXZ65m0dNUOfIxcxI6QiDiuzS12MGux9rL8Tc0AYmiwqF3YkhGfgfYE2YhIMg7S45/1
+	3gsqKzv78eHUXB28hT3f2U26T7aiicv+c
+X-Google-Smtp-Source: AGHT+IFwKyquGZ42qEZXuzplo7dTtTIZstlWx8eT5Cnym4l1/KyRSyXAlFJM77dGC9N/8n1uHKr6qIMbF2NID8m5P0Q=
+X-Received: by 2002:a1f:fe4c:0:b0:4d8:37eb:9562 with SMTP id
+ l73-20020a1ffe4c000000b004d837eb9562mr9457830vki.0.1712099474048; Tue, 02 Apr
+ 2024 16:11:14 -0700 (PDT)
+References: <CO3PR07MB92396DC50ACF4C1B13A4BFCAFD5E2@CO3PR07MB9239.namprd07.prod.outlook.com>
+ <CO3PR07MB92393B4B213630D54E168262FD5E2@CO3PR07MB9239.namprd07.prod.outlook.com>
+In-Reply-To: <CO3PR07MB92393B4B213630D54E168262FD5E2@CO3PR07MB9239.namprd07.prod.outlook.com>
+From: Muling Lin <mulingg@gmail.com>
+Date: Tue, 2 Apr 2024 19:11:03 -0400
+Message-ID: <CACi-ZaK+bc5AP8swchQUG1PdZZXpnYQdNuxizAgQ2D-aRWLA8w@mail.gmail.com>
+Subject: Re: Heart Disease Care App Project Question
+To: "Rogers, Jacob C" <jrogers335@gatech.edu>
+Cc: "Storey, Edward C" <edward.storey@gatech.edu>, "Fu, Michael D" <mfu42@gatech.edu>, 
+	"Avunuri, Sai Anoop" <savunuri3@gatech.edu>, "Song, Jaehoon" <jsong421@gatech.edu>
+Content-Type: multipart/alternative; boundary="000000000000f88e1a06152538a3"
+Return-Path: mulingg@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 02 Apr 2024 23:11:15.1584
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ cbd64576-795b-4aac-1879-08dc536a3214
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 482198bb-ae7b-4b25-8b7a-6d7f32faa083:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ DS1PEPF00017094:EE_|CY8PR07MB9594:EE_|DM8PR07MB8949:EE_
+X-MS-Exchange-Organization-AuthSource:
+ DS1PEPF00017094.namprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: cbd64576-795b-4aac-1879-08dc536a3214
+X-MS-Exchange-AtpMessageProperties: SA
+X-GT-Tenant: 042d12d7-75fe-4547-b5b6-0573f80f829d
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:209.85.221.172;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-vk1-f172.google.com;PTR:mail-vk1-f172.google.com;CAT:NONE;SFS:(13230031);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Apr 2024 23:11:15.1584
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbd64576-795b-4aac-1879-08dc536a3214
+X-MS-Exchange-CrossTenant-Id: 482198bb-ae7b-4b25-8b7a-6d7f32faa083
+X-MS-Exchange-CrossTenant-AuthSource:
+ DS1PEPF00017094.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR07MB9594
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.9942010
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7409.037
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?aGM3SGZSYTRsb0dnYytxODAyLzF6dE5vWU5TNk5ybkRVdXBnVGhoMDNCRmJ3?=
+ =?utf-8?B?VU50eHFNQ0RLb3dGSXJlOTVYM1IzZEhCMmpwWWZqV2lLMEszOFpiSkFYOFZo?=
+ =?utf-8?B?NFFvUk1MK2I3M1dpM2pqb0FWVnRUYmJvQzJtM3VWNUJKTUJsZHN3WFppNnpB?=
+ =?utf-8?B?YjZjdVlsKzZZTEtHYjhBUnY3cCtieTcrSU0vUUdYMnNoZlorcU5rSDROTUdz?=
+ =?utf-8?B?Z1d4ZVVFYmtwcnpOZWRsaGFjUHVzWTBEVFF6V1BlOW84dVNGdzNkQWNUeEVJ?=
+ =?utf-8?B?RndqU3lVYXkvNThOSjRMWUhEZm0zODRwWTlsRkhmdVFlSlptdlJCVG9kRlpi?=
+ =?utf-8?B?by9oSldseHI0QzQ3SjJmVkd6NnYzYUFPcXhsVWU5VHJ4R2oxaTltbW5hdmx1?=
+ =?utf-8?B?ZUFWUjhITlh6Vk9GVFJiS041b0ZpY2h2d0U1SEVYZmw2bTZiMEROMnhCRlJ4?=
+ =?utf-8?B?ckUzS3pXcVFwVFBuVTc5R3lmWElPM2x1T0M2ME4wZEJ1anh6dVBzN29wRXRk?=
+ =?utf-8?B?UVlsMlpvRVNnNm5LREt4bEtGZmJpc1hDRGRkNGZtZ3JwbzFXVUtxdVdORGJy?=
+ =?utf-8?B?Q1hJWitmMXhscEFsZVhKSzBnUWp5K1RGbnBuaS9sbzBHTm5XblFnZGFBVy93?=
+ =?utf-8?B?ZWRva0Z6KzFJRjF5cXhlcEdsMWptRDdoTVV4bGd3SUIvQVp5OENxWWZwQjRm?=
+ =?utf-8?B?dTUxb2tFUHJadWNRdEZVRlZnNE5ab1hHUkxwTWRJajRrNDFtQVYyOGt0ZDZP?=
+ =?utf-8?B?ZHlNT3hsTXloZk1KSFBlQ1VTUUdTS2xLUFN1Vmw3ejNUNmFCdGU1WTVUTG55?=
+ =?utf-8?B?UldpY3lTVlpZaFZrOEN3UFIvaitSSXk4alBrdTFuRk5VT2Nsa3lTcVlpRnZq?=
+ =?utf-8?B?T0FhYWpQRk1VZHBudEpTNzFUSTlyMkY1QjdTSHVkbW1JKzRQdzlNdjVZR3pl?=
+ =?utf-8?B?T053cWpxbzJnbWorLzZ3U1ZQczdFZlNGa3ROYmRzdk9aNkpuUTc5K2QyQ1d5?=
+ =?utf-8?B?VEVHLzdwSWtzLzlpVTFRQWR4VWNBZ0pXbjNuTXhHNExyYmtNaU4vVXpucHV6?=
+ =?utf-8?B?RmN1ZmJMajZBR2IraHg5TUYvMU0wRllhU3JqNElRMURkZ3c3SjRoMGp2OFpk?=
+ =?utf-8?B?aGZBM2Q1aFlOLzkxL2MvNEtkcUs0d0pmSndYbFhOZmRXbkhXR25CK3d3WjVV?=
+ =?utf-8?B?bm8yK2pBMnA2aUE4aWoxa3JOayt3SVN1NWlQNVJYUkRpZVVReDFJVnozSDFq?=
+ =?utf-8?B?MzJqeEZpQnUxb2dEbngwb3dnZGtqOVNaOGNaUEtWMkRSTVU1SUJmNmhVLzVq?=
+ =?utf-8?B?UTd1NncwWWZqVTc5bEVIUndLaHdlYTRaZUpQMXp1bzhaVWlzdjJ6VTIrNmVL?=
+ =?utf-8?B?Z01FWkpSb1BEc1IrRk5OT3YxV0RuZlNZejRTR0NYRnlCUGJZU0p6WlcySlhm?=
+ =?utf-8?B?RE10dHorV1FRMlFRdTNlbEltOVBOTWRyUEY4YzZNa0J6TjlHZDF0UHJrY29h?=
+ =?utf-8?B?dzJzR1A2b000eCsxbTBRaUUxVHVuQmJWdWNMOEdxZDBxUEg1Y2ZBblJJWFFo?=
+ =?utf-8?B?emxsa2VKcWFkaUdjRmF1VU9ZcFR3VzA3M0R4clFaQ2dwR3lDeHJXZXZuN2pB?=
+ =?utf-8?B?blRmbnhnbUd3ckI4Z2cyUlhTd2FoVERVR2Y4VjdGQjFpWUtaTFcrMUxlTkxP?=
+ =?utf-8?B?MlZtUHAxR2Exd0ZFMU1sa1dDdk9QdUUwbTFjNnM5amR0V1NTanY1OE5OOWk5?=
+ =?utf-8?B?UmJkMVJhQUlLWEVzOEpLZnMzR3FJSUF3V0pnZnRucmM1MlE5OEZnTWYwWjlQ?=
+ =?utf-8?B?TzB0MkZNOThvd0NKYzIrS0ZDaFhqcUJ6T2t1ZTBPdEFtQWpiUFovWmhlekRQ?=
+ =?utf-8?B?RU5XRGsyT2JXbzlLYmpFQVdUcS9ZUVRYOTNMV29sSjZmaGxVMyszbm1ONnpQ?=
+ =?utf-8?B?Y2NyVEhCRzZMb2NMRXJoSDdJV0ZxNnZ4aU1rTDlyK2U4bHluYU1mdy9hdkhO?=
+ =?utf-8?B?YWZMUGx2RDQvSUM2L1lPSWxkRkQyMk9tZTJISG4vQUZRb3RkN3UyVXowQ2FL?=
+ =?utf-8?B?eDF5ZDZ6WW1uem03dXFXckFlb0JOS2tDRlBJVSsrOXdpeVd5aWU0Kzh6djE4?=
+ =?utf-8?B?LzVVajlIbEExT1JacmlvdFJHYittcXF2V1RkL1JQTmNJSDkwb3ZYSmY4S3Q0?=
+ =?utf-8?B?QVFFU0JKVWV1OUVjR2ZUZ29CdndGcUoyMGtVYXd3VGxZR0FHSGc5Vk1KLzd5?=
+ =?utf-8?B?RlRvQW5mQldLUGFGZXd4Y2tnQlMxcHdyK0VjNlk4Qnp4QnUreXJFS3pMWmZL?=
+ =?utf-8?B?akpuelhLOHpUbEI5WWtZbVZoeGY0S1JOeUlyRGZsdHRNbVYvbDU3OElOemJP?=
+ =?utf-8?B?ZUF1QTc4RktNOTEvTHp1NUZreVUrSXZkMkxaSkNmQklScUtISGRNQ1c3YkVB?=
+ =?utf-8?B?ZXFmN2lhVFEwMEpSRWYxVEJ6dTY5Yy9pTWFiTzVUNDVIdzdXb2h5dk5tTldu?=
+ =?utf-8?B?T1p3Q1QvZTRVSVJVaWZtUnhlTFU2VEVLeUFJckFzekxBajdQTHBpYWV0cWxl?=
+ =?utf-8?B?OGs5ZWZpYmVLMnFjQWVVekVBbjkyeTgzNmRnUENNb3NUbHNsQ0VBY0Rja3kx?=
+ =?utf-8?Q?B7vn8g2L3IlG2KSocgzDZqNQAEmg=3D?=
+MIME-Version: 1.0
+
+--000000000000f88e1a06152538a3
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hey Jacob and the rest of Team 3342,
+
+Really sorry for the late response - I saw this a while back and was
+planning on responding but it just got lost. Not sure if it is still
+relevant at this point but everything you mentioned sounds excellent. The
+only improvement I can think is if we are able to stratify patients into
+different tabs/columns (green/yellow/red) so that it's easy for clinicians
+to be more efficient in addressing the patients with the most urgent needs
+without having the visual noise of the other colors intermingled with each
+other.
+
+I think the custom notifications is an interesting idea but I think a call
+would still be best - there's a lot of medical information that would still
+be best conveyed through a conversation. Good idea though! Let me know if
+anything else comes up and again apologies for the delayed answer.
+
+Best,
+Muling
+
+
+On Fri, Mar 1, 2024 at 5:31=E2=80=AFPM Rogers, Jacob C <jrogers335@gatech.e=
+du>
+wrote:
+
+> Hi again,
+>
+> Sorry for  the double email but I just remembered we had one additional
+> question for you regarding the whole system.
+> In the medical staff dashboard, we plan on creating a system where the
+> medical staff team can create custom notifications to send to patients'
+> phones. Does this seem like a worthwhile addition to you, or is it
+> redundant since the staff have access to the phone number of the patients
+> which is also visible on the page?
+>
+> If you like this idea of the custom notifications, should the name of the
+> staff member that send the notification be visible as part of the custom
+> notification to the patient?
+>
+> Thanks again, and have a good weekend!
+> Jacob
+> ------------------------------
+> *From:* Rogers, Jacob C <jrogers335@gatech.edu>
+> *Sent:* Friday, March 1, 2024 5:27 PM
+> *To:* mulingg@gmail.com <mulingg@gmail.com>
+> *Cc:* Storey, Edward C <edward.storey@gatech.edu>; Fu, Michael D <
+> mfu42@gatech.edu>; Avunuri, Sai Anoop <savunuri3@gatech.edu>; Song,
+> Jaehoon <jsong421@gatech.edu>
+> *Subject:* Heart Disease Care App Project Question
+>
+> Hi Muling,
+>
+> Happy March, hope you've had a good last week of February. This last
+> sprint of the project we have been working to develop the medical staff
+> dashboard and had a quick design question for you.
+>
+> In the main dashboard where the medical staff can see patients, we are
+> implementing a priority feature where each patient is assigned a risk
+> rating based on a statistical analysis model we are developing that notic=
+es
+> deviations in weight. For this system, we currently plan on implementing =
+a
+> three-tier system:
+>
+> Green (representing no detectable risk patterns)
+> Yellow (representing some possible detected risk that should be reviewed
+> by staff)
+> Red (representing large, sudden deviation in weight or detected swelling)
+>
+> Each patient will have this color as a part of their information to
+> improve the efficiency of the system and ensure higher risk patients are
+> viewed by medical staff first. Does this system sound sufficient to you,
+> and could you think of any improvements?
+>
+> More generally, our progress on the project is up to date with the
+> iteration plan and development is going smoothly. We're excited to show y=
+ou
+> all the new features next time we meet.
+>
+> Thanks so much!
+> Jacob for GT Junior Design Team 3342
+>
+
+--000000000000f88e1a06152538a3
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hey Jacob and the rest of Team 3342,<div><br></div><div>Real=
+ly sorry for the&nbsp;late response - I saw this a while back and was plann=
+ing on responding but it just got lost. Not sure if it is still relevant at=
+ this point but everything you mentioned sounds excellent. The only improve=
+ment I can think is if we are able to stratify patients into different tabs=
+/columns (green/yellow/red) so that it's easy for clinicians to be more eff=
+icient in addressing the patients with the most urgent needs without having=
+ the visual noise of the other colors intermingled with each other.&nbsp;</=
+div><div><br></div><div>I think the custom notifications is an interesting =
+idea but I think a call would still be best - there's a lot of medical info=
+rmation that would still be best conveyed through a conversation. Good idea=
+ though! Let me know if anything else comes up and again apologies for the&=
+nbsp;delayed answer.&nbsp;</div><div><br></div><div>Best,</div><div>Muling<=
+/div><div><br></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" c=
+lass=3D"gmail_attr">On Fri, Mar 1, 2024 at 5:31=E2=80=AFPM Rogers, Jacob C =
+&lt;<a href=3D"mailto:jrogers335@gatech.edu">jrogers335@gatech.edu</a>&gt; =
+wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0=
+px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div clas=
+s=3D"msg1823689867367682542">
+
+
+
+
+<div dir=3D"ltr">
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Hi again,</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Sorry for&nbsp; the double email but I just remembered we had one additiona=
+l question for you regarding the whole system.</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+In the medical staff dashboard, we plan on creating a system where the medi=
+cal staff team can create custom notifications to send to patients' phones.=
+ Does this seem like a worthwhile addition to you, or is it redundant since=
+ the staff have access to the phone
+ number of the patients which is also visible on the page?</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+If you like this idea of the custom notifications, should the name of the s=
+taff member that send the notification be visible as part of the custom not=
+ification to the patient?</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Thanks again, and have a good weekend!</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Jacob</div>
+<div id=3D"m_1823689867367682542appendonsend"></div>
+<hr style=3D"display:inline-block;width:98%">
+<div id=3D"m_1823689867367682542divRplyFwdMsg" dir=3D"ltr"><font face=3D"Ca=
+libri, sans-serif" style=3D"font-size:11pt" color=3D"#000000"><b>From:</b> =
+Rogers, Jacob C &lt;<a href=3D"mailto:jrogers335@gatech.edu" target=3D"_bla=
+nk">jrogers335@gatech.edu</a>&gt;<br>
+<b>Sent:</b> Friday, March 1, 2024 5:27 PM<br>
+<b>To:</b> <a href=3D"mailto:mulingg@gmail.com" target=3D"_blank">mulingg@g=
+mail.com</a> &lt;<a href=3D"mailto:mulingg@gmail.com" target=3D"_blank">mul=
+ingg@gmail.com</a>&gt;<br>
+<b>Cc:</b> Storey, Edward C &lt;<a href=3D"mailto:edward.storey@gatech.edu"=
+ target=3D"_blank">edward.storey@gatech.edu</a>&gt;; Fu, Michael D &lt;<a h=
+ref=3D"mailto:mfu42@gatech.edu" target=3D"_blank">mfu42@gatech.edu</a>&gt;;=
+ Avunuri, Sai Anoop &lt;<a href=3D"mailto:savunuri3@gatech.edu" target=3D"_=
+blank">savunuri3@gatech.edu</a>&gt;; Song, Jaehoon &lt;<a href=3D"mailto:js=
+ong421@gatech.edu" target=3D"_blank">jsong421@gatech.edu</a>&gt;<br>
+<b>Subject:</b> Heart Disease Care App Project Question</font>
+<div>&nbsp;</div>
+</div>
+
+<div dir=3D"ltr">
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Hi Muling,</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Happy March, hope you've had a good last week of February. This last sprint=
+ of the project we have been working to develop the medical staff dashboard=
+ and had a quick design question for you.</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+In the main dashboard where the medical staff can see patients, we are impl=
+ementing a priority feature where each patient is assigned a risk rating ba=
+sed on a statistical analysis model we are developing that notices deviatio=
+ns in weight. For this system, we
+ currently plan on implementing a three-tier system:</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Green (representing no detectable risk patterns)</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Yellow (representing some possible detected risk that should be reviewed by=
+ staff)</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Red (representing large, sudden deviation in weight or detected swelling)</=
+div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Each patient will have this color as a part of their information to improve=
+ the efficiency&nbsp;of the system and ensure higher risk patients are view=
+ed by medical staff first. Does this system sound sufficient to you, and co=
+uld you think of any improvements?</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+More generally, our progress on the project is up to date with the iteratio=
+n plan and development is going smoothly. We're excited to show you all the=
+ new features next time we meet.</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+<br>
+</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Thanks so much!</div>
+<div style=3D"font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Cali=
+bri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+Jacob for GT Junior Design Team 3342</div>
+</div>
+</div>
+
+</div></blockquote></div>
+
+--000000000000f88e1a06152538a3--

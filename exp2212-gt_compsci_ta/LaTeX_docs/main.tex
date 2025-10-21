@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%
+% class file
+\documentclass[12pt]{report}
+\newcommand{\TUG}{TeX Users Group}
+% style files
+\usepackage{geometry}
+\usepackage{blindtext}	%blindtext
+\usepackage{amsmath}	%amsmath
+\usepackage[backend=bibtex, style=numeric]{biblatex}	%biblatex
+\usepackage{tikz}	%tikz
+\usepackage{graphicx}	%graphicx
+\usepackage{hyperref}   %hyperref: enable hyperlinks in the entire document
+% commands
+\title{\LaTeX \space Documentation}
+\author{Jaehoon Song} 
+\date{October 2021}
+\geometry{margin=1in}   %geometry
+\addbibresource{bibliography/references.bib}	%biblatex
+\graphicspath{{images/}}	%graphicx
+%%%%%%%%%%%%%%%%%%% Body %%%%%%%%%%%%%%%%%%%
+\begin{document} 
+
+
+
+
+\input{temp/temp.tex}
+
+
+
+
+% Title
+\maketitle
+% (Optional) Article Components
+    %\input{article_components/abstract.tex}
+% Table of Content
+\tableofcontents
+% Chapters
+\chapter{Dot Product}
+\input{chapters/chatper01.tex}
+% Appendices
+\appendix
+\chapter{How to be better at \LaTeX}
+\input{appendices/appendix_a.tex}
+% Reference
+\printbibliography  %biblatex
+\end{document}
+%%%%%%%%%%%%%%%% Tips for LaTeX %%%%%%%%%%%%%%%%
+% < Context >
+% 1. Multiple Spaces 	-	No Change
+% 2. Single Enter		-	No Change
+% 3. Multiple Enter		-	New Paragraph

@@ -48,6 +48,10 @@ bin/
 Thumbs.db
 *.lnk
 *.url
+# Cache files
+*.psd
+ref/
+Ruth*.pdf
 
 # Python
 venv/

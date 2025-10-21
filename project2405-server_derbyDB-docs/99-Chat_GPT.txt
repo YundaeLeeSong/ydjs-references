@@ -1,0 +1,76 @@
+I'm in a software development project building an application for medical system, what possible Minimum Marketable Features (MMFs) are there?
+
+--------------------------------------------------------------------------------------------------------
+
+can you give me a list of user stories by features requirements with "requirements In Scope", "Stretch Goals", and "Future Goals"? (include all the alternatives and error conditions that can occur) 
+
+
+
+The corresponding MMF (Minimum Marketable Feature) is as follows.
+Login with Authentication: a login system satisfying the following purposes
+	1. Date of Birth, Full Name, and Medical Record Number (MRN) retrived from another subsystem (epic) for authentication, to eliminate the need for additional account setup steps.
+	2. Custom Login (using our own id/password) just in case of being not able to retrive data from another subsystem (epic)
+
+--------------------------------------------------------------------------------------------------------
+
+with given infromation, write pargraphs with moderate level of vocab and natively smooth transitions
+
+--------------------------------------------------------------------------------------------------------
+
+rephrase it with moderate level of vocab
+
+--------------------------------------------------------------------------------------------------------
+
+
+can you make it a little shorter? but not too short with moderate level of vocab
+
+
+--------------------------------------------------------------------------------------------------------
+Now, I want you to extract out all requirements about the application. Here is a project description.
+
+
+
+
+
+It's about ____, can you answer it with the following template? (response with a moderate vocabulary level)
+
+It's about ____, can you answer it with the following template? (response with a moderate vocabulary level)
+
+It's about ____, can you answer it with the following template? (response with a moderate vocabulary level)
+
+It's about ____, can you answer it with the following template? (response with a moderate vocabulary level)
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+Here is an example of user story and its scenario.
+
+
+Story: As a caregiver, I want to add visual information for tasks so that the patient can understand the task even if they can’t read.
+
+Scenario 1: The caregiver wants to add an image that describes the action for a task.
+Given that the caregiver is on the task configuration page;
+When they upload an image of their choice for the task;
+Then the image will be associated with the task and will be seen by the patient.
+Scenario 2: The caregiver wants to change the image that describes the action for a task.
+Given that the caregiver is on the task configuration page;
+When they click edit image on a task and upload a different image of their choice;
+Then the old image for the task will be replaced by the new image and the new image will be seen by the patient.
+Scenario 3: The caregiver wants to delete an image associated with a task.
+Given that the caregiver is on the task configuration page;
+When they click the edit button on a task and press the delete image button over the image; Then the image will be removed from the task and the patient will no longer see any image with the task.
+
+
+
+
+Here my user story. "As a patient, I want to be able to log in using my Date of Birth, Full Name, and Medical Record Number (MRN) retrieved from the epic system so that I can access my medical records and information conveniently."

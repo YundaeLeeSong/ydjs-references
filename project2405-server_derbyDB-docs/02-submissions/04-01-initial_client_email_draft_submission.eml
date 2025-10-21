@@ -1,0 +1,1035 @@
+Received: from SJ0PR07MB8455.namprd07.prod.outlook.com (2603:10b6:a03:358::6)
+ by BN8PR07MB7091.namprd07.prod.outlook.com with HTTPS; Wed, 6 Sep 2023
+ 20:15:13 +0000
+Received: from SJ0PR07MB8567.namprd07.prod.outlook.com (2603:10b6:a03:370::9)
+ by SJ0PR07MB8455.namprd07.prod.outlook.com (2603:10b6:a03:358::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6768.25; Wed, 6 Sep
+ 2023 20:15:12 +0000
+Received: from SJ0PR07MB8567.namprd07.prod.outlook.com
+ ([fe80::5ab:6bfe:ce21:203c]) by SJ0PR07MB8567.namprd07.prod.outlook.com
+ ([fe80::5ab:6bfe:ce21:203c%3]) with mapi id 15.20.6768.024; Wed, 6 Sep 2023
+ 20:15:11 +0000
+From: "Storey, Edward C" <edward.storey@gatech.edu>
+To: "mulingg@gmail.com" <mulingg@gmail.com>
+CC: "Song, Jaehoon" <jsong421@gatech.edu>, "Rogers, Jacob C"
+	<jrogers335@gatech.edu>, "Fu, Michael D" <mfu42@gatech.edu>, "Avunuri, Sai
+ Anoop" <savunuri3@gatech.edu>, "Roy, Nimisha" <nroy9@gatech.edu>, "Hibbard,
+ Lee W" <lhibbard7@gatech.edu>
+Subject: Georgia Tech Junior Design: Meeting Request
+Thread-Topic: Georgia Tech Junior Design: Meeting Request
+Thread-Index: AQHZ4PviyaTMwBofWEqenN05/BQtLw==
+Date: Wed, 6 Sep 2023 20:15:11 +0000
+Message-ID:
+	<SJ0PR07MB8567AB02ACEDCE882FDDB04295EFA@SJ0PR07MB8567.namprd07.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource: SJ0PR07MB8567.namprd07.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	f17fedd3-7d87-4cc3-f349-08dbaf15f95c
+X-MS-Exchange-Organization-SCL: 1
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+msip_labels:
+x-ms-publictraffictype: Email
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(425001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	GQ6e/5K/IGXL3MVbBmeOiv0C1WJtmSSTSyYUpTXOq/ZIBIvigblY6OhjeH1qD8TDvT4yzMkGWmEix1AF6eD/FobeWuZeQ7HT2e1cvrqxQKI5mOVk4pEq70B/tNbWmm7UqcDW1E02hk+mGOCLHfJ27NxHPZRIVWG3otqjkM5je2a76m0nxzDGHITKWxOYsmXzLF60F062kirYcqnk7GGvveIwgb9WPDa8/iQoq+2YUOhTEVccvIuxWAjm2QiPRucdFX19PZ26xeIvHFVWJhTy0z4JBqB3gDgYcGBitdEATlR2JDR9HzVKzKUKCrRXvuFJXWYkSGZiYV1LUmfloUZl3cSgxc6HQTIl6w8l1g+m/fGNIBKBCszVKll3kpAMYmvNDMT2o8zC/0SfWjetPsFhk1X1ciDSqh2qnOqSwR4ghlKOBvcrQ+5shnOxXPutNVdXz4DC+kdAntvCNeB+ukkndk9mGIxK24JuAs2rVr158HAwibGirIaE6P9bFpeu6Yho2FGCCk1FvpMWmbV4GCwWMzozDBll+0w0MCNaqZiX+MvwmFKsz2czITA4H4DNslPc6gFzAbi/DFpqtw7glfNLEUw0kv2HgXvDPkLKaw4Uk9TrFHa6mmSkTZAxL/Wg/AXGcOcQW5GNyamxVx43zQ33R4FI07SS9aO1ZhiuvqOlaIC4yonA/NKHSz4rOS1naUOtC09vr+kGvBn1Sh+xFk/FbznM6XEZiDC9JDEl/m57umsAwgdH0Mz3GXG0dfoSdP3V
+Content-Type: multipart/alternative;
+	boundary="_000_SJ0PR07MB8567AB02ACEDCE882FDDB04295EFASJ0PR07MB8567namp_"
+MIME-Version: 1.0
+
+--_000_SJ0PR07MB8567AB02ACEDCE882FDDB04295EFASJ0PR07MB8567namp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Dr. Lin,
+
+
+
+We would like to formally introduce ourselves as Junior Design Group 3342 a=
+t the Georgia Institute of Technology. We are a group of junior/senior comp=
+uter science students passionate about healthcare and impactful problem-sol=
+ving. We are pleased to announce that the course instructors recommended us=
+ to work with you on the weight-tracking application and scale system to re=
+duce heart failure readmission.
+
+
+
+Meeting Request
+
+Our introductory meeting will be about 90 minutes (about one and a half hou=
+rs). Our team's availability next week is as follows:
+
+  *   Thursday (9/14) at 5:00 pm to 7:00 pm
+
+  *   Friday (9/15) from 3:30 pm to 8:00 pm
+
+
+
+The tentative agenda for our meeting is the following:
+
+  *   Formal Introductions
+
+  *   Project Requirements
+
+  *   Additional Features
+
+  *   Necessary Equipment/Hardware
+
+  *   Timeline of Deliverables
+
+
+
+We kindly request your input on a suitable date and time for our introducto=
+ry discussion.
+
+
+
+More about Our Team
+
+Our team comprises five dedicated junior/senior members specializing in com=
+puter science. With a thorough grasp of software development principles, we=
+ are well-prepared to tackle complex projects. Allow us to provide you with=
+ a brief overview of our qualifications:
+
+  *   Edward Storey: Management, Frontend, Networking, Security - (edward.s=
+torey@gatech.edu<mailto:edward.storey@gatech.edu>)
+
+  *   Jacob Rogers: Frontend, Backend, UI/UX Design - (jrogers335@gatech.ed=
+u<mailto:jrogers335@gatech.edu>)
+
+  *   Jaehoon Song: Backend, Networking, Databases - (jsong421@gatech.edu<m=
+ailto:jsong421@gatech.edu>)
+
+  *   Sai Anoop Avunuri: Backend, Machine Learning, Web Development - (savu=
+nuri3@gatech.edu<mailto:savunuri3@gatech.edu>)
+
+  *   Michael Fu: Backend, Machine Learning, Data Analytics - (mfu42@gatech=
+.edu<mailto:mfu42@gatech.edu>)
+
+
+
+We are excited to learn more about the project's details and look forward t=
+o working with you this semester.
+
+
+
+Best,
+
+Edward Storey
+B.S. Computer Science
+Georgia Institute of Technology - Class of 2023
+Cell +1 (678) 986-9288
+edward.storey@gatech.edu<http://tomasino@gatech.edu/>
+
+--_000_SJ0PR07MB8567AB02ACEDCE882FDDB04295EFASJ0PR07MB8567namp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">Dear
+ Dr. Lin,&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPa=
+sted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&=
+quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; font-si=
+ze: 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_=
+MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">&nbsp;</span></span><span class=3D"EOP SCXW32637=
+849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;3=
+35559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-sel=
+ect: text; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_Em=
+beddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp=
+;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">We
+ would like to formally introduce ourselves as Junior Design Group 3342 at =
+the Georgia Institute of Technology. We are a group of junior/senior comput=
+er science students passionate about healthcare and impactful problem-solvi=
+ng.
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">We are pleased to announce that the course=
+ instructors recommended us to work with you on the weight-tracking applica=
+tion and scale system to reduce heart
+ failure readmission.</span><span class=3D"NormalTextRun SCXW32637849 BCX9 =
+ContentPasted0" style=3D"margin:0px;user-select:text">&nbsp;</span></span><=
+span class=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quo=
+t;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" sty=
+le=3D"margin: 0px; user-select: text; font-size: 10pt; line-height: 16px; f=
+ont-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; col=
+or: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">&nbsp;</span></span><span class=3D"EOP SCXW32637=
+849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;3=
+35559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-sel=
+ect: text; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_Em=
+beddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp=
+;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight MacC=
+hromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; outli=
+ne: transparent solid 1px; font-size: 10pt; line-height: 16px; font-family:=
+ Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: b=
+old; font-variant-ligatures: none !important; color: rgb(34, 34, 34); backg=
+round-color: rgb(255, 255, 255);"><span class=3D"NormalTextRun SCXW32637849=
+ BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">Meeting
+ Request&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPas=
+ted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&q=
+uot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; font-siz=
+e: 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_M=
+SFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; f=
+ont-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana,=
+ sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(25=
+5, 255, 255);">
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin:0px;use=
+r-select:text;cursor:text;clear:both">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">Our
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">introductory</span><span class=3D"NormalTe=
+xtRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:tex=
+t">&nbsp;</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPaste=
+d0" style=3D"margin:0px;user-select:text">meeting
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">will</span><span class=3D"NormalTextRun SC=
+XW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">&nbsp=
+;be about 90 minutes (about one and a half hours).
+ Our team's availability next week is as follows:&nbsp;</span></span><span =
+class=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201=
+341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style=3D=
+"margin: 0px; user-select: text; font-size: 10pt; line-height: 16px; font-f=
+amily: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; color: r=
+gb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<ul>
+<li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"14" dat=
+a-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quo=
+t;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot=
+;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left=
+&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot;:&qu=
+ot;hybridMultilevel&quot;}" data-aria-posinset=3D"1" data-aria-level=3D"1" =
+class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:text;cu=
+rsor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontService,=
+ sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Thursday
+ (9/14) at 5:00&nbsp;</span><span class=3D"NormalTextRun SCXW32637849 BCX9 =
+ContentPasted0" style=3D"margin:0px;user-select:text">pm to 7:00 pm</span><=
+/span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"14=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"2" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Calibri, Calibri_MSF=
+ontService, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Friday
+ (9/15) from 3:30 pm to 8:00 pm</span></span></p>
+</li></ul>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin:0px;use=
+r-select:text;cursor:text;clear:both">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9" style=3D"margin:0px;user-s=
+elect:text"></span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPaste=
+d0" data-ccp-props=3D"{&quot;134233117&quot;:false,&quot;134233118&quot;:fa=
+lse,&quot;201341983&quot;:0,&quot;335551550&quot;:1,&quot;335551620&quot;:1=
+,&quot;335559685&quot;:0,&quot;335559737&quot;:0,&quot;335559738&quot;:0,&q=
+uot;335559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; use=
+r-select: text; font-size: 10pt; line-height: 16px; font-family: Arial, Ari=
+al_EmbeddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">=
+&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin:0px;use=
+r-select:text;cursor:text;clear:both">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">The
+ tentative agenda for our meeting is the following:&nbsp;</span></span><spa=
+n class=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;2=
+01341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style=
+=3D"margin: 0px; user-select: text; font-size: 10pt; line-height: 16px; fon=
+t-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; color=
+: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+</div>
+<div class=3D"SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; f=
+ont-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana,=
+ sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(25=
+5, 255, 255);">
+<ul>
+<li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"13" dat=
+a-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quo=
+t;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot=
+;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left=
+&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot;:&qu=
+ot;hybridMultilevel&quot;}" data-aria-posinset=3D"1" data-aria-level=3D"1" =
+class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:text;cu=
+rsor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontService,=
+ sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Formal
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">Introductions&nbsp;</span></span><span cla=
+ss=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341=
+983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style=3D"ma=
+rgin: 0px; user-select: text; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nb=
+sp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"13=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"2" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Project
+ Requirements&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 Conte=
+ntPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;=
+:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; lin=
+e-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService=
+, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"13=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"3" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Additional
+ Features&nbsp;&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 Con=
+tentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quo=
+t;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; l=
+ine-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontServi=
+ce, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"13=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"4" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Necessary
+ Equipment/Hardware&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9=
+ ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739=
+&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: tex=
+t; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontS=
+ervice, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"13=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"5" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ari=
+al_MSFontService, sans-serif; font-variant-ligatures: none !important; colo=
+r: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"N=
+ormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sel=
+ect:text">Timeline
+ of Deliverables</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentP=
+asted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,=
+&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; line-h=
+eight: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, s=
+ans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li></ul>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9" style=3D"margin:0px;user-s=
+elect:text"></span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPaste=
+d0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quo=
+t;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; font-size:=
+ 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSF=
+ontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">We
+ kindly request your input on a suitable date and time for our introductory=
+ discussion.</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPaste=
+d0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quo=
+t;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; font-size:=
+ 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSF=
+ontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9" style=3D"margin:0px;user-s=
+elect:text"></span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPaste=
+d0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quo=
+t;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; font-size:=
+ 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSF=
+ontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight MacC=
+hromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; outli=
+ne: transparent solid 1px; font-size: 10pt; line-height: 16px; font-family:=
+ Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; font-weight: b=
+old; font-variant-ligatures: none !important; color: rgb(34, 34, 34); backg=
+round-color: rgb(255, 255, 255);"><span class=3D"NormalTextRun SCXW32637849=
+ BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">More
+ about Our Team&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 Con=
+tentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quo=
+t;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; f=
+ont-size: 10pt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, =
+Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">Our
+ team </span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0"=
+ style=3D"margin:0px;user-select:text">comprises</span><span class=3D"Norma=
+lTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:=
+text">&nbsp;five dedicated junior</span><span class=3D"NormalTextRun SCXW32=
+637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">/senior</=
+span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">&nbsp;members
+ specializing in </span><span class=3D"NormalTextRun SCXW32637849 BCX9 Cont=
+entPasted0" style=3D"margin:0px;user-select:text">c</span><span class=3D"No=
+rmalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-sele=
+ct:text">omputer
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">s</span><span class=3D"NormalTextRun SCXW3=
+2637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">cience. =
+With a thorough grasp of software development
+ principles, we are well-prepared to tackle complex projects. Allow us to p=
+rovide you with a
+</span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">brief</span><span class=3D"NormalTextRun S=
+CXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">&nbs=
+p;overview of our qualifications:&nbsp;</span></span><span class=3D"EOP SCX=
+W32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&=
+quot;335559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; us=
+er-select: text; font-size: 10pt; line-height: 16px; font-family: Arial, Ar=
+ial_EmbeddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);"=
+>&nbsp;</span></p>
+</div>
+<div class=3D"SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; f=
+ont-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana,=
+ sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(25=
+5, 255, 255);">
+<ul>
+<li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"12" dat=
+a-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quo=
+t;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot=
+;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left=
+&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot;:&qu=
+ot;hybridMultilevel&quot;}" data-aria-posinset=3D"1" data-aria-level=3D"1" =
+class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:text;cu=
+rsor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontService,=
+ sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight Unde=
+rlined MacChromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: =
+text; outline: transparent solid 1px; text-decoration: underline; line-heig=
+ht: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans=
+-serif; font-weight: bold; font-variant-ligatures: none !important; color: =
+rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Norm=
+alTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select=
+:text">Edward
+ Storey</span></span><span data-contrast=3D"none" lang=3D"EN-US" class=3D"T=
+extRun Highlight SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text=
+; outline: transparent solid 1px; line-height: 16px; font-family: Arial, Ar=
+ial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: =
+none !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 25=
+5);"><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">:
+ Management, Frontend, Networking, Security - (</span></span><a class=3D"Hy=
+perlink SCXW32637849 BCX9 OWAAutoLink ContentPasted0" href=3D"mailto:edward=
+.storey@gatech.edu" target=3D"_blank" rel=3D"noreferrer noopener" style=3D"=
+margin:0px;user-select:text;text-decoration:none" id=3D"OWAd9c7d731-1975-03=
+c7-84a9-3f9306b46435" data-loopstyle=3D"linkonly"><span data-contrast=3D"no=
+ne" lang=3D"EN-US" class=3D"TextRun Highlight Underlined SCXW32637849 BCX9"=
+ style=3D"margin: 0px; user-select: text; outline: transparent solid 1px; t=
+ext-decoration: underline; line-height: 16px; font-family: Arial, Arial_Emb=
+eddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !i=
+mportant; color: rgb(5, 99, 193); background-color: rgb(255, 255, 255);"><s=
+pan class=3D"NormalTextRun SCXW32637849 BCX9" data-ccp-charstyle=3D"Hyperli=
+nk" style=3D"margin:0px;user-select:text">edward.storey@gatech.edu</span></=
+span></a><span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highl=
+ight SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: t=
+ransparent solid 1px; line-height: 16px; font-family: Arial, Arial_Embedded=
+Font, Arial_MSFontService, sans-serif; font-variant-ligatures: none !import=
+ant; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span c=
+lass=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px=
+;user-select:text">)&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX=
+9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;33555973=
+9&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: te=
+xt; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFont=
+Service, sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"12=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"2" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight Unde=
+rlined MacChromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: =
+text; outline: transparent solid 1px; text-decoration: underline; line-heig=
+ht: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans=
+-serif; font-weight: bold; font-variant-ligatures: none !important; color: =
+rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Norm=
+alTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select=
+:text">Jacob
+ Rogers</span></span><span data-contrast=3D"none" lang=3D"EN-US" class=3D"T=
+extRun Highlight SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text=
+; outline: transparent solid 1px; line-height: 16px; font-family: Arial, Ar=
+ial_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: =
+none !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 25=
+5);"><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=
+=3D"margin:0px;user-select:text">:
+ Frontend, Backend, UI/UX </span><span class=3D"NormalTextRun SCXW32637849 =
+BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">D</span><span cl=
+ass=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;=
+user-select:text">esign - (</span></span><a class=3D"Hyperlink SCXW32637849=
+ BCX9 OWAAutoLink ContentPasted0" href=3D"mailto:jrogers335@gatech.edu" tar=
+get=3D"_blank" rel=3D"noreferrer noopener" style=3D"margin:0px;user-select:=
+text;text-decoration:none" id=3D"OWA389e2aff-9a5d-67a6-0eb3-ed3caeb26d7d" d=
+ata-loopstyle=3D"linkonly"><span data-contrast=3D"none" lang=3D"EN-US" clas=
+s=3D"TextRun Highlight Underlined SCXW32637849 BCX9" style=3D"margin: 0px; =
+user-select: text; outline: transparent solid 1px; text-decoration: underli=
+ne; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFont=
+Service, sans-serif; font-variant-ligatures: none !important; color: rgb(5,=
+ 99, 193); background-color: rgb(255, 255, 255);"><span class=3D"NormalText=
+Run SCXW32637849 BCX9" data-ccp-charstyle=3D"Hyperlink" style=3D"margin:0px=
+;user-select:text">jrogers335@gatech.edu</span></span></a><span data-contra=
+st=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW32637849 BCX9" st=
+yle=3D"margin: 0px; user-select: text; outline: transparent solid 1px; line=
+-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService,=
+ sans-serif; font-variant-ligatures: none !important; color: rgb(34, 34, 34=
+); background-color: rgb(255, 255, 255);"><span class=3D"NormalTextRun SCXW=
+32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">)&nbsp;=
+</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp=
+-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&=
+quot;:240}" style=3D"margin: 0px; user-select: text; line-height: 16px; fon=
+t-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; color=
+: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"12=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"3" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight Unde=
+rlined MacChromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: =
+text; outline: transparent solid 1px; text-decoration: underline; line-heig=
+ht: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans=
+-serif; font-weight: bold; font-variant-ligatures: none !important; color: =
+rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Norm=
+alTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select=
+:text">Jaehoon
+ Song</span></span><span data-contrast=3D"none" lang=3D"EN-US" class=3D"Tex=
+tRun Highlight SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; =
+outline: transparent solid 1px; line-height: 16px; font-family: Arial, Aria=
+l_EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: no=
+ne !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255)=
+;"><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"=
+margin:0px;user-select:text">:
+ Backend, Networking, Database</span><span class=3D"NormalTextRun SCXW32637=
+849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">s</span><spa=
+n class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:=
+0px;user-select:text">&nbsp;- (</span></span><a class=3D"Hyperlink SCXW3263=
+7849 BCX9 OWAAutoLink ContentPasted0" href=3D"mailto:jsong421@gatech.edu" t=
+arget=3D"_blank" rel=3D"noreferrer noopener" style=3D"margin:0px;user-selec=
+t:text;text-decoration:none" id=3D"OWA02599bb8-36b0-4874-7435-9290c0fa533b"=
+ data-loopstyle=3D"linkonly"><span data-contrast=3D"none" lang=3D"EN-US" cl=
+ass=3D"TextRun Highlight Underlined SCXW32637849 BCX9" style=3D"margin: 0px=
+; user-select: text; outline: transparent solid 1px; text-decoration: under=
+line; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFo=
+ntService, sans-serif; font-variant-ligatures: none !important; color: rgb(=
+5, 99, 193); background-color: rgb(255, 255, 255);"><span class=3D"NormalTe=
+xtRun SCXW32637849 BCX9" data-ccp-charstyle=3D"Hyperlink" style=3D"margin:0=
+px;user-select:text">jsong421@gatech.edu</span></span></a><span data-contra=
+st=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW32637849 BCX9" st=
+yle=3D"margin: 0px; user-select: text; outline: transparent solid 1px; line=
+-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService,=
+ sans-serif; font-variant-ligatures: none !important; color: rgb(34, 34, 34=
+); background-color: rgb(255, 255, 255);"><span class=3D"NormalTextRun SCXW=
+32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">)&nbsp;=
+</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp=
+-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&=
+quot;:240}" style=3D"margin: 0px; user-select: text; line-height: 16px; fon=
+t-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; color=
+: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"12=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"4" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight Unde=
+rlined MacChromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: =
+text; outline: transparent solid 1px; text-decoration: underline; line-heig=
+ht: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans=
+-serif; font-weight: bold; font-variant-ligatures: none !important; color: =
+rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Norm=
+alTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select=
+:text">Sai
+ Anoop </span><span class=3D"NormalTextRun SpellingErrorV2Themed SCXW326378=
+49 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text;background-rep=
+eat:repeat-x;background-position:left bottom;base64,PD94bWwgdmVyc2lvbj0iMS4=
+wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNXB4IiBoZWlnaHQ9IjRweCIgdmlld0=
+JveD0iMCAwIDUgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwM=
+C9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwh=
+LS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTYuMiAoODE2NzIpIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0=
+tPgogICAgPHRpdGxlPnNwZWxsaW5nX3NxdWlnZ2xlPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZW=
+Qgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkZsYWdzIiBzdHJva2U9Im5vbmUiIHN0c=
+m9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8=
+ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAxMC4wMDAwMDAsIC0yOTYuMDAwMDAwKSIgaWQ9InN=
+wZWxsaW5nX3NxdWlnZ2xlIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMT=
+AxMC4wMDAwMDAsIDI5Ni4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDMgQ=
+zEuMjUsMyAxLjI1LDEgMi41LDEgQzMuNzUsMSAzLjc1LDMgNSwzIiBpZD0iUGF0aCIgc3Ryb2tl=
+PSIjRUIwMDAwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxyZWN=
+0IGlkPSJSZWN0YW5nbGUiIHg9IjAiIHk9IjAiIHdpZHRoPSI1IiBoZWlnaHQ9IjQiPjwvcmVjdD=
+4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+&quot;):base6=
+4,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNXB4I=
+iBoZWlnaHQ9IjRweCIgdmlld0JveD0iMCAwIDUgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0=
+cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8=
+xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTYuMiAoODE2NzIpIC0gaH=
+R0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPnNwZWxsaW5nX3NxdWlnZ2xlPC90aXRsZ=
+T4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkZsYWdz=
+IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJ=
+ldmVub2RkIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAxMC4wMDAwMDAsIC=
+0yOTYuMDAwMDAwKSIgaWQ9InNwZWxsaW5nX3NxdWlnZ2xlIj4KICAgICAgICAgICAgPGcgdHJhb=
+nNmb3JtPSJ0cmFuc2xhdGUoMTAxMC4wMDAwMDAsIDI5Ni4wMDAwMDApIj4KICAgICAgICAgICAg=
+ICAgIDxwYXRoIGQ9Ik0wLDMgQzEuMjUsMyAxLjI1LDEgMi41LDEgQzMuNzUsMSAzLjc1LDMgNSw=
+zIiBpZD0iUGF0aCIgc3Ryb2tlPSIjRUIwMDAwIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KIC=
+AgICAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIHg9IjAiIHk9IjAiIHdpZHRoPSI1I=
+iBoZWlnaHQ9IjQiPjwvcmVjdD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwv=
+Zz4KPC9zdmc+&quot;));border-bottom:1px solid transparent">Avunuri</span></s=
+pan><span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight =
+SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transp=
+arent solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont,=
+ Arial_MSFontService, sans-serif; font-variant-ligatures: none !important; =
+color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=
+=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;use=
+r-select:text">:
+ Backend, Machine Learning, Web Development - (</span></span><a class=3D"Hy=
+perlink SCXW32637849 BCX9 OWAAutoLink ContentPasted0" href=3D"mailto:savunu=
+ri3@gatech.edu" target=3D"_blank" rel=3D"noreferrer noopener" style=3D"marg=
+in:0px;user-select:text;text-decoration:none" id=3D"OWAde3ffb88-43bc-5bbd-d=
+028-a0d855615e46" data-loopstyle=3D"linkonly"><span data-contrast=3D"none" =
+lang=3D"EN-US" class=3D"TextRun Highlight Underlined SCXW32637849 BCX9" sty=
+le=3D"margin: 0px; user-select: text; outline: transparent solid 1px; text-=
+decoration: underline; line-height: 16px; font-family: Arial, Arial_Embedde=
+dFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !impor=
+tant; color: rgb(5, 99, 193); background-color: rgb(255, 255, 255);"><span =
+class=3D"NormalTextRun SCXW32637849 BCX9" data-ccp-charstyle=3D"Hyperlink" =
+style=3D"margin:0px;user-select:text">savunuri3@gatech.edu</span></span></a=
+><span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCX=
+W32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transpare=
+nt solid 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Ar=
+ial_MSFontService, sans-serif; font-variant-ligatures: none !important; col=
+or: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"=
+NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-se=
+lect:text">)&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 Conten=
+tPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:=
+0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; line=
+-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService,=
+ sans-serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li><li data-leveltext=3D"&#61623;" data-font=3D"Symbol" data-listid=3D"12=
+" data-list-defn-props=3D"{&quot;335552541&quot;:1,&quot;335559684&quot;:-2=
+,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:=
+&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot=
+;left&quot;,&quot;469777804&quot;:&quot;&#61623;&quot;,&quot;469777815&quot=
+;:&quot;hybridMultilevel&quot;}" data-aria-posinset=3D"5" data-aria-level=
+=3D"1" class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"user-select:=
+text;cursor:text;clear:both;font-size:10pt;font-family:Arial, Arial_MSFontS=
+ervice, sans-serif">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight Unde=
+rlined MacChromeBold SCXW32637849 BCX9" style=3D"margin: 0px; user-select: =
+text; outline: transparent solid 1px; text-decoration: underline; line-heig=
+ht: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans=
+-serif; font-weight: bold; font-variant-ligatures: none !important; color: =
+rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Norm=
+alTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select=
+:text">Michael
+ Fu</span></span><span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextR=
+un Highlight SCXW32637849 BCX9" style=3D"margin: 0px; user-select: text; ou=
+tline: transparent solid 1px; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">:
+ Backend, Machine Learning, Data Analytics - (</span></span><a class=3D"Hyp=
+erlink SCXW32637849 BCX9 OWAAutoLink ContentPasted0" href=3D"mailto:mfu42@g=
+atech.edu" target=3D"_blank" rel=3D"noreferrer noopener" style=3D"margin:0p=
+x;user-select:text;text-decoration:none" id=3D"OWAb51e68d2-f3f9-48f5-5116-7=
+44eccbc6587" data-loopstyle=3D"linkonly"><span data-contrast=3D"none" lang=
+=3D"EN-US" class=3D"TextRun Highlight Underlined SCXW32637849 BCX9" style=
+=3D"margin: 0px; user-select: text; outline: transparent solid 1px; text-de=
+coration: underline; line-height: 16px; font-family: Arial, Arial_EmbeddedF=
+ont, Arial_MSFontService, sans-serif; font-variant-ligatures: none !importa=
+nt; color: rgb(5, 99, 193); background-color: rgb(255, 255, 255);"><span cl=
+ass=3D"NormalTextRun SCXW32637849 BCX9" data-ccp-charstyle=3D"Hyperlink" st=
+yle=3D"margin:0px;user-select:text">mfu42@gatech.edu</span></span></a><span=
+ data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW32637=
+849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparent sol=
+id 1px; line-height: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MS=
+FontService, sans-serif; font-variant-ligatures: none !important; color: rg=
+b(34, 34, 34); background-color: rgb(255, 255, 255);"><span class=3D"Normal=
+TextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:t=
+ext">)&nbsp;</span></span><span class=3D"EOP SCXW32637849 BCX9 ContentPaste=
+d0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quo=
+t;335559740&quot;:240}" style=3D"margin: 0px; user-select: text; line-heigh=
+t: 16px; font-family: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-=
+serif; color: rgb(34, 34, 34);">&nbsp;</span></p>
+</li></ul>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">&nbsp;</span></span><span class=3D"EOP SCXW32637=
+849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;3=
+35559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-sel=
+ect: text; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_Em=
+beddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp=
+;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">We
+ are </span><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" =
+style=3D"margin:0px;user-select:text">excited</span><span class=3D"NormalTe=
+xtRun SCXW32637849 BCX9 ContentPasted0" style=3D"margin:0px;user-select:tex=
+t">&nbsp;to learn more about the project's details
+ and look forward to working </span><span class=3D"NormalTextRun SCXW326378=
+49 BCX9 ContentPasted0" style=3D"margin:0px;user-select:text">with</span><s=
+pan class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"margi=
+n:0px;user-select:text">&nbsp;you this semester.</span></span><span class=
+=3D"EOP SCXW32637849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;20134198=
+3&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}" style=3D"marg=
+in: 0px; user-select: text; font-size: 10pt; line-height: 16px; font-family=
+: Arial, Arial_EmbeddedFont, Arial_MSFontService, sans-serif; color: rgb(34=
+, 34, 34);">&nbsp;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">&nbsp;</span></span><span class=3D"EOP SCXW32637=
+849 BCX9 ContentPasted0" data-ccp-props=3D"{&quot;201341983&quot;:0,&quot;3=
+35559739&quot;:0,&quot;335559740&quot;:240}" style=3D"margin: 0px; user-sel=
+ect: text; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_Em=
+beddedFont, Arial_MSFontService, sans-serif; color: rgb(34, 34, 34);">&nbsp=
+;</span></p>
+</div>
+<div class=3D"OutlineElement Ltr SCXW32637849 BCX9" style=3D"margin: 0px; u=
+ser-select: text; cursor: text; clear: both; font-family: &quot;Segoe UI&qu=
+ot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<p class=3D"Paragraph SCXW32637849 BCX9" style=3D"margin:0px;user-select:te=
+xt;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align=
+:left">
+<span data-contrast=3D"none" lang=3D"EN-US" class=3D"TextRun Highlight SCXW=
+32637849 BCX9" style=3D"margin: 0px; user-select: text; outline: transparen=
+t solid 1px; font-size: 10pt; line-height: 16px; font-family: Arial, Arial_=
+EmbeddedFont, Arial_MSFontService, sans-serif; font-variant-ligatures: none=
+ !important; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"=
+><span class=3D"NormalTextRun SCXW32637849 BCX9 ContentPasted0" style=3D"ma=
+rgin:0px;user-select:text">Best,</span></span></p>
+</div>
+</div>
+<div class=3D"elementToProof">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"Signature">
+<div><strong style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; t=
+ext-align: start; background-color: rgb(255, 255, 255);">Edward Storey</str=
+ong><br style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; text-a=
+lign: start; background-color: rgb(255, 255, 255);">
+<span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; text-ali=
+gn: start; display: inline !important; background-color: rgb(255, 255, 255)=
+;">B.S. Computer Science</span><br style=3D"font-family: Calibri, Arial, He=
+lvetica, sans-serif; text-align: start; background-color: rgb(255, 255, 255=
+);">
+</div>
+<div><span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; tex=
+t-align: start; display: inline !important; background-color: rgb(255, 255,=
+ 255);">Georgia Institute of Technology - Class of 2023</span><br style=3D"=
+font-family: Calibri, Arial, Helvetica, sans-serif; text-align: start; back=
+ground-color: rgb(255, 255, 255);">
+</div>
+<div><span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; tex=
+t-align: start; display: inline !important; background-color: rgb(255, 255,=
+ 255);">Cell +1 (678) 986-9288</span><br style=3D"font-family: Calibri, Ari=
+al, Helvetica, sans-serif; text-align: start; background-color: rgb(255, 25=
+5, 255);">
+<a href=3D"http://tomasino@gatech.edu/" data-auth=3D"NotApplicable" data-lo=
+opstyle=3D"linkonly" style=3D"font-family: Calibri, Arial, Helvetica, sans-=
+serif; margin: 0px; text-align: start; background-color: rgb(255, 255, 255)=
+;" id=3D"OWA6a613fc8-c1c7-d35a-fa4b-c6fc4b6ef9b1" class=3D"OWAAutoLink">edw=
+ard.storey@gatech.edu</a></div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_SJ0PR07MB8567AB02ACEDCE882FDDB04295EFASJ0PR07MB8567namp_--

@@ -1,0 +1,50 @@
+Theorem. Ratio Test (1)
+\left(\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=L<1\right)\Rightarrow\left(\sum_{n=0}^{\infty}a_n\ absolutely\ converges\right)
+Proof.
+Using the direct proof,
+\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=L\ \ \ \ \ \ \ \left(L<1\right)
+\Leftrightarrow\forall\ \varepsilon>0,\ \exists\ N\in\mathbb{N}\ such\ that\left|\left|\frac{a_{n+1}}{a_n}\right|-L\right|<\varepsilon,\ for\ every\ n>N
+That is, for every \varepsilon>0, there exists a large number, N\in\mathbb{N}, such that
+\left|\left|\frac{a_{n+1}}{a_n}\right|-L\right|<\varepsilon\ \ \ \ \ \ \ \ for\ n=N+1,\ N+2,\cdots
+\Leftrightarrow\ L-\varepsilon<\left|\frac{a_{n+1}}{a_n}\right|<L+\varepsilon\ \ \ \ \ \ \ for\ n=N+1,\ N+2,\cdots
+Since this equation is always true for every \varepsilon, choose its value
+\varepsilon=\frac{1-L}{2}>0
+Now we have a true statement (hypothesis),
+for\ n=N+1,\ N+2,\cdots
+L-\frac{1-L}{2}<\left|\frac{a_{n+1}}{a_n}\right|<L+\frac{1-L}{2}
+\Leftrightarrow\frac{3L-1}{2}<\left|\frac{a_{n+1}}{a_n}\right|<\frac{L+1}{2}
+\because\left(\left|\frac{a_{n+1}}{a_n}\right|>0\ is\ true\right)\bigwedge\left(\frac{L+1}{2}<1\ is\ true\right)
+\Rightarrow\forall\ n>N,\ \ \ max\left\{0,\ \frac{3L-1}{2}\right\}<\left|\frac{a_{n+1}}{a_n}\right|<\frac{L+1}{2}<1
+0<\frac{L+1}{2}<1
+n=N+1,\ \ \ \left|\frac{a_{N+2}}{a_{N+1}}\right|<\frac{L+1}{2}\ \Leftrightarrow\ \left|a_{N+2}\right|<\frac{L+1}{2}\left|a_{N+1}\right|
+n=N+2,\ \ \ \left|\frac{a_{N+3}}{a_{N+2}}\right|<\frac{L+1}{2}\ \Leftrightarrow\ \left|a_{N+3}\right|<\frac{L+1}{2}\left|a_{N+2}\right|<\left(\frac{L+1}{2}\right)^2\left|a_{N+1}\right|
+n=N+3,\ \ \ \left|\frac{a_{N+4}}{a_{N+3}}\right|<\frac{L+1}{2}\ \Leftrightarrow\ \left|a_{N+4}\right|<\frac{L+1}{2}\left|a_{N+3}\right|<\left(\frac{L+1}{2}\right)^2\left|a_{N+2}\right|{<\left(\frac{L+1}{2}\right)}^3\left|a_{N+1}\right|
+\vdots
+
+Therefore, we can construct the following inequality,
+\sum_{n=0}^{\infty}\left|a_n\right|=\left(\left|a_0\right|+\cdots+\left|a_N\right|\right)+\left(\left|a_{N+1}\right|+\left|a_{N+2}\right|+\left|a_{N+3}\right|+\left|a_{N+4}\right|+\cdots\right)
+<\left(\left|a_1\right|+\cdots+\left|a_N\right|\right)+\left\{\left|a_{N+1}\right|+\frac{L+1}{2}\left|a_{N+1}\right|+\left(\frac{L+1}{2}\right)^2\left|a_{N+1}\right|+\left(\frac{L+1}{2}\right)^3\left|a_{N+1}\right|+\cdots\right\}
+=\left(\left|a_1\right|+\cdots+\left|a_N\right|\right)+\left|a_{N+1}\right|\left\{1+\frac{L+1}{2}+\left(\frac{L+1}{2}\right)^2+\left(\frac{L+1}{2}\right)^3+\cdots\right\}
+=\left(\left|a_1\right|+\cdots+\left|a_N\right|\right)+\left|a_{N+1}\right|\left\{\frac{1}{1-\left(\frac{L+1}{2}\right)}\right\}=\left(\sum_{n=0}^{N}\left|a_n\right|\right)+\left|a_{N+1}\right|\left(\frac{2}{1-L}\right)
+\therefore\sum_{n=0}^{\infty}\left|a_n\right|<\sum_{n=0}^{N}\left|a_n\right|+\left|a_{N+1}\right|\left(\frac{2}{1-L}\right)
+Since the infinite sum is bounded and monotonic, it converges by the monotonic sequence theorem.
+Therefore,
+\left(\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=L<1\right)\Rightarrow\left(\sum_{n=0}^{\infty}a_n\ absolutely\ converges\right)_\qed
+Also, we have to consider the following two different hypotheses.
+\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=L>1\ \ \ \ \ \ \ and\ \ \ \ \ \ \ \ \ \lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=1
+
+Theorem. Ratio Test (2)
+\left(\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=L>1\right)\Rightarrow\left(\sum_{n=0}^{\infty}a_n\ diverges\right)
+We can prove the Ratio Test (2) same as we did in the Ratio Test (1).
+
+Theorem. Ratio Test (3)
+\left(\lim\below{n\rightarrow\infty}{\left|\frac{a_{n+1}}{a_n}\right|}=1\right)\Rightarrow\left(\sum_{n=0}^{\infty}a_n\ is\ inconclusive\right)
+Try to prove it. (Choose any positive value for \varepsilon.)
+
+Exercise. Test the series by using the Ratio Test.
+
+1.\ \ \sum_{n=1}^{\infty}\left(-1\right)^n\frac{n^4}{3^{n+2}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2.\ \ \sum_{n=1}^{\infty}\frac{1}{n!}\ 
+
+3.\ \ \sum_{n=1}^{\infty}\frac{\cos\funcapply(n\pi/3)}{n!}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4.\ \ \sum_{n=1}^{\infty}\frac{1}{n}
+
+5.\ \ \sum_{n=0}^{\infty}\frac{\sqrt n}{n^2+1}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6.\ \ \sum_{n=1}^{\infty}\frac{n^n}{n!}

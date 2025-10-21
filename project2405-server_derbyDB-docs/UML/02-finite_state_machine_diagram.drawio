@@ -1,0 +1,148 @@
+<mxfile host="Electron" modified="2024-02-19T00:57:20.978Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="zlzR885TxKUx1OT8S07C" version="21.2.8" type="device">
+  <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
+    <mxGraphModel dx="780" dy="542" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2a3bc250acf0617d-8" value="Database" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;width=125;height=60;" parent="1" vertex="1">
+          <mxGeometry x="10" y="170" width="710" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-4" value="Delete and Create (01)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="260" y="295" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-5" value="entry / --&lt;br&gt;exit / --" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="WTYUdBuvm8yJHuAdQWrG-4" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-4" target="WTYUdBuvm8yJHuAdQWrG-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-7" value="IDLE (00)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="260" y="430" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-8" value="entry / --&lt;br&gt;exit / enter SQL or exit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="WTYUdBuvm8yJHuAdQWrG-7" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-8" target="WTYUdBuvm8yJHuAdQWrG-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-10" target="WTYUdBuvm8yJHuAdQWrG-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="630" />
+              <mxPoint x="300" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-10" value="Delete / DELETE (02)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="160" y="720" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-11" value="entry / enter DML command&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;exit / --" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="WTYUdBuvm8yJHuAdQWrG-10" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-16" target="WTYUdBuvm8yJHuAdQWrG-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-16" value="Read / GET (03)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="360" y="600" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-17" value="entry / enter DQL command&lt;br&gt;exit / return results" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="WTYUdBuvm8yJHuAdQWrG-16" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-19" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="325" y="180" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-20" value="database service on" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-19" target="WTYUdBuvm8yJHuAdQWrG-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-25" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-8" target="WTYUdBuvm8yJHuAdQWrG-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="560" as="targetPoint" />
+            <mxPoint x="350" y="500" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-26" value="&lt;p class=&quot;MsoNormal&quot;&gt;&lt;/p&gt;This documentation illustrates the execution of fundamental database operations (CRUD: Create, Read, Update, and Delete) through the utilization of a Finite State Machine (FSM) diagram, providing a visual depiction of the system&#39;s behavior. Additionally, each operational state is depicted within the framework of a REST API, with the Flask server adeptly managing HTTP messages (requests and responses).&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="10" y="10" width="365" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-35" value="DDL: &quot;delete&quot;, &quot;define&quot; tables" style="shape=note;size=20;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="426" y="310" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-36" value="DML: &quot;modify&quot; table values" style="shape=note;size=20;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="120" y="790" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WTYUdBuvm8yJHuAdQWrG-37" value="DQL: &quot;query&quot; table values" style="shape=note;size=20;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="370" y="670" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aOWYYbfIgqSweCKdtac2-1" value="Backup (99)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="551" y="415" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="aOWYYbfIgqSweCKdtac2-2" value="entry / exit&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;exit / setup log.txt and bkp.csv by date" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="aOWYYbfIgqSweCKdtac2-1" vertex="1">
+          <mxGeometry y="30" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aOWYYbfIgqSweCKdtac2-3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" parent="1" source="aOWYYbfIgqSweCKdtac2-1" target="aOWYYbfIgqSweCKdtac2-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aOWYYbfIgqSweCKdtac2-4" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
+          <mxGeometry x="616" y="587" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aOWYYbfIgqSweCKdtac2-5" value="database service off" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#000000;rounded=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-7" target="aOWYYbfIgqSweCKdtac2-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="272" as="targetPoint" />
+            <mxPoint x="600" y="187" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="6UBQBexGUBbMEyNuTX_O-4" target="WTYUdBuvm8yJHuAdQWrG-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-4" value="Update / PUT (02)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="30" y="630" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-5" value="entry / enter DML command&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;exit / --" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="6UBQBexGUBbMEyNuTX_O-4" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="6UBQBexGUBbMEyNuTX_O-6" target="WTYUdBuvm8yJHuAdQWrG-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-6" value="Insert / POST (02)" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-7" value="entry / enter DML command&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;exit / --" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" parent="6UBQBexGUBbMEyNuTX_O-6" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-8" target="6UBQBexGUBbMEyNuTX_O-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="740" as="targetPoint" />
+            <mxPoint x="320" y="510" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="210" y="475" />
+              <mxPoint x="210" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6UBQBexGUBbMEyNuTX_O-10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="WTYUdBuvm8yJHuAdQWrG-7" target="6UBQBexGUBbMEyNuTX_O-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="517" as="targetPoint" />
+            <mxPoint x="210" y="332" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="140" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
