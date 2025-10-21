@@ -1,6 +1,6 @@
 private-*.tex
 main.tex
-
+/main.tex
 
 /cli.tex
 /core.tex
