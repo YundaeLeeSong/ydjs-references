@@ -1,3 +1,7 @@
+private-*.tex
+main.tex
+
+
 /cli.tex
 /core.tex
 # /preamble.tex
