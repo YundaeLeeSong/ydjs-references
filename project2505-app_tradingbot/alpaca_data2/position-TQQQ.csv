@@ -1,0 +1,6 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+TQQQ,2,3.13,2025-07-16 21:30:52,84.73,82.95,2.15,False,True,False,True,7.0,2
+TQQQ,2,3.13,2025-07-16 21:33:50,84.73,82.95,2.15,False,True,False,True,7.0,2
+TQQQ,2,3.13,2025-07-16 21:34:30,84.73,82.95,2.15,False,True,False,True,7.0,2
+TQQQ,2,3.13,2025-07-16 21:40:52,84.73,82.95,2.15,False,True,False,True,7.0,2
+TQQQ,2,3.13,2025-07-16 23:01:00,85.07,82.95,2.56,True,False,False,True,7.0,2

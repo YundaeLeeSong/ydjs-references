@@ -1,0 +1,10 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+SMU,3.87,22.0,2025-10-01 17:13:14,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:13:31,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:13:52,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:14:30,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:14:50,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:15:08,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:22:27,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:22:51,20.67,22.7,-8.94,False,False,True,True,7.0,2
+SMU,3.87,22.0,2025-10-01 17:23:02,20.67,22.7,-8.94,False,False,True,True,7.0,2

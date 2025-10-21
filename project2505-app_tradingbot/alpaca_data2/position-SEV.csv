@@ -1,0 +1,11 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+SEV,7.14,1.0,2025-10-20 14:02:06,5.6,5.55,0.9,False,True,False,True,7.0,2
+SEV,7.14,1.0,2025-10-20 14:02:18,5.6,5.55,0.9,False,True,False,True,7.0,2
+SEV,7.48,1.0,2025-10-20 14:03:21,5.35,5.55,-3.6,False,True,False,True,7.0,2
+SEV,7.48,1.0,2025-10-20 14:03:26,5.35,5.55,-3.6,False,True,False,True,7.0,2
+SEV,7.48,1.0,2025-10-20 14:04:05,5.35,5.55,-3.6,False,True,False,True,7.0,2
+SEV,7.48,1.0,2025-10-20 14:04:23,5.35,5.55,-3.6,False,True,False,True,7.0,2
+SEV,7.48,1.0,2025-10-20 14:04:26,5.35,5.55,-3.6,False,True,False,True,7.0,2
+SEV,7.49,47.0,2025-10-20 20:37:34,5.34,5.31,0.65,False,True,False,True,7.0,2
+SEV,7.58,47.0,2025-10-21 00:30:57,5.28,5.31,-0.48,False,True,False,True,7.0,2
+SEV,7.58,47.0,2025-10-21 00:31:05,5.28,5.31,-0.48,False,True,False,True,7.0,2

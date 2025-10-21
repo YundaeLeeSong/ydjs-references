@@ -1,0 +1,86 @@
+[
+  {
+    "id": "sk0001",
+    "name": "Alice",
+    "age": 23,
+    "score": 98.68,
+    "department": "Engineering"
+  },
+  {
+    "id": "sk0002",
+    "name": "Bob",
+    "age": 31,
+    "score": 76.0,
+    "department": "Marketing"
+  },
+  {
+    "id": "sk0003",
+    "name": "Charlie",
+    "age": 27,
+    "score": 100.33,
+    "department": "Engineering"
+  },
+  {
+    "id": "sk0004",
+    "name": "Diana",
+    "age": 35,
+    "score": 88.5,
+    "department": "Sales"
+  },
+  {
+    "id": "sk0005",
+    "name": "Eve",
+    "age": 29,
+    "score": 101.43,
+    "department": "Engineering"
+  },
+  {
+    "id": "sk0006",
+    "name": "Frank",
+    "age": 26,
+    "score": 92.15,
+    "department": "Marketing"
+  },
+  {
+    "id": "sk0007",
+    "name": "Grace",
+    "age": 32,
+    "score": 85.7,
+    "department": "Sales"
+  },
+  {
+    "id": "sk0008",
+    "name": "Hannah",
+    "age": 28,
+    "score": 97.2,
+    "department": "Engineering"
+  },
+  {
+    "id": "sk0009",
+    "name": "Ian",
+    "age": 30,
+    "score": 79.5,
+    "department": "Marketing"
+  },
+  {
+    "id": "sk0010",
+    "name": "Julia",
+    "age": 24,
+    "score": 95.0,
+    "department": "Sales"
+  },
+  {
+    "id": "sk0003",
+    "name": "Charles",
+    "age": 28,
+    "score": 99.0,
+    "department": "Engineering"
+  },
+  {
+    "id": "sk0007",
+    "name": "Gracie",
+    "age": 33,
+    "score": 86.1,
+    "department": "Sales"
+  }
+]

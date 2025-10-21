@@ -1,0 +1,24 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+ADBG,7.31,40.0,2025-09-11 22:51:54,10.94,11.54,-5.2,False,True,False,True,10.5,2
+ADBG,7.44,40.0,2025-09-12 19:52:12,10.75,11.54,-6.85,False,True,False,True,10.5,2
+ADBG,8.41,3.0,2025-10-15 15:20:43,9.51,9.49,0.24,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:07:11,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:07:13,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:08:19,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:08:21,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:08:50,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:09:16,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:09:18,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:09:22,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:10:03,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:10:05,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:10:09,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:11:07,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:11:10,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-19 21:11:14,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.27,3.0,2025-10-20 01:53:39,9.67,9.49,1.9,False,True,False,True,9.1,2
+ADBG,8.22,3.0,2025-10-20 04:05:18,9.73,9.49,2.53,False,True,False,True,9.1,2
+ADBG,8.24,3.0,2025-10-20 04:07:28,9.71,9.49,2.32,False,True,False,True,9.1,2
+ADBG,8.24,3.0,2025-10-20 04:08:24,9.71,9.49,2.32,False,True,False,True,9.1,2
+ADBG,8.22,3.0,2025-10-20 04:11:06,9.73,9.49,2.53,False,True,False,True,9.1,2
+ADBG,7.81,1.0,2025-10-21 00:31:20,10.24,9.49,7.89,True,False,False,True,9.1,2

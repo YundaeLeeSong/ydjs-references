@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "20251008000000000::f5d297f0-a265-4f5a-93ce-f8593a7552e5",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-08",
+    "created_at": "2025-10-09T00:06:37.881296Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 45 trades on 2025-10-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251008000000000::8f3dcc1f-8e55-48dc-b267-5b85294e7c06",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-08",
+    "created_at": "2025-10-09T00:16:21.498466Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 42.87 shares (18 trades) on 2025-10-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251007000000000::cfea4ab6-7b8e-4c50-b1e9-99669e8e9843",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-07",
+    "created_at": "2025-10-08T00:16:16.399224Z",
+    "net_amount": "-0.49",
+    "description": "TAF fee for proceed of 2946.2 shares (16 trades) on 2025-10-07 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251007000000000::4c33daad-c816-4866-9013-640940db1ca3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-07",
+    "created_at": "2025-10-08T00:15:35.100184Z",
+    "net_amount": "-0.14",
+    "description": "CAT fee for proceed of 71 trades on 2025-10-07 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251006000000000::f21711aa-7bb3-4945-badd-f076d268e352",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-06",
+    "created_at": "2025-10-07T00:06:50.308858Z",
+    "net_amount": "-0.04",
+    "description": "CAT fee for proceed of 31 trades on 2025-10-06 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251006000000000::34a2f1fe-3ed6-4f12-b823-0a784f7133a8",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-06",
+    "created_at": "2025-10-07T00:16:34.585448Z",
+    "net_amount": "-0.06",
+    "description": "TAF fee for proceed of 326.35 shares (23 trades) on 2025-10-06 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251003000000000::8e9f1cd4-2c76-4400-84c7-c85b1e7a7c30",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-03",
+    "created_at": "2025-10-04T00:16:18.652642Z",
+    "net_amount": "-0.45",
+    "description": "TAF fee for proceed of 2683.04 shares (14 trades) on 2025-10-03 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251003000000000::4de72bdc-2c07-4b65-a33b-129240852c18",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-03",
+    "created_at": "2025-10-04T00:06:35.429321Z",
+    "net_amount": "-0.08",
+    "description": "CAT fee for proceed of 18 trades on 2025-10-03 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251002000000000::f6891416-e58d-4570-9246-cad7fd87a5c0",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-02",
+    "created_at": "2025-10-03T00:16:26.042602Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 52.01 shares (4 trades) on 2025-10-02 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251002000000000::3e688349-6f09-4604-80f7-cccbc69849de",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-02",
+    "created_at": "2025-10-03T00:06:32.555152Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 26 trades on 2025-10-02 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251001000000000::93c8a990-845d-49a8-9378-a7880b74ed29",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-10-01",
+    "created_at": "2025-10-02T00:06:33.328863Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 6 trades on 2025-10-01 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20251001000000000::51deedf1-4076-4b8f-be58-c1ba6310e534",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-10-01",
+    "created_at": "2025-10-02T00:16:16.289717Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 108.03 shares (2 trades) on 2025-10-01 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250930000000000::4ce8edd8-df6f-4264-9624-8b3547fc0bf7",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-30",
+    "created_at": "2025-10-01T00:06:27.978498Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 2 trades on 2025-09-30 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250929000000000::8cfa66a1-3e3f-4214-ad1f-6e79fefd1ac0",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-29",
+    "created_at": "2025-09-30T00:16:14.60885Z",
+    "net_amount": "-0.08",
+    "description": "TAF fee for proceed of 462.05 shares (4 trades) on 2025-09-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250929000000000::2f95b6ff-3c7d-401d-9af7-b8e6c3c58d17",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-29",
+    "created_at": "2025-09-30T00:06:30.770541Z",
+    "net_amount": "-0.09",
+    "description": "CAT fee for proceed of 11 trades on 2025-09-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250926000000000::e7a2a7ba-2f2d-4f23-b90d-29602b2ffee3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-26",
+    "created_at": "2025-09-27T00:06:23.299711Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 9 trades on 2025-09-26 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250926000000000::cf26bd56-b99d-41fb-a3c1-e17bd57c2216",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-26",
+    "created_at": "2025-09-27T00:16:09.54947Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 18.24 shares (9 trades) on 2025-09-26 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250925000000000::d52929a0-8010-48b8-a308-0aa9c754d7c8",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-25",
+    "created_at": "2025-09-26T00:06:25.546362Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 14 trades on 2025-09-25 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250925000000000::abddb2f0-1c48-45c1-812c-fa69f6b840a4",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-25",
+    "created_at": "2025-09-26T00:16:12.103823Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 9.89 shares (12 trades) on 2025-09-25 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250924000000000::cf17fd1c-0a47-4fd1-985c-d1d232a6e554",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-24",
+    "created_at": "2025-09-25T00:16:02.658803Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 5.4 shares (2 trades) on 2025-09-24 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250924000000000::6b1b6188-d16a-43c1-be75-1be14eec5d48",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-24",
+    "created_at": "2025-09-25T00:06:18.561901Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 2 trades on 2025-09-24 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250923000000000::f4674883-cdd0-4b58-88eb-781edf952b2e",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-23",
+    "created_at": "2025-09-24T00:06:26.10666Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 2 trades on 2025-09-23 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250923000000000::ea928eb2-81fe-4d63-a41d-bc10c51e2eea",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-23",
+    "created_at": "2025-09-24T00:16:04.888316Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 0.01 shares (1 trades) on 2025-09-23 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250922000000000::93f6a1f9-3fd8-484b-b2fa-0b0da606a80a",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-22",
+    "created_at": "2025-09-23T00:06:46.473738Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 5 trades on 2025-09-22 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250919000000000::c88dfe94-6e67-4a4f-bf14-c98fe9ecec13",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-19",
+    "created_at": "2025-09-20T00:16:13.119147Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 2.04 shares (4 trades) on 2025-09-19 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250919000000000::122eb758-998b-4193-b2b9-e05a915821f3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-19",
+    "created_at": "2025-09-20T00:06:58.606013Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 14 trades on 2025-09-19 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250918000000000::fa156f97-8269-43cf-a598-d6a12c9ece56",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-18",
+    "created_at": "2025-09-19T00:15:52.812597Z",
+    "net_amount": "-0.04",
+    "description": "TAF fee for proceed of 228.72 shares (34 trades) on 2025-09-18 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250918000000000::b3383b8a-8f56-4b5c-a323-dd39c877b344",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-18",
+    "created_at": "2025-09-19T00:06:18.32006Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 69 trades on 2025-09-18 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250917000000000::fdc5e45f-14e0-4122-930b-a15ac89a0b13",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-17",
+    "created_at": "2025-09-18T00:06:31.223818Z",
+    "net_amount": "-0.07",
+    "description": "CAT fee for proceed of 24 trades on 2025-09-17 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250917000000000::a6d686b5-6d61-4587-ae25-3fd53689b94c",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-17",
+    "created_at": "2025-09-18T00:16:03.44971Z",
+    "net_amount": "-0.3",
+    "description": "TAF fee for proceed of 1761.73 shares (4 trades) on 2025-09-17 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250916000000000::971eeeab-1085-4786-b7fc-b19d6345064e",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-16",
+    "created_at": "2025-09-17T00:15:48.038671Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 8.05 shares (6 trades) on 2025-09-16 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250916000000000::192e69ab-48ae-4df7-9dc0-be0ff133592e",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-16",
+    "created_at": "2025-09-17T00:06:20.296718Z",
+    "net_amount": "-0.05",
+    "description": "CAT fee for proceed of 11 trades on 2025-09-16 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250915000000000::89ff7134-dddf-4093-bfb1-72388225ca65",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-15",
+    "created_at": "2025-09-16T00:06:34.130685Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 39 trades on 2025-09-15 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250915000000000::35d3cbcb-32f1-4bda-9d3c-422d7fb10805",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-15",
+    "created_at": "2025-09-16T00:16:07.237146Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 24.08 shares (15 trades) on 2025-09-15 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250912000000000::fff17005-333b-40bb-8a81-2cc8ad8c1ac8",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-12",
+    "created_at": "2025-09-13T00:17:36.156712Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 39 trades on 2025-09-12 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250912000000000::c3ffcfff-dc09-4210-9550-0e172376add9",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-12",
+    "created_at": "2025-09-13T00:20:27.015275Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 107.11 shares (14 trades) on 2025-09-12 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250911000000000::b8234446-0cd0-4405-a3c8-6f056080c6af",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-11",
+    "created_at": "2025-09-12T00:09:25.844492Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 7 trades on 2025-09-11 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250911000000000::978961b8-f4fb-4bec-8f1a-f721d545ec39",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-11",
+    "created_at": "2025-09-12T00:17:24.920161Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 16 shares (2 trades) on 2025-09-11 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250910000000000::2cc0b115-82f9-4fb8-8d79-408c4b9cb2c5",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-10",
+    "created_at": "2025-09-11T00:09:26.232531Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 3 trades on 2025-09-10 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250909000000000::588f8620-5674-4fbd-b9b5-0592d1c6c220",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-09",
+    "created_at": "2025-09-10T00:16:31.415421Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 6.28 shares (9 trades) on 2025-09-09 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250909000000000::1540078d-b5ca-478b-84ba-bfcca8abd3ea",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-09",
+    "created_at": "2025-09-10T00:08:39.804482Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 14 trades on 2025-09-09 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250908000000000::aeaac230-0e02-433b-a582-13c6827183b9",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-08",
+    "created_at": "2025-09-09T00:18:29.278768Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 69.49 shares (16 trades) on 2025-09-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250908000000000::77cd48a4-dba9-4f8b-bd89-458ac6af7c39",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-08",
+    "created_at": "2025-09-09T00:10:03.717411Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 33 trades on 2025-09-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250905000000000::5026549d-b547-420b-96c4-6d7f1f6eeba8",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-05",
+    "created_at": "2025-09-06T00:17:33.375244Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 4.09 shares (5 trades) on 2025-09-05 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250905000000000::368b09a0-c027-45af-b908-2f390fd704a8",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-05",
+    "created_at": "2025-09-06T00:09:04.097254Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 14 trades on 2025-09-05 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250904000000000::f07f4aaa-097b-40dc-aa31-b6ed29139c07",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-04",
+    "created_at": "2025-09-05T00:08:52.168473Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 17 trades on 2025-09-04 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250904000000000::e74e0013-f7b2-433d-b9e9-433ba2a6650f",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-04",
+    "created_at": "2025-09-05T00:16:21.415665Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 7.61 shares (10 trades) on 2025-09-04 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250903000000000::789e0ad0-6ec0-4992-b2cf-ecbbf7af4d3c",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-03",
+    "created_at": "2025-09-04T00:10:50.102594Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 10 trades on 2025-09-03 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250903000000000::5185e921-b513-41fb-8d06-c962c554d3c9",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-03",
+    "created_at": "2025-09-04T00:19:21.749698Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 5.89 shares (6 trades) on 2025-09-03 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250902000000000::9cbd7144-3652-444c-8f15-520cb6cf6f08",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-09-02",
+    "created_at": "2025-09-03T00:19:57.250471Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 0.47 shares (2 trades) on 2025-09-02 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250902000000000::5c14592b-e841-4df8-ac96-e4b9c595ca3f",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-09-02",
+    "created_at": "2025-09-03T00:11:34.030161Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 3 trades on 2025-09-02 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250829000000000::e42ddbc0-521b-445c-8269-52bccbe3d12d",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-29",
+    "created_at": "2025-08-30T00:18:32.450061Z",
+    "net_amount": "-0.11",
+    "description": "TAF fee for proceed of 604.02 shares (5 trades) on 2025-08-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250829000000000::b1d8caa6-f758-4404-8651-2bd52ddfba65",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-29",
+    "created_at": "2025-08-30T00:09:43.906506Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 13 trades on 2025-08-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250828000000000::8f51bc20-41a2-4a8c-995c-52f4330923e7",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-28",
+    "created_at": "2025-08-29T00:09:47.497269Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 29 trades on 2025-08-28 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250828000000000::13de3379-0bb5-4a3b-b41d-36e1f16cc080",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-28",
+    "created_at": "2025-08-29T00:19:21.226087Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 15.4 shares (13 trades) on 2025-08-28 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250827000000000::86e2461f-d107-4ac3-ab21-7a64bb7d56df",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-27",
+    "created_at": "2025-08-28T00:17:43.749141Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 71.31 shares (11 trades) on 2025-08-27 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250827000000000::5793ecb8-c2b9-4fec-872a-7733749b8daf",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-27",
+    "created_at": "2025-08-28T00:09:09.978233Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 17 trades on 2025-08-27 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250826000000000::75d33a0f-8222-4ae4-9f78-fd220a5dea0f",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-26",
+    "created_at": "2025-08-27T00:17:06.029679Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 6.95 shares (11 trades) on 2025-08-26 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250826000000000::612b017d-dc19-4120-a68f-cf7ce73ffd41",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-26",
+    "created_at": "2025-08-27T00:09:17.53442Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 22 trades on 2025-08-26 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250825000000000::b03a0b77-1ffa-4136-9bf7-8e94e895a866",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-25",
+    "created_at": "2025-08-26T00:19:15.101346Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 6.07 shares (10 trades) on 2025-08-25 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250825000000000::60fa4c4d-0e6c-466e-8701-abe5357b7aad",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-25",
+    "created_at": "2025-08-26T00:10:21.857152Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 19 trades on 2025-08-25 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250822000000000::a3adeba1-7666-4898-9134-3bdc89a8786f",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-22",
+    "created_at": "2025-08-23T00:09:40.577122Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 51 trades on 2025-08-22 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250822000000000::3deb6a2f-9e68-48ea-bf0d-3dda59f22291",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-22",
+    "created_at": "2025-08-23T00:17:13.671582Z",
+    "net_amount": "-0.03",
+    "description": "TAF fee for proceed of 177.25 shares (20 trades) on 2025-08-22 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250821000000000::6d3c31d9-b9b4-4f31-bef3-36f8a3e33dc2",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-21",
+    "created_at": "2025-08-22T00:16:22.311211Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 95.72 shares (10 trades) on 2025-08-21 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250821000000000::0968e66a-fd93-4e70-b8c0-ede904494fdf",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-21",
+    "created_at": "2025-08-22T00:08:58.120711Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 22 trades on 2025-08-21 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250820000000000::bc26889a-a1be-48b2-9d6f-89151a3b3231",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-20",
+    "created_at": "2025-08-21T00:17:45.374831Z",
+    "net_amount": "-0.05",
+    "description": "TAF fee for proceed of 270.44 shares (19 trades) on 2025-08-20 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250820000000000::8281a390-75a0-404f-a43f-79ff39121209",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-20",
+    "created_at": "2025-08-21T00:09:09.324056Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 42 trades on 2025-08-20 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250819000000000::f8fa83f9-c5cf-4fec-804f-c909743af88b",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-19",
+    "created_at": "2025-08-20T00:17:58.723026Z",
+    "net_amount": "-0.09",
+    "description": "TAF fee for proceed of 534.12 shares (18 trades) on 2025-08-19 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250819000000000::7056484e-af3f-441c-a41a-4fb69e66656a",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-19",
+    "created_at": "2025-08-20T00:09:50.460283Z",
+    "net_amount": "-0.03",
+    "description": "CAT fee for proceed of 35 trades on 2025-08-19 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250818000000000::c19eace7-3072-44a0-8f6f-dd8acb11149f",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-18",
+    "created_at": "2025-08-19T00:19:15.453595Z",
+    "net_amount": "-0.06",
+    "description": "TAF fee for proceed of 331.21 shares (12 trades) on 2025-08-18 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250818000000000::ab636edf-daea-4991-a82c-b4a2348d4d51",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-18",
+    "created_at": "2025-08-19T00:10:35.682533Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 33 trades on 2025-08-18 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250815000000000::e3d63f8e-a5c4-4a70-862e-f10572fb8c4d",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-15",
+    "created_at": "2025-08-16T00:09:56.295038Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 35 trades on 2025-08-15 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250815000000000::c56719c2-e27a-4333-9ba7-377d72bf09bf",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-15",
+    "created_at": "2025-08-16T00:18:24.958668Z",
+    "net_amount": "-0.04",
+    "description": "TAF fee for proceed of 222.21 shares (19 trades) on 2025-08-15 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250814000000000::cd3bde2e-3c60-49b7-b6b6-85ed1f660a56",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-14",
+    "created_at": "2025-08-15T00:17:45.995607Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 21.69 shares (13 trades) on 2025-08-14 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250814000000000::9e3bc695-7457-4a8e-8ad6-a9171de47e7d",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-14",
+    "created_at": "2025-08-15T00:09:53.2287Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 28 trades on 2025-08-14 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250813000000000::dd8f8ba0-1497-4327-a386-306e88bfe2b9",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-13",
+    "created_at": "2025-08-14T00:18:22.334631Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 5.96 shares (7 trades) on 2025-08-13 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250813000000000::229d57c4-c65c-49ef-b6b4-049580555c6a",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-13",
+    "created_at": "2025-08-14T00:10:01.689761Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 22 trades on 2025-08-13 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250812000000000::cfa92afb-554e-44e2-a3c0-6e5560423d63",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-12",
+    "created_at": "2025-08-13T00:17:13.810387Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 58.32 shares (8 trades) on 2025-08-12 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250812000000000::38d48a08-480c-4c46-9f7c-8b3cfe40a2a8",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-12",
+    "created_at": "2025-08-13T00:09:45.377347Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 27 trades on 2025-08-12 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250811000000000::bc44975f-93df-4f88-82c4-c241f359732b",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-11",
+    "created_at": "2025-08-12T00:10:16.296563Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 21 trades on 2025-08-11 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250811000000000::84cfeb22-ae6e-435e-9c5b-020eccb6a4ec",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-11",
+    "created_at": "2025-08-12T00:19:14.307498Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 97.13 shares (14 trades) on 2025-08-11 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250808000000000::e22b7a3e-7157-40a8-9b03-0901eeded739",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-08",
+    "created_at": "2025-08-09T00:17:34.678951Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 7.54 shares (6 trades) on 2025-08-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250808000000000::dc831570-d921-4f54-8be7-cb06c3800497",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-08",
+    "created_at": "2025-08-09T00:09:36.6602Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 10 trades on 2025-08-08 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250807000000000::caffa809-3d04-4638-a846-fefd6113cf9c",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-07",
+    "created_at": "2025-08-08T00:18:00.861583Z",
+    "net_amount": "-0.04",
+    "description": "TAF fee for proceed of 226.05 shares (9 trades) on 2025-08-07 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250807000000000::6ba195af-85ac-4ee7-8ab6-7c57555d1e99",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-07",
+    "created_at": "2025-08-08T00:09:24.484529Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 12 trades on 2025-08-07 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250806000000000::ccd513bb-c487-493d-9bf3-2ac409db1b65",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-06",
+    "created_at": "2025-08-07T00:16:56.438322Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 13.68 shares (3 trades) on 2025-08-06 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250806000000000::365c652e-c5d6-4348-8c4e-b82cfb14a00f",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-06",
+    "created_at": "2025-08-07T00:09:18.313822Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 3 trades on 2025-08-06 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250805000000000::71610911-4ceb-4829-98e9-8d3975d9cdcb",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-05",
+    "created_at": "2025-08-06T00:18:43.472343Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 28.39 shares (9 trades) on 2025-08-05 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250805000000000::0d45e594-548f-4f69-b70b-df3d240dfc22",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-05",
+    "created_at": "2025-08-06T00:11:11.097646Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 23 trades on 2025-08-05 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250804000000000::9a8afadd-7f86-42ae-86f7-dbe86e0ed8cf",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-04",
+    "created_at": "2025-08-05T00:10:42.569489Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 17 trades on 2025-08-04 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250804000000000::95513f2c-b43a-40fb-9a94-663b164a7e3c",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-08-04",
+    "created_at": "2025-08-05T00:19:21.496461Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 44.04 shares (10 trades) on 2025-08-04 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250801000000000::2a70fbb2-3ea0-4bb7-9708-e21a631976d3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-08-01",
+    "created_at": "2025-08-02T00:11:30.359454Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 13 trades on 2025-08-01 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250731000000000::afa21f02-819c-445e-9adf-c4ecaa67efa0",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-07-31",
+    "created_at": "2025-08-01T00:09:42.512984Z",
+    "net_amount": "-0.03",
+    "description": "CAT fee for proceed of 39 trades on 2025-07-31 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250731000000000::6cd6e2c0-b4a7-4e32-bb3c-46b9e8abb230",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-07-31",
+    "created_at": "2025-08-01T00:19:11.336021Z",
+    "net_amount": "-0.03",
+    "description": "TAF fee for proceed of 174.96 shares (12 trades) on 2025-07-31 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250730000000000::bf7b5f9b-d108-401e-8154-c14de0917874",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-07-30",
+    "created_at": "2025-07-31T00:19:19.796401Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 59.64 shares (11 trades) on 2025-07-30 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250730000000000::8af30e7b-68d0-440b-8ffb-7ebd862bb9a3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-07-30",
+    "created_at": "2025-07-31T00:09:28.527891Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 37 trades on 2025-07-30 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250729000000000::aae2a941-f5d8-47e9-840e-4e2167a836cc",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-07-29",
+    "created_at": "2025-07-30T00:19:08.992199Z",
+    "net_amount": "-0.01",
+    "description": "TAF fee for proceed of 3.51 shares (4 trades) on 2025-07-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250729000000000::655b18b8-0383-459d-ac39-a1b5602ac77c",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-07-29",
+    "created_at": "2025-07-30T00:09:42.037405Z",
+    "net_amount": "-0.02",
+    "description": "CAT fee for proceed of 24 trades on 2025-07-29 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250728000000000::c32c5cbf-d02b-419b-8842-bb30814e24d3",
+    "activity_type": "FEE",
+    "activity_sub_type": "CAT",
+    "date": "2025-07-28",
+    "created_at": "2025-07-29T00:10:25.310295Z",
+    "net_amount": "-0.01",
+    "description": "CAT fee for proceed of 17 trades on 2025-07-28 by 825224530",
+    "status": "executed"
+  },
+  {
+    "id": "20250728000000000::a7ede328-c766-4c99-9f01-1ea943b72f4b",
+    "activity_type": "FEE",
+    "activity_sub_type": "TAF",
+    "date": "2025-07-28",
+    "created_at": "2025-07-29T00:19:13.535603Z",
+    "net_amount": "-0.02",
+    "description": "TAF fee for proceed of 83 shares (6 trades) on 2025-07-28 by 825224530",
+    "status": "executed"
+  }
+]

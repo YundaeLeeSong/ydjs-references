@@ -1,0 +1,14 @@
+id,name,age,score,department,new_field,new_field2,new_field3
+sk0001,Alice,23,98.68,Engineering,,,0
+sk0002,Bob,31,76.0,Marketing,,,0
+sk0003,Charlie,27,100.33,Engineering,,,0
+sk0004,Diana,35,88.5,Sales,,,0
+sk0005,Eve,29,101.43,Engineering,,,0
+sk0006,Frank,26,92.15,Marketing,,,0
+sk0007,Grace,32,85.7,Sales,,,0
+sk0008,Hannah,28,97.2,Engineering,,,0
+sk0009,Ian,30,79.5,Marketing,,,0
+sk0010,Julia,24,95.0,Sales,,,0
+sk0003,Charles,28,99.0,Engineering,,,0
+sk0007,Gracie,33,86.1,Sales,,,0
+sk0006,Grace,26,90.0,Sales,new_value,new_value2,0

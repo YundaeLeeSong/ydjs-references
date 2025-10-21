@@ -1,0 +1,20 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+IONZ,19.56,4.0,2025-09-20 21:52:37,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,19.56,4.0,2025-09-20 21:53:55,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,19.56,4.0,2025-09-20 22:08:23,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,19.56,4.0,2025-09-20 22:10:08,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,19.56,4.0,2025-09-20 22:12:57,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,19.56,4.0,2025-09-20 22:14:12,4.09,4.36,-6.19,False,True,False,True,7.0,2
+IONZ,20.78,9.0,2025-10-02 16:28:28,3.85,4.2,-8.36,False,True,False,True,11.375,2
+IONZ,20.83,9.0,2025-10-02 16:32:22,3.84,4.2,-8.6,False,True,False,True,11.375,2
+IONZ,23.26,54.0,2025-10-03 16:40:19,3.44,3.86,-10.85,False,True,False,True,11.375,2
+IONZ,23.19,54.0,2025-10-03 16:46:23,3.45,3.86,-10.59,False,True,False,True,11.375,2
+IONZ,23.19,54.0,2025-10-03 16:49:31,3.45,3.86,-10.59,False,True,False,True,11.375,2
+IONZ,23.53,54.0,2025-10-04 01:18:58,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:15:34,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:27:18,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:28:08,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:44:06,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:49:20,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:49:59,3.4,3.86,-11.89,False,False,True,True,11.375,2
+IONZ,23.53,54.0,2025-10-05 04:52:19,3.4,3.86,-11.89,False,False,True,True,11.375,2

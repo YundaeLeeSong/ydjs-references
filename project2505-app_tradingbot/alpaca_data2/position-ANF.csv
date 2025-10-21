@@ -1,0 +1,2 @@
+asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
+ANF,1.2,0.02,2025-10-21 00:31:20,66.65,67.98,-1.96,False,True,False,False,7.0,2

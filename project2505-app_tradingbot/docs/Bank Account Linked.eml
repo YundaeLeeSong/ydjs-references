@@ -1,0 +1,1179 @@
+Delivered-To: manual20151276@gmail.com
+Received: by 2002:ab3:1109:0:b0:2b0:7b8d:3b4f with SMTP id j9csp587241lta;
+        Sun, 11 May 2025 20:21:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEOZqVwYOxGHGmjbUGm3+1Lgkt6jPDbxSIjQ7BD1/0FqEoxtjDvslMpcL30PQJLZeS71iA1
+X-Received: by 2002:a05:620a:4051:b0:7c5:ccc0:2382 with SMTP id af79cd13be357-7cd01178fc6mr2092375085a.52.1747020117474;
+        Sun, 11 May 2025 20:21:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747020117; cv=none;
+        d=google.com; s=arc-20240605;
+        b=NLwwWJF2t1EsmlCmFgfK6C7ileNJ/yqoskQPwE+jwt3ATqeDuW1qp7bxENikoiKoup
+         SWSdbphgrcr+wIkUDbRSMimiewMrLERJwO0F9Qbe4x2o4B1T0e7vBDPoCUXAs1dtwSPu
+         5FsZjepvMzMiWXA3PYxUO/Umh0H6AQHWW1l5xMNKj4Dh0royZ+wY3f+3y7yOI3COf5Kh
+         Pb+0HS7LSnDvl6Riz+2GLqXpiPn5Y/pztQxRzjMMn8kwZUZDK4vfPSJnhWR1BBcqYz2q
+         5mFsyRb9WNOqTwxYBPP5/ACjJVujj3NJRkdjm/n1dIIy581GRH3ZJp0drikiGKlfi62s
+         qKAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:dkim-signature:dkim-signature;
+        bh=l6DiogTmSWQSo4vE/Y4GBn2vJE4PKoKEvkFBigBLHqU=;
+        fh=9Ma5lMHNk69nFUXT4SnEzN8/BvfiTzhWr3Z17bjT9UQ=;
+        b=Thbm1T+hfMLHmJpDk21phmxNKvA5vk7uFYmyxx4HUkiws1CPsg70LiNyJXsqVUzLz0
+         iz//DHbYhkPqreZAmO/JAAwx1RhoJj7K9sVTDMXo06j8R8zAK0JF9OeGUNyyylYEjYAW
+         ZXzcx+PE2tXfXTJyRYn7L9JDULSbkd4QcfxKvJkQdSDBBFxAKgYWYN735/xz9gnVys9M
+         qMh0peN8DGNFTQ+OG+BlKQNwwYMFhp5fPWII35fVYhbNBB0hFnDm/me7fwMeUuZFJx6h
+         HnbIMpYQRri+BLlSarQjj/tp2SsQBBeFMtljwwd+3/0GMassLQlDIQMwMsPsfz9C2MY2
+         F1WA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mailer.alpaca.markets header.s=mailo header.b=T3XlLmsy;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=iHEOJlQN;
+       spf=pass (google.com: domain of bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets designates 143.55.230.202 as permitted sender) smtp.mailfrom="bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpaca.markets
+Return-Path: <bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets>
+Received: from a230-202.mailgun.net (a230-202.mailgun.net. [143.55.230.202])
+        by mx.google.com with UTF8SMTPS id af79cd13be357-7cd00ff0112si780423685a.554.2025.05.11.20.21.57
+        for <manual20151276@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 11 May 2025 20:21:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets designates 143.55.230.202 as permitted sender) client-ip=143.55.230.202;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mailer.alpaca.markets header.s=mailo header.b=T3XlLmsy;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=iHEOJlQN;
+       spf=pass (google.com: domain of bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets designates 143.55.230.202 as permitted sender) smtp.mailfrom="bounce+572872.feb926-manual20151276=gmail.com@mailer.alpaca.markets";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=alpaca.markets
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailer.alpaca.markets; q=dns/txt; s=mailo; t=1747020116; x=1747027316;
+ h=Content-Type: Content-Transfer-Encoding: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=l6DiogTmSWQSo4vE/Y4GBn2vJE4PKoKEvkFBigBLHqU=;
+ b=T3XlLmsyU3z7Bc56h8HYGEsv33yLYkEBuTVel8wopA3KpdRd1cW+6qpCCr2TlrR4KgWjLH3dsOTbl+D0+Lk1I58qG4IvK3EEtOqfyrmgFt4/qj0ZpwG8yaxjWkQgq0rVlkXRa7pkF3pZ5qPa/VCK2SWZrLtohSD216cdxAsEeaHy2K79Af+MKDf7dWStfnHBkR8UFDAWkL4fdSjU+qe3t2Zr7LrJqTEd8Zk/WTliNKLdMNBUFmebNnoNc2Wv1lcKPsHvaepdBYhNmRY4XbPD2Rx9RkqrYoqQH8u67X5oCG80uXYxFlAqoHQKgjQQx6pgciJhYpk/ShRA2JU6QUUDng==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1747020116; x=1747027316;
+ h=Content-Type: Content-Transfer-Encoding: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=l6DiogTmSWQSo4vE/Y4GBn2vJE4PKoKEvkFBigBLHqU=;
+ b=iHEOJlQNatTKKJmCP5b2b8jE4lVMoWPsJdquqBv42kvYWz81amlow0OirRwRAX04KOxtiY7mykH7PACvCElUxc2b1yB0QqS7QTYkPEf7p7I+vB2DncCfTDnMrs34Zivajc4jk0SAeSzXTngargK2fZHC4+7sgm9PY/5tqrRbWa4=
+X-Feedback-Id: support@mailer.alpaca.markets::6467996c40f7f8de17fd2a96:mailgun
+X-Mailgun-Sending-Ip: 143.55.230.202
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyJjNjY4NiIsIm1hbnVhbDIwMTUxMjc2QGdtYWlsLmNvbSIsImZlYjkyNiJd
+Received: by 5c8a6677ae48 with HTTP id 682169543dd43d18e28262e2; Mon, 12 May 2025
+ 03:21:56 GMT
+Sender: support@mailer.alpaca.markets
+Date: Mon, 12 May 2025 03:21:56 +0000
+Mime-Version: 1.0
+Subject: Bank Account Linked
+From: Alpaca Support <support@mailer.alpaca.markets>
+To: manual20151276@gmail.com
+Message-Id: <20250512032156.f895531c41969e0f@mailer.alpaca.markets>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+
+<!DOCTYPE html>
+<html><head>
+  <style type=3D"text/css">
+    #PreviewIntercomModal .ic_message_content h1,
+    #PreviewIntercomModal .ic_message_content h2 {
+      color: #0072b0 !important;
+    }
+
+    #PreviewIntercomModal .ic_message_without_image>.ic_message_internals>.=
+ic_message_content {
+      border-color: #0072b0 !important;
+    }
+
+    #PreviewIntercomModal .ic_user_comment_body {
+      background-color: #0072b0 !important;
+      border-color: #0072b0 !important;
+    }
+
+    #PreviewIntercomModal .ic_message_content a {
+      color: #0072b0 !important;
+    }
+
+    #PreviewIntercomModal .ic_message_content a:hover {
+      color: #0072b0 !important;
+    }
+
+    #PreviewIntercomModal .ic_user_comment_body {
+      background-color: #0072b0 !important;
+      border-color: #0072b0 !important;
+    }
+
+    .intercom-h2b-button br {
+      display: none;
+    }
+  </style>
+  <style type=3D"text/css" data-premailer=3D"ignore">
+    =20
+    =20
+    #outlook a {
+      padding: 0;
+    }
+
+    =20
+    body {
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    =20
+    .ExternalClass {
+      width: 100%;
+    }
+
+    =20
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    =20
+    table td {
+      border-collapse: collapse;
+    }
+
+    table {
+      table-layout: fixed;
+    }
+
+    @media only screen and (max-width: 480px) {
+      br.hidden {
+        display: block !important;
+      }
+
+      td.padding_cell {
+        display: none !important;
+      }
+
+      table.message_footer_table td {
+        font-size: 11px !important;
+      }
+    }
+
+    @media only screen and (max-device-width: 480px) {
+      br.hidden {
+        display: block !important;
+      }
+
+      td.padding_cell {
+        display: none !important;
+      }
+
+      table.message_footer_table td {
+        font-size: 11px !important;
+      }
+    }
+  </style>
+
+  <style type=3D"text/css" data-premailer=3D"ignore">
+    =20
+    =20
+    #outlook a {
+      padding: 0;
+    }
+
+    =20
+    body {
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    =20
+    .ExternalClass {
+      width: 100%;
+    }
+
+    =20
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    =20
+    table td {
+      border-collapse: collapse;
+    }
+
+    @media only screen and (max-width: 480px) {
+      br.hidden {
+        display: block !important;
+      }
+
+      td.padding_cell {
+        display: none !important;
+      }
+
+      table.message_footer_table td {
+        font-size: 11px !important;
+      }
+    }
+
+    @media only screen and (max-device-width: 480px) {
+      br.hidden {
+        display: block !important;
+      }
+
+      td.padding_cell {
+        display: none !important;
+      }
+
+      table.message_footer_table td {
+        font-size: 11px !important;
+      }
+    }
+  </style>
+
+  <style type=3D"text/css">
+    .admin_name b {
+      color: #6f6f6f;
+    }
+
+    .date_cell a {
+      color: #999999;
+    }
+
+    .comment_header_td {
+      width: 100%;
+      background: #FCD72B;
+      border: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif
+    }
+
+    .content-td {
+      color: #525252;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .content-td h1 {
+      font-size: 26px;
+      line-height: 33px;
+      color: #282F33;
+      margin-bottom: 7px;
+      margin-top: 30px;
+      font-weight: normal;
+    }
+
+    .content-td h1 a {
+      color: #282F33;
+    }
+
+    .content-td h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #282F33;
+      margin: 30px 0 7px;
+    }
+
+    .content-td h2 a {
+      color: #282F33;
+    }
+
+    .content-td h1+h2 {
+      margin-top: 0 !important;
+    }
+
+    .content-td h2+h1 {
+      margin-top: 0 !important;
+    }
+
+    .content-td h3,
+    .content-td h4,
+    .content-td h5 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .content-td p {
+      margin: 0 0 17px 0;
+      line-height: 1.5;
+    }
+
+    .content-td p img,
+    .content-td h1 img,
+    .content-td h2 img,
+    .content-td li img,
+    .content-td .intercom-h2b-button img {
+      margin: 0;
+      padding: 0;
+    }
+
+    .content-td a {
+        color: #BA9527;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .content-td a:hover {
+        color: #fcd503;
+    }
+
+    .content-td a:active {
+        color: #fcd503;
+    }
+
+    .content-td a:visited {
+        color: #947120;
+    }
+
+    .content-td p.intro {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .content-td blockquote {
+      margin: 40px 0;
+      font-style: italic;
+      color: #8C8C8C;
+      font-size: 18px;
+      text-align: center;
+      padding: 0 30px;
+      font-family: Georgia, sans-serif;
+      quotes: none;
+    }
+
+    .content-td blockquote a {
+      color: #8C8C8C;
+    }
+
+    .content-td ul {
+      list-style: disc;
+      margin: 0 0 20px 40px;
+      padding: 0;
+    }
+
+    .content-td ol {
+      list-style: decimal;
+      margin: 0 0 20px 40px;
+      padding: 0;
+    }
+
+    .content-td img {
+      margin: 17px 0;
+      max-width: 100%;
+    }
+
+    .content-td .intercom-container {
+      margin-bottom: 16px;
+    }
+
+    .content-td hr {
+      border: none;
+      border-top: 1px solid #DDD;
+      border-bottom: 0;
+      margin: 50px 30% 50px 30%;
+    }
+
+    =20
+    .content-td pre {
+      margin: 0 0 10px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      overflow: auto;
+    }
+
+    .content-td pre code {
+      font-family: Courier, monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    table.intercom-container {
+      margin: 17px 0;
+    }
+
+    table.intercom-container.intercom-align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table.intercom-container td {
+      background-color: #FCD503;
+      padding: 12px 35px;
+      border-radius: 3px;
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+    }
+
+    .content-td .intercom-h2b-button {
+      font-size: 14px;
+      color: #2f2f2f !important;
+      font-weight: bold;
+      display: inline-block;
+      text-decoration: none;
+      background-color: #fcd503;
+      border: none !important;
+      margin: 10px 0 10px 0;
+      padding: 13px 35px;
+
+    }
+
+    a.intercom-h2b-button {
+      background-color: #fcd503;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: #2f2f2f !important;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: bold;
+      min-height: 20px;
+      text-decoration: none;
+    }
+
+    .content-td .intercom-h2b-button:hover {
+      background-color: #ffde2b;
+    }
+
+    .message_footer_table .avatar {
+      -ms-interpolation-mode: bicubic;
+      -webkit-background-clip: padding-box;
+      -webkit-border-radius: 20px;
+      background-clip: padding-box;
+      border-radius: 20px;
+      display: inline-block;
+      height: 40px;
+      max-width: 100%;
+      outline: none;
+      text-decoration: none;
+      width: 40px;
+    }
+
+    .powered-by-table .powered-by-text a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #999;
+    }
+
+    .main_wrapper {
+      padding: 0 20px;
+    }
+
+    .content-td> :first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  </style>
+
+ =20
+  <style type=3D"text/css" data-premailer=3D"ignore">
+    @media screen and (max-width: 635px) {
+      .main-wrap {
+        width: 100% !important;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .content-td {
+        padding: 30px 15px !important;
+      }
+
+      .content-td h1 {
+        margin-bottom: 5px;
+      }
+
+      .message_footer_table .space {
+        width: 20px !important;
+      }
+
+      .message_footer_table .arrow-wrap {
+        padding-left: 20px !important;
+      }
+
+      .message_footer_table .admin_name b {
+        display: block !important;
+      }
+
+      .main_wrapper {
+        padding: 0;
+      }
+
+      .comment_body {
+        border-bottom: 1px solid #DDD !important;
+      }
+
+      .footer-td-wrapper {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+      }
+
+      .footer-td-wrapper .date_cell {
+        text-align: left !important;
+        padding: 15px 0 0 20px !important;
+      }
+    }
+  </style>
+
+
+  <style type=3D"text/css" data-premailer=3D"ignore">
+    .content-td blockquote+* {
+      margin-top: 20px !important;
+    }
+
+    .ExternalClass .content-td h1 {
+      padding: 20px 0 !important;
+    }
+
+    .ExternalClass .content-td h2 {
+      padding: 0 0 5px !important;
+    }
+
+    .ExternalClass .content-td p {
+      padding: 10px 0 !important;
+    }
+
+    .ExternalClass .content-td .intercom-container {
+      padding: 5px 0 !important;
+    }
+
+    .ExternalClass .content-td hr+* {
+      padding-top: 30px !important;
+    }
+
+    .ExternalClass .content-td ol,
+    .ExternalClass .content-td ul {
+      padding: 0 0 20px 40px !important;
+      margin: 0 !important;
+    }
+
+    .ExternalClass .content-td ol li,
+    .ExternalClass .content-td ul li {
+      padding: 3px 0 !important;
+      margin: 0 !important;
+    }
+
+    .content-td> :first-child {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .ExternalClass .content-td> :first-child {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+  </style>
+
+
+
+  <style type=3D"text/css">
+    .intercom-align-right {
+      text-align: right !important;
+    }
+
+    .intercom-align-center {
+      text-align: center !important;
+    }
+
+    .intercom-align-left {
+      text-align: left !important;
+    }
+
+    =20
+    .right-to-left .intercom-align-right {
+      text-align: left !important;
+    }
+
+    .right-to-left .intercom-align-left {
+      text-align: right !important;
+    }
+
+    .right-to-left .intercom-align-left {
+      text-align: right !important;
+    }
+
+    .right-to-left li {
+      text-align: right !important;
+      direction: rtl;
+    }
+
+    .right-to-left .intercom-align-left img,
+    .right-to-left .intercom-align-left .intercom-h2b-button {
+      margin-left: 0 !important;
+    }
+
+    .intercom-attachment,
+    .intercom-attachments,
+    .intercom-attachments td,
+    .intercom-attachments th,
+    .intercom-attachments tr,
+    .intercom-attachments tbody,
+    .intercom-attachments .icon,
+    .intercom-attachments .icon img {
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .intercom-attachments {
+      margin: 10px 0 !important;
+    }
+
+    .intercom-attachments .icon,
+    .intercom-attachments .icon img {
+      width: 16px !important;
+      height: 16px !important;
+    }
+
+    .intercom-attachments .icon {
+      padding-right: 5px !important;
+    }
+
+    .intercom-attachment {
+      display: inline-block !important;
+      margin-bottom: 5px !important;
+    }
+
+    .intercom-interblocks-content-card {
+      width: 334px !important;
+      max-height: 136px !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+      border-radius: 20px !important;
+      font-size: 16px !important;
+      border: 1px solid #e0e0e0 !important;
+    }
+
+    .intercom-interblocks-link,
+    .intercom-interblocks-article-card {
+      text-decoration: none !important;
+    }
+
+    .intercom-interblocks-article-icon {
+      width: 22.5% !important;
+      height: 136px !important;
+      float: left !important;
+      background-color: #fafafa !important;
+      background-image: url('https://alpaca-e339b1d6388e.intercom-mail.com/=
+assets/article_book-1a595be287f73c0d02f548f513bfc831.png') !important;
+      background-repeat: no-repeat !important;
+      background-size: 32px !important;
+      background-position: center !important;
+    }
+
+    .intercom-interblocks-article-text {
+      width: 77.5% !important;
+      float: right !important;
+      background-color: #fff !important;
+    }
+
+    .intercom-interblocks-link-title,
+    .intercom-interblocks-article-title {
+      color: #519dd4 !important;
+      font-size: 15px !important;
+      margin: 16px 18px 12px !important;
+      line-height: 1.3em !important;
+      overflow: hidden !important;
+    }
+
+    .intercom-interblocks-link-description,
+    .intercom-interblocks-article-body {
+      margin: 0 18px 12px !important;
+      font-size: 14px !important;
+      color: #65757c !important;
+      line-height: 1.3em !important;
+    }
+
+    .intercom-interblocks-link-author,
+    .intercom-interblocks-article-author {
+      margin: 10px 15px !important;
+      height: 24px !important;
+      line-height: normal !important;
+    }
+
+    .intercom-interblocks-link-author-avatar,
+    .intercom-interblocks-article-author-avatar {
+      width: 16px !important;
+      height: 16px !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+      float: left;
+      margin-right: 5px;
+    }
+
+    .intercom-interblocks-link-author-avatar-image,
+    .intercom-interblocks-article-author-avatar-image {
+      width: 16px !important;
+      height: 16px !important;
+      border-radius: 50% !important;
+      margin: 0 !important;
+      vertical-align: top !important;
+      font-size: 12px !important;
+    }
+
+    .intercom-interblocks-link-author-name,
+    .intercom-interblocks-article-author-name {
+      color: #74848b !important;
+      margin: 0 0 0 5px !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      overflow: hidden !important;
+    }
+
+    .intercom-interblocks-article-written-by {
+      color: #8897a4 !important;
+      margin: 1px 0 0 5px !important;
+      font-size: 12px !important;
+      overflow: hidden !important;
+      vertical-align: middle !important;
+      float: left !important;
+    }
+  </style>
+
+ =20
+  <style>
+    .intercom-container img {
+        max-width: 100%;
+    }
+    .intercom-h2b-button:hover {
+        background-color:#ebc703;
+    }
+
+    .header-logo {
+      width: 140px;
+    }
+    .container.header {
+        margin-bottom: 10px;
+    }
+   =20
+    .container.content a {
+        color: #BA9527;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .container.footer {
+        color: #a1a1a1;
+        padding: 25px;
+    }
+    .container.footer a, .unsubscribe a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #a1a1a1;
+    }
+    .container.footer a:hover, container.contenxt a:hover, .unsubscribe a:h=
+over {
+        color: #fcd503;
+    }
+
+    .container.social-icons {
+        padding: 25px 0 0 0;
+    }
+    table.social-icons th {
+        padding-right: 20px;
+    }
+
+    td.pad-right {
+        padding-right: 20px;
+    }
+    td.pad-left {
+        padding-left: 20px;
+    }
+   =20
+    .bullet {
+        color: #947120;
+        font-size: 20px;
+        font-weight: bold;
+        padding-right: 20px;
+    }
+    .brown-list {
+        color: #947120;
+        margin-left: -25px;
+    }
+    .brown-list p {
+        color: #2f2f2f;
+    }
+    a {
+    color: #BA9527;
+    text-decoration: underline;
+    font-weight: bold;
+    }
+
+    a:hover {
+    color: #fcd503;
+    }
+
+    a:active {
+    color: #fcd503;
+    }
+
+    a:visited {
+    color: #947120;
+    }
+
+    .text-left {
+    text-align: left;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .text-right {
+    text-align: right;
+    }
+    .color-brown {
+    color: #947120;
+    }
+    .color-light-brown {
+    color: #BA9527;
+    }
+    .color-yellow, .color-primary {
+    color: #FCD503;
+    }
+    .weight-normal {
+        font-weight: normal;
+    }
+    .float-left {
+        float: left;
+    }
+    .align-left {
+        text-align: left;
+    }
+    .float-right {
+        float: right;
+    }
+    .align-right {
+        text-align: right;
+    }
+    .clear {
+        clear: both;
+        display: block;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bgtc per=
+sonal" align=3D"center" style=3D"border-collapse: collapse; line-height: 10=
+0% !important; margin: 0;   padding: 0; width: 100% !important; background-=
+color: #ffffff;">
+    <tbody>
+      <tr>
+        <td>
+         =20
+          <table style=3D"border-collapse: collapse; margin: auto; width: 1=
+00%; max-width: 635px; min-width: 320px;  " class=3D"main-wrap">
+            <tbody>
+              <tr>
+                <td valign=3D"top">
+                  <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" c=
+lass=3D"reply_header_table" style=3D"border-collapse: collapse; color: #c0c=
+0c0; font-family: 'Helvetica Neue',Arial,sans-serif; font-size: 13px; line-=
+height: 26px; margin: 0 auto 26px;   width: 100%">
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td valign=3D"top" class=3D"main_wrapper">
+
+                <div class=3D"container header">
+                    <img class=3D"header-logo" style=3D"width: 140px; margi=
+n-bottom: 10px;" src=3D"https://alpaca.markets/static/images/email/logo-pla=
+in.png" alt=3D"Alpaca Markets">
+                </div>
+
+                  <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" c=
+lass=3D"comment_wrapper_table admin_comment" align=3D"center" style=3D"-web=
+kit-background-clip: padding-box; -webkit-border-radius: 3px; background-cl=
+ip: padding-box; border-collapse: collapse; border-radius: 3px; color: #545=
+454; font-family: 'Helvetica Neue',Arial,sans-serif; font-size: 13px; line-=
+height: 20px; margin: 0 auto;   width: 100%">
+                    <tbody>
+                      <tr>
+                        <td valign=3D"top" class=3D"comment_wrapper_td">
+                          <table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" class=3D"comment_header" style=3D"border-collapse: separate; border:=
+ none; font-size: 1px; height: 2px; line-height: 3px;   width: 100%">
+                            <tbody>
+                              <tr>
+                                <td valign=3D"top" class=3D"comment_header_=
+td"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" class=3D"comment_body" style=3D"-webkit-background-clip: padding-box=
+; -webkit-border-radius: 0 0 3px 3px; background-clip: padding-box; border-=
+collapse: collapse; border-color: #dddddd; border-radius: 0 0 3px 3px; bord=
+er-style: solid; border-width: 0 1px 1px; width: 100%;">
+                            <tbody>
+                              <tr>
+                                <td class=3D"comment_body_td content-td" st=
+yle=3D"-webkit-background-clip: padding-box; -webkit-border-radius: 0 0 3px=
+ 3px; background-clip: padding-box; border-radius: 0 0 3px 3px; color: #525=
+252; font-family: 'Helvetica Neue',Arial,sans-serif; font-size: 15px; line-=
+height: 22px; overflow: hidden; padding: 40px 40px 30px; background-color: =
+white;">
+
+
+
+                               =20
+	<div style=3D'text-align:left;'>
+		Hello Jaehoon,<br/>
+		<br/>
+
+		This is just a confirmation that you linked a bank account via Plaid. The=
+re is no need for you to do anything.<br/>
+		<br/>
+		If you did not perform this bank linking
+please reach out to <a href=3D"mailto:support@alpaca.markets" target=3D"_bl=
+ank">support@alpaca.markets</a> as soon as possible.<br/>
+	<br/><br/><br/>
+		Best<br/>
+		<br/>
+		The Alpaca Team<br/>
+		<a href=3D"https://alpaca.markets" style=3D"text-decoration: none; color:=
+ #bfa100;">https://alpaca.markets</a>
+	</div>
+
+
+
+
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0">
+                    <tbody>
+                      <tr>
+                        <td width=3D"100%" class=3D"footer-td-wrapper">
+                          <table width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"border-collapse: collapse; color: #545454; f=
+ont-family: 'Helvetica Neue',Arial,sans-serif; font-size: 13px; line-height=
+: 20px; margin: 0 auto; max-width: 100%;   width: 100%" class=3D"message_fo=
+oter_table">
+                            <tbody>
+                              <tr>
+                                <td valign=3D"middle" align=3D"right" class=
+=3D"date_cell" style=3D"color: #999999; text-align: center; font-size: 12px=
+;">
+
+                                    <div class=3D"container social-icons">
+                                        <table align=3D"center" class=3D"me=
+nu social-icons float-center">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                <table>
+                                                    <tbody><tr>
+                                                   =20
+                                                    <th class=3D"menu-item =
+float-center" style=3D"padding: 6px;"><a href=3D"https://twitter.com/alpaca=
+hq" target=3D"_blank"><img src=3D"https://alpaca.markets/static/images/emai=
+l/x-logo-black.png" alt=3D"Twitter" class=3D"social-icon" height=3D"18"></a=
+></th>
+                                                    <th class=3D"menu-item =
+float-center" style=3D"padding: 6px;"><a href=3D"https://www.linkedin.com/c=
+ompany/9300556/" target=3D"_blank"><img src=3D"https://alpaca.markets/stati=
+c/images/email/linkedin-icon.png" alt=3D"LinkedIn" class=3D"social-icon" he=
+ight=3D"20"></a></th>
+                                                    <th class=3D"menu-item =
+float-center" style=3D"padding: 6px;"><a href=3D"https://github.com/alpacah=
+q" target=3D"_blank"><img src=3D"https://alpaca.markets/static/images/email=
+/github-mark.png" alt=3D"GitHub" class=3D"social-icon" height=3D"20"></a></=
+th>
+                                                    </tr>
+                                                </tbody></table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                       =20
+                                    <div class=3D"container footer">
+                                        <p class=3D"text-left" style=3D"tex=
+t-align: left;">
+                                            <small>
+                                              This is not an offer, solicit=
+ation of an offer, or advice
+                                              to buy or sell securities or =
+cryptocurrencies or open a
+                                              brokerage account or cryptocu=
+rrency account in any
+                                              jurisdiction where Alpaca Sec=
+urities or Alpaca Crypto,
+                                              respectively, are not registe=
+red or licensed, as
+                                              applicable. Options trading i=
+s not suitable for all
+                                              investors due to its inherent=
+ high risk, which can
+                                              potentially result in signifi=
+cant losses.
+                                              <br><br>
+                                              Commission-free trading means=
+ that there are no commission
+                                              charges for Alpaca Securities=
+ self-directed individual
+                                              brokerage accounts that trade=
+ U.S.-listed securities
+                                              through an API. Relevant regu=
+latory fees may apply.
+                                              Commissions may be charged if=
+ your account is held at one
+                                              of Alpaca's correspondent fir=
+ms.
+                                              <br><br>
+                                              Brokerage services are provid=
+ed by Alpaca Securities LLC
+                                              (=E2=80=9CAlpaca Securities=
+=E2=80=9D), member
+                                              <a
+                                                href=3D"https://www.finra.o=
+rg/"
+                                                style=3D"color: inherit; te=
+xt-decoration: underline">FINRA</a>/<a
+                                                href=3D"https://www.sipc.or=
+g/"
+                                                style=3D"color: inherit; te=
+xt-decoration: underline">SIPC</a>,
+                                              a wholly-owned subsidiary of =
+AlpacaDB, Inc.
+                                              <br><br>
+                                              Cryptocurrency services are m=
+ade available by Alpaca
+                                              Crypto, a FinCEN-registered m=
+oney services business (NMLS
+                                              #2160858) and a wholly-owned =
+subsidiary of AlpacaDB, Inc.
+                                              Alpaca Crypto is not a member=
+ of SIPC or FINRA.
+                                              Cryptocurrencies are not stoc=
+ks, and your cryptocurrency
+                                              investments are not protected=
+ by either FDIC or SIPC.
+                                              <br><br>
+                                              Please read
+                                              <a
+                                                href=3D"https://www.theocc.=
+com/company-information/documents-and-archives/options-disclosure-document"
+                                                style=3D"color: inherit; te=
+xt-decoration: underline">Characteristics
+                                                and Risks of Standardized O=
+ptions</a>
+                                              before investing in options. =
+<br><br>
+                                              Neither Alpaca Securities LLC=
+ nor Alpaca Crypto LLC takes
+                                              responsibility for or accepts=
+ time-sensitive instructions
+                                              sent by email, including orde=
+rs or funds transfer
+                                              instructions.
+                                              <br><br>
+                                              Technology and services are o=
+ffered by AlpacaDB, Inc.
+                                              <br><br>
+                                              The Paper Trading API is offe=
+red by AlpacaDB, Inc. and
+                                              does not require real money o=
+r permit a user to transact
+                                              in real securities in the mar=
+ket. Providing use of the
+                                              Paper Trading API is not an o=
+ffer or solicitation to buy
+                                              or sell securities, securitie=
+s derivatives, or futures
+                                              products of any kind, or any =
+type of trading or investment
+                                              advice, recommendation, or st=
+rategy, given or in any
+                                              manner endorsed by AlpacaDB, =
+Inc. or any AlpacaDB, Inc.
+                                              affiliate and the information=
+ made available through the
+                                              Paper Trading API is not an o=
+ffer or solicitation of any
+                                              kind in any jurisdiction wher=
+e AlpacaDB, Inc. or any
+                                              AlpacaDB, Inc. affiliate (col=
+lectively, =E2=80=9CAlpaca=E2=80=9D) is not
+                                              authorized to do business.
+                                              <br><br>
+                                              Please see the
+                                              <a
+                                                href=3D"https://alpaca.mark=
+ets/disclosures"
+                                                style=3D"color: inherit; te=
+xt-decoration: underline">Disclosure
+                                                Library</a>
+                                              for additional information an=
+d disclosures from Alpaca
+                                              Securities and Alpaca Crypto.
+                                            </small>
+                                            </p>
+                                            <br>
+                                   =20
+                                            <p class=3D"text-center copyrig=
+ht">
+                                            <small>
+                                                =C2=A9 2025 Alpaca Securiti=
+es LLC. All rights reserved.
+                                                <br>
+                                                12 E 49th Street, Floor 11,=
+ New York, NY 10017
+                                                <br><br>
+                                                =C2=A9 2025 Alpaca Crypto L=
+LC. All rights reserved.
+                                                <br>
+                                                =C2=A9 2025 AlpacaDB, Inc. =
+All rights reserved.
+                                                <br>
+                                                3 East Third Ave, Suite 214=
+, San Mateo, CA 94401=20
+                                                <br>
+                                            </small>
+                                            <p class=3D"text-center unsubsc=
+ribe">
+                                            <small>
+                                            </small>
+                                            </p>
+                                        </div>
+                                </td>
+                              </tr>
+                              <tr>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign=3D"top" height=3D"20"></td>
+      </tr>
+    </tbody>
+  </table>
+ =20
+</body></html>

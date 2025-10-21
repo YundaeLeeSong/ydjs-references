@@ -1,0 +1,113 @@
+
+
+def fetch_orders(status="open", save_path=None):
+    """
+    Fetches orders filtered by status and optionally saves to JSON.
+    """
+    url = f"{BASE_URL}/v2/orders"
+    params = {"status": status}
+    resp = requests.get(url, headers=HEADERS, params=params)
+    resp.raise_for_status()
+    orders = resp.json()
+
+    if save_path:
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        with open(save_path, "w") as f:
+            json.dump(orders, f, indent=2)
+    return orders
+
+
+def fetch_activities(activity_type=None, after=None, until=None, direction=None, save_path=None):
+    """
+    Fetches account activities. Optional filtering by:
+      - activity_type: type string or list of types (e.g., 'FILL', 'ORDER_CANCEL')
+      - after: ISO timestamp (inclusive)
+      - until: ISO timestamp (inclusive)
+      - direction: 'asc' or 'desc'
+    Optionally saves to JSON at save_path.
+    """
+    url = f"{BASE_URL}/v2/account/activities"
+    params = {}
+    if activity_type:
+        params['activity_type'] = activity_type
+    if after:
+        params['after'] = after
+    if until:
+        params['until'] = until
+    if direction:
+        params['direction'] = direction
+
+    resp = requests.get(url, headers=HEADERS, params=params)
+    resp.raise_for_status()
+    activities = resp.json()
+
+    if save_path:
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        with open(save_path, "w") as f:
+            json.dump(activities, f, indent=2)
+    return activities
+
+
+def save_orders_to_csv(orders, filename="alpaca_data/orders.csv"):  
+    """
+    Save list of order dicts to CSV.
+    """
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    fieldnames = ["id", "symbol", "side", "qty", "limit_price", "status"]
+    with open(filename, "w", newline="") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for o in orders:
+            writer.writerow({
+                "id": o.get("id"),
+                "symbol": o.get("symbol"),
+                "side": o.get("side"),
+                "qty": o.get("qty", o.get("notional", "")),
+                "limit_price": o.get("limit_price", ""),
+                "status": o.get("status", "")
+            })
+    print(f"✔ Saved {len(orders)} orders to {filename}")
+
+
+def save_activities_to_csv(activities, filename="alpaca_data/activities.csv"):  
+    """
+    Save list of activity dicts to CSV.
+    """
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    fieldnames = [
+        "id", "activity_type", "symbol", "qty", "side", 
+        "price", "cumulative_qty", "leaves_qty", "transaction_time"
+    ]
+    with open(filename, "w", newline="") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for a in activities:
+            writer.writerow({
+                "id": a.get("id"),
+                "activity_type": a.get("activity_type"),
+                "symbol": a.get("symbol", ""),
+                "qty": a.get("qty", ""),
+                "side": a.get("side", ""),
+                "price": a.get("price", ""),
+                "cumulative_qty": a.get("cumulative_qty", ""),
+                "leaves_qty": a.get("leaves_qty", ""),
+                "transaction_time": a.get("transaction_time", "")
+            })
+    print(f"✔ Saved {len(activities)} activities to {filename}")
+
+
+def load_data():
+    """
+    Example loader: fetch and save both orders and activities.
+    """
+    orders = fetch_orders(status="open", save_path="alpaca_data/orders.json")
+    print(f"Fetched {len(orders)} open orders.")
+    save_orders_to_csv(orders)
+
+    activities = fetch_activities(save_path="alpaca_data/activities.json")
+    print(f"Fetched {len(activities)} activities.")
+    save_activities_to_csv(activities)
+
+
+if __name__ == "__main__":
+    load_data()

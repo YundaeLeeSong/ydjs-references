@@ -1,7 +1,7 @@
 # IDE configurations
 .idea/
 .vscode/
-ext/
+
 
 # Videos (large media files)
 *.mp4
@@ -19,3 +19,31 @@ ext/
 # *.jpeg
 # *.png
 # *.gif
+
+
+
+
+# Microsoft Office files
+*.docx
+*.xlsx
+*.pptx
+
+
+
+# Executables (Windows)
+*.exe
+
+
+################################################################
+# System Specific Ignores
+################################################################
+# System files
+ext/
+.DS_Store
+Thumbs.db
+*.lnk
+*.url
+
+# Python
+venv/
+

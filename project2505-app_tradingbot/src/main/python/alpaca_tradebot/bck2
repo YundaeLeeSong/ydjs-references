@@ -1,0 +1,17 @@
+
+# ─── Fetch & save open orders ──────────────────────────────────────────────────
+def fetch_orders(save_path="alpaca_data/orders.json"):
+    """
+    Fetches all open orders and writes them to `save_path`.
+    """
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    url = f"{BASE_URL}/v2/orders"
+    params = {
+        "status": "open",     # only open orders
+        # "limit": 500,         # max per page (optional)
+        # you can add: after, until, direction, nested, etc.
+    }
+    resp = requests.get(url, headers=HEADERS, params=params)
+    resp.raise_for_status()
+    return resp.json()
+

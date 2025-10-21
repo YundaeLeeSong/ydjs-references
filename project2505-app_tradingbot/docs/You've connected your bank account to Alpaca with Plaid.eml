@@ -1,0 +1,426 @@
+Delivered-To: manual20151276@gmail.com
+Received: by 2002:ab3:1109:0:b0:2b0:7b8d:3b4f with SMTP id j9csp587362lta;
+        Sun, 11 May 2025 20:22:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFumLPSiMaLgyq/bocHFMmU7vOtFC5w1heCGulAwjDsEDO0AZc8XVbmlpp4f0wj/mB8xXbS
+X-Received: by 2002:a05:620a:2901:b0:7c7:a5e6:d287 with SMTP id af79cd13be357-7cd01163d3bmr2072987285a.52.1747020139642;
+        Sun, 11 May 2025 20:22:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747020139; cv=none;
+        d=google.com; s=arc-20240605;
+        b=H8SNrl9v9uoGMLql33UsIhF8y7F/FOZpImKFw4/DwZBmWIIbjsVUVVJH56erdOgnST
+         Ecv3FBTZ2+SV+xb7hXQjmhK6KlVhtxozyapwepwHrav6K433OF22nOl8NzKn6gpbsJpj
+         Kaft+wFGZyQsnWVhi9qoqN1MKbHdIbOI+V+kLe6IVhcMfa8BgAf7kNiNataPcwXSRm5Z
+         Y0doG/j45BpU8TGvw9Skfm54sVCubf+bbpGDgGji8KCa0HS/g2l0D/bAtJuHcmKSLZ6v
+         ANbI2m5XzdVv9FOztDLbOMWzwL+QmTqEw9DOy9foZrY7DO5kzPi8+elO7QhLInetppZ4
+         sszg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:to:from
+         :dkim-signature:dkim-signature;
+        bh=UseS4+fOj0tHQSnAzBNDZPvv5bNQP02t5PHIT+uWcIE=;
+        fh=zCHI2lWrjl3wCeAh8L8vlPufksK5jo2FFxy90cGEKJw=;
+        b=DTVKn7L43r7pgIUt06Qq9LU/lTFRgpDcJIZTrUtxvZp+RoHPE6tn8VbbRjNN8cBGTQ
+         wNEox1ANYEwkYKPT28yR+p5TyFX1m346s/tH/8LFq6nE/XJc8/8pm+CArMfX3lqoPf+2
+         sXKkvqdzl2FQcKqpw8hL5HaTK4wI+jPzjLFqgIw2JFxaTgdGGyvuN+jMY1tDrM5YYq94
+         bUtZCjcoUGpalVyJa0QvnjT/yPcOsKdWDYsepywGO9DM05O8VAY9RIbdvn0PNV4/V9+s
+         Nhm44oq4AJ7i8gxsy+/Gq0F3vlnZLldLVbIIyJ4Zru/SAd0vzJumh9WbXAnktF5s40jE
+         hO3Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@plaid.com header.s=votjg5dbfkir72pgnnug5by4bx3aetrf header.b=SvUT03r1;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=W0gCGmRt;
+       spf=pass (google.com: domain of 01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com designates 54.240.48.1 as permitted sender) smtp.mailfrom=01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=plaid.com
+Return-Path: <01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com>
+Received: from a48-1.smtp-out.amazonses.com (a48-1.smtp-out.amazonses.com. [54.240.48.1])
+        by mx.google.com with ESMTPS id af79cd13be357-7cd00f51efdsi771387885a.98.2025.05.11.20.22.19
+        for <manual20151276@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 11 May 2025 20:22:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com designates 54.240.48.1 as permitted sender) client-ip=54.240.48.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@plaid.com header.s=votjg5dbfkir72pgnnug5by4bx3aetrf header.b=SvUT03r1;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=W0gCGmRt;
+       spf=pass (google.com: domain of 01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com designates 54.240.48.1 as permitted sender) smtp.mailfrom=01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=plaid.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=votjg5dbfkir72pgnnug5by4bx3aetrf; d=plaid.com; t=1747020139;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=31+0SiDLpnnafKPN9DqRug6bvcciKY3r/jqxDhe0RFs=;
+	b=SvUT03r1l58JUz/cpDRV6esFJRWctTXY2VFvCiZFDRmZi5UO6Sf7zk2oDna4g65n
+	xDzRKbxkcxqGNyKl8FkueBQWwYFATmX9q1d3pkJoa24kyw1rNleojDf34AZaoDK4TtT
+	6+quuYPYCXUVgdUtCnqYsNckGpBCmtBBi36xm0Vg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1747020139;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=31+0SiDLpnnafKPN9DqRug6bvcciKY3r/jqxDhe0RFs=;
+	b=W0gCGmRtCFRyBK0zXrIPS+WBcKl1ZKYSIrpa8V2TDhL7ujM6oPRu9fqzODef2Jhe
+	V5ae3rV7qPzSG3CY/ieSAtZfutpUwdzH6IFSJoEDRYVeWNwAmnLYC4GgEhsp6mHJ243
+	9UnDlUNZKigdh9CST29W7Eb7XGD20IffDwCTmfIQ=
+From: Plaid <noreply@plaid.com>
+To: JAEHOON SONG <manual20151276@gmail.com>
+Subject: You've connected your bank account to Alpaca with Plaid
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_228500_728718186.1747020139031"
+Message-ID: <01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000@email.amazonses.com>
+Date: Mon, 12 May 2025 03:22:19 +0000
+Feedback-ID: ::1.us-east-1.Wve89bXpAa3DQ+O48yLdljmWbucH2PAoqiGaAsmHYfk=:AmazonSES
+X-SES-Outgoing: 2025.05.12-54.240.48.1
+
+------=_Part_228500_728718186.1747020139031
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Alpaca connected to your Chase account
+
+Powered by Plaid
+
+Date: 05/11/2025 08:21 PM PDT
+Phone Number: (=E2=80=A2=E2=80=A2=E2=80=A2) =E2=80=A2=E2=80=A2=E2=80=A2 892=
+6
+
+If this was you, you=E2=80=99re all set and no further action is required. =
+If this wasn't you, click here to disconnect and secure your account: https=
+://my.plaid.com/notification/report?id=3DC41Wrw&amp;token=3D10eebd90-ebbc-4=
+c5c-ae03-6ddb476388e0.
+
+Why am I getting this email?
+You're getting this email because you, or someone authorizedon your Chase a=
+ccount, saved your phone number with Plaid to connect your financial accoun=
+ts faster.
+
+To protect your privacy and keep your account secure, we'll periodically re=
+ach out to confirm it was you who connected your bank account to an app.
+
+What is Plaid?
+Plaid helps you securely connect your financial accounts to the apps and se=
+rvices you want. Learn more: https://plaid.com/how-it-works-for-consumers/
+
+Plaid only shares your data with your permission.
+
+Read more about Plaid's commitment to privacy (https://plaid.com/how-we-han=
+dle-data/), and visit our Help Center (https://support-my.plaid.com/hc/en-u=
+s) for any further questions.
+
+Privacy Policy: https://plaid.com/legal/#end-user-privacy-policy
+Unsubscribe:=20
+Update your preferences:=20
+View in browser:=20
+
+=C2=A9 Plaid Inc. 2025
+
+Support ID: C41Wrw
+
+------=_Part_228500_728718186.1747020139031
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+   =20
+  <style type=3D"text/css">:root{--background-color:#FFFFFF;--text-color:#6=
+26262;--secondary-text:#626262;--border-color:rgba(0, 0, 0, 0.1);--footer-b=
+g:#02294B;--footer-text:#f2f4f6;--section-header-color:#02294B;--entity-nam=
+e-color:#02294B}@media (max-width:480px){.container{background-size:contain=
+}}@media (min-width:481px){.app-icon{border-radius:24px;width:96px;height:9=
+6px;filter:drop-shadow(0 6px 12px rgba(0, 0, 0, .35))}.connection-arrow{wid=
+th:20px;height:20px}}@media (max-width:480px){h1{font-size:17px}}@media (ma=
+x-width:480px){.footer-cell-left,.footer-cell-right{display:none}.footer-mo=
+bile-content{display:block}}@media (min-width:481px){.footer-cell{display:t=
+able-cell;vertical-align:top}.footer-cell-left{width:30%}.footer-cell-right=
+{width:70%;padding-left:32px}.footer-bottom-row{display:none}.footer-mobile=
+-content{display:none}}</style></head>
+
+  <body leftspace=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=3D"0=
+" offset=3D"0" style=3D"background:var(--background-color);background-color=
+:#FFF;color:var(--text-color);font-family:-apple-system,BlinkMacSystemFont,=
+&#34;line-height:1.5;margin:0;padding:0" bgcolor=3D"#FFFFFF">
+   =20
+   =20
+
+    <div class=3D"container" style=3D"background:url(&#39;https://cdn-email=
+.plaid.com/images/e907ff810f.png&#39;) no-repeat top center;background-colo=
+r:#FFF;background-size:450px auto;margin:0 auto;max-width:600px;padding:24p=
+x">
+
+      <div class=3D"app-connection" style=3D"margin:40px auto;text-align:ce=
+nter;width:100%" align=3D"center">
+        <div class=3D"app-icons" style=3D"display:table;margin:20px auto;wi=
+dth:auto">
+          <div class=3D"app-icons-row" style=3D"display:table-row">
+            <div class=3D"app-icons-cell" style=3D"display:table-cell;paddi=
+ng:0 8px;vertical-align:middle">
+              <img class=3D"app-icon" src=3D"https://client-logos.plaid.com=
+/1:59f7b8444e95b8782b00bc9b:40250945-094e-43fa-8674-4946964bf24c:1024.png" =
+alt=3D"Client" style=3D"border-radius:14px;display:block;filter:drop-shadow=
+(0 4px 8px rgba(0, 0, 0, .35));height:58px;margin:0 auto;width:58px">
+            </div>
+            <div class=3D"app-icons-cell" style=3D"display:table-cell;paddi=
+ng:0 8px;vertical-align:middle">
+              <img class=3D"connection-arrow" src=3D"https://cdn-email.plai=
+d.com/images/8ec252e868.png" alt=3D"Connection" style=3D"height:16px;opacit=
+y:.6;width:16px">
+            </div>
+            <div class=3D"app-icons-cell" style=3D"display:table-cell;paddi=
+ng:0 8px;vertical-align:middle">
+              <img class=3D"app-icon" src=3D"https://cdn-email.plaid.com/im=
+ages/7c8995c880.png" alt=3D"Plaid" style=3D"border-radius:14px;display:bloc=
+k;filter:drop-shadow(0 4px 8px rgba(0, 0, 0, .35));height:58px;margin:0 aut=
+o;width:58px">
+            </div>
+          </div>
+        </div>
+        <h1 style=3D"color:#4E6981;font-size:21px;font-weight:400;line-heig=
+ht:1.4;margin:0">
+          <span style=3D"color:#02294B;font-weight:600">Alpaca</span> conne=
+cted to your
+          <span style=3D"color:#02294B;font-weight:600">Chase</span> accoun=
+t
+        </h1>
+        <div class=3D"phone-number-mask" style=3D"background:#F5F6FD;border=
+-radius:100px;color:#626262;display:inline-block;font-size:14px;margin-top:=
+20px;padding:7px 18px">
+          Phone number (=E2=80=A2=E2=80=A2=E2=80=A2) =E2=80=A2=E2=80=A2=E2=
+=80=A2 8926
+        </div>
+       =20
+        <div class=3D"powered-by" style=3D"align-items:center;color:#626262=
+;display:flex;font-size:12px;gap:8px;justify-content:center;margin:16px aut=
+o">
+          <div>Powered by</div>
+          <img src=3D"https://cdn-email.plaid.com/images/1a1158ecdb.png" al=
+t=3D"Plaid" style=3D"display:block;height:2.25em;object-fit:contain;width:a=
+uto">
+        </div>
+      </div>
+
+      <div class=3D"content" style=3D"color:#626262;font-size:15px;line-hei=
+ght:1.4">
+        If this was you, you&#39;re all set and no further action is requir=
+ed. If this wasn&#39;t you, <a href=3D"https://jp9npfk4.r.us-east-1.awstrac=
+k.me/L0/https:%2F%2Fmy.plaid.com%2Fnotification%2Freport%3Fid=3DC41Wrw%26to=
+ken=3D10eebd90-ebbc-4c5c-ae03-6ddb476388e0/1/01000196c283ca17-850c9a12-52a9=
+-49bc-b377-d0a4c024f4c6-000000/VHDfw57J1x-Pw8f7DXIzEFotaTE=3D425" style=3D"=
+color:#626262;text-decoration:underline;text-underline-offset:2px">click he=
+re to disconnect and secure your account</a>.
+      </div>
+
+      <div class=3D"section" style=3D"margin:32px 0;padding-top:8px">
+        <div class=3D"section-divider" style=3D"margin-bottom:24px">
+          <img src=3D"https://cdn-email.plaid.com/images/d174a1027a.png" al=
+t=3D"" style=3D"height:auto;width:100px">
+        </div>
+        <h2 style=3D"color:#02294B;font-size:20px;font-weight:500;margin:0 =
+0 16px 0">Why am I getting this email?</h2>
+        <div class=3D"content" style=3D"color:#626262;font-size:15px;line-h=
+eight:1.4">
+          You&#39;re getting this email because you, or someone authorized =
+on your Chase account, saved your phone number with Plaid to connect your f=
+inancial accounts faster.
+          <br><br>
+          To protect your privacy and keep your account secure, we&#39;ll p=
+eriodically reach out to confirm it was you who connected your bank account=
+ to an app.
+        </div>
+      </div>
+
+      <div class=3D"section" style=3D"margin:32px 0;padding-top:8px">
+        <div class=3D"section-divider" style=3D"margin-bottom:24px">
+          <img src=3D"https://cdn-email.plaid.com/images/d174a1027a.png" al=
+t=3D"" style=3D"height:auto;width:100px">
+        </div>
+        <h2 style=3D"color:#02294B;font-size:20px;font-weight:500;margin:0 =
+0 16px 0">What is Plaid?</h2>
+        <div class=3D"content" style=3D"color:#626262;font-size:15px;line-h=
+eight:1.4">
+          Plaid helps you securely connect your financial accounts to the a=
+pps and services you want. <a href=3D"https://jp9npfk4.r.us-east-1.awstrack=
+.me/L0/https:%2F%2Fplaid.com%2Fhow-it-works-for-consumers%2F/1/01000196c283=
+ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/xsUXMpadsSCkADzZ2r3NF8abAo=
+k=3D425" style=3D"color:#626262;text-decoration:underline;text-underline-of=
+fset:2px">Learn more</a>
+        </div>
+
+        <div class=3D"security-items" style=3D"margin-top:24px">
+          <div class=3D"security-item" style=3D"align-items:flex-start;disp=
+lay:flex;margin:16px 0">
+            <img class=3D"security-icon" src=3D"https://cdn-email.plaid.com=
+/images/a9f1bfcdef.png" alt=3D"Lock" style=3D"flex-shrink:0;height:20px;mar=
+gin-right:12px;width:20px">
+            <div class=3D"content" style=3D"color:#626262;font-size:15px;li=
+ne-height:1.4">
+              Plaid only shares your data with your permission.
+            </div>
+          </div>
+          <div class=3D"security-item" style=3D"align-items:flex-start;disp=
+lay:flex;margin:16px 0">
+            <img class=3D"security-icon" src=3D"https://cdn-email.plaid.com=
+/images/1f26f750e1.png" alt=3D"Shield" style=3D"flex-shrink:0;height:20px;m=
+argin-right:12px;width:20px">
+            <div class=3D"content" style=3D"color:#626262;font-size:15px;li=
+ne-height:1.4">
+              Read more about Plaid&#39;s commitment to <a href=3D"https://=
+jp9npfk4.r.us-east-1.awstrack.me/L0/https:%2F%2Fplaid.com%2Fhow-we-handle-d=
+ata%2F/1/01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/5W5UY=
+bu9Vn3nt-sa2RqLIedn_jU=3D425" style=3D"color:#626262;text-decoration:underl=
+ine;text-underline-offset:2px">privacy</a>, and visit our <a href=3D"https:=
+//jp9npfk4.r.us-east-1.awstrack.me/L0/https:%2F%2Fsupport-my.plaid.com%2Fhc=
+%2Fen-us/1/01000196c283ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/uHe=
+uVw8d9hpfhWPXkB4Nc5j2fBE=3D425" style=3D"color:#626262;text-decoration:unde=
+rline;text-underline-offset:2px">Help Center</a> for any further questions.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=3D"footer" style=3D"background:var(--footer-bg);background=
+-color:#02294B;border-radius:16px;margin-top:40px;padding:25px">
+        <!--[if !mso]><!-->
+        <div style=3D"display:none;max-height:0;overflow:hidden">
+          =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=
+=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=
+=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =C2=A0 =E2=9A=A1 =
+=C2=A0=20
+        </div>
+        <!--<![endif]-->
+        <table class=3D"footer-table" role=3D"presentation" width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#02294B" style=
+=3D"background-color:#02294B;border-collapse:collapse;width:100%">
+          <tbody><tr>
+            <!-- Desktop Layout -->
+            <td class=3D"footer-cell footer-cell-left" width=3D"30%" valign=
+=3D"top" style=3D"background-color:#02294B;padding-right:32px;vertical-alig=
+n:top;width:30%" bgcolor=3D"#02294B">
+              <img class=3D"footer-logo" src=3D"https://cdn-email.plaid.com=
+/images/11574faa38.png" alt=3D"Plaid" width=3D"50" style=3D"display:block;h=
+eight:auto;margin-bottom:24px;width:26px">
+             =20
+              <table class=3D"footer-social-table" role=3D"presentation" wi=
+dth=3D"100" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margi=
+n-bottom:24px">
+                <tbody><tr>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Ftwitter.com%2Fplaid/1/01000196c283ca17-850c9a12-52a9-49bc-b377-=
+d0a4c024f4c6-000000/mrRMFrksCTH-nF9FPrWzGiPDHMo=3D425" style=3D"color:inher=
+it;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/455654=
+9562.png" alt=3D"X (formerly Twitter)" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Finstagram.com%2Fplaid/1/01000196c283ca17-850c9a12-52a9-49bc-b37=
+7-d0a4c024f4c6-000000/djuI4XZHtuhMIUFFGPNk_2ZECsA=3D425" style=3D"color:inh=
+erit;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/57bedf=
+8918.png" alt=3D"Instagram" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Flinkedin.com%2Fcompany%2Fplaid/1/01000196c283ca17-850c9a12-52a9=
+-49bc-b377-d0a4c024f4c6-000000/Jgo057joPbWFnkz9ZOa659bhPGA=3D425" style=3D"=
+color:inherit;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/7d539b=
+9091.png" alt=3D"LinkedIn" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                </tr>
+              </tbody></table>
+             =20
+              <div class=3D"copyright" style=3D"color:#f2f4f6;font-size:14p=
+x;margin-bottom:8px;white-space:nowrap">=C2=A9 Plaid Inc. 2025</div>
+            </td>
+            <td class=3D"footer-cell footer-cell-right" width=3D"70%" valig=
+n=3D"top" style=3D"background-color:#02294B;padding-left:32px;text-align:le=
+ft;vertical-align:top;width:70%" bgcolor=3D"#02294B" align=3D"left">
+              <div class=3D"footer-address" style=3D"color:#f2f4f6;display:=
+block;font-size:14px;line-height:1.5;margin-bottom:24px">
+                PO Box 7775 #35278<br>
+                San Francisco, CA 94120
+              </div>
+              <div class=3D"footer-links" style=3D"display:block">
+                <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/http=
+s:%2F%2Fplaid.com%2Flegal%2F%23end-user-privacy-policy/1/01000196c283ca17-8=
+50c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/XgN8JZPSB8hOir-yiCprsQs41Tk=3D42=
+5" class=3D"footer-link" style=3D"color:#f2f4f6;display:block;font-size:14p=
+x;line-height:1.5;margin-bottom:0;text-decoration:underline;text-underline-=
+offset:2px">Privacy Policy</a>
+              </div>
+              <div class=3D"support-id" style=3D"color:#f2f4f6;font-size:14=
+px;margin-top:24px;white-space:nowrap">Support ID: C41Wrw</div>
+            </td>
+          </tr>
+          <!-- Mobile Layout -->
+          <tr class=3D"footer-mobile-content">
+            <td colspan=3D"2" style=3D"background-color:#02294B">
+              <img class=3D"footer-logo" src=3D"https://cdn-email.plaid.com=
+/images/11574faa38.png" alt=3D"Plaid" width=3D"50" style=3D"display:block;h=
+eight:auto;margin-bottom:24px;width:26px">
+             =20
+              <div class=3D"footer-address" style=3D"color:#f2f4f6;display:=
+block;font-size:14px;line-height:1.5;margin-bottom:24px">
+                PO Box 7775 #35278<br>
+                San Francisco, CA 94120
+              </div>
+             =20
+              <div class=3D"footer-links" style=3D"display:block;margin-bot=
+tom:24px">
+                <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/http=
+s:%2F%2Fplaid.com%2Flegal%2F%23end-user-privacy-policy/2/01000196c283ca17-8=
+50c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/tJpj5_QKG83Oq3VWxc_OAL0krsk=3D42=
+5" class=3D"footer-link" style=3D"color:#f2f4f6;display:block;font-size:14p=
+x;line-height:1.5;margin-bottom:0;text-decoration:underline;text-underline-=
+offset:2px">Privacy Policy</a>
+              </div>
+             =20
+              <table class=3D"footer-social-table" role=3D"presentation" wi=
+dth=3D"100" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margi=
+n-bottom:24px">
+                <tbody><tr>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Ftwitter.com%2Fplaid/2/01000196c283ca17-850c9a12-52a9-49bc-b377-=
+d0a4c024f4c6-000000/_gS1l0xnHO6iU8KdpxcH3SX5eO0=3D425" style=3D"color:inher=
+it;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/455654=
+9562.png" alt=3D"X (formerly Twitter)" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Finstagram.com%2Fplaid/2/01000196c283ca17-850c9a12-52a9-49bc-b37=
+7-d0a4c024f4c6-000000/9El0POJ6H-R7-DLyoBlM579fMbA=3D425" style=3D"color:inh=
+erit;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/57bedf=
+8918.png" alt=3D"Instagram" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                  <td width=3D"32">
+                    <a href=3D"https://jp9npfk4.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Flinkedin.com%2Fcompany%2Fplaid/2/01000196c283ca17-850c9a12-52a9=
+-49bc-b377-d0a4c024f4c6-000000/Lz8fjd6ltC4P8GZ4tROC7Igc_zM=3D425" style=3D"=
+color:inherit;text-decoration:underline;text-underline-offset:2px">
+                      <img src=3D"https://cdn-email.plaid.com/images/7d539b=
+9091.png" alt=3D"LinkedIn" width=3D"24" height=3D"24">
+                    </a>
+                  </td>
+                </tr>
+              </tbody></table>
+             =20
+              <div class=3D"copyright" style=3D"color:#f2f4f6;font-size:14p=
+x;margin-bottom:8px;white-space:nowrap">=C2=A9 Plaid Inc. 2025</div>
+              <div class=3D"support-id" style=3D"color:#f2f4f6;font-size:14=
+px;white-space:nowrap">Support ID: C41Wrw</div>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+ =20
+
+<img alt=3D"" src=3D"https://jp9npfk4.r.us-east-1.awstrack.me/I0/01000196c2=
+83ca17-850c9a12-52a9-49bc-b377-d0a4c024f4c6-000000/It4oVnvMQ0YTv8srGoa5upei=
+3jI=3D425" style=3D"display: none; width: 1px; height: 1px;">
+</body></html>
+
+------=_Part_228500_728718186.1747020139031--
