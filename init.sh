@@ -117,14 +117,23 @@ case "${OS_NAME}" in
 esac
 
 # Construct the full filename of the target script.
-SCRIPT_TO_RUN="./_${BASE_NAME}-${OS_SUFFIX}.sh"
+SCRIPT_TO_RUN="./scripts/${BASE_NAME}-${OS_SUFFIX}.sh"
 echo "Looking for OS-specific script: ${SCRIPT_TO_RUN}"
 
 
 # --- Execution Logic with Improved Error Handling ---
-# First, check if the target script file exists. The '-f' flag checks for a regular file.
+# First, check if the target script file and any subdirectories exist.
+# The '-f' flag checks for a regular file.
+
 if [ ! -f "${SCRIPT_TO_RUN}" ]; then
-    # The file does not exist. Inform the user and create a template.
+    # The file does not exist. Check if parent directories exist and create them if needed.
+    SCRIPT_DIR=$(dirname "${SCRIPT_TO_RUN}")
+    
+    if [ ! -d "${SCRIPT_DIR}" ]; then
+        echo "${COLOR_YELLOW}Creating directory structure: ${SCRIPT_DIR}${COLOR_RESET}"
+        mkdir -p "${SCRIPT_DIR}"
+    fi
+    
     echo "${COLOR_RED}Error: Target script '${SCRIPT_TO_RUN}' was not found.${COLOR_RESET}"
     echo -e "\tCreating a template file for you..."
 
