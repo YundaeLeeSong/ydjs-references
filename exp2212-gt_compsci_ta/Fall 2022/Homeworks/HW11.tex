@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 11}
+\author{Due: December 2}
+\date{Released: November 18}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, December 2, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope} as short answers that will be auto-graded. Please be sure to read the formatting instructions as you submit!
+    \item[iii.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty, and Rohan Bodla
+\newpage
+\begin{enumerate}
+
+\item Assume that there is a party consisting of people between the ages of 18 and 24 inclusive. How many people would have to be at the party to guarantee that at least three people share the same birth date, birth month, and birth year? Note: assume the range of birth years include 2 leap years. \pt{10}
+
+\item Assume that a website only allows strings of length 5 as a password for a user account. Valid characters for a password consist of lowercase letters, uppercase letters, digits, or underscores, and the passwords must meet the following requirements:
+\begin{itemize}
+    \item If the password begins with a vowel, then it must contain exactly 2 digits, and those digits must be distinct. Do not consider ``y" a vowel.
+    \item If the password begins with a consonant, then the remaining 4 characters must include an even digit.
+    \item If the password begins with a number, the product of all numerical digits in the password must be even.
+    \item The password cannot begin with an underscore.
+\end{itemize} How many unique passwords exist under the given constraints? \pt{8}
+
+\item How many different ways are there to choose 15 donuts from a donut shop that offers them in 21 different flavors?  \pt{5}
+
+\item Imagine you are drawing from a deck of 52 cards. Determine the number of ways you can achieve the following 5-card hands drawn from the deck without repeats. \pte{5}
+\begin{enumerate}
+    \item[a)] A Straight (5 cards of sequential rank; may be a Straight Flush as described in part D). Hint: when considering the Ace, a straight could be Ace, 2, 3, 4, 5 or 10, Jack, Queen, King, Ace, but no other wrap-around is allowed (e.g., Queen, King, Ace, 2, 3 is not allowed)
+    \item[b)] A Flush (5 cards of the same suit; may be a Straight Flush as described in part D)
+    \item[c)] A Full House (3 cards of one rank and 2 from a single other rank)
+    \item[d)] A Straight Flush (5 cards of sequential rank from the same suit)
+\end{enumerate}
+
+\item How many solutions are there to the following equations? \pte{5}
+\begin{enumerate}
+    \item[a)] $a_1 + a_2 + a_3 + a_4 = 12$\\\\
+where $a_1, a_2, a_3,$ and $a_4$ are positive integers\\
+
+    \item[b)] $a_1 + a_2 + a_3 < 13$\\\\
+    where $a_1, a_2,$ and $a_3$ are non-negative integers\\
+
+    \item[c)] $a_1 + a_2 + a_3 + a_4 + a_5 \leq 12$\\\\
+    where $a_1, a_2, a_3, a_4,$ and $a_5$ are non-negative integers, $a_1 > 5$ and $a_3 \leq 10$\\
+    
+\end{enumerate}
+
+\item How many different strings can be created by rearranging the character string ``i am out of ideas"? Ignore spaces. \pt{8}
+
+\item CS 2050 has 9 recitation sections. 6 of the recitation sections are led by a pair of TAs, and 3 recitation sections are led by a trio of TAs. There are also 5 TAs who do not teach recitation. How many ways are there to line up all of the TAs such that each TA with recitation partner(s) is standing next to them? \pt{5}
+
+\item How many eight digit numbers contain the digit 2 exactly once, the digit 3 exactly twice, and the digit 4 exactly thrice. Leading 0s are allowed. \pt{5}
+
+\item How many eight digit numbers contain the digit 2 exactly once, the digit 3 exactly twice, the digit 4 exactly thrice, and more 5s than threes? Leading 0s are allowed. \pt{4}
+
+\item A lattice path in the plane is a sequence of ordered pairs of integers $(m_1,n_1),(m_2,n_2),\dots,(m_t,n_t)$ such that for all $i < t-1$: \pte{5}
+\begin{enumerate}
+    \item[i.] $m_{i+1}=m_i+1$ and $n_{i+1} = n_i$ or
+    \item[ii.] $m_{i+1}=m_i$ and $n_{i+1}=n_i+1$
+\end{enumerate}
+
+\begin{enumerate}
+    \item How many lattice paths exist from $(0,0)$ to $(11,13)$?
+    \item How many lattice paths exist from $(5,3)$ to $(11,13)$?
+    \item How many lattice paths exist from $(0,0)$ to $(11,13)$ that pass through $(5,3)$?
+    \item How many lattice paths exist from $(0,0)$ to $(11,13)$ that do not pass through $(5,3)$?
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+

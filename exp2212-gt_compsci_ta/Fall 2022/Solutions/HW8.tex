@@ -1,0 +1,223 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 8}
+\author{Due: November 3}
+\date{Released: October 27}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, November 3, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty, Rohan Bodla
+\newpage
+\begin{enumerate}
+
+
+\item Explain why we should never use $(n = 2q, e)$ as a public key in an RSA system. \pt{5}
+\begin{solution}
+A public key $n$ is the product of two primes, and the private key $d$ is derived from those two primes. For RSA encryption to be effective, it must be computationally difficult to decompose $n$ into its factors. If 2 is one of the factors of $n$, then a brute force attack will immediately find the primes $p, q$ that are factors of $n$ and easily derive the private key $d$, so any plaintext encrypted with $n = 2q$ is easily decryptable without knowing the prime decomposition beforehand.
+\end{solution}
+
+\item The following statement was put through a caeser cipher using a shift of 10. Decrypt the bolded portions of the statement: \pt{5}\
+\begin{center}
+    \textbf{``$x^2-1$ sc nsfscslvo li} 8 \textbf{pyb kvv zycsdsfo ynn sxdoqobc $x$."}
+\end{center}
+\begin{solution}
+ Take the mapping of letters $\{a..z\}$ to $\{0..25\}$ and apply the decryption shift $p = (c - 10) \text{mod} 26$.
+
+``$x^2 - 1$ is divisible by 8 for all positive odd integers $x$."
+\end{solution}
+
+\item Using mathematical induction or a counterexample, prove or disprove the statement that was decrypted in question 2. \pt{25}
+\begin{solution}\\
+Proof: Let $P(x)$ be that $x^2 - 1$ is divisible by 8. I proceed by mathematical induction to show that $P(x)$ holds true for all positive odd integers.\\
+By definition of positive odd number, $x = 2n + 1$ for some $n \in \mathbb{Z}, n \geq 0$. Thus, we can rewrite the statement as follows:\\
+Let $P(n)$ be that $(2n + 1)^2 - 1$ is divisible by 8. I proceed by mathematical induction to show that $P(n)$ holds true for all non-negative integers.\\
+
+Basis Step: $P(0)$ holds true because $(2(0) + 1)^2 - 1 = 0$, and $8 | 0$.
+
+Inductive Hypothesis: Assume $P(k): (2k + 1)^2 - 1$ is divisible by 8 for some fixed arbitrary non-negative integer $k$.\\
+Inductive Step: I proceed to show that $P(k) \rightarrow P(k + 1)$ is true whenever $P(k)$ is true.
+\begin{center}
+\begin{tabular}{l|l}
+    Statement & Reasoning\\ \hline
+    1) $(2k + 1)^2 - 1$ is divisible by 8 & Inductive Hypothesis\\
+    2) $(2k + 1)^2 - 1 = 8c$ for some $c \in \mathbb{Z}$ & Definition Division\\
+    3) $(4k^2 + 4k + 1) - 1 = 8c$ & Simplify (2)\\
+    4) $(4k^2 + 4k + 1) - 1 + 8k + 8 = 8c + 8k + 8$ & Add $8k + 8$ to (3)\\
+    5) $(4k^2 + 12k + 9) - 1 = 8c + 8k + 8$ & Simplify (4)\\
+    6) $(2k + 3)^2 - 1 = 8c + 8k + 8$ & Factor LHS of (5)\\
+    7) $(2(k + 1) + 1)^2 - 1 = 8c + 8k + 8$ & Factor RHS of (6)\\
+    8) $(2(k + 1) + 1)^2 - 1 = 8(c + k + 1)$ & Factor LHS of (7)\\
+    9) $c + k + 1= z$ for some $z \in \mathbb{Z}$ & Closure of integer addition\\
+    10) $(2(k + 1) + 1)^2 - 1 = 8z$ & Substitute (9) into (8)\\
+    11) $(2(k + 1) + 1)^2 - 1$ is divisible by 8 & Definition of divisibility
+\end{tabular}
+\end{center}
+
+Thus, we see that $P(k + 1): (2(k + 1) + 1)^2 - 1$ is divisible by 8 is true whenever $P(k)$ is true. This completes the inductive step.
+
+By math induction $P(n)$ holds true for all nonnegative integers. $\square$
+\end{solution}
+
+\item Use mathematical induction to prove that the following statement is true for all integers $n$ greater than 1. \pt{25}
+\begin{center}
+    $n!$ $<$ $n^n$
+\end{center}
+
+\begin{solution}
+\\Proof: Let P(n) be that $n!$ $<$ $n^n$. I proceed using math induction to prove that P(n) holds true for all positive integers greater than 1.
+\\Basis Step: P(2) holds true because $2!$ $<$ $2^2$ since $2<4$. This completes the basis step.
+\\Inductive Hypothesis: Assume P(k): $k!$ $<$ $k^k$ for some fixed arbitrary positive integer k greater than 1.
+\\Inductive Step: I proceed to show that $P(k) \rightarrow P(k + 1)$ is true whenever $P(k)$ is true.
+\begin{center}
+\begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $k! < k^k$ & Inductive Hypothesis\\
+    2) $(k + 1)k! < (k + 1)k^k$ & Multiply (1) by $(k + 1)$\\
+    3) $(k + 1)! < (k + 1)k^k$ & Definition of factorial\\
+    4) $0 < 1$ & Axiom\\
+    5) $k < k + 1$ & Add $k$ to (4)\\
+    6) $1 < k$ & Domain of $k$\\
+    7) $k^k < (k + 1)^k$ & Exponentiate (5) by $k$, and knowing (6)\\
+    8) $(k + 1)k^k < (k + 1)(k + 1)^k$ & Multiply (7) by $(k + 1)$\\
+    9) $(k + 1)k^k < (k + 1)^{k + 1}$ & Simplify (8)\\
+    10) $(k + 1)! < (k + 1)^{k + 1}$ & Transitivity on (3) and (9)
+\end{tabular}
+\end{center}
+Thus, we see that $P(k + 1): (k + 1)! < (k + 1)^{k + 1}$ is true whenever $P(k)$ is true. This completes the inductive step.
+
+By math induction $P(n)$ holds true for all integers $n \geq 2. \square$
+\end{solution}
+
+\item Prove using mathematical induction that \[1^3 + 2^3 + \dots + n^3 = \left(\frac{n(n+1)}{2}\right)^2\] for all positive integers $n$. \pt{25}
+
+\begin{solution}
+\\Proof: Let P(n) be that $1^3 + 2^3 + \dots + n^3 = \left(\frac{n(n+1)}{2}\right)^2$. I proceed using math induction to prove that P(n) holds true for all positive integers.
+\\Basis Step: P(1) holds true because $1^3 = \left(\frac{1(2)}{2}\right)^2$. This completes the basis step.
+\\Inductive Hypothesis: Assume P(k): $1^3 + 2^3 + \dots + k^3 = \left(\frac{k(k+1)}{2}\right)^2$ for some fixed arbitrary positive integer k.
+\\Inductive Step: I proceed to show that $P(k) \rightarrow P(k + 1)$ is true whenever $P(k)$ is true.
+\begin{center}
+\begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $1^3 + 2^3 + \dots + k^3 = \left(\frac{k(k+1)}{2}\right)^2$ & Inductive Hypothesis\\
+    2) $1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \left(\frac{k(k+1)}{2}\right)^2 + (k+1)^3$ & Add $(k+1)^3$ to both sides\\
+    3)$1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \frac{k^2(k+1)^2}{4} + \frac{4(k+1)^3}{4}$ & Expansion of (2)\\
+    4) $1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \frac{(k+1)^2(k^2 + 4(k+1))^2}{4}$ & Simplification of (3)\\
+    5) $1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \frac{(k+1)^2(k+2)^2}{4}$ & Factorization of (4)\\
+    6) $1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \frac{(k+1)^2[(k+1)+1]^2}{4}$ & Expand $k+2$
+\end{tabular}
+\end{center}
+Thus, we see that P(k + 1): $1^3 + 2^3 + \dots + k^3 + (k+1)^3 = \frac{(k+1)^2[(k+1)+1]^2}{4}$ is true whenever P(k) is true. This completes the inductive step. 
+
+By math induction P(n) holds true for all positive integers. $\square$
+
+\end{solution}
+
+\item Decrypt the ciphertext message \textbf{``tjeefuxlx"} which was produced using the transposition cipher with blocks of three, based on the permutation $\sigma$ of $\{1, 2, 3\}$ defined by $\sigma(1) = 2$, $\sigma(2) = 3$ and $\sigma(3) = 1$. \pt{5}
+\begin{solution}\\
+Define $\sigma^{-1}: \sigma^{-1}(1) = 3, \sigma^{-1}(2) = 1, \sigma^{-1}(3) = 2$\\
+Split ciphertext into blocks of 3: \textbf{``tje efu xlx"}\\
+Decrypt back into plaintext using $\sigma^{-1}: \textbf{``jet fue lxx"}$\\
+Then, cut off trailing `x's: \textbf{``jet fue l"}
+
+Answer: \textbf{``jet fuel"}
+\end{solution}
+
+\item Suppose you intercept the message ``09 11 49 52 49 33 52 02 00 10 17 39 08 13 09 52 02 17 52 10” that has been encrypted using the RSA algorithm. You know that the public key used for encryption is (55, 23). Decrypt the message to determine what was said. Use the process shown in lecture to complete this problem. You must show all work. \pt{10}\\\\
+(\emph{Note}: If your calculator is unable to calculate $a^dmod n$ where $a$ is one of the numbers in the message above
+and $d$ is the decryption key, then you can just show $a^d mod n$ for each value of $a$. Note that this is the final step in decryption so you won’t show what the message actually was. You must still show the work for calculating the
+decryption key $d$).
+
+\begin{solution}
+$n = 55, e = 23$.
+
+The private key is $d$ such that $ed \equiv 1 (\text{mod} (p - 1)(q - 1))$.
+
+$n = pq = 5 \cdot 11$, so $p = 5$ and $q = 11$ (order doesn't matter), so the plugging the values in:\\
+$23d \equiv 1 (\text{mod} (5 - 1)(11 - 1))$\\
+$23d \equiv 1 (\text{mod} 40)$\\
+$d = 7$ (since $23 \cdot 7 = 161, 161 \text{mod} 40 = 1)$
+
+To decrypt each substring, we use $m_i = c_i^d \text{mod} n$.
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+    Cipher Substring & Formula & Value & Message Character \\ \hline
+    09 & $09^7 \text{mod} 55$ & 4 & E\\
+    11 & $11^7 \text{mod} 55$ & 11 & L\\
+    49 & $49^7 \text{mod} 55$ & 14 & O\\
+    52 & $52^7 \text{mod} 55$ & 13 & N\\
+    49 & $49^7 \text{mod} 55$ & 14 & O\\
+    33 & $33^7 \text{mod} 55$ & 22 & W\\
+    52 & $52^7 \text{mod} 55$ & 13 & N\\
+    02 & $02^7 \text{mod} 55$ & 18 & S\\
+    00 & $00^7 \text{mod} 55$ & 0 & A\\
+    10 & $10^7 \text{mod} 55$ & 10 & K\\
+    17 & $17^7 \text{mod} 55$ & 8 & I\\
+    39 & $39^7 \text{mod} 55$ & 19 & T\\
+    08 & $08^7 \text{mod} 55$ & 2 & C\\
+    13 & $13^7 \text{mod} 55$ & 7 & H\\
+    09 & $09^7 \text{mod} 55$ & 4 & E\\
+    52 & $52^7 \text{mod} 55$ & 13 & N\\
+    02 & $02^7 \text{mod} 55$ & 18 & S\\
+    17 & $17^7 \text{mod} 55$ & 8 & I\\
+    52 & $52^7 \text{mod} 55$ & 13 & N\\
+    10 & $10^7 \text{mod} 55$ & 10 & K
+\end{tabular}
+\end{center}
+
+Message: \textbf{``Elon owns a kitchen sink"}
+
+\end{solution}
+
+\end{enumerate}
+\end{document}
+

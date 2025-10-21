@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 5}
+\author{Due: October 7th}
+\date{Released: September 30th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 7, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+\\
+
+Author(s): David Teng, Richard Zhao
+
+\clearpage
+
+\begin{enumerate}
+    \item \pt{15} For each of the following maps, where $f : \mathbb{Z}\times\mathbb{Z} \rightarrow \mathbb{Z}$, determine whether $f$ is: 
+
+\begin{itemize}
+    \item onto and one-to-one
+    \item onto but not one-to-one
+    \item not onto but one-to-one
+    \item neither onto nor one-to-one
+    \item not a function
+\end{itemize}
+
+
+\begin{enumerate}
+    \item[a)] $f(x, y) = x^4 + 2y$
+    \item[b)] $f(x, y) = y! -  x!$
+    \item[c)] $f(x, y) = 3x - 2y$
+    \item[d)] $f(x, y) = \frac{x}{y}$
+    \item[e)] $f(x, y) = |x| + y$
+\end{enumerate}
+
+\item \pt{9}Use the cashier's algorithm to make change using quarters, dimes, nickels, and pennies for the following amounts of money. You do not have to specifically show how you greedily formed change, but rather there are many ways to make this change and only the cashier's/greedy distribution will be accepted.
+\begin{enumerate}
+\item[a)] $37$ cents
+\item[b)] $68$ cents
+\item[c)] $124$ cents
+
+\end{enumerate}
+
+\item \pt{8} Imagine that a new coin that is worth exactly 12 cents has been introduced to our existing currency system. Prove or disprove the statements (use an example or counterexample):
+\begin{enumerate}
+    \item ``The cashier's algorithm using quarters, dimes, nickels,  12-cent coins, and pennies can produce coins change using fewer coins than the algorithm without the 12 cent coin."
+    
+    \item ``The cashier's algorithm using quarters, dimes, nickels,  12-cent coins, and pennies and will produce change using the fewest coins possible for all coin values."
+
+\end{enumerate}
+
+\item \pt{8} State whether the following is True or False and explain your reasoning for full credit:
+\begin{enumerate}
+    \item[a)] Given two positive integers $x$ and $c$, if $x + c < 10$, then $\lfloor \frac{x}{10} \rfloor = \lfloor \frac{x + c}{10} \rfloor$.
+    \item[b)] Given two functions $f(x)$ and $g(x)$, if $f(g(x))$ is defined, then $g(f(x))$ must also be defined.
+\end{enumerate}
+\newpage
+
+\item \pt{20} For each part below, determine whether:
+\begin{itemize}
+\item $f(x)$ is $O(g(x))$ 
+\item $g(x)$ is $O(f(x))$
+\item $f(x)$ is $O(g(x))$ and $g(x)$ is $O(f(x))$ \item none of the above.
+\end{itemize}
+\begin{enumerate}
+    \item $f(x) = 100x + \log(x)$, $g(x) = x + (\log(x))^2$
+    \item $f(x) = x^x$, $g(x) = x!$
+    \item $f(x) = \frac{1}{x}$, $g(x) = \log(x)$
+    \item $f(x) = x^{2.0} + x^{1.9} + x^{1.8}...$, $g(x) = x^{2.1}$
+\end{enumerate}
+
+\item \pt{10} List all numbers that you would compare 30 with while searching for the number 30 in the sequence \{1 7 8 20 24 29 30 41 44 63\} using the binary search algorithm. You must use the version of the algorithm that was shown in class. Write all values compared against in the order the comparisons occur including all inequality comparisons and the final equality check. Note that if you compare against a number more than once, you must list it again for each additional comparison. e.g $\{1, 3, 7, 3\}$
+
+\item \pt{15} Prove or disprove the following statements.
+\begin{enumerate}
+    \item[a)] $\lfloor 3x \rfloor = \lfloor x \rfloor + \lfloor x + \frac{1}{3} \rfloor + \lfloor x + \frac{2}{3} \rfloor$, for all $x \in \mathbb{R}$. (Hint: A real number $x$ can be written as $x = a+ b$ where $a \in \mathbb{Z}$ and $b \in [0,1)$.)
+    \item[b)] $\log(x)({x^3 + x^2+}{\frac{1}{x}})$ is O($x^4$). (If you choose to prove this statement, you must do so using witnesses).
+\end{enumerate}
+
+\item \pt{10} {Let $f$ and $g$ be functions such that:}
+\begin{itemize}
+    \item $f(x) = x \log(x^2)$, where $f:\mathbb{R}\to\mathbb{R}$
+    \item $g(x) = x^3$, where $g:\mathbb{R}\to\mathbb{R}$
+\end{itemize}
+\begin{enumerate}
+    \item Determine whether $f(x)$ is $O(g(x))$. Justify your answer using witnesses. If $f(x)$ is not $O(g(x))$, then show an argument using a proof by contradiction using witnesses as to why $f(x)$ is not $O(g(x))$.
+    \item Determine whether $g(x)$ is $O(f(x))$. Justify your answer using witnesses.If $g(x)$ is not $O(f(x))$, then show an argument using a proof by contradiction using witnesses as to why $g(x)$ is not $O(f(x))$.
+\end{enumerate}
+
+\item \pt{5} {Determine the time complexity of the following algorithm.}
+    \begin{algorithmic}
+    \State $sum \gets 0$
+    \For{$x =1$; $x \leq n$; $x=2x$}
+        \For{$y=0$; $y \leq x$; $y \gets y+1$} 
+            \State $sum \gets sum + y$
+        \EndFor
+    \EndFor
+    \end{algorithmic}
+\end{enumerate}
+
+\end{document}

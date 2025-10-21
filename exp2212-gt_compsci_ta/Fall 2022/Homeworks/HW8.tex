@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 8}
+\author{Due: November 3}
+\date{Released: October 27}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, November 3, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty, Rohan Bodla
+\newpage
+\begin{enumerate}
+
+
+\item Explain why we should never use $(n = 2q, e)$ as a public key in an RSA system. \pt{5}
+
+\item The following statement was put through a caeser cipher using a shift of 10. Decrypt the bolded portions of the statement: \pt{5}\
+\begin{center}
+    \textbf{``$x^2-1$ sc nsfscslvo li} 8 \textbf{pyb kvv zycsdsfo ynn sxdoqobc $x$."}
+\end{center}
+
+\item Using mathematical induction or a counterexample, prove or disprove the statement that was decrypted in question 2. \pt{25}
+
+\item Use mathematical induction to prove that the following statement is true for all integers $n$ greater than 1. \pt{25}
+\begin{center}
+    $n!$ $<$ $n^n$
+\end{center}
+
+\item Prove using mathematical induction that \[1^3 + 2^3 + \dots + n^3 = \left(\frac{n(n+1)}{2}\right)^2\] for all positive integers $n$. \pt{25}
+
+\item Decrypt the ciphertext message \textbf{``tjeefuxlx"} which was produced using the transposition cipher with blocks of three, based on the permutation $\sigma$ of $\{1, 2, 3\}$ defined by $\sigma(1) = 2$, $\sigma(2) = 3$ and $\sigma(3) = 1$. \pt{5}
+
+\item Suppose you intercept the message ``09 11 49 52 49 33 52 02 00 10 17 39 08 13 09 52 02 17 52 10” that has been encrypted using the RSA algorithm. You know that the public key used for encryption is (55, 23). Decrypt the message to determine what was said. Use the process shown in lecture to complete this problem. You must show all work. \pt{10}\\\\
+(\emph{Note}: If your calculator is unable to calculate $a^dmod n$ where $a$ is one of the numbers in the message above
+and $d$ is the decryption key, then you can just show $a^d mod n$ for each value of $a$. Note that this is the final step in decryption so you won’t show what the message actually was. You must still show the work for calculating the
+decryption key $d$).
+
+
+\end{enumerate}
+\end{document}
+

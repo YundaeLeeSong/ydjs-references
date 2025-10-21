@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 7}
+\author{Due: October 21th}
+\date{Released: October 14th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 21, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao
+\newpage
+\begin{enumerate}
+
+\item Identify the GCD of the following group of numbers.
+\begin{enumerate}
+    \item[a)] -294, 274
+    \item[b)] 126, 98
+    \item[c)] 1026, 954
+    \item[d)] $2^63^25^47^2$, $2^33^47$
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] 2
+        \item[b)] 14
+        \item[c)] 18
+        \item[d)] 504
+    \end{enumerate}
+    \end{solution}
+
+\item Identify the LCM of the following group of numbers.
+\begin{enumerate}
+    \item[a)] 77, 336
+    \item[b)] 240, 404
+    \item[c)] $6!, 6^6$
+    \item[d)] $3^45^611^2$, $2^45^313$
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}
+    \item[a)] $LCM(7^1 11^1, 2^4 3^1 7^1) = 3,696$
+    \item[b)] $LCM(2^4 3^1 5^1, 2^2 101^1) = 24,240$
+    \item[c)] $LCM(2^4 3^2 5^1, 2^6 3^6) = 233,280$
+    \item[d)] $2^4 3^4 5^6 11^2 13^1 = 31,853,250,000$
+\end{enumerate}
+\end{solution}
+
+\item Determine whether the following sets of integer are pairwise relatively prime.
+\begin{enumerate}
+    \item[a)] 14, 175, 39
+    \item[b)] 63, 50, 17, 115
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}
+    \item[a)] no, gcd(14, 175) = 7
+    \item[b)] no, gcd(50, 115) = 5
+\end{enumerate}
+\end{solution}
+
+\item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class.
+\begin{enumerate}
+    \item[a)] \textbf{gcd(123, 456)}
+    \item[b)] \textbf{gcd(420, 69)} %Akshay was here
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}
+    \item[a)]
+    \begin{tabular}{l|l|l||l|l|l}
+        Step Number & Initial $x$ & Initial $y$ & $r := x$ (mod $y$) & $x := y$ & $y := r$ \\ \hline
+        1 & 123 & 456 & 123 & 456 & 123\\
+        2 & 456 & 123 & 87 & 123 & 87\\
+        3 & 123 & 87 & 36 & 87 & 36\\
+        4 & 87 & 36 & 15 & 36 & 15\\
+        5 & 36 & 15 & 6 & 15 & 6\\
+        6 & 15 & 6 & 3 & 6 & 3\\
+        7 & 6 & 3 & 0 & 3 & 0\\
+        8 & \underline{3} & \underline{0}
+    \end{tabular}
+    gcd(123, 456) = 3
+    
+    \item[b)]
+    \begin{tabular}{l|l|l||l|l|l}
+        Step Number & Initial $x$ & Initial $y$ & $r := x$ (mod $y$) & $x := y$ & $y := r$ \\ \hline
+        1 & 420 & 69 & 6 & 69 & 6\\
+        2 & 69 & 6 & 3 & 6 & 3\\
+        3 & 6 & 3 & 0 & 3 & 0\\
+        4 & \underline{3} & \underline{0}
+    \end{tabular}
+    gcd(420, 69) = 3
+\end{enumerate}
+\end{solution}
+
+\item Find the smallest integer $k$ with $n$ distinct positive factors. For example, if $n = 4$, then $k = 6$ is the smallest integer with 4 distinct positive factors: 1, 2, 3, and 6.
+\begin{enumerate}
+    \item[a)] 3
+    \item[b)] 6
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}
+    \item[a)] $2^2 = 4$ (factors 1, 2, 4)
+    \item[b)] $2^2 3^1 = 12$ (factors 1, 2, 3, 4, 6, 12)
+\end{enumerate}
+\end{solution}
+
+\item Show your work by using the Chinese Remainder Theorem, find all values x such that:\\
+$x \equiv 3$ (mod 5) \\$x \equiv 2$ (mod 7)\\$x \equiv 7$ (mod 8)
+
+\begin{solution}\\
+$a_1 = 3, a_2 = 2, a_3 = 7$\\
+$m_1 = 5, m_2 = 7, m_3 = 8$\\
+$M = m_1 m_2 m_3 = 5 \cdot 7 \cdot 8 = 280$
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+    $a_i$ & $m_i$ & $\overline{m_i} = \frac{M}{m_i}$ & $u_i$ s.t. $\overline{m_i} u_i \equiv 1$ (mod $m_i$)\\ \hline
+    3 & 5 & 56 & $56 u_1 \equiv 1$ (mod 5) $\Rightarrow u_1 = 1$\\
+    2 & 7 & 40 & $40 u_2 \equiv 1$ (mod 7) $\Rightarrow u_2 = 3$\\
+    7 & 8 & 35 & $35 u_3 \equiv 1$ (mod 8) $\Rightarrow u_3 = 3$
+\end{tabular}
+\end{center}
+
+$x \equiv \sum_i a_i \overline{m_i} u_i$ (mod $M$)
+
+$\sum_i a_i \overline{m_i} u_i = 3 \cdot 56 \cdot 1 + 2 \cdot 40 \cdot 3 + 7 \cdot 35 \cdot 3 = 1143$
+
+$x \equiv 1143$ (mod 280)\\
+$x \equiv 23$ (mod 280)
+
+\end{solution}
+
+\item If $g = gcd(a, b)$ and $x = ab$, where $a$ and $b$ are positive integers, prove or disprove that $g^2 | x$.
+\begin{solution}
+I proceed with a direct proof.
+
+\begin{center}
+\begin{tabular}{l|l}
+    Statement & Reasoning \\
+    1) $g = gcd(a,b)$ & given\\ \hline
+    2) $a = ng$ for $n \in \mathbb{Z}^+$ & definition of gcd\\
+    3) $b = mg$ for $m \in \mathbb{Z}^+$ & definition of gcd\\
+    4) $x = ab$ & given\\
+    5) $x = (ng)(mg)$ & substitute 2) and 3) into 4)\\
+    6) $x = (nm)g^2$ & factor $nm$ from 5)\\
+    7) $k = nm$ for $k \in \mathbb{Z}$ & closure of multiplication in integers\\
+    8) $x = kg^2$ & substitute 7) into 6)\\
+    9) $g^2 | x$ & definition of divisibility
+\end{tabular}
+\end{center}
+
+I have shown by direct proof that given positive integers $a$ and $b$, if $g = gcd(a, b)$ and $x = ab$, then $g^2 | x. \square$
+\end{solution}
+
+% \item Given that $d | a$, and $d | b$, prove or disprove that $d | gcd(a, b)$.
+
+
+\end{enumerate}
+\end{document}
+
+%    \item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class.
+%\begin{enumerate}
+%    \item[a)] \textbf{gcd(123, 456)}
+%    \item[b)] \textbf{gcd(64,46)}
+%\end{enumerate}
+
+% \item Find the least integer with n distinct positive factors where n is below. For example, if n = 4, then the solution is 6 because 1,2,3,6 are distinct positive factors of 6 and there are n=4 of them.
+
+% \item Given that $d | a$, and $d | b$, prove or disprove that $d | gcd(a, b)$.
+
+%    \item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class.
+%\begin{enumerate}
+%    \item[a)] \textbf{gcd(123, 456)}
+%    \item[b)] \textbf{gcd(64,46)}
+%\end{enumerate}

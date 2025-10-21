@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 10}
+\author{Due: November 11}
+\date{Released: November 18}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, November 18, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty, and Rohan Bodla
+\newpage
+\begin{enumerate}
+
+\item Ternary strings consists of digits: 0, 1, 2.  Give a recursive definition for the set of ternary strings that are palindromes such that the string consists of an odd number of 1s. \pt{10}
+
+\item Recursively define the set of binary strings with more 0s than 1s. \pt{10}
+
+\item How many ternary strings of length $n$ have either 3 consecutive "0"s or 4 consecutive "1"s? (Ternary strings are strings consisting of only the characters 0, 1, and 2. Strings with more than 3 consecutive "0"s or more than 4 consecutive "1"s are valid). \pt{10}
+
+\item Recursively define the sequence $a_n = 3n!$ for all $n \in \mathbb{Z}^{\geq 1}$. \pt{10}
+
+\item Recursively define the sequence $a_n = 3 * 6^n$ for $n \in \mathbb{Z}^{\geq 1}$. \pt{10}
+
+\item Find $f(3), f(4)$, and $f(5)$ for each of the following recursive definitions: \pte{10}
+\begin{enumerate}
+    \item[a)] $f(0) = 1$\\
+    $f(1) = 2$\\
+    $f(n + 1) = {2f(n)}^2 + 3f(n - 1)$
+    \item[b)] $f(0) = 2$\\
+    $f(1) = 3$\\
+    $f(n+1) = \frac{f(n)}{f(n-1)}$
+\end{enumerate}
+
+\item Recursively define a function $F(x)$ that takes in a string of numbers and lowercase letters and finds the sum of the number of vowels and the number of even digits. Do not consider $y$ to be a vowel. \pt{10}
+
+\item Use a tree diagram to determine the number of ways to arrange the letters $a$, $b$, $c$, and $d$ such that $c$ comes before $b$ or $a$ comes after $d$. \pt{10}
+
+\item If you have to put $n + 1$ pigeons into $n$ holes, then you would have to put at least two pigeons into the same hole. What is the result if you place $3m^2n + 1$ pigeons into $n$ holes? \pt{10}
+
+%\item For future semesters:
+% \item Show that if $a_1$, $a_2$, ... , $a_n$ are n distinct real numbers, exactly n - 1 multiplications are used to compute the product of these n numbers no matter how parentheses are inserted into their product.
+
+% \item Show that whenever 25 girls and 25 boys are seated around a circular table there is always a person both of whose neighbors are boys.
+
+\end{enumerate}
+\end{document}
+

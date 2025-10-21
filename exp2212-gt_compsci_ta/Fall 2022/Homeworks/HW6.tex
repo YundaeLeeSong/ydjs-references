@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+%Template authors: Frederic Faulkner, Akshay Kulkarni
+
+\title{CS 2050 Fall 2022 Homework 6}
+\author{Due: October 14th}
+
+\date{Released: October 7th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 14, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao
+
+\clearpage
+
+\begin{enumerate}
+
+    \item
+    {Determine the time complexity of the following algorithm where $n$ is the input size.} \pt{4}
+    \begin{algorithmic}
+    \State $sum := 0$
+    \State $i:=1$
+    \While{$i<10$} 
+        \State sum += i
+        \State i += sum
+        \EndWhile
+    \State $j := i$
+    \While{ $j<5n$}
+        \State j *= 2
+        \State sum += 1
+        \EndWhile
+    \end{algorithmic}
+    
+    \item
+    {Determine the time complexity of the following algorithm where $n$ is the input size.} \pt{4}
+    \begin{algorithmic}
+    \State $sum := 0$
+    \State $i:=1$
+    \For{$i:=1$ to $n$} 
+        \State $sum *= i$
+    \EndFor
+    \State $j := i$
+    \While{ $j<10$}
+        \State j += 1
+        \State sum += j
+        \State j *= 2
+    \EndWhile
+    \end{algorithmic}
+
+    \item Find the prime factorization of each of the following integers. \pte{4}
+\begin{enumerate}
+    \item[a)] $46^317^415^2$
+    \item[b)] 314
+    \item[c)] 7!
+\end{enumerate}
+
+    \item Approximate the number of prime numbers whose logarithms under base 2 do not exceed 7. Round to the nearest integer. Show your work. \pt{4}
+
+    \item Convert the decimal expansion for each of the following integers into a binary expansion. Show your work for full credit. \pte{4}
+\begin{enumerate}
+    \item[a)] 195
+    \item[b)] 318
+\end{enumerate}
+
+    \item Convert the binary expansion of each of these integers into an octal, hexadecimal and decimal expansion. Show your work for full credit. \pte{4}
+\begin{enumerate}
+    \item[a)] $(11000110)_2$
+    \item[b)] $(1011101)_2$
+\end{enumerate}
+
+    \item Convert the hexadecimal expansion for each of the following integers into a binary expansion. Show your work for full credit. \pte{4}
+\begin{enumerate}
+    \item[a)] $(CE9A6)_{16}$
+    \item[b)] $(BA03)_{16}$
+\end{enumerate}
+
+\item Evaluate the following. Note: a calculator is not needed for these problems, and similar difficulty problems
+may appear on the exam (where a calculator is not permitted). \pte{4}
+\begin{enumerate}
+    \item $(41^2$ mod 37) mod 9
+    \item $(8^3$ mod $14)^2$ mod 19
+    \item $(25^2$ mod 5) mod 73
+    \item $((-6)^3$ mod $11)^4$ mod 5
+\end{enumerate}
+
+\item Suppose $a \equiv 2 \pmod{15}$ and $b \equiv 9 \pmod{15}$ for $a,b \in \mathbb{Z}$. Find the integer $c$ such that $0 \leq c \leq 14$ in
+each of the following modular congruences. Note: a calculator is not needed for these problems, and similar
+difficulty problems may appear on the exam (where a calculator is not permitted). \pte{4}
+\begin{enumerate}
+    \item $c \equiv 11b \pmod{15}$
+    \item $ c \equiv 3a +3b \pmod{15}$
+    \item $c \equiv a^3 +2b^2 \pmod{15}$
+    \item $c \equiv (8a)^{2000} \pmod{15}$
+\end{enumerate}
+
+\item Prove that if $a$ not divisible by 3 for some $a \in \mathbb{Z}$, then $(a+1)(a+2)$ is divisible by 3. (You must use a valid proof technique with an intro, body, conclusion.) \pt{10}
+
+\item Prove or disprove that if $a + b$ is odd and $a|b$ for $a,b \in \mathbb{Z}$, then $a$ is odd. \pt{10}
+\begin{itemize}
+    \item If proving, then you must use a valid proof technique with an intro, body, conclusion.  
+    \item If disproving, you must provide a valid counterexample and explain why the counterexample disproves the theorem
+    
+\end{itemize}
+
+
+\end{enumerate}
+\end{document}

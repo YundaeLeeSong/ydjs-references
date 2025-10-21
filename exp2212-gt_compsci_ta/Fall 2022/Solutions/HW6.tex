@@ -1,0 +1,297 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 6}
+\author{Due: October 14th}
+\date{Released: October 7th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 14, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): Prisha Sheth, Samuel Zhang
+
+\clearpage
+
+\begin{enumerate}
+
+\item
+{Determine the time complexity of the following algorithm where $n$ is the input size.}
+\begin{algorithmic}
+\State $sum := 0$
+\State $i:=1$
+\While{$i<10$} 
+    \State sum += i
+    \State i += sum
+    \EndWhile
+\State $j := i$
+\While{ $j<5n$}
+    \State j *= 2
+    \State sum += 1
+    \EndWhile
+\end{algorithmic}
+    \begin{solution}
+    Time Complexity: $O(\log{(n)})$
+    
+    First while loop is $O(1)$, second while loop runs $\log{(5n)}$ times.
+    \end{solution}
+
+\item
+{Determine the time complexity of the following algorithm where $n$ is the input size.}
+\begin{algorithmic}
+\State $sum := 0$
+\State $i:=1$
+\For{$i:=1$ to $n$} 
+    \State $sum *= i$
+\EndFor
+\State $j := i$
+\While{ $j<10$}
+    \State j += 1
+    \State sum += j
+    \State j *= 2
+\EndWhile
+\end{algorithmic}
+    \begin{solution}
+    Time Complexity: $O(n)$
+    
+    First while loop is $O(n)$, second while loop is $O(1)$.
+    \end{solution}
+
+\item Find the prime factorization of each of these integers.
+\begin{enumerate}
+    \item[a)] 42069
+    \item[b)] 314
+    \item[c)] 7!
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] $3 \cdot 37 \cdot 379$
+        \item[b)] $2 \cdot 157$
+        \item[c)] $2^4 \cdot 3^2 \cdot 5 \cdot 7$
+    \end{enumerate}
+    \end{solution}
+
+\item Approximate the number of prime numbers whose logarithms under base 2 do not exceed 7. Show your work.
+    \begin{solution}
+    $\Pi(x)$ is the number of prime numbers $\leq x$.\\
+    $\lim_{x \rightarrow \infty} \frac{\Pi(x)}{x \div ln(x)} = 1$
+    $\Rightarrow \lim_{x \rightarrow \infty} \Pi(x) = \frac{x}{ln(x)}$\\
+    $log_2(n) \leq 7 \Rightarrow n \leq 128$\\
+    $\Pi(128) \approx \frac{128}{ln(128)}$\\
+    $\Pi(128) \approx 26$
+    \end{solution}
+
+\item Convert the decimal expansion for each of the following integers into a binary expansion. Show your work for full credit.
+\begin{enumerate}
+    \item[a)] 195
+    \item[b)] 318
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] $195 = (1100 0011)_2$\\
+        $195 - 2^7 = 67$\\
+        $67 - 2^6 = 3$\\
+        $3 - 2^1 = 1$\\
+        $1 - 2^0 = 0$
+        \item[b)] $318 = (1 0011 1110)_2$\\
+        $318 - 2^8 = 62$\\
+        $62 - 2^5 = 30$\\
+        $30 - 2^4 = 14$\\
+        $14 - 2^3 = 6$\\
+        $6 - 2^2 = 2$\\
+        $2 - 2^1 = 0$
+    \end{enumerate}
+    \end{solution}
+
+\item Convert the binary expansion of each of these integers into an octal, hexadecimal and decimal expansion. Show your work for full credit.
+\begin{enumerate}
+    \item[a)] $(11000110)_2$
+    \item[b)] $(1011101)_2$
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] $(11000110)_2$
+        \begin{itemize}
+            \item Octal: $(011\:000\:110)_2 = (306)_8$
+            \item Hexadecimal: $(1100\:0110)_2 = (C6)_{16}$
+            \item Decimal: $2^7 + 2^6 + 2^2 + 2^1 = 198$
+        \end{itemize}
+        \item[b)] $(1011101)_2$
+        \begin{itemize}
+            \item Octal: $(001\:011\:101)_2 = (135)_8$
+            \item Hexadecimal: $(0101\:1101)_2 = (5D)_{16}$
+            \item Decimal: $2^6 + 2^4 + 2^3 + 2^2 + 2^0 = 93$
+        \end{itemize}
+    \end{enumerate}
+    \end{solution}
+
+\item Convert the hexadecimal expansion for each of the following integers into a binary expansion. Show your work for full credit.
+\begin{enumerate}
+    \item[a)] $(CE9A6)_{16}$
+    \item[b)] $(BA03)_{16}$
+\end{enumerate}
+    \begin{solution}
+        \item[a)] $(1100\:1110\:1001\:1010\:0110)_2$
+        \item[b)] $(1011\:1010\:0000\:0011)_2$
+    \end{solution}
+
+\item Evaluate the following. Note: a calculator is not needed for these problems, and similar difficulty problems
+may appear on the exam (where a calculator is not permitted).
+\begin{enumerate}
+    \item $(41^2$ mod 37) mod 9
+    \item $(8^3$ mod $14)^2$ mod 19
+    \item $(25^2$ mod 5) mod 73
+    \item $((-6)^3$ mod $11)^4$ mod 5
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] 7
+        \item[b)] 7
+        \item[c)] 0
+        \item[d)] 1
+    \end{enumerate}
+    \end{solution}
+
+%    \item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class.
+%\begin{enumerate}
+%    \item[a)] \textbf{gcd(123, 456)}
+%    \item[b)] \textbf{gcd(64,46)}
+%\end{enumerate}
+
+\item Suppose that a and b are integers. $a \equiv 2 \pmod{15}$ and $b \equiv 9 \pmod{15}$. Find the integer c such that $0 \leq c \leq 14$ in
+each of the following modular congruences. Note: a calculator is not needed for these problems, and similar
+difficulty problems may appear on the exam (where a calculator is not permitted).
+\begin{enumerate}
+    \item $c \equiv 11b \pmod{15}$
+    \item $ c \equiv 3a +3b \pmod{15}$
+    \item $c \equiv a^3 +2b^2 \pmod{15}$
+    \item $c \equiv (8a)^{2000} \pmod{15}$
+\end{enumerate}
+    \begin{solution}
+    \begin{enumerate}
+        \item[a)] $c = 9$
+        \item[b)] $c = 3$
+        \item[c)] $c = 5$
+        \item[d)] $c = 1$
+    \end{enumerate}
+    \end{solution}
+
+\item Prove that if a is an integer not divisible by 3, then (a + 1)(a + 2) is divisible by 3. (You must use a valid proof technique with an intro, body, conclusion.)
+
+\begin{solution}
+
+I proceed with a direct proof to show that if a is an integer not divisible by 3, then (a + 1)(a + 2) is divisible by 3. Assume a is an integer that is not divisible by 3. 
+
+There are two cases: $a = 3k + 1$ and $a = 3k + 2$ where $k \in \mathbb{Z}$
+
+Case 1: \\
+\begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $a = 3k + 1$ where $k \in \mathbb{Z}$ & definition of not divisible by 3 \\
+    2) $(a + 1)(a + 2) = (3k + 1 + 1)(3k + 1 + 2)$ & Substitution of (1) into original equation \\
+    3) $(a + 1)(a + 2) = (3k + 2)(3k + 3)$ & Simplification of (2) \\
+    4) $(a + 1)(a + 2) = 9k^2 + 9k + 6k + 6$ & Expansion of (3) \\
+    5) $(a + 1)(a + 2) = 9k^2 + 15k + 6$ & Simplification of (4) \\
+    6) $(a + 1)(a + 2) = 3(3k^2 + 5k + 2)$ & Factor out 3 in (5) \\
+    7) $l = 3k^2 + 5k + 2$ & Closure of multiplication and addition of integers \\
+    8) $(a + 1)(a + 2) = 3l$ & Substitution of (7) into (6) \\
+    9) $(a + 1)(a + 2)$ is divisible by 3 & Definition of divisibility \\
+\end{tabular}
+
+Case 2: \\
+\begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $a = 3k + 2$ where $k \in \mathbb{Z}$ & definition of not divisible by 3 \\
+    2) $(a + 1)(a + 2) = (3k + 2 + 1)(3k + 2 + 2)$ & Substitution of (1) into original equation \\
+    3) $(a + 1)(a + 2) = (3k + 3)(3k + 4)$ & Simplification of (2) \\
+    4) $(a + 1)(a + 2) = 9k^2 + 12k + 9k + 12$ & Expansion of (3) \\
+    5) $(a + 1)(a + 2) = 9k^2 + 21k + 12$ & Simplification of (4) \\
+    6) $(a + 1)(a + 2) = 3(3k^2 + 7k + 4)$ & Factor out 3 in (5) \\
+    7) $l = 3k^2 + 7k + 4$ & Closure of multiplication and addition of integers \\
+    8) $(a + 1)(a + 2) = 3l$ & Substitution of (7) into (6) \\
+    9) $(a + 1)(a + 2)$ is divisible by 3 & Definition of divisibility \\
+\end{tabular}
+
+Therefore I have shown using a direct proof that whenever an integer a is not divisible by 3, then (a + 1)(a + 2) is divisible by 3. 
+
+\end{solution}
+
+\item Prove or disprove that if a and b are integers, a divides b, and a + b is odd, then a is odd. 
+\begin{itemize}
+    \item If proving, then you must use a valid proof technique with an intro, body, conclusion.  
+    \item If disproving, you must provide a valid counterexample and explain why the counterexample disproves the theorem
+    \begin{solution}
+    I proceed with a proof by contradiction. I will show that there is a contradiction when it is assumed that the hypothesis is true and the conclusion is false. Assume that $a$ divides $b$ and $a + b$ is odd, and assume that $a$ is not odd.
+    
+    \begin{tabular}{l|l}
+        Statement & Reasoning \\ \hline
+        1) $a$ divides $b$ & given \\
+        2) $b = sa$ where $s \in \mathbb{Z}$ & definition of $a$ divides $b$ \\
+        3) $a$ is even & given \\
+        4) $a = 2k$ where $k \in \mathbb{Z}$ & definition of even \\
+        5) $a + b = a + sa$ & add $a$ to both sides of (2) \\
+        6) $a + b = 2k + 2sk$ & substitute (4) into (5) \\
+        7) $a + b = 2(k + sk)$ & factor 2 from RHS of (6) \\
+        8) $t = k + sk$ where $t \in \mathbb{Z}$ & closure of addition and multiplication of integers \\
+        9) $a + b = 2t$ & substitute (8) into (7) \\
+        10) $a + b$ is even & definition of even on (9) \\
+        11) $a + b$ is odd & given
+    \end{tabular}
+    
+    There is a contradiction in lines (10) and (11) because $a + b$ cannot be odd and even at the same time. The proof by contradiction is complete. Therefore, if $a$ divides $b$ and $a + b$ is odd, then $a$ must be odd. $\square$
+    \end{solution}
+    
+\end{itemize}
+
+
+\end{enumerate}
+\end{document}
+
+%    \item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class.
+%\begin{enumerate}
+%    \item[a)] \textbf{gcd(123, 456)}
+%    \item[b)] \textbf{gcd(64,46)}
+%\end{enumerate}

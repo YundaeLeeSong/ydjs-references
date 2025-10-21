@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 7}
+\author{Due: October 21th}
+\date{Released: October 14th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 21, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+
+Author(s): David Teng, Richard Zhao
+\newpage
+\begin{enumerate}
+
+\item Identify the GCD of the following group of numbers. \pte{4}
+\begin{enumerate}
+    \item[a)] -294, 274
+    \item[b)] 126, 98
+    \item[c)] 1026, 954
+    \item[d)] $2^63^25^47^2$, $2^33^47$
+\end{enumerate}
+
+\item Identify the LCM of the following group of numbers. \pte{4}
+\begin{enumerate}
+    \item[a)] 77, 336
+    \item[b)] 240, 404
+    \item[c)] $6!, 6^6$
+    \item[d)] $3^45^611^2$, $2^45^313$
+\end{enumerate}
+
+\item Determine whether the following sets of integer are pairwise relatively prime. \pte{6}
+\begin{enumerate}
+    \item[a)] $\{14, 175, 39\}$
+    \item[b)] $\{63, 50, 17, 115\}$
+\end{enumerate}
+
+\item Use the Euclidean algorithm to find the following values. You must clearly show all steps of your work using the Euclidean algorithm taught in class. \pte{8}
+\begin{enumerate}
+    \item[a)] $\gcd(123, 456)$
+    \item[b)] $\gcd(420, 69)$ %Akshay was here
+\end{enumerate}
+
+\item Find the smallest integer $k$ with $n$ distinct positive factors. For example, if $n = 4$, then $k = 6$ is the smallest integer with 4 distinct positive factors: 1, 2, 3, and 6. \pte{8}
+
+\begin{enumerate}
+    \item[a)] 3
+    \item[b)] 6
+\end{enumerate}
+
+\item Show your work by using the Chinese Remainder Theorem, find all values x such that: \pt{12}\\
+$x \equiv 3$ (mod 5) \\$x \equiv 2$ (mod 7)\\$x \equiv 7$ (mod 8) 
+
+\item If $g = \gcd(a, b)$ and $x = ab$, where $a$ and $b$ are positive integers, prove or disprove that $g^2 | x$. \pt{12}
+
+\end{enumerate}
+\end{document}
+

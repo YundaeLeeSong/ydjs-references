@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{algpseudocode}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 5}
+\author{Due: October 7th}
+\date{Released: September 30th}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item[i.] This assignment is due on \textbf{11:59 PM EST, Friday, October 7, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam.
+    \item[ii.] You will submit your assignment on \textbf{Gradescope}. Shorter answers may be entered directly into response fields, however longer answer must be recorded on a typeset (e.g. using \LaTeX) or \emph{neatly} written PDF.
+    \item[iii.] Ensure that all questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+    \item[iv.] You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.
+    \item[v.] Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\end{enumerate}
+\\
+
+Author(s): David Teng, Richard Zhao
+
+\clearpage
+
+\begin{enumerate}
+    \item \pt{15} For each of the following maps, where $f : \mathbb{Z}\times\mathbb{Z} \rightarrow \mathbb{Z}$, determine whether $f$ is: 
+
+\begin{itemize}
+    \item onto and one-to-one
+    \item onto but not one-to-one
+    \item not onto but one-to-one
+    \item neither onto nor one-to-one
+    \item not a function
+\end{itemize}
+
+
+\begin{enumerate}
+    \item[a)] $f(x, y) = x^4 + 2y$\\ Onto but not one to one
+    \item[b)] $f(x, y) = y! -  x!$\\ Not a function
+    \item[c)] $f(x, y) = 3x - 2y$\\ Onto but not one to one
+    \item[d)] $f(x, y) = \frac{x}{y}$\\ Not a function
+    \item[e)] $f(x, y) = |x| + y$\\ Onto but not one to one
+\end{enumerate}
+
+\item \pt{9}Use the cashier's algorithm to make change using quarters, dimes, nickels, and pennies for the following amounts of money. You do not have to specifically show how you greedily formed change, but rather there are many ways to make this change and only the cashier's/greedy distribution will be accepted.
+\begin{enumerate}
+\item[a)] $37$ cents\\1 Quarter, 1 Dime, 2 Pennies
+\item[b)] $68$ cents\\2 Quarters, 1 Dime, 1 Nickel, 3 Pennies
+\item[c)] $124$ cents\\4 Quarters, 2 Dimes, 4 Pennies
+
+\end{enumerate}
+
+\item \pt{8} Imagine that a new coin that is worth exactly 12 cents has been introduced to our existing currency system. Prove or disprove the statements (if disproving, you must provide a counterexample and explain why that is a counterexample):
+\begin{enumerate}
+    \item ``The cashier's algorithm using quarters, dimes, nickels,  12-cent coins, and pennies and can produce coins change using fewer coins than the algorithm without the 12 cent coin."\\\\
+    When making change for 12 cents a single 12 cent coin will be optimal using the cashiers. Without it would take a dime and 2 pennies
+    \item ``The cashier's algorithm using quarters, dimes, nickels,  12-cent coins, and pennies and will produce change using the fewest coins possible for all coin values."\\\\
+    Change for 20 cents without using cashier's is 2 dimes. Using cashier's would involve 1 12 cent coin, 1 nickel, and 3 pennies which is much less optimal
+
+\end{enumerate}
+
+\item \pt{8} State whether the following is True or False and explain your reasoning for full credit:
+\begin{enumerate}
+    \item[a)] Given two positive integers $x$ and $c$, if $x + c < 10$, then $\lfloor \frac{x}{10} \rfloor = \lfloor \frac{x + c}{10} \rfloor$.\\
+    True, since x + c is < 10 x must be less than 10 for both to be positive. This means that x + c / 10 and x / 10 are less than 1. Therefore the floor of both must evaluate to 0.
+    \item[b)] Given two functions $f(x)$ and $g(x)$, if $f(g(x))$ is defined, then $g(f(x))$ must also be defined.\\
+    False, depending on the domain and range chosen for f(x) and for g(x) and locations where the function can be undefined, f(g(x)) may be defined while g(f(x)) is not.
+\end{enumerate}
+
+\item \pt{20} For each part below, determine whether:
+\begin{itemize}
+\item $f(x)$ is $O(g(x))$ 
+\item $g(x)$ is $O(f(x))$
+\item $f(x)$ is $O(g(x))$ and $g(x)$ is $O(f(x))$ \item none of the above.
+\end{itemize}
+\begin{enumerate}
+    \item $f(x) = 100x + \log(x)$, $g(x) = x + (\log(x))^2$
+    \\$f(x)$ is $O(g(x))$ and $g(x)$ is $O(f(x))$
+    \item $f(x) = x^x$, $g(x) = x!$
+    \\$g(x)$ is $O(f(x))$
+    \item $f(x) = \frac{1}{x}$, $g(x) = \log(x)$
+    \\ $f(x)$ is $O(g(x))$ 
+    \item $f(x) = x^{2.0} + x^{1.9} + x^{1.8}...$, $g(x) = x^{2.1}$
+    \\$f(x)$ is $O(g(x))$ 
+\end{enumerate}
+
+\item \pt{10} List all numbers that you would compare 30 with while searching for the number 30 in the sequence \{1 7 8 20 24 29 30 41 44 63\} using the binary search algorithm. You must use the version of the algorithm that was shown in class. Write all values compared against in the order the comparisons occur including all inequality comparisons and the final equality check. Note that if you compare against a number more than once, you must list it again for each additional comparison. e.g $\{1, 3, 7, 3\}$
+\\\\ Comparisons are 29, 41, 30, 29, 30
+
+\item \pt{15} Prove or disprove the following statements.
+\begin{enumerate}
+    \item[a)] $\lfloor 3x \rfloor = \lfloor x \rfloor + \lfloor x + \frac{1}{3} \rfloor + \lfloor x + \frac{2}{3} \rfloor$, for all $x \in \mathbb{R}$. (Hint: A real number $x$ can be written as $x = a+ b$ where $a \in \mathbb{Z}$ and $b \in [0,1)$.)
+    \\\\Accepting a two column formal proof or written paragraph proof for this question.\\
+    We are given that x is a real number, this means that x can be rewritten as a + b where a is an integer and b is between 0 inclusive and 1 exclusive. Then, the left hand side can be rewritten as $\lfloor 3a + 3b \rfloor$ which simplifies to 3a + $\lfloor 3b \rfloor$ since a is an integer. For the right hand side we have 3 cases. Case 1: b is between 0 and 1/3, Case 2: b is between 1/3 and 2/3, and Case 3: b is between 2/3 and 1.\\
+    Case 1: When b is between 0 and 1/3, 3b will be less than 1 therefore the left hand side will evaluate to 3a. The right hand side can be rewritten as $\lfloor a + b \rfloor + \lfloor a + b + 1/3\rfloor + \lfloor a + b + 2/3\rfloor$. Because a is an integer, we can rewrite the statement as 3a + $\lfloor b \rfloor + \lfloor b + 1/3\rfloor + \lfloor b + 2/3\rfloor$. Because b is less than 1/3 in case 1, b + 1/3 will be less than 1 and b + 2/3 will be less than 1. Therefore evaluating the floor functions would give us 3a + 0 + 0 + 0 or 3a.\\
+    
+    Case 2: When b is between 1/3 and 2/3, 3b will be greater than or equal to 1 but less than 2. Therefore the left hand side will evaluate to 3a + 1. The right hand side can be rewritten as $\lfloor a + b \rfloor + \lfloor a + b + 1/3\rfloor + \lfloor a + b + 2/3\rfloor$. Because a is an integer, we can rewrite the statement as 3a + $\lfloor b \rfloor + \lfloor b + 1/3\rfloor + \lfloor b + 2/3\rfloor$. Because b is less than 2/3 in case 2, b + 1/3 will be less than 1 and b + 2/3 will greater than 1 but less than 2. Therefore evaluating the floor functions would give us 3a + 0 + 0 + 1 or 3a + 1.\\
+    
+    Case 3: When b is between 2/3 and 1, 3b will be greater than or equal to 2 but less than 3. Therefore the left hand side will evaluate to 3a + 2. The right hand side can be rewritten as $\lfloor a + b \rfloor + \lfloor a + b + 1/3\rfloor + \lfloor a + b + 2/3\rfloor$. Because a is an integer, we can rewrite the statement as 3a + $\lfloor b \rfloor + \lfloor b + 1/3\rfloor + \lfloor b + 2/3\rfloor$. Because b is less than 1 but greater than 2/3 in case 3, b + 1/3 will be greater than 1 and less than 2 and b + 2/3 will greater than 1 but less than 2. Therefore evaluating the floor functions would give us 3a + 0 + 1 + 1 or 3a + 2.\\
+    For each case we can see that the LHS and RHS are equivalent to one another therefore the statement is true.
+    \item[b)] $\log(x)({x^3 + x^2+}{\frac{1}{x}})$ is O($x^4$). (If you choose to prove this statement, you must do so using witnesses).\\
+    \\$log(x)x^3 + log(x)x^2 + 1/x * $ log$(x)$\\
+    $log(x)x^3 < 1 * x^4$ for all x > 1\\
+    $log(x)x^2 < 1 * x^4$ for all x > 1\\
+    $1/x log(x) < 1 * x^4$ for all x > 1\\
+    Therefore $\log(x)({x^3 + x^2+}{\frac{1}{x}})$ is O($x^4$) with witnesses C = 3 and k = 1.
+\end{enumerate}
+
+\item \pt{10} {Let $f$ and $g$ be functions such that:}
+\begin{itemize}
+    \item $f(x) = x \log(x^2)$, where $f:\mathbb{R}\to\mathbb{R}$
+    \item $g(x) = x^3$, where $g:\mathbb{R}\to\mathbb{R}$
+\end{itemize}
+\begin{enumerate}
+    \item Determine whether $f(x)$ is $O(g(x))$. Justify your answer using witnesses. If $f(x)$ is not $O(g(x))$, then show an argument using a proof by contradiction using witnesses as to why $f(x)$ is not $O(g(x))$.
+    \\$x log(x^2) < 1 * x^3$ for all $x > 1$
+    \\ Therefore f(x) is O(g(x)) with witnesses C = 1 and k = 1
+    \item Determine whether $g(x)$ is $O(f(x))$. Justify your answer using witnesses.If $g(x)$ is not $O(f(x))$, then show an argument using a proof by contradiction using witnesses as to why $g(x)$ is not $O(f(x))$.
+    \\\\I proceed with a proof by contradiction. We assume g(x) to be O(f(x)).\\Then $x log(x^2) * C > x^3$ for some constant C for all x greater than or equal to an integer k. Dividing $x log(x^2)$ from both sides gives $x^3 / x log(x^2) < C$. Because x can be any positive integer and $x^3$ grows faster than $x log(x^2)$ the left hand side is always increasing. No matter what constant value is chosen for C, because x is increasing to infinity, there will always be an x value greater than any chosen C. This is a contradiction with our initial assumption and therefore g(x) is not O(f(x))
+\end{enumerate}
+
+\item \pt{5} {Determine the time complexity of the following algorithm.}
+    \begin{algorithmic}
+    \State $sum \gets 0$
+    \For{$x =1$; $x \leq n$; $x=2x$}
+        \For{$y=0$; $y \leq x$; $y \gets y+1$} 
+            \State $sum \gets sum + y$
+        \EndFor
+    \EndFor
+    \end{algorithmic}
+\\Explaination not required. Correct answer is O(n) but also accepting O(n log n)
+\end{enumerate}
+
+\end{document}
