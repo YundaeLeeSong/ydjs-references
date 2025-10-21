@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 88541a529c234a54fa8d310a1de12495
+  m_SerializeEntries:
+  - m_GUID: 22fcefd2fbfbfd645bf2dba0bfa7d8fe
+    m_Address: Assets/SFXs/sfx01_pickup.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 97aa3dd169e866c4eac258f53990de78
+    m_Address: Assets/SFXs/sfx02_explosion.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d11f70f2bf306644bd2391b217f4232
+    m_Address: Assets/SFXs/sfx03_laser_shot.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 53a09185c3c9a184c85c66b836a343d2
+    m_Address: Assets/SFXs/sfx04_magic_spell.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b96dd29de32e814c85f118cd14a2471
+    m_Address: Assets/SFXs/sfx05_power_up.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efe3e789d4af5aa4ea00dc1dc9f3d8fc
+    m_Address: Assets/SFXs/sfx06_tv_noise.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c8447e23951d6bc4d8a5392b6b10c67c
+    m_Address: Assets/SFXs/sfx07_water_drop.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c704b858236588141a7f41f5691b01ea
+    m_Address: Assets/SFXs/sfx08_ding_dong.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7a37adce8f9edc45b42addbfe68cb04
+    m_Address: Assets/SFXs/sfx09_electric_spark.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5fc8546bfd9c2d14ba010fa6be3aee59
+    m_Address: Assets/SFXs/sfx10_wood_hit.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0fd7a9553d045a64298077fe4b071d65
+    m_Address: Assets/SFXs/sfx11_mouse_click.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a56024040ae1e94dba3d3f9a8791330
+    m_Address: Assets/Sprites/narrative2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 981a309642360f34d9390d0895a82db8
+    m_Address: Assets/Sprites/narrative3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 809f5b582fd144a44b2f8104fbfeb4b3
+    m_Address: Assets/Texts/narrative1.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 16b295a0fa11c3340870394075bd10ab
+    m_Address: Assets/Texts/narrative2.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7291359ed96a62d44aa77e662f833e4a
+    m_Address: Assets/Texts/narrative3.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ecbb56d717e5f2429a01eb5c2d47a87
+    m_Address: Assets/BGMs/bgm01_start.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e4cc90fb987cfcc45a9a5c153e8cfed5
+    m_Address: Assets/BGMs/bgm02_ingame.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fb1237dad2e2dbd45b0407fc8d2b05cb
+    m_Address: Assets/BGMs/bgm03_end.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4444773173f2cf44a1a344219393a1d
+    m_Address: Assets/Sprites/narrative1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 61fb13cd5b029c142a4d15738185aed4
+    m_Address: Assets/Texts/narrative4.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 82a0d160ba1a53d44a608bc1a0b9395e
+    m_Address: Assets/Sprites/narrative4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: bdd1293a59c7c0f428b63a997841e0ec, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2dabd3898ca473347b058a1214d8f62d, type: 2}
+    - {fileID: 11400000, guid: c32bff26e2e5e1341a255d1a38e064b7, type: 2}
