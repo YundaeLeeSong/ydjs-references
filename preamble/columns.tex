@@ -1,0 +1,200 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/group.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+% \@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+% \@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+% \@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+%   \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+%   \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+%   \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+%   \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+%   \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+%   \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+%   \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+%   \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+%   \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+% }
+% \@ifpackageloaded{graphicx}{}{\usepackage{graphicx}}    % \raisebox, \resizebox
+% \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}  % social media icons
+% \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}    % hyperlinks
+% \@ifpackageloaded{fontenc}{}{\usepackage[T1]{fontenc}}  % better font encoding
+% \@ifpackageloaded{lmodern}{}{\usepackage{lmodern}}      % Latin Modern — scalable replacement for CM
+\@ifpackageloaded{multicol}{}{\usepackage{multicol}}      % balanced multi-column environment
+\@ifpackageloaded{xparse}{}{\usepackage{xparse}}          % for flexible environment argument parsing
+
+\makeatother
+
+
+
+% ------------------------------------------------------------------------------
+% Multi-Column Block Environment
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Environment for creating balanced multi-column layouts with introductory
+%   paragraphs and customizable column counts. Provides professional formatting
+%   with horizontal rules and proper spacing.
+%
+% FEATURES:
+%   - Mandatory introductory paragraph with visual separation
+%   - Optional column count parameter (defaults to 2 columns)
+%   - Automatic column balancing for even content distribution
+%   - Professional formatting with horizontal rules above and below
+%   - Customizable column separation (default 1cm)
+%   - Ragged columns for better text flow
+%
+% DEPENDENCIES:
+%   \usepackage{multicol}  % for \begin{multicols} environment
+%   \usepackage{xparse}    % for \NewDocumentEnvironment
+%
+% USAGE EXAMPLES:
+%   \section*{Part 1}
+%     \begin{multicolblock}{Solve each equation.}
+%     \begin{enumerate}
+%       \item $6 = \dfrac{a}{4} + 2$
+%       \item $9x - 7 = -7$
+%       \item $-4 = \dfrac{r}{20} - 5$
+%       \item $-6 + \dfrac{x}{4} = -5$
+%       \item $0 = 4 + \dfrac{n}{5}$
+%       \item $-1 = \dfrac{5 + x}{6}$
+%     \item $\dfrac{v + 9}{3} = 8$
+%     \item $-9x + 1 = -80$
+%     \item $-2 = 2 + \dfrac{v}{4}$
+%     \item $2(n + 5) = -2$
+%     \item $-6 = \dfrac{n}{2} - 10$
+%     \item $144 = -12(x + 5)$
+%     \item $8n + 7 = 31$
+%     \item $\dfrac{n + 5}{-16} = -1$
+%     \item $-10 = 10(k - 9)$
+%     \item $-9x - 13 = -103$
+%     \item $-10 = -10 + 7m$
+%     \item $\dfrac{m}{9} - 1 = -2$
+%     \item $-243=-9(10+x)$
+%     \item $9+9 n=9$
+%     \item $7(9+k)=84$
+%     \item $8+\dfrac{b}{-4}=5$
+%   \end{enumerate}
+% \end{multicolblock}
+% \begin{subanswer}
+%   \begin{multicolblock}{Here are the answers.}[3]
+%   \begin{enumerate}
+%     \item $a=16$
+%     \item $x=0$
+%     \item $r=20$
+%     \item $x=4$
+%     \item $n=-20$
+%     \item $x=-11$
+%     \item $v=15$
+%     \item $x=7$
+%     \item $v=-24$
+%     \item $n=-6$
+%     \item $n=8$
+%     \item $x=-17$
+%     \item $n=3$
+%     \item $n=-21$
+%     \item $k=8$
+%     \item $x=-4$
+%     \item $m=0$
+%     \item $m=-9$
+%     \item $x=-37$
+%     \item $n=0$
+%     \item $k=0$
+%     \item $b=-12$
+%   \end{enumerate}
+%   \end{multicolblock}
+% \end{subanswer}
+% \newpage
+% \section*{Part 2}
+% \begin{multicolblock}{Solve each equation.}
+%   \begin{enumerate}
+%     \item $\dfrac{r}{10}+4=5$
+%     \item $\dfrac{n}{2}+5=3$
+%     \item $3p-2=-29$
+%     \item $1-r=-5$
+%     \item $\dfrac{k-10}{2}=-7$
+%     \item $\dfrac{n-5}{2}=5$
+%     \item $-9+\dfrac{n}{4}=-7$
+%     \item $\dfrac{9+m}{3}=2$
+%     \item $\dfrac{-5+x}{22}=-1$
+%     \item $4n-9=-9$
+%     \item $\dfrac{x+9}{2}=3$
+%     \item $\dfrac{-12+x}{11}=-3$
+%     \item $\dfrac{-4+x}{2}=6$
+%     \item $-5+\dfrac{n}{3}=0$
+%     \item $\dfrac{p}{4}+8=7$
+%     \item $9+\dfrac{n}{4}=15$
+%     \item $6+\dfrac{x}{2}=4$
+%     \item $\dfrac{b+11}{3}=-2$
+%     \item $\dfrac{a-10}{3}=-4$
+%     \item $-12r+4=100$
+%     \item $\dfrac{m}{16}-9=-8$
+%     \item $-7+4r=-15$
+%     \item $\dfrac{m-13}{2}=-8$
+%     \item $-5x+13=-17$
+%     \item $\dfrac{k+10}{-2}=5$
+%     \item $\dfrac{p+8}{-2}=10$
+%     \item $-14r-19=303$
+%     \item $\dfrac{x}{-4}-5=-8$
+%   \end{enumerate}
+% \end{multicolblock}
+% \begin{subanswer}
+%   \begin{multicolblock}{Here are the answers.}[3]
+%   \begin{enumerate}
+%     \item $r=10$
+%     \item $n=-4$
+%     \item $p=-9$
+%     \item $r=6$
+%     \item $k=-4$
+%     \item $n=15$
+%     \item $n=8$
+%     \item $m=-3$
+%     \item $x=-27$
+%     \item $n=0$
+%     \item $x=-3$
+%     \item $x=-21$
+%     \item $x=16$
+%     \item $n=15$
+%     \item $p=-4$
+%     \item $n=24$
+%     \item $x=-4$
+%     \item $b=-17$
+%     \item $a=-2$
+%     \item $r=-8$
+%     \item $m=16$
+%     \item $r=-2$
+%     \item $m=-5$
+%     \item $x=4$
+%     \item $k=-28$
+%     \item $p=-26$
+%     \item $r=-22$
+%     \item $x=12$
+%   \end{enumerate}
+%   \end{multicolblock}
+% \end{subanswer}
+
+
+\NewDocumentEnvironment{multicolblock}{ m o }{%
+  % #1 = mandatory intro paragraph
+  % #2 = optional number of columns (if absent -> default 2)
+  % \par\medskip
+  % print the introductory paragraph (allow it to contain paragraphs)
+  \IfNoValueTF{#2}{\def\mccols{2}}{\def\mccols{#2}}% decide number of columns (default 2)
+  #1
+  \par\vspace{6pt}\noindent\hrule
+  \setlength{\columnsep}{1cm}% optional: adjust column separation here
+  \begin{multicols}{\mccols}\raggedcolumns% start multicol environment
+}{%
+  % end multicol environment and draw bottom rule
+  \end{multicols}
+  \noindent\hrule\par\vspace{9.5pt}
+}
+
+

@@ -1,0 +1,195 @@
+
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/font.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+% Font encoding and families
+\@ifpackageloaded{fontenc}{}{\usepackage[T1]{fontenc}}   % better font encoding
+\@ifpackageloaded{lmodern}{}{\usepackage{lmodern}}       % Latin Modern — scalable replacement for CM
+
+
+
+% Typography helpers
+\@ifpackageloaded{lettrine}{}{\usepackage{lettrine}}      % dropped capitals
+\@ifpackageloaded{lipsum}{}{\usepackage{lipsum}}          % dummy text (testing)
+\@ifpackageloaded{dirtytalk}{}{\usepackage[
+    left = “,% 
+    right = ”,% 
+    leftsub = ‘,% 
+    rightsub = ’ %
+]{dirtytalk}}                                               % \say{} quotations
+
+\makeatother
+
+% ------------------------------------------------------------------------------
+% Documentation and Usage Examples: lipsum and lettrine
+% ------------------------------------------------------------------------------
+% DESCRIPTION
+%   The lipsum package provides dummy text for testing typographic layout.
+%   The lettrine package produces dropped capitals at the beginning of a paragraph.
+%
+% FEATURES
+%   - lipsum: generate one or more paragraphs for quick layout checks
+%   - lettrine: control dropped capital lines, spacing, and scaling
+%
+% USAGE: lipsum
+%   Basic:    \lipsum                  % generates a default paragraph
+%   Paragraph: \lipsum[1]              % first paragraph
+%   Range:     \lipsum[2-3]            % paragraphs 2 to 3
+%   Words:     \lipsum[1][1-5]         % words 1–5 from paragraph 1
+%
+% USAGE: lettrine
+%   Basic:     \lettrine{T}{his} starts a paragraph with a dropped “T”
+%   Lines:     \lettrine[lines=3]{T}{his}    % drop across 3 lines
+%   Spacing:   \lettrine[findent=2pt,nindent=0pt]{T}{his}
+%   Scaling:   \lettrine[lines=3,loversize=0.15]{T}{his}
+%   Slope:     \lettrine[hang=1]{T}{his}     % tighter hang of text under the drop cap
+%
+% EXAMPLES (copy into your document body to preview)
+%   % Example 1: Simple lipsum
+%   % \lipsum[1]
+%
+%   % Example 2: Variable Length lipsum
+%   % \lipsum[2-3]
+%
+%   % Example 3: Drop cap with default settings
+%   % \lettrine{L}{orem} ipsum dolor sit amet, consectetur adipiscing elit.\lipsum[2]
+%
+%   % Example 4: Three-line drop cap with adjusted size
+%   % \lettrine[lines=3,loversize=0.2]{D}{olor} sit amet, consectetur adipiscing elit.\lipsum[3]
+%
+%   % Example 5: Fine-tuned indents for tighter text wrap
+%   % \lettrine[lines=3,findent=1.5pt,nindent=0pt]{T}{ypography} testing block.\lipsum[4]
+%
+% NOTES
+%   - Use \par after a lettrine paragraph if spacing looks off in complex layouts.
+%   - Pair lettrine with a serif body font for best aesthetics.
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \inlinequote{<text>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command formats text as an inline quote using smart quotes.
+%   It provides a quick way to add quoted text within a paragraph.
+%
+% PARAMETERS:
+%   <text>    The text to be quoted (required)
+%
+% DEPENDENCIES:
+%   \usepackage{dirtytalk}
+%
+% USAGE EXAMPLES:
+%   \inlinequote{This is a quoted text}
+%   The author said \inlinequote{this is important}.
+% ------------------------------------------------------------------------------
+\newcommand{\inlinequote}[1]{\say{#1}}
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \blockquote{<text>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command creates a block quote with proper spacing and formatting.
+%   It centers the quoted text and adds vertical spacing above and below.
+%
+% FEATURES:
+%   - Adds 2.5em spacing above and below the quote
+%   - Centers the quoted text
+%   - Uses smart quotes for proper typography
+%
+% PARAMETERS:
+%   <text>    The text to be quoted (required)
+%
+% DEPENDENCIES:
+%   \usepackage{dirtytalk}
+%
+% USAGE EXAMPLES:
+%   \blockquote{This is a longer quote that deserves to be set apart}
+%   \blockquote{Another important quote}
+% ------------------------------------------------------------------------------
+\newcommand{\blockquote}[1]{%
+  \vspace{2.5em}%
+  \begin{quote}%
+    \say{#1}%
+  \end{quote}%
+  \vspace{2.5em}%
+}
+
+
+% ------------------------------------------------------------------------------
+% \parenref{<label>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command produces a reference enclosed in parentheses, e.g., (1.2).
+%
+% PARAMETERS:
+%   <label>    The label to reference (required)
+%
+% USAGE EXAMPLES:
+%   See \parenref{sec:intro} for details.
+% ------------------------------------------------------------------------------
+\newcommand{\parenref}[1]{(\ref{#1})}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grouping Shortcuts for VS Code (`View` > `Command Palette` > `Preferences: Open Keyboard Shortcuts (JSON)`)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {
+%   "key": "ctrl+b",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\textbf{${TM_SELECTED_TEXT}}"
+%   }
+% },
+% {
+%   "key": "ctrl+i",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\textit{${TM_SELECTED_TEXT}}"
+%   }
+% },
+% {
+%   "key": "ctrl+u",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\underbar{${TM_SELECTED_TEXT}}"
+%   }
+% },
+% {
+%   "key": "ctrl+q",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\inlinequote{${TM_SELECTED_TEXT}}"
+%   }
+% },
+% {
+%   "key": "ctrl+shift+q",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\blockquote{${TM_SELECTED_TEXT}}"
+%   }
+% },
+% {
+%   "key": "ctrl+shift+f",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\footnote{${TM_SELECTED_TEXT}}"
+%   }
+% },

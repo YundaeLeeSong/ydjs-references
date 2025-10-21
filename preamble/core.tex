@@ -1,0 +1,362 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {@requires} VSCode extension: LaTeX Workshop by James Yu
+% ------------------------------------------------------------------------------
+% `preamble` (core.tex) is a file commonly used in LaTeX projects to define 
+% custom configurations and packages for the document. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/core.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{graphicx}{}{\usepackage{graphicx}}     % include images
+% ======================== Math =======================
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}     % math fonts and symbols
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}       % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}       % math foundations, align, cases, ...
+% \@ifpackageloaded{amsthm}{}{\usepackage{amsthm}}         % theorem/proof environments
+\@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% ====================== Document =====================
+\@ifpackageloaded{fancybox}{}{\usepackage{fancybox}}     % shadowbox, ovalbox, etc.
+\@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}     % framed environments
+\@ifpackageloaded{datetime2}{}{\usepackage{datetime2}}   % date/time formatting
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}     % hyperlinks in PDF
+\@ifpackageloaded{enumitem}{}{\usepackage{enumitem}}     % custom enumerate/itemize labels
+\@ifpackageloaded{fancyhdr}{}{\usepackage{fancyhdr}}     % custom headers/footers
+\@ifpackageloaded{microtype}{}{\usepackage{microtype}}   % improved typography
+\@ifpackageloaded{lipsum}{}{\usepackage{lipsum}}         % dummy text for examples
+\@ifpackageloaded{xcolor}{}{\usepackage[table]{xcolor}   % colors for text, tables, tikz
+  \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}          
+  \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}        
+  \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}         
+  \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}       
+  \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}         
+  \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}      
+  \definecolor{blackcolor}{rgb}{0, 0, 0}              
+  \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}         
+  \definecolor{darkgreen}{RGB}{0,128,0}               
+}
+\@ifpackageloaded{changepage}{}{\usepackage{changepage}} % adjust margins (adjustwidth)
+\@ifpackageloaded{etoolbox}{}{\usepackage{etoolbox}}     % programming tools for LaTeX
+\@ifpackageloaded{xparse}{}{\usepackage{xparse}}         % define flexible macros
+% =============== Tabular Data (Tables) ===============
+\@ifpackageloaded{tabularx}{}{\usepackage{tabularx}}     % tables with adjustable-width columns
+\@ifpackageloaded{array}{}{\usepackage{array}}           % extended array/tabular features
+\@ifpackageloaded{longtable}{}{\usepackage{longtable}}   % multipage tables
+\@ifpackageloaded{caption}{}{\usepackage{caption}}       % customize captions
+\@ifpackageloaded{arydshln}{}{\usepackage{arydshln}}     % dashed/dotted lines in tables
+\@ifpackageloaded{multicol}{}{\usepackage{multicol}}     % multiple columns in text
+% ================== TikZ Libraries ===================
+\@ifpackageloaded{tikz}{}{\usepackage{tikz}}             % diagrams and graphics
+\usetikzlibrary{automata, positioning, arrows}
+\usetikzlibrary{arrows.meta}
+% =====================================================
+\makeatother
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \insertimage{<width>}{<path>}{<caption>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command inserts an image into the document with automatic formatting,
+%   centering, and captioning. The image is sized relative to the text width.
+%
+% FEATURES:
+%   - Automatic figure environment with proper positioning
+%   - Centered image with customizable width
+%   - Automatic caption and label generation
+%   - Responsive sizing using \textwidth
+%
+% PARAMETERS:
+%   {<width>}     Image width as fraction of text width (e.g., 0.8 for 80%)
+%   {<path>}      File path relative to current directory (e.g., images/graph.png)
+%   {<caption>}   Caption text displayed below the image
+%
+% DEPENDENCIES:
+%   \usepackage{graphicx}
+%
+% USAGE EXAMPLES:
+%   \insertimage{0.8}{images/graph.png}{This is an example caption.}
+%   \insertimage{0.5}{logo.png}{Company logo}
+%
+% RETURNS:
+%   Figure reference: \ref{fig:<path>}
+% ------------------------------------------------------------------------------
+\newcommand{\insertimage}[3]{%
+    \begin{figure}[h!]%
+        \centering%
+        \includegraphics[width=#1\textwidth]{#2}%
+        \caption{#3}%
+        \label{fig:#2}%
+    \end{figure}%
+}
+
+
+% \newcommand{\fullpageimage}[1]{%
+%   \begin{adjustwidth}{-\pageMargin}{-\pageMargin}%
+%     \includegraphics[width=\pageWidth]{#1}%
+%   \end{adjustwidth}%
+% }
+
+
+% ------------------------------------------------------------------------------
+% \insertvideo{<width>}{<height>}{<path>}{<caption>}{<autoplay>}{<loop>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command inserts a video into the document with automatic formatting
+%   and media player controls. The video is sized relative to the text width.
+%
+% FEATURES:
+%   - Automatic figure environment with proper positioning
+%   - Centered video with customizable dimensions
+%   - Click-to-activate media player
+%   - Configurable autoplay and loop settings
+%   - Automatic caption and label generation
+%
+% PARAMETERS:
+%   {<width>}     Video width as fraction of text width (e.g., 0.8 for 80%)
+%   {<height>}    Video height as fraction of text width
+%   {<path>}      Video file path (e.g., video.mp4)
+%   {<caption>}   Caption text displayed below the video
+%   {<autoplay>}  Autoplay setting (true/false)
+%   {<loop>}      Loop setting (true/false)
+%
+% DEPENDENCIES:
+%   \usepackage{media9}
+%
+% USAGE EXAMPLES:
+%   \insertvideo{0.8}{0.6}{video.mp4}{Tutorial video}{false}{true}
+%   \insertvideo{0.6}{0.4}{demo.mp4}{Product demonstration}{true}{false}
+%
+% RETURNS:
+%   Figure reference: \ref{fig:<path>}
+% ------------------------------------------------------------------------------
+\newcommand{\insertvideo}[6]{%
+    \begin{figure}[h!]%
+        \centering%
+        \includemedia[%
+            width=#1\textwidth,%
+            height=#2\textwidth,%
+            activate=onclick,%
+            addresource=#3,%
+            flashvars={%
+                src=#3%
+                &autoPlay=#5%
+                &loop=#6%
+            }%
+        ]{}{VPlayer.swf}%
+        \caption{#4}%
+        \label{fig:#3}%
+    \end{figure}%
+}
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \generatedOn
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command prints the exact date and time when the LaTeX document was 
+%   compiled. It uses the `datetime2` package to fetch the timestamp in the ISO 
+%   8601 format (YYYY-MM-DD HH:MM:SS).
+%
+% FEATURES:
+%   - Automatically generates current compilation timestamp
+%   - Uses ISO 8601 format for consistency
+%   - No parameters required
+%
+% DEPENDENCIES:
+%   \usepackage{datetime2}
+%
+% USAGE EXAMPLES:
+%   The document was generated on: \generatedOn
+%   Last compiled: \generatedOn
+% ------------------------------------------------------------------------------
+\newcommand{\generatedOn}{\DTMnow}
+
+% ------------------------------------------------------------------------------
+% \handout[<is_shadow>]{<course_name>}{<date>}{<title>}{<author>}{<secondary_info>}{<number>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command creates a formatted header for handouts with optional shadow effect.
+%   It provides a professional-looking title page for course materials.
+%
+% FEATURES:
+%   - Configurable shadow effect (shadowbox vs framebox)
+%   - Smart page numbering: only changes if handout number is provided
+%   - Responsive width using \textwidth instead of hardcoded values
+%   - Professional layout with course information
+%   - Index-friendly: preserves page numbering when no handout number given
+%   - If <number> is provided: changes page numbering to "number-page" (e.g., "1-1", "1-2")
+%   - If <number> is empty: keeps default page numbering (index-friendly)
+%
+% PARAMETERS:
+%   [<is_shadow>]     Boolean for shadow effect (optional, defaults to false)
+%   <course_name>     Name of the course (e.g., "CS 4510 Automata and Complexity")
+%   <date>            Date of the handout (e.g., "Jan 15, 2025")
+%   <title>           Title of the handout (e.g., "Lecture 1")
+%   <author>          Name of the author (e.g., "Prof. Alice")
+%   <secondary_info>  Additional info (e.g., "Scribe(s): Bob and Charlie")
+%   <number>          Handout number or identifier (optional, affects page numbering)
+%
+% DEPENDENCIES:
+%   \usepackage{fancybox}
+%   \usepackage{ifthen}
+%
+% USAGE EXAMPLES:
+%   % With handout number (changes page numbering)
+%   \newpage\handout
+%   {CS 4510}{Jan 15, 2025}
+%   {Lecture 1}
+%   {Prof. Smith}{Scribe: John}
+%   {1}
+%
+%   % With shadow effect and handout number
+%   \newpage\handout[true]
+%   {CS 1010}{Feb 1, 2025}
+%   {Assignment 1}
+%   {Prof. Jones}{Due: Feb 15}
+%   {A1}
+%
+%   % Without handout number (preserves page numbering for index)
+%   \newpage\handout
+%   {CS 4510}{Jan 15, 2025}
+%   {Lecture 1}
+%   {Prof. Smith}{Scribe: John}
+%   {}
+% ------------------------------------------------------------------------------
+\newcommand{\handout}[7][false]{%
+  % Only change page numbering if handout number (#7) is provided and not empty
+  \ifthenelse{\equal{#7}{}}{%
+    % No handout number provided - keep default page numbering
+  }{%
+    % Handout number provided - temporarily change page numbering
+    \let\oldthepage\thepage
+    \renewcommand{\thepage}{#7-\arabic{page}}%
+  }%
+  
+  \noindent
+  \begin{center}%
+  \ifthenelse{\equal{#1}{true}}{%
+    \makebox[\linewidth]{%
+      \shadowbox{%
+        \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+          \vbox{%
+            \hbox to \linewidth{#2 \hfill #3}%
+            \vspace{4mm}%
+            \hbox to \linewidth{{\Large \hfill #4 \hfill}}%
+            \vspace{2mm}%
+            \hbox to \linewidth{{\it #5 \hfill #6}}%
+          }%
+        }%
+      }%
+    }%
+  }{%
+    \makebox[\linewidth]{%
+      \framebox[\linewidth]{%
+        \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+          \vbox{%
+            \hbox to \linewidth{#2 \hfill #3}%
+            \vspace{4mm}%
+            \hbox to \linewidth{{\Large \hfill #4 \hfill}}%
+            \vspace{2mm}%
+            \hbox to \linewidth{{\it #5 \hfill #6}}%
+          }%
+        }%
+      }%
+    }%
+  }%
+  \end{center}%
+  \vspace*{4mm}%
+}
+
+
+
+% ------------------------------------------------------------------------------
+% \courseheader[<scale>]{<left-top>}{<right-top>}{<title>}{<date>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command creates a professional course/assignment header using a two-line
+%   layout implemented with tabularx. The left column is a fixed-width block
+%   controlled by \courseTitleWidth and the right column flexes to fill the line.
+%   This implementation ensures strict column alignment and consistent vertical
+%   alignment for both rows.
+%
+% FEATURES:
+%   - Column widths controlled explicitly (\courseTitleWidth).
+%   - Uses tabularx so rows line up predictably when widths change.
+%   - Optional title scaling ('fit') for long/unbreakable text via \resizebox.
+%   - Professional typography with ragged text controls to avoid over-centering.
+%   - Automatic horizontal rule under the header.
+%
+% PARAMETERS:
+%   [<scale>]      Title scaling option: 'fit' for auto-scaling, omit for natural wrapping
+%   {<left-top>}   Small text on the left of the top row (e.g., course name)
+%   {<right-top>}  Small text on the right of the top row (e.g., semester)
+%   {<title>}      Main title text (centered in left block)
+%   {<date>}       Date text (right-aligned on second row)
+%
+% DEPENDENCIES:
+%   \usepackage{tabularx}
+%   \usepackage{graphicx} (for scaling functionality)
+%   \usepackage{xparse}   (for \NewDocumentCommand)
+%   \usepackage{array}    (for column modifiers)
+%
+% USAGE EXAMPLES:
+%   % Set title block width (adjust as needed)
+%   \setlength{\courseTitleWidth}{0.70\textwidth}
+%
+%   % Natural text wrapping (preferred for most cases)
+%   \courseheader{Math 2106-B: Foundations of Mathematical Proof}{Fall 2025}%
+%                {ICA (In-Class Assignment) 1}{August 18th}
+%
+%   % Auto-scaling for long titles
+%   \courseheader[fit]{Math 2106-B: Foundations of Mathematical Proof}{Fall 2025}%
+%                 {Very Long Title That Should Be Scaled}{August 18th}
+%
+% NOTES:
+%   - Adjust \courseTitleWidth to change the left/right split globally.
+%   - Use scaling only when natural wrapping is unacceptable.
+%   - This tabularx version keeps rows strictly aligned and is a good choice when
+%     precise column behavior is desired.
+% ------------------------------------------------------------------------------
+\newlength{\courseTitleWidth}
+\setlength{\courseTitleWidth}{0.70\textwidth}
+% Main command (tabularx implementation)
+\NewDocumentCommand{\courseheader}{ O{} m m m m }{%
+  \noindent
+  \begingroup
+    \setlength{\parindent}{0em}%
+    % tabularx: left column fixed, right column flexible
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{\courseTitleWidth}
+                                 @{\extracolsep{\fill}}>{\raggedleft\arraybackslash}X@{}}%
+      % Top row (small left / small right)
+      {\small #2} & {\small #3} \\[1em]
+      % Main row: title (centered in left fixed column) and date (right)
+      \multicolumn{1}{@{}p{\courseTitleWidth}@{}}{%
+        \centering
+        \IfValueTF{#1}{%
+          % scaling mode: scale horizontally to the left column width
+          \resizebox{\courseTitleWidth}{!}{\Huge\bfseries #4}%
+        }{%
+          % natural wrapping mode
+          {\Huge\bfseries #4}%
+        }%
+      } &
+      {\normalsize #5} \\
+    \end{tabularx}\par
+    \vspace{3pt}\noindent\rule{\linewidth}{1pt}\vspace{10pt}%
+  \endgroup
+}
+
+
+
+
+

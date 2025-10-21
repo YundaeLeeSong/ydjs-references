@@ -1,0 +1,201 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/group.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+% \@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+% \@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+\@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+  \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+  \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+  \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+  \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+  \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+  \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+  \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+  \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+  \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+}
+\@ifpackageloaded{graphicx}{}{\usepackage{graphicx}}  % \raisebox, \resizebox
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}  % social media icons
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}  % hyperlinks
+\@ifpackageloaded{fontenc}{}{\usepackage[T1]{fontenc}}   % better font encoding
+\@ifpackageloaded{lmodern}{}{\usepackage{lmodern}}       % Latin Modern — scalable replacement for CM
+
+\makeatother
+
+
+% ------------------------------------------------------------------------------
+% Resume Header Environment
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Environment for creating a standardized resume header with contact information
+%   and social media links. Provides consistent formatting across resume documents.
+%
+% FEATURES:
+%   - Centered layout with proper spacing
+%   - Social media icons with hyperlinks (input between begin/end)
+%   - Contact information formatting
+%   - Consistent typography and spacing
+%
+% DEPENDENCIES:
+%   \usepackage{graphicx}      % for \raisebox, \resizebox
+%   \usepackage{fontawesome5}  % for social media icons
+%   \usepackage{hyperref}      % for clickable links
+%
+% USAGE EXAMPLES:
+%   \begin{resume-header}{Jaehoon Song}
+%     {402 Suwanee Oaks Dr NE, Suwanee, Georgia 30024}
+%     {+1 470-350-8926}
+%     {jsong421@gatech.edu}
+%     {https://github.com/JaehoonSong12}
+%     \socialicon{\faIcon{linkedin}} \href{https://www.linkedin.com/in/john-profile/}{john-profile} |
+%     \socialicon{\faIcon{github}} \href{https://github.com/john-username}{john-username} |
+%     \socialicon{\faIcon{twitter}} \href{https://twitter.com/john-handle}{john-handle} |
+%     \socialicon{\faIcon{linkedin}} \href{https://www.linkedin.com/in/#5/}{john-profile} \\ 
+%     \socialicon{\faIcon{instagram}} \href{https://www.instagram.com/#8/}{john-instagram} |
+%     \socialicon{\faIcon{facebook}} \href{https://www.facebook.com/#9/}{john-facebook} |
+%     \socialicon{\faIcon{youtube}} \href{https://www.youtube.com/@#10}{john-youtube}
+%     \socialicon{\faIcon{cloud}} \href{https://www.example.com/cloud}{john-cloud} |
+%     \socialicon{\faIcon{link}} \href{https://www.example.com/link}{john-link} |
+%     \socialicon{\faIcon{folder}} \href{https://www.example.com/folder}{john-folder} |
+%     \socialicon{\faIcon{folder-open}} \href{https://www.example.com/folder-open}{john-folder-open}
+%     \socialicon{\faIcon{database}} \href{https://www.example.com/database}{john-database} |
+%     \socialicon{\faIcon{code}} \href{https://www.example.com/code}{john-code} \\
+%   \end{resume-header}
+
+% ------------------------------------------------------------------------------
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\NewDocumentEnvironment{resume-header}{m m m m m}{%
+\begin{center}
+    {\LARGE\bfseries \textbf{#1}} \\ \vspace{0.5em}%\Huge?
+    {\small #2 | 
+      \socialicon{\faIcon{mobile-alt}} #3 | 
+      \socialicon{\faIcon{envelope}} \href{mailto:#4}{#4} | 
+      \socialicon{\faIcon{github}} \href{#5}{GitHub}
+    } \\ \vspace{0.5em}
+}{%
+\end{center}
+}
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Resume Objective Environment
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Environment for creating a centered, italicized objective statement on resumes.
+%   Provides consistent formatting for professional objective sections.
+%
+% FEATURES:
+%   - Centered layout with proper spacing
+%   - Italicized text with reduced opacity for subtle appearance
+%   - Automatic color reset to black after environment
+%   - Consistent typography and spacing
+%
+% DEPENDENCIES:
+%   \usepackage{xcolor}  % for color definitions
+%
+% USAGE EXAMPLES:
+%   \begin{resume-objective}
+%     Seeking a software engineering position where I can apply my technical skills
+%     and passion for innovation to contribute to meaningful projects.
+%   \end{resume-objective}
+\newenvironment{resume-objective}{%
+  \vspace{-1.4em}
+  \begin{center}
+  \itshape
+  \color{black!60}
+}{%
+  \color{black}
+  \end{center}
+}
+
+% ------------------------------------------------------------------------------
+% Resume Section Command
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Command for creating standardized section headers in resumes with consistent
+%   typography and formatting. Creates small caps text with underline rule.
+%
+% FEATURES:
+%   - Small caps typography for professional appearance
+%   - Horizontal rule underline for visual separation
+%   - Proper spacing and line breaks
+%   - Consistent formatting across all sections
+%
+% DEPENDENCIES:
+%   None (uses standard LaTeX commands)
+%
+% USAGE EXAMPLES:
+%   \resumeSection{Experience}
+%   \resumeSection{Education}
+%   \resumeSection{Skills}
+%   \resumeSection{Projects}
+
+% Underlined, all-caps section title macro (no indent; use \hrule for the line)
+% \newcommand{\resumeSection}[1]{%
+%   {\noindent\bfseries\MakeUppercase{#1}\par\nobreak\vspace{-0.6em}%
+%   \noindent\rule{\linewidth}{0.6pt}\par}
+% }
+\newcommand{\resumeSection}[1]{%
+  {\noindent\large\textsc{#1}\par\nobreak\vspace{-0.6em}%
+  \noindent\rule{\linewidth}{0.6pt}\par}
+}
+
+% ------------------------------------------------------------------------------
+% Resume Itemize Environment
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Environment for creating formatted resume entries with organization details,
+%   location, dates, position title, and optional additional information.
+%   Provides consistent formatting for experience, education, and other sections.
+%
+% FEATURES:
+%   - Organization name, location, and date formatting
+%   - Position title with optional additional info (e.g., GPA)
+%   - Bulleted list for achievements and responsibilities
+%   - Consistent spacing and typography
+%   - Optional fifth parameter for additional information
+%
+% DEPENDENCIES:
+%   \usepackage{xparse}  % for \NewDocumentEnvironment
+%
+% USAGE EXAMPLES:
+%   \begin{resume-itemize}
+%     {Bits of Good}{Atlanta, Georgia}{August 2021 -- Present}
+%     {Developer}[GPA: 4.0/4.0]
+%       \item Programmed a Pokédex to search and get information about Pokémon entities using the PokeAPI, HTML/CSS, and JavaScript.
+%       \item Developed a restaurant review guide and a full-stack pet adoption website utilizing MongoDB, Mongoose, Express, React, and Next (MERN stack).
+%   \end{resume-itemize}
+%   \begin{resume-itemize}
+%     {Chinese Student Association}{Atlanta, Georgia}{January 2021 -- Present}
+%     {Engineering Manager}
+%     \item Improved the Chinese Student Association (CSA)'s website by replacing the pre-existing structure with the React framework.
+%     \item Led and delegated tasks to members of the website team based on their individual strengths.
+%   \end{resume-itemize}
+%   \begin{resume-itemize}
+%     {GT First Generation Jackets}{Atlanta, Georgia}{January 2021 -- Present}
+%     {Peer Mentor}
+%     \item Mentored four first-generation Georgia Tech students throughout their first year of college, sharing personal experiences and advising them on similar struggles.
+%   \end{resume-itemize}
+\NewDocumentEnvironment{resume-itemize}{ m m m m o }{%
+  % Header formatting
+  \noindent\textbf{#1} \,|\, #2 \hfill \textit{#3}\\
+  \noindent\textit{#4} \IfNoValueTF{#5}{}{\hfill #5}
+  \vspace{-0.4em}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2em}
+    \setlength{\parskip}{0pt}
+}{%
+  \end{itemize}
+}

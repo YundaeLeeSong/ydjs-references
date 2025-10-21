@@ -1,0 +1,109 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/group.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+\@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+% \@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+%   \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+%   \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+%   \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+%   \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+%   \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+%   \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+%   \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+%   \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+%   \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+% }
+\makeatother
+
+
+
+% ------------------------------------------------------------------------------
+% Mathematical Grouping Commands
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for mathematical grouping and delimiters with automatic sizing.
+%   These commands are designed for quick insertion via VS Code keybindings.
+%
+% FEATURES:
+%   - Automatic sizing with \left and \right
+%   - Safe to use in text mode with \ensuremath and \xspace
+%   - VS Code keybinding integration
+%   - Consistent formatting across documents
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The inner product \coord{x,y} defines a metric.
+%   The group \group{G} acts on the set \set{X}.
+%   The absolute value \abs{x} is always non-negative.
+%   The interval \arr{a,b} contains all real numbers between a and b.
+%   The inner product $\coord{x,y}$ defines a metric.
+%   The group $\group{G}$ acts on the set $\set{X}$.
+%   The absolute value $\abs{x}$ is always non-negative.
+%   The interval $\arr{a,b}$ contains all real numbers between a and b.
+% ------------------------------------------------------------------------------
+\newcommand{\group}[1]{\ensuremath{\left(#1\right)}\xspace}              % Parentheses: (x)
+\newcommand{\arr}[1]{\ensuremath{\left[#1\right]}\xspace}                % Square brackets: [x]
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}\xspace}              % Curly braces: {x}
+\newcommand{\abs}[1]{\ensuremath{\left|#1\right|}\xspace}                % Absolute value: |x|
+\newcommand{\coord}[1]{\ensuremath{\left\langle#1\right\rangle}\xspace}  % Angle brackets: ⟨x⟩
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grouping Shortcuts for VS Code (`View` > `Command Palette` > `Preferences: Open Keyboard Shortcuts (JSON)`)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {
+%   "key": "ctrl+shift+9",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorTextFocus && editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\group{${TM_SELECTED_TEXT:${1}}}"
+%   }
+% },
+% {
+%   "key": "ctrl+9",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorTextFocus && editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\arr{${TM_SELECTED_TEXT:${1}}}"
+%   }
+% },
+% {
+%   "key": "ctrl+shift+[",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorTextFocus && editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\set{${TM_SELECTED_TEXT:${1}}}"
+%   }
+% },
+% {
+%   "key": "ctrl+shift+\\",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorTextFocus && editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\abs{${TM_SELECTED_TEXT:${1}}}"
+%   }
+% },
+% {
+%   "key": "ctrl+shift+,",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorTextFocus && editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\coord{${TM_SELECTED_TEXT:${1}}}"
+%   }
+% },

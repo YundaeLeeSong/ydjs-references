@@ -1,0 +1,460 @@
+
+% paragraph - indentation
+\setlength{\parindent}{0pt}                         % default: 18pt
+
+
+
+
+
+% paragraph - code
+\usepackage{listings, lmodern}                               % \begin{lstlisting}\end{lstlisting}
+\lstset{
+  language=Python,
+  commentstyle=\color{darkgreen},
+  keywordstyle=\color{blue},
+  stringstyle=\color{darkgreen},
+  basicstyle=\ttfamily,
+  breaklines=true,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  literate=*{0}{{{\color{blue}0}}}1
+            {1}{{{\color{blue}1}}}1
+            {2}{{{\color{blue}2}}}1
+            {3}{{{\color{blue}3}}}1
+            {4}{{{\color{blue}4}}}1
+            {5}{{{\color{blue}5}}}1
+            {6}{{{\color{blue}6}}}1
+            {7}{{{\color{blue}7}}}1
+            {8}{{{\color{blue}8}}}1
+            {9}{{{\color{blue}9}}}1
+}
+
+
+
+% Tabular Data (Tables)
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% CUSTOM DOCUMENT %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title pages
+\usepackage{outline} 
+\usepackage{pmgraph} 
+\usepackage[normalem]{ulem}
+\usepackage{verbatim}
+\usepackage{pgffor}
+\usepackage{xstring}
+\usepackage{xparse} % for advanced argument parsing
+% Signature Fields for Agreement
+\usepackage{textcomp} % for \TextField
+\usepackage{ifthen}   % for conditional checks
+\newcounter{nameCounter}
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \signField[<Printed Name>][<Width Factor>]: Generates a signature field
+% ------------------------------------------------------------------------------
+% DEPENDENCIES:
+% - hyperref: Required for \TextField command
+% - tabbing: Built-in LaTeX environment
+%
+% DESCRIPTION:
+% This command creates a structured signature field with labeled sections for:
+% - Signature
+% - Printed Name (customizable label)
+% - Date
+% - Initials
+%
+% The width of the entire signature field can be adjusted using the second argument.
+% The proportions remain the same while scaling.
+%
+% USAGE:
+%   \signField[<Printed Name>][<Width Factor>]
+%   - <Printed Name> (Optional): Defaults to "Printed Name"
+%   - <Width Factor>: A decimal value specifying the fraction of \textwidth
+%
+% EXAMPLES:
+%   - \shortSignField           
+%   - \signField                
+%   - \signField[Full Name]     → Uses "Full Name" for the name label by their usage.
+% ------------------------------------------------------------------------------
+\newcommand{\signField}[1][Printed Name]{
+    \stepcounter{nameCounter}
+    \begin{tabbing}
+        \hspace{0.3\textwidth} \= \hspace{0.35\textwidth} \= \hspace{0.20\textwidth} \= \hspace{0.15\textwidth} \kill
+        \makebox[0.3\textwidth]{} \> \TextField[name=name\arabic{nameCounter},width=0.35\textwidth,bordercolor=0 0 0]{} \> \TextField[name=date\arabic{nameCounter},width=0.20\textwidth,bordercolor=0 0 0]{} \> \makebox[0.15\textwidth]{} \\[-8pt]
+        \underline{\hspace{0.3\textwidth}} \> \underline{\hspace{0.35\textwidth}} \> \underline{\hspace{0.20\textwidth}} \> \underline{\hspace{0.15\textwidth}} \\ 
+        \textit{Signature} \> #1 \> Date \> \makebox[0.15\textwidth][r]{\textbf{\textit{Initials}}}
+    \end{tabbing}
+}
+
+% ------------------------------------------------------------------------------
+% \shortSignField[<Printed Name>]: Generates a compact signature field
+% ------------------------------------------------------------------------------
+% DEPENDENCIES:
+% - hyperref: Required for \TextField command
+% - tabbing: Built-in LaTeX environment
+%
+% DESCRIPTION:
+% Creates a simplified signature field with:
+% - Signature
+% - Printed Name (customizable)
+% - Date
+%
+% USAGE:
+%   \shortSignField[<Printed Name>]
+%   - <Printed Name> (Optional): Defaults to "Printed Name"
+%
+% EXAMPLES:
+%   - \shortSignField           → Uses default "Printed Name" label
+%   - \shortSignField[Name]     → Uses "Name" for the name label
+% ------------------------------------------------------------------------------
+\newcommand{\shortSignField}[1][Printed Name]{%
+    \stepcounter{nameCounter}
+
+    % Define overall width as a multiple of \textwidth
+    \newlength{\overallWidth}
+    \setlength{\overallWidth}{0.8\textwidth}  % Slightly reduced total width
+
+    % Calculate proportional column widths
+    \newlength{\colOne}
+    \newlength{\colTwo}
+    \newlength{\colThree}
+
+    \setlength{\colOne}{0.3\overallWidth}
+    \setlength{\colTwo}{0.4\overallWidth}
+    \setlength{\colThree}{0.3\overallWidth}
+
+    \begin{tabbing}
+        \hspace{\colOne} \= \hspace{\colTwo} \= \hspace{\colThree} \kill
+        \makebox[\colOne]{} \> 
+        \TextField[name=name\arabic{nameCounter},width=\colTwo,bordercolor=0 0 0]{} \> 
+        \generatedOn \\[-8pt]
+        \underline{\hspace{\colOne}} \> 
+        \underline{\hspace{\colTwo}} \> 
+        \underline{\hspace{\colThree}} \\ 
+        \textit{Signature} \> #1 \> Date
+    \end{tabbing}
+}
+
+% ------------------------------------------------------------------------------
+% \customtitle{<Title>}{<Subtitle>}{<Team>}{<Authors>}{<Course>}{<Institution>}{<Professor>}
+% ------------------------------------------------------------------------------
+% DEPENDENCIES:
+% - graphicx: Required for \includegraphics command
+% - hyperref: Required for PDF metadata
+%
+% DESCRIPTION:
+% Creates a professional title page with:
+% - Institution logo
+% - Title and subtitle
+% - Team information
+% - Author list
+% - Course information
+% - Institution name
+% - Professor name
+%
+% USAGE:
+%   \customtitle{<Title>}{<Subtitle>}{<Team>}{<Authors>}{<Course>}{<Institution>}{<Professor>}
+%
+% PARAMETERS:
+%   - Title: Main title of the document
+%   - Subtitle: Secondary title or project description
+%   - Team: Team name or identifier
+%   - Authors: List of authors (use \convertarraytostring for multiple authors)
+%   - Course: Course name and code
+%   - Institution: Institution name
+%   - Professor: Professor's name
+%
+% EXAMPLES:
+%   \customtitle
+%     {Final Team Project: Process Book}
+%     {Music Trends and Insights}
+%     {Team: Vizualytics}
+%     {Author One, Author Two}
+%     {CS-4460-B: Introduction to Information Visualization}
+%     {Georgia Institute of Technology}
+%     {Professor: John Doe}
+% ------------------------------------------------------------------------------
+\newcommand{\convertarraytostring}[2]{
+  \gdef#1{}
+  \foreach \x in {#2} {
+    \xdef#1{#1 \x \\}
+  }
+}
+\newcommand{\customtitle}[7]{
+    \title{
+        % \includegraphics[width=0.60\textwidth]{\BookEmblem}\par\vspace{1cm}
+        \includegraphics[width=0.50\textwidth]{\BookEmblem} \\ % fixed Logo settings
+        \vspace*{0.5in}
+        \textbf{#1} \\ 
+        \vspace*{0.5in}
+        #2
+    }
+    \author{
+        #3 \\ 
+        \vspace*{1pt} \\
+        #4 \\
+        \vspace*{0.5in} \\
+        \textbf{#5} \\ 
+        \vspace*{1pt} \\
+        #6 \\ 
+        \vspace*{1pt} \\
+        \textbf{#7} \\ 
+    }
+    \date{\today} % fixed date settings
+    \maketitle
+    \newpage
+}
+
+
+% \convertarraytostring
+% {\titleauthors}                                                                       % Authors
+% {Jaehoon Song (lead), Manya Jain, Devika Papal, Yashman P Singh}
+% \customtitle
+% {Final Team Project: Process Book}                                                    % Title
+% {Music Trends and Insights: Visualization of Genres, Artists, and Listener Behaviors} % Subtitle
+% {Team: Vizualytics}                                                                   % Team name (e.g., "Team: Vizualytics")
+% {\titleauthors}
+% {CS-4460-B: Introduction to Information Visualization}                                % Course name (e.g., "CS-4460-B: Introduction to ...")
+% {Georgia Institute of Technology}                                                     % Institution (e.g., "Georgia Institute of Technology")
+% {Professor: Yalong Yang}                                                              % Professor name (e.g., "Yalong Yang")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{definition}{Definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliographies (with Citations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=biber,style=apa]{biblatex}      % \newpage\printbibliography\end{document}
+\addbibresource{../references.bib}                      % \cite{reference1}
+% \addbibresource{references.bib}                         % \cite{reference1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFAULT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                    % \textbf{boldfaced}
+                                                    % \textit{intalicized}
+%%%% MATH underbrace
+% \[
+%     a + b + c = \underbrace{x + y + z
+%         }_{\text{
+%         Sum of terms
+%         }
+%         }
+% \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage[table]{xcolor}
+\usepackage{caption}
+
+
+
+
+
+
+
+
+
+%%macros for Alg and Uncertainty
+\newcommand\p{\mbox{\bf P}\xspace}
+\newcommand\np{\mbox{\bf NP}\xspace}
+\newcommand{\Alg}{\text{Alg}}
+\newcommand{\Opt}{\text{Opt}}
+
+\newcommand{\one}{\mathbf{1}\xspace}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\sse}{\subseteq}
+\newcommand{\Clients}{\text{Clients}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\cc}{\mathbf{c}}
+\def \integers {\mathbb{Z}}
+
+\newcommand\OPT{\text{OPT}\xspace}
+
+
+%%Computational problems
+
+\newcommand\sat{\mbox{SAT}\xspace}
+
+\newcommand\numsat{\mbox{$\sharp$ SAT}\xspace}
+%% Notation for integers, natural numbers, reals, fractions, sets, cardinalities
+%%and so on
+
+\newcommand{\IGNORE}[1]{}
+\newcommand\bz{\mbox{\bf Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand\nat{\mbox{\bf N}}
+\newcommand\rea{\mbox{\bf R}}
+\newcommand\B{\{0,1\}}      % boolean alphabet  use in math mode
+\newcommand\Bs{\{0,1\}^*}   % B star            use in math mode
+\newcommand\true{\mbox{\sc True}}
+\newcommand\false{\mbox{\sc False}}
+\DeclareRobustCommand{\fracp}[2]{{#1 \overwithdelims()#2}}
+\DeclareRobustCommand{\fracb}[2]{{#1 \overwithdelims[]#2}}
+\newcommand{\marginlabel}[1]%
+{\mbox{}\marginpar{\it{\raggedleft\hspace{0pt}#1}}}
+\newcommand\card[1]{\left| #1 \right|} %cardinality of set S; usage \card{S}
+\newcommand\set[1]{\left\{#1\right\}} %usage \set{1,2,3,,}
+\newcommand\poly{\mbox{poly}}  %usage \poly(n)
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator*{\rank}{rank}
+\newcommand{\floor}[1]{\lfloor\, $#1$\,\rfloor}
+\newcommand{\ceil}[1]{\lceil\, $#1$\,\rceil}
+\newcommand{\comp}[1]{\overline{#1}}
+\newcommand{\defeq}{\overset{\mathrm{def}}{=}}
+\newcommand{\bits}{\set{0,1}}
+
+
+
+% Ordinals
+% \newcommand{\st}{\textsuperscript{st}\ }
+% \newcommand{\nd}{\textsuperscript{nd}\ }
+% \newcommand{\rd}{\textsuperscript{rd}\ }
+\newcommand{\thsup}{\textsuperscript{th}\ }
+
+
+\usepackage{qtree} % `\Tree` for simple tree graphing!
+
+
+\newenvironment{algo}{\vspace{0.07in} \noindent \begin{minipage}	{5.5in}%\begin{quote}
+\hrule\vspace{0.01in}\hrule \vspace{0.05in}}{\vspace{-0.0in}\hrule\vspace{0.01in}\hrule \vspace{0.07in}%\end{quote} 
+\end{minipage}}%
+
+
+\usepackage{arydshln} % For dashed/dotted lines
+\usepackage{cellspace} % Extra padding in table cells
+\usepackage{multicol}
+
+\usepackage{xspace}
+\usepackage{braket}
+
+
+
+
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% \newcommand{\algorithmiccomment}[1]{\quad$\triangleright$ #1}
+\makeatletter
+\renewcommand{\algorithmiccomment}[1]{\hfill$\triangleright$~#1}
+\makeatother

@@ -1,0 +1,235 @@
+
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/math-graph.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{xy}{}{\usepackage[all]{xy}}        % XY-pic package for diagrams
+\@ifpackageloaded{xparse}{}{\usepackage{xparse}}    % \NewDocumentCommand
+\@ifpackageloaded{xstring}{}{\usepackage{xstring}}   % \IfStrEq for string comparison
+\@ifpackageloaded{caption}{}{\usepackage{caption}}  % \caption command
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}} % hyperlinks and cross-references
+\makeatother
+
+% ------------------------------------------------------------------------------
+% \xyArc[<direction>]
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Creates a directed arc (arrow) in XY-pic diagrams with specified direction.
+%   This is a wrapper around the XY-pic \ar@{->}[<direction>] command.
+%
+% FEATURES:
+%   - Creates directed arrows in XY-pic diagrams
+%   - Supports all standard XY-pic direction syntax
+%   - Optional direction parameter with default empty
+%
+% PARAMETERS:
+%   [<direction>]    Direction for the arc (optional, e.g., "r", "u", "rr", "ur")
+%
+% DEPENDENCIES:
+%   \usepackage{xy}
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   % Basic right arrow
+%   A \xyArc[r]
+%
+%   % Up-right arrow
+%   A \xyArc[ur]
+% ------------------------------------------------------------------------------
+\NewDocumentCommand{\xyArc}{O{}}{\ar@{->}[#1]}
+
+% ------------------------------------------------------------------------------
+% \xyEdge[<direction>]
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Creates an undirected edge (line) in XY-pic diagrams with specified direction.
+%   This is a wrapper around the XY-pic \ar@{-}[<direction>] command.
+%
+% FEATURES:
+%   - Creates undirected edges in XY-pic diagrams
+%   - Supports all standard XY-pic direction syntax
+%   - Optional direction parameter with default empty
+%
+% PARAMETERS:
+%   [<direction>]    Direction for the edge (optional, e.g., "r", "u", "rr", "ur")
+%
+% DEPENDENCIES:
+%   \usepackage{xy}
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   % Basic right edge
+%   A \xyEdge[r]
+%
+%   % Up-right edge
+%   A \xyEdge[ur]
+% ------------------------------------------------------------------------------
+\NewDocumentCommand{\xyEdge}{O{}}{\ar@{-}[#1]}
+
+% ------------------------------------------------------------------------------
+% \xyLoop[<direction>]
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Creates a loop (self-loop) in XY-pic diagrams with specified direction.
+%   This command provides a convenient way to create loops with various orientations.
+%
+% FEATURES:
+%   - Creates self-loops with configurable direction
+%   - Supports 8 cardinal directions plus aliases
+%   - Error handling for invalid directions
+%   - Default direction is "u" (up)
+%
+% PARAMETERS:
+%   [<direction>]    Loop direction (optional, defaults to "u")
+%                    Valid directions: r, ur (ru), u, ul (lu), l, dl (ld), d, dr (rd)
+%
+% DEPENDENCIES:
+%   \usepackage{xy}
+%   \usepackage{xparse}
+%   \usepackage{xstring}
+%
+% USAGE EXAMPLES:
+%   % Default up loop
+%   A \xyLoop
+%
+%   % Right loop
+%   A \xyLoop[r]
+%
+%   % Up-right loop (two aliases)
+%   A \xyLoop[ur]
+%   A \xyLoop[ru]
+%
+%   % Down-left loop (two aliases)
+%   A \xyLoop[dl]
+%   A \xyLoop[ld]
+%
+%   % Complex diagram with loops
+%   A \xyLoop[r] B \xyLoop[u] C
+% ------------------------------------------------------------------------------
+\NewDocumentCommand{\xyLoop}{O{u}}{%
+  \IfStrEq{#1}{r}{\ar@(dr,ur)[]}{%
+  \IfStrEq{#1}{ru}{\ar@(r,ur)[]}{%
+  \IfStrEq{#1}{ur}{\ar@(r,ur)[]}{%
+  \IfStrEq{#1}{u}{\ar@(ur,ul)[]}{%
+  \IfStrEq{#1}{ul}{\ar@(u,ul)[]}{%
+  \IfStrEq{#1}{lu}{\ar@(u,ul)[]}{%
+  \IfStrEq{#1}{l}{\ar@(ul,dl)[]}{%
+  \IfStrEq{#1}{dl}{\ar@(l,dl)[]}{%
+  \IfStrEq{#1}{ld}{\ar@(l,dl)[]}{%
+  \IfStrEq{#1}{d}{\ar@(dl,dr)[]}{%
+  \IfStrEq{#1}{dr}{\ar@(d,dr)[]}{%
+  \IfStrEq{#1}{rd}{\ar@(d,dr)[]}{%
+    \PackageError{xyLoop}{Invalid loop direction: #1}%
+      {Valid directions: r, ur (ru), u, ul (lu), l, dl (ld), d, dr (rd).}%
+  }}}}}}}}}}}}
+}%
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% COMPREHENSIVE USAGE EXAMPLE WITH CROSS-REFERENCING
+% ------------------------------------------------------------------------------
+% This section demonstrates how to use all the graph commands together
+% and how to create cross-references using \nameref and \pageref.
+%
+% USAGE EXAMPLES:
+% 
+%   % Basic graph with nodes and edges
+%   \begin{figure}[h]
+%     \centering
+%     \[
+%     \xymatrix@R=1.5em@C=1.5em{
+%       A \xyEdge[r]  &   B \xyEdge[r]              & C 
+%       \\
+%       D \xyEdge[u]  &   E \xyEdge[u]              & F \xyEdge[l]
+%       \\
+%       G \xyEdge[r]  &   H \xyEdge[r]\xyEdge[ur]   & I
+%     }
+%     \]
+%     \caption{Simple 3x3 grid graph}
+%     \label{fig:simple-grid}
+%   \end{figure}
+
+%   Here is a reference to the graph: Figure~\ref{fig:mixed-graph}.
+
+%   \begin{figure}[h]
+%     \centering
+%     \[
+%     \xymatrix@R=1.5em@C=1.5em{
+%       A \xyArc[r]     & B \xyLoop[u] 
+%       \\
+%       C \xyEdge[u]    & D \xyArc[ul]      & E \xyArc[l]
+%       \\
+%       F \xyLoop[d]   & G \xyArc[l]       & H \xyArc[u]
+%     }
+%     \]
+%     \caption{Mixed directed and undirected graph}
+%     \label{fig:mixed-graph}
+%   \end{figure}
+
+  
+
+%   % Cross-referencing examples
+%   As shown in \nameref{fig:simple-grid}, we can create basic grid graphs.
+%   The \nameref{fig:mixed-graph} demonstrates both directed and undirected edges.
+%   For more complex examples, see \nameref{fig:complex-graph} on page \pageref{fig:complex-graph}.
+
+
+%   % Complex graph with multiple connections
+%   \begin{figure}[h]
+%     \centering
+%     \[
+%     \xymatrix@R=2em@C=2em{
+%       % ----------------------------------------------------------------------
+%       {} & 
+%       *++[o][F]{2} \xyEdge[r]\xyEdge[d] \xyLoop[ul] & 
+%       *++[o][F]{3} \xyEdge[l]\xyEdge[ld] \xyLoop[u] & 
+%       {} & 
+%       *++[o][F]{5} \xyEdge[r] \xyLoop[l] & 
+%       *++[o][F]{1} \xyLoop[r] & 
+%       {} \\
+%       % ----------------------------------------------------------------------
+%       {} & 
+%       *++[o][F]{6} \xyEdge[u]\xyEdge[ur] \xyLoop[l] & 
+%       {} & 
+%       *++[o][F]{4} \xyLoop[u] & 
+%       {} & 
+%       {} & 
+%       {} \\
+%       % ----------------------------------------------------------------------
+%       {} & 
+%       {} & 
+%       {} & 
+%       *++[o][F]{2} \xyEdge[r] \xyEdge[ld] \xyLoop[u] & 
+%       *++[o][F]{6} \xyLoop[r] & 
+%       {} & 
+%       {} \\
+%       % ----------------------------------------------------------------------
+%       {} & 
+%       {} & 
+%       *++[o][F]{3} \xyEdge[ur] \xyArc[rr] \xyLoop[l] & 
+%       {} & 
+%       *++[o][F]{1} \xyEdge[d] \xyLoop[ur] & 
+%       {} & 
+%       {} \\
+%       % ----------------------------------------------------------------------
+%       {} & 
+%       {} & 
+%       {} & 
+%       *++[o][F]{4} \xyArc[uur] \xyLoop[ld] \xyLoop[dr] & 
+%       *++[o][F]{5} \xyArc[l] \xyLoop[r] & 
+%       {} & 
+%       {} \\
+%     }
+%     \]
+%     \caption{Complex graph with multiple node types and connections}
+%     \label{fig:complex-graph}
+%   \end{figure}
+
+%   % Referencing specific graph elements
+%   In the \nameref{fig:complex-graph}, node 2 has connections to nodes 3 and 6,
+%   while node 4 has multiple loops and arcs to other nodes.
+% ------------------------------------------------------------------------------
+    

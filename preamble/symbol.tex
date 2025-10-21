@@ -1,0 +1,230 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/symbol.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+\@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+\@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+\@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+\@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+% \@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+%   \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+%   \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+%   \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+%   \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+%   \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+%   \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+%   \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+%   \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+%   \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+% }
+\makeatother
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Canonical Number Sets
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   These commands define standard number sets using \mathds font.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%   - Uses double-struck font for mathematical clarity
+%
+% DEPENDENCIES:
+%   \usepackage{dsfont} 
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The set \setN contains all natural numbers.
+%   For any $x \in \setR$, we have $x^2 \geq 0$.
+%   The complex numbers \setC extend the reals.
+% ------------------------------------------------------------------------------
+\newcommand{\setN}{\ensuremath{\mathds{N}}\xspace} % Natural numbers
+\newcommand{\setZ}{\ensuremath{\mathds{Z}}\xspace} % Integers
+\newcommand{\setQ}{\ensuremath{\mathds{Q}}\xspace} % Rational numbers
+\newcommand{\setR}{\ensuremath{\mathds{R}}\xspace} % Real numbers
+\newcommand{\setC}{\ensuremath{\mathds{C}}\xspace} % Complex numbers
+\newcommand{\setK}{\ensuremath{\mathds{K}}\xspace} % Generic field
+\newcommand{\setF}{\ensuremath{\mathds{F}}\xspace} % Finite fields
+\newcommand{\setS}{\ensuremath{\mathds{S}}\xspace} % Unit sphere / sets
+\newcommand{\setT}{\ensuremath{\mathds{T}}\xspace} % Torus / time index
+\newcommand{\setE}{\ensuremath{\mathds{E}}\xspace} % Expectation symbol
+\newcommand{\setP}{\ensuremath{\mathds{P}}\xspace} % Probability symbol
+\newcommand{\setI}{\ensuremath{\mathds{I}}\xspace} % Identity matrix
+\newcommand{\setUNIV}{\ensuremath{\mathcal{U}}\xspace} % Universal set
+\newcommand{\setNULL}{\ensuremath{\emptyset}\xspace} % Empty set
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Probability & Statistics Core
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Core commands for probability theory and statistics.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Standard probability and statistics notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{dsfont}
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The probability \Prob(A) of event A.
+%   The expected value \E[X] of random variable X.
+%   The standard deviation \sd of the distribution.
+% ------------------------------------------------------------------------------
+\newcommand{\Prob}{\ensuremath{\mathds{P}}\xspace} % Probability measure
+\newcommand{\E}{\ensuremath{\mathds{E}}\xspace}    % Expectation operator
+\newcommand{\sd}{\ensuremath{\sigma}\xspace}       % Standard deviation
+
+% ------------------------------------------------------------------------------
+% Probability Distribution Names
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for common probability distributions.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Standard distribution notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   X $\sim$ \Bernoulli(p) follows a Bernoulli distribution.
+%   Y $\sim$ \Normal(\mu,\sigma^2) is normally distributed.
+%   Z $\sim$ \Exponential(\lambda) has exponential distribution.
+% ------------------------------------------------------------------------------
+\newcommand{\Bernoulli}{\ensuremath{\mathrm{Bernoulli}}\xspace}
+\newcommand{\Binomial}{\ensuremath{\mathrm{Binomial}}\xspace}
+\newcommand{\Geometric}{\ensuremath{\mathrm{Geometric}}\xspace}
+\newcommand{\Poisson}{\ensuremath{\mathrm{Poisson}}\xspace}
+\newcommand{\Exponential}{\ensuremath{\mathrm{Exponential}}\xspace}
+\newcommand{\GammaDist}{\ensuremath{\mathrm{Gamma}}\xspace}
+\newcommand{\BetaDist}{\ensuremath{\mathrm{Beta}}\xspace}
+\newcommand{\Dirichlet}{\ensuremath{\mathrm{Dirichlet}}\xspace}
+\newcommand{\Normal}{\ensuremath{\mathcal{N}}\xspace}        % Normal distribution
+\newcommand{\Cauchy}{\ensuremath{\mathrm{Cauchy}}\xspace}
+\newcommand{\Laplace}{\ensuremath{\mathrm{Laplace}}\xspace}
+\newcommand{\Uniform}{\ensuremath{\mathrm{Uniform}}\xspace}
+\newcommand{\StudentT}{\ensuremath{\mathrm{Student}\text{-}\mathit{t}}\xspace}
+\newcommand{\ChiSq}{\ensuremath{\chi^2}\xspace}
+
+% ------------------------------------------------------------------------------
+% Function Spaces & Calligraphic Letters
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for function spaces and common calligraphic letters.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Standard mathematical notation for function spaces
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{cal}
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The space \opC of continuous functions.
+%   The Hilbert space \opH with inner product.
+%   The power set \opP(X) of set X.
+% ------------------------------------------------------------------------------
+\newcommand{\opA}{\ensuremath{\mathcal{A}}\xspace}
+\newcommand{\opB}{\ensuremath{\mathcal{B}}\xspace}   % Sigma-algebra
+\newcommand{\opC}{\ensuremath{\mathcal{C}}\xspace}   % Continuous functions
+\newcommand{\opD}{\ensuremath{\mathcal{D}}\xspace}
+\newcommand{\opF}{\ensuremath{\mathcal{F}}\xspace}   % Sigma-algebra / Fourier transform
+\newcommand{\opH}{\ensuremath{\mathcal{H}}\xspace}   % Hilbert space
+\newcommand{\opL}{\ensuremath{\mathcal{L}}\xspace}   % Linear operators / L^p
+\newcommand{\opM}{\ensuremath{\mathcal{M}}\xspace}   % Measures
+\newcommand{\opN}{\ensuremath{\mathcal{N}}\xspace}   % Neighborhoods
+\newcommand{\opO}{\ensuremath{\mathcal{O}}\xspace}   % Big-O notation
+\newcommand{\opP}{\ensuremath{\mathcal{P}}\xspace}   % Power set
+\newcommand{\opS}{\ensuremath{\mathcal{S}}\xspace}   % Schwartz space
+\newcommand{\opT}{\ensuremath{\mathcal{T}}\xspace}   % Topology
+
+% ------------------------------------------------------------------------------
+% Script Letters (Sheaves & Special Spaces)
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for script letters commonly used for sheaves and special spaces.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Script font for mathematical objects
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{mathrsfs}
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The structure sheaf \shO of the scheme.
+%   The Schwartz space \shS of rapidly decreasing functions.
+%   The sheaf \shF of functions on the manifold.
+% ------------------------------------------------------------------------------
+\newcommand{\shA}{\ensuremath{\mathscr{A}}\xspace}
+\newcommand{\shB}{\ensuremath{\mathscr{B}}\xspace}
+\newcommand{\shC}{\ensuremath{\mathscr{C}}\xspace}
+\newcommand{\shD}{\ensuremath{\mathscr{D}}\xspace}
+\newcommand{\shF}{\ensuremath{\mathscr{F}}\xspace}
+\newcommand{\shG}{\ensuremath{\mathscr{G}}\xspace}
+\newcommand{\shH}{\ensuremath{\mathscr{H}}\xspace}
+\newcommand{\shL}{\ensuremath{\mathscr{L}}\xspace}
+\newcommand{\shO}{\ensuremath{\mathscr{O}}\xspace}   % Structure sheaf
+\newcommand{\shS}{\ensuremath{\mathscr{S}}\xspace}   % Schwartz space
+
+% ------------------------------------------------------------------------------
+% Fraktur Letters (Lie Algebras & Ideals)
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for fraktur letters used in Lie algebras and ring theory.
+%   All commands are text-usable with \ensuremath and \xspace.
+%
+% FEATURES:
+%   - Fraktur font for algebraic structures
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{amssymb}
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The Lie algebra \algg with bracket operation.
+%   The special linear algebra \algsl(n).
+%   The prime ideal \algp in the ring.
+% ------------------------------------------------------------------------------
+\newcommand{\algg}{\ensuremath{\mathfrak{g}}\xspace}      % Generic Lie algebra
+\newcommand{\algsl}{\ensuremath{\mathfrak{sl}}\xspace}    % Special linear algebra
+\newcommand{\algso}{\ensuremath{\mathfrak{so}}\xspace}    % Special orthogonal algebra
+\newcommand{\algsp}{\ensuremath{\mathfrak{sp}}\xspace}    % Symplectic algebra
+\newcommand{\algp}{\ensuremath{\mathfrak{p}}\xspace}      % Prime ideal
+\newcommand{\algm}{\ensuremath{\mathfrak{m}}\xspace}      % Maximal ideal
+\newcommand{\algh}{\ensuremath{\mathfrak{h}}\xspace}      % Cartan subalgebra

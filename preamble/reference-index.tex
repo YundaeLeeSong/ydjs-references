@@ -1,0 +1,65 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/reference-index.tex
+% ------------------------------------------------------------------------------
+% Load packages conditionally
+\makeatletter
+\@ifpackageloaded{imakeidx}{}{\usepackage{imakeidx}}
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}} % helpful for TOC/links
+\makeatother
+
+% ------------------------------------------------------------------------------
+% Index setup (imakeidx)
+% ------------------------------------------------------------------------------
+% DESCRIPTION
+%   Enables index generation with convenient printing and TOC integration.
+%
+% COMMON OPTIONS
+%   title=Index   – custom index title (default: Index)
+%   intoc         – include the index in the table of contents
+%
+% USAGE
+%   1) Declare the index here via \makeindex[...]
+%   2) Mark entries in your document using \index{term} or \index{term!subterm}
+%   3) Print the index near the end using \printindex (see examples below)
+%   Build notes: latexmk usually runs makeindex automatically. Manual build:
+%     pdflatex file; makeindex file; pdflatex file
+\makeindex[
+  % title=Index,                % adjustable title (defualt: Index)
+  intoc
+]
+
+% ------------------------------------------------------------------------------
+% Examples
+% ------------------------------------------------------------------------------
+% In document body, add index entries:
+%   % See \S~1 for an overview of sets.\index{set theory}
+%   % Use \index{functions!injective} to create sub-entries.
+%
+% To print the index (pick one style):
+
+%   % \clearpage
+%   % \printindex                  % unnumbered, title from imakeidx
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grouping Shortcuts for VS Code (`View` > `Command Palette` > `Preferences: Open Keyboard Shortcuts (JSON)`)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {
+%   "key": "ctrl+shift+r",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "${TM_SELECTED_TEXT}\\index{${TM_SELECTED_TEXT}}"
+%   }
+% },

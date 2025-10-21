@@ -1,0 +1,119 @@
+% You can assume the following custom macros or alias are available...
+% \usepackage{amsmath,amssymb,mathrsfs,dsfont,xspace}
+
+% % Logical operators
+% \newcommand{\NOT}[1]{\ensuremath{\lnot\,#1}\xspace}                           % logical negation
+% \newcommand{\AND}[2]{\ensuremath{#1\mathbin{\land}#2}\xspace}                 % logical conjunction (binary)
+% \newcommand{\OR}[2]{\ensuremath{#1\mathbin{\lor}#2}\xspace}                   % logical disjunction (binary)
+% \newcommand{\THEN}[2]{\ensuremath{#1\mathbin{\rightarrow}#2}\xspace}          % implication (binary)
+% \newcommand{\IFF}[2]{\ensuremath{#1\mathbin{\leftrightarrow}#2}\xspace}       % biconditional (binary)
+% \newcommand{\TRUE}{\ensuremath{\boldsymbol{T}}\xspace}                        % tautology symbol
+% \newcommand{\FALSE}{\ensuremath{\boldsymbol{F}}\xspace}                       % contradiction symbol
+
+% % Set theory
+% \newcommand{\sNOT}[1]{\ensuremath{\overline{#1}}\xspace}                      % set complement (unary)
+% \newcommand{\sOR}[2]{\ensuremath{#1\mathbin{\cup}#2}\xspace}                  % union (binary)
+% \newcommand{\sAND}[2]{\ensuremath{#1\mathbin{\cap}#2}\xspace}                 % intersection (binary)
+% \newcommand{\sMINUS}[2]{\ensuremath{#1\mathbin{\setminus}#2}\xspace}          % set difference (binary)
+% \newcommand{\sXOR}[2]{\ensuremath{#1\mathbin{\triangle}#2}\xspace}            % symmetric difference (binary)
+% \newcommand{\sTIMES}[2]{\ensuremath{#1\mathbin{\times}#2}\xspace}             % Cartesian product (binary)
+% \newcommand{\sPOWER}[1]{\ensuremath{\mathcal{P}(#1)}\xspace}                  % power set (unary)
+% \newcommand{\sCARD}[1]{\ensuremath{\#(#1)}\xspace}                            % cardinality (unary)
+% \newcommand{\sEMPTY}{\ensuremath{\emptyset}\xspace}                           % empty set
+% \newcommand{\sUNIV}{\ensuremath{\mathcal{U}}\xspace}                          % universal set
+% \newcommand{\sORALL}[3]{\ensuremath{\bigcup_{#1}^{#2} #3}\xspace}             % indexed union (index, upper, expr)
+% \newcommand{\sANDALL}[3]{\ensuremath{\bigcap_{#1}^{#2} #3}\xspace}            % indexed intersection (index, upper, expr)
+% \newcommand{\sBUILD}[2]{\ensuremath{\{\,#1 \mid #2\,\}}\xspace}               % set-builder (expr, condition)
+
+% % Number theory & floor/ceiling
+% \newcommand{\LDIV}[2]{\ensuremath{#1\mathbin{\mid}#2}\xspace}                 % divides (binary)
+% \newcommand{\NDIV}[2]{\ensuremath{#1\mathbin{\nmid}#2}\xspace}                % does not divide (binary)
+% \newcommand{\FLOOR}[1]{\ensuremath{\lfloor #1\rfloor}\xspace}                 % floor (unary)
+% \newcommand{\CEIL}[1]{\ensuremath{\lceil #1\rceil}\xspace}                    % ceiling (unary)
+% \newcommand{\LCM}[2]{\ensuremath{\operatorname{lcm}(#1,#2)}\xspace}           % least common multiple (binary)
+% \newcommand{\GCD}[2]{\ensuremath{\operatorname{gcd}(#1,#2)}\xspace}           % greatest common divisor (binary)
+
+% % Canonical number sets & basic symbols
+% \newcommand{\setN}{\ensuremath{\mathds{N}}\xspace}                            % natural numbers
+% \newcommand{\setZ}{\ensuremath{\mathds{Z}}\xspace}                            % integers
+% \newcommand{\setQ}{\ensuremath{\mathds{Q}}\xspace}                            % rationals
+% \newcommand{\setR}{\ensuremath{\mathds{R}}\xspace}                            % reals
+% \newcommand{\setC}{\ensuremath{\mathds{C}}\xspace}                            % complex numbers
+% \newcommand{\setK}{\ensuremath{\mathds{K}}\xspace}                            % generic field
+% \newcommand{\setF}{\ensuremath{\mathds{F}}\xspace}                            % finite field
+% \newcommand{\setS}{\ensuremath{\mathds{S}}\xspace}                            % sphere / set S
+% \newcommand{\setT}{\ensuremath{\mathds{T}}\xspace}                            % torus / time index
+% \newcommand{\setE}{\ensuremath{\mathds{E}}\xspace}                            % expectation symbol
+% \newcommand{\setP}{\ensuremath{\mathds{P}}\xspace}                            % probability symbol
+% \newcommand{\setI}{\ensuremath{\mathds{I}}\xspace}                            % identity matrix
+% \newcommand{\setUNIV}{\ensuremath{\mathcal{U}}\xspace}                        % universal set (calligraphic)
+% \newcommand{\setNULL}{\ensuremath{\emptyset}\xspace}                          % empty set alias
+
+
+
+
+
+
+
+
+
+
+
+
+
+% % Probability & statistics
+% \newcommand{\Prob}[1]{\ensuremath{\mathds{P}\!\left(#1\right)}\xspace}        % probability of event (unary)
+% \newcommand{\E}[1]{\ensuremath{\mathds{E}\!\left[#1\right]}\xspace}           % expectation (unary)
+% \newcommand{\sd}{\ensuremath{\sigma}\xspace}                                  % standard deviation
+
+% % Common distributions (names — no args)
+% \newcommand{\Bernoulli}{\ensuremath{\mathrm{Bernoulli}}\xspace}               % Bernoulli distribution
+% \newcommand{\Binomial}{\ensuremath{\mathrm{Binomial}}\xspace}                 % Binomial distribution
+% \newcommand{\Geometric}{\ensuremath{\mathrm{Geometric}}\xspace}               % Geometric distribution
+% \newcommand{\Poisson}{\ensuremath{\mathrm{Poisson}}\xspace}                   % Poisson distribution
+% \newcommand{\Exponential}{\ensuremath{\mathrm{Exponential}}\xspace}           % Exponential distribution
+% \newcommand{\GammaDist}{\ensuremath{\mathrm{Gamma}}\xspace}                   % Gamma distribution
+% \newcommand{\BetaDist}{\ensuremath{\mathrm{Beta}}\xspace}                     % Beta distribution
+% \newcommand{\Dirichlet}{\ensuremath{\mathrm{Dirichlet}}\xspace}               % Dirichlet distribution
+% \newcommand{\Normal}{\ensuremath{\mathcal{N}}\xspace}                          % Normal distribution
+% \newcommand{\Cauchy}{\ensuremath{\mathrm{Cauchy}}\xspace}                     % Cauchy distribution
+% \newcommand{\Laplace}{\ensuremath{\mathrm{Laplace}}\xspace}                   % Laplace distribution
+% \newcommand{\Uniform}{\ensuremath{\mathrm{Uniform}}\xspace}                   % Uniform distribution
+% \newcommand{\StudentT}{\ensuremath{\mathrm{Student}\text{-}\mathit{t}}\xspace} % Student-t distribution
+% \newcommand{\ChiSq}{\ensuremath{\chi^2}\xspace}                               % chi-squared
+
+% % Calligraphic operators / function spaces
+% \newcommand{\opA}{\ensuremath{\mathcal{A}}\xspace}                            % calligraphic A
+% \newcommand{\opB}{\ensuremath{\mathcal{B}}\xspace}                            % calligraphic B
+% \newcommand{\opC}{\ensuremath{\mathcal{C}}\xspace}                            % calligraphic C
+% \newcommand{\opD}{\ensuremath{\mathcal{D}}\xspace}                            % calligraphic D
+% \newcommand{\opF}{\ensuremath{\mathcal{F}}\xspace}                            % calligraphic F
+% \newcommand{\opH}{\ensuremath{\mathcal{H}}\xspace}                            % Hilbert space
+% \newcommand{\opL}{\ensuremath{\mathcal{L}}\xspace}                            % operator L
+% \newcommand{\opM}{\ensuremath{\mathcal{M}}\xspace}                            % measures
+% \newcommand{\opN}{\ensuremath{\mathcal{N}}\xspace}                            % neighborhoods / normal
+% \newcommand{\opO}{\ensuremath{\mathcal{O}}\xspace}                            % big-O
+% \newcommand{\opP}{\ensuremath{\mathcal{P}}\xspace}                            % power set operator
+% \newcommand{\opS}{\ensuremath{\mathcal{S}}\xspace}                            % Schwartz space
+% \newcommand{\opT}{\ensuremath{\mathcal{T}}\xspace}                            % topology / operator T
+
+% % Script letters (sheaves / special spaces)
+% \newcommand{\shA}{\ensuremath{\mathscr{A}}\xspace}                            % script A
+% \newcommand{\shB}{\ensuremath{\mathscr{B}}\xspace}                            % script B
+% \newcommand{\shC}{\ensuremath{\mathscr{C}}\xspace}                            % script C
+% \newcommand{\shD}{\ensuremath{\mathscr{D}}\xspace}                            % script D
+% \newcommand{\shF}{\ensuremath{\mathscr{F}}\xspace}                            % script F
+% \newcommand{\shG}{\ensuremath{\mathscr{G}}\xspace}                            % script G
+% \newcommand{\shH}{\ensuremath{\mathscr{H}}\xspace}                            % script H
+% \newcommand{\shL}{\ensuremath{\mathscr{L}}\xspace}                            % script L
+% \newcommand{\shO}{\ensuremath{\mathscr{O}}\xspace}                            % script O
+% \newcommand{\shS}{\ensuremath{\mathscr{S}}\xspace}                            % script S
+
+% % Fraktur (Lie algebras / ideals)
+% \newcommand{\algg}{\ensuremath{\mathfrak{g}}\xspace}                           % fraktur g
+% \newcommand{\algsl}{\ensuremath{\mathfrak{sl}}\xspace}                         % fraktur sl
+% \newcommand{\algso}{\ensuremath{\mathfrak{so}}\xspace}                         % fraktur so
+% \newcommand{\algsp}{\ensuremath{\mathfrak{sp}}\xspace}                         % fraktur sp
+% \newcommand{\algp}{\ensuremath{\mathfrak{p}}\xspace}                           % fraktur p
+% \newcommand{\algm}{\ensuremath{\mathfrak{m}}\xspace}                           % fraktur m
+% \newcommand{\algh}{\ensuremath{\mathfrak{h}}\xspace}                           % fraktur h

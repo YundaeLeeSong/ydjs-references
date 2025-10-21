@@ -1,0 +1,453 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/operator.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+\@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+\@ifpackageloaded{centernot}{}{\usepackage{centernot}}   % \centernot for prettier negated symbols
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+% \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}    % hyperlinks and cross-references
+% \@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+%   \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+%   \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+%   \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+%   \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+%   \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+%   \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+%   \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+%   \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+%   \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+% }
+\makeatother
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Logical Operators
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for logical operators and connectives.
+%   All commands are text-usable with \ensuremath and \xspace.
+%   Operators can be used with or without arguments.
+%
+% FEATURES:
+%   - Standard logical notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%   - Flexible: no args (symbol only) or with args (formula)
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The statement P \AND Q is true.
+%   If P \THEN Q, then \NOT Q \THEN \NOT P.
+%   P \IFF Q means P \THEN Q \AND Q \THEN P.
+%   \NOT{p} \AND{q}{r} \THEN{s}{t}
+% ------------------------------------------------------------------------------
+\makeatletter % "ENABLE" internal \@... macros
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\NOT}{\@ifnextchar\bgroup{\NOT@with}{\NOT@noarg}}
+\newcommand{\NOT@noarg}{\ensuremath{\lnot}\xspace}
+\newcommand{\NOT@with}[1]{\ensuremath{\lnot\,{#1}}\xspace}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\AND}{\@ifnextchar\bgroup{\AND@with}{\AND@noarg}}
+\newcommand{\AND@noarg}{\ensuremath{\mathbin{\land}}\xspace}
+\newcommand{\AND@with}[1]{%
+  \@ifnextchar\bgroup{\AND@twowith{#1}}{\AND@singleerror{#1}}%
+}
+\newcommand{\AND@twowith}[2]{\ensuremath{{#1}\mathbin{\land}{#2}}\xspace}
+\newcommand{\AND@singleerror}[1]{%
+  \@latex@error{`\string\AND' expects either no arguments or two braced arguments. Use `\string\AND{p}{q}'}\@ehc
+}
+
+\newcommand{\MEET}{\@ifnextchar\bgroup{\MEET@with}{\MEET@noarg}}
+\newcommand{\MEET@noarg}{\ensuremath{\mathbin{\wedge}}\xspace}
+\newcommand{\MEET@with}[1]{%
+  \@ifnextchar\bgroup{\MEET@twowith{#1}}{\MEET@singleerror{#1}}%
+}
+\newcommand{\MEET@twowith}[2]{\ensuremath{{#1}\mathbin{\wedge}{#2}}\xspace}
+\newcommand{\MEET@singleerror}[1]{%
+  \@latex@error{`\string\MEET' expects either no arguments or two braced arguments. Use `\string\MEET{A}{B}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\OR}{\@ifnextchar\bgroup{\OR@with}{\OR@noarg}}
+\newcommand{\OR@noarg}{\ensuremath{\mathbin{\lor}}\xspace}
+\newcommand{\OR@with}[1]{%
+  \@ifnextchar\bgroup{\OR@twowith{#1}}{\OR@singleerror{#1}}%
+}
+\newcommand{\OR@twowith}[2]{\ensuremath{{#1}\mathbin{\lor}{#2}}\xspace}
+\newcommand{\OR@singleerror}[1]{%
+  \@latex@error{`\string\OR' expects either no arguments or two braced arguments. Use `\string\OR{p}{q}'}\@ehc
+}
+
+\newcommand{\JOIN}{\@ifnextchar\bgroup{\JOIN@with}{\JOIN@noarg}}
+\newcommand{\JOIN@noarg}{\ensuremath{\mathbin{\vee}}\xspace}
+\newcommand{\JOIN@with}[1]{%
+  \@ifnextchar\bgroup{\JOIN@twowith{#1}}{\JOIN@singleerror{#1}}%
+}
+\newcommand{\JOIN@twowith}[2]{\ensuremath{{#1}\mathbin{\vee}{#2}}\xspace}
+\newcommand{\JOIN@singleerror}[1]{%
+  \@latex@error{`\string\JOIN' expects either no arguments or two braced arguments. Use `\string\JOIN{A}{B}'}\@ehc
+}
+
+
+
+
+
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\THEN}{\@ifnextchar\bgroup{\THEN@with}{\THEN@noarg}}
+\newcommand{\THEN@noarg}{\ensuremath{\mathbin{\rightarrow}}\xspace}
+\newcommand{\THEN@with}[1]{%
+  \@ifnextchar\bgroup{\THEN@twowith{#1}}{\THEN@singleerror{#1}}%
+}
+\newcommand{\THEN@twowith}[2]{\ensuremath{{#1}\mathbin{\rightarrow}{#2}}\xspace}
+\newcommand{\THEN@singleerror}[1]{%
+  \@latex@error{`\string\THEN' expects either no arguments or two braced arguments. Use `\string\THEN{p}{q}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\IFF}{\@ifnextchar\bgroup{\IFF@with}{\IFF@noarg}}
+\newcommand{\IFF@noarg}{\ensuremath{\mathbin{\leftrightarrow}}\xspace}
+\newcommand{\IFF@with}[1]{%
+  \@ifnextchar\bgroup{\IFF@twowith{#1}}{\IFF@singleerror{#1}}%
+}
+\newcommand{\IFF@twowith}[2]{\ensuremath{{#1}\mathbin{\leftrightarrow}{#2}}\xspace}
+\newcommand{\IFF@singleerror}[1]{%
+  \@latex@error{`\string\IFF' expects either no arguments or two braced arguments. Use `\string\IFF{p}{q}'}\@ehc
+}
+
+% Constants: no arguments
+\newcommand{\TRUE}{\ensuremath{\boldsymbol{T}}\xspace} % tautology
+\newcommand{\FALSE}{\ensuremath{\boldsymbol{F}}\xspace} % contradiction
+
+\makeatother % "DISABLE" internal \@... macros
+
+% ------------------------------------------------------------------------------
+% Set Theory Operators
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for set theory operations and notation.
+%   All commands are text-usable with \ensuremath and \xspace.
+%   Operators can be used with or without arguments.
+%
+% FEATURES:
+%   - Standard set theory notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%   - Flexible: no args (symbol only) or with args (formula)
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The union A \sOR B of sets A and B.
+%   The complement \sNOT{A} of set A.
+%   The power set \sPOWER(X) of set X.
+%   The cardinality \sCARD(A) of set A.
+%   \sOR{A}{B} \sAND{C}{D} \sMINUS{E}{F}
+% ------------------------------------------------------------------------------
+\makeatletter % "ENABLE" internal \@... macros
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\sNOT}{\@ifnextchar\bgroup{\sNOT@with}{\sNOT@noarg}}
+\newcommand{\sNOT@noarg}{\ensuremath{\overline{}}\xspace}
+\newcommand{\sNOT@with}[1]{\ensuremath{\overline{#1}}\xspace}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\sOR}{\@ifnextchar\bgroup{\sOR@with}{\sOR@noarg}}
+\newcommand{\sOR@noarg}{\ensuremath{\mathbin{\cup}}\xspace}
+\newcommand{\sOR@with}[1]{%
+  \@ifnextchar\bgroup{\sOR@twowith{#1}}{\sOR@singleerror{#1}}%
+}
+\newcommand{\sOR@twowith}[2]{\ensuremath{{#1}\mathbin{\cup}{#2}}\xspace}
+\newcommand{\sOR@singleerror}[1]{%
+  \@latex@error{`\string\sOR' expects either no arguments or two braced arguments. Use `\string\sOR{A}{B}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\sAND}{\@ifnextchar\bgroup{\sAND@with}{\sAND@noarg}}
+\newcommand{\sAND@noarg}{\ensuremath{\mathbin{\cap}}\xspace}
+\newcommand{\sAND@with}[1]{%
+  \@ifnextchar\bgroup{\sAND@twowith{#1}}{\sAND@singleerror{#1}}%
+}
+\newcommand{\sAND@twowith}[2]{\ensuremath{{#1}\mathbin{\cap}{#2}}\xspace}
+\newcommand{\sAND@singleerror}[1]{%
+  \@latex@error{`\string\sAND' expects either no arguments or two braced arguments. Use `\string\sAND{A}{B}'}\@ehc
+}
+
+
+
+
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\sMINUS}{\@ifnextchar\bgroup{\sMINUS@with}{\sMINUS@noarg}}
+\newcommand{\sMINUS@noarg}{\ensuremath{\mathbin{\setminus}}\xspace}
+\newcommand{\sMINUS@with}[1]{%
+  \@ifnextchar\bgroup{\sMINUS@twowith{#1}}{\sMINUS@singleerror{#1}}%
+}
+\newcommand{\sMINUS@twowith}[2]{\ensuremath{{#1}\mathbin{\setminus}{#2}}\xspace}
+\newcommand{\sMINUS@singleerror}[1]{%
+  \@latex@error{`\string\sMINUS' expects either no arguments or two braced arguments. Use `\string\sMINUS{A}{B}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\sXOR}{\@ifnextchar\bgroup{\sXOR@with}{\sXOR@noarg}}
+\newcommand{\sXOR@noarg}{\ensuremath{\mathbin{\triangle}}\xspace}
+\newcommand{\sXOR@with}[1]{%
+  \@ifnextchar\bgroup{\sXOR@twowith{#1}}{\sXOR@singleerror{#1}}%
+}
+\newcommand{\sXOR@twowith}[2]{\ensuremath{{#1}\mathbin{\triangle}{#2}}\xspace}
+\newcommand{\sXOR@singleerror}[1]{%
+  \@latex@error{`\string\sXOR' expects either no arguments or two braced arguments. Use `\string\sXOR{A}{B}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\sTIMES}{\@ifnextchar\bgroup{\sTIMES@with}{\sTIMES@noarg}}
+\newcommand{\sTIMES@noarg}{\ensuremath{\mathbin{\times}}\xspace}
+\newcommand{\sTIMES@with}[1]{%
+  \@ifnextchar\bgroup{\sTIMES@twowith{#1}}{\sTIMES@singleerror{#1}}%
+}
+\newcommand{\sTIMES@twowith}[2]{\ensuremath{{#1}\mathbin{\times}{#2}}\xspace}
+\newcommand{\sTIMES@singleerror}[1]{%
+  \@latex@error{`\string\sTIMES' expects either no arguments or two braced arguments. Use `\string\sTIMES{A}{B}'}\@ehc
+}
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\sPOWER}{\@ifnextchar\bgroup{\sPOWER@with}{\sPOWER@noarg}}
+\newcommand{\sPOWER@noarg}{\ensuremath{\mathcal{P}}\xspace}
+\newcommand{\sPOWER@with}[1]{\ensuremath{\mathcal{P}({#1})}\xspace}
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\sCARD}{\@ifnextchar\bgroup{\sCARD@with}{\sCARD@noarg}}
+\newcommand{\sCARD@noarg}{\ensuremath{\#}\xspace}
+\newcommand{\sCARD@with}[1]{\ensuremath{\#{#1}}\xspace}
+
+% Constants: no arguments
+\newcommand{\sEMPTY}{\ensuremath{\emptyset}\xspace} % Empty set
+\newcommand{\sUNIV}{\ensuremath{\mathcal{U}}\xspace} % Universal set
+
+\makeatother % "DISABLE" internal \@... macros
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Indexed Set Operations
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for indexed union and intersection operations.
+%   These commands accept index definitions and create proper mathematical notation.
+%
+% FEATURES:
+%   - Creates indexed union/intersection with proper subscripts and superscripts
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The union $\sORALL{i=1}{n}{A_i}$ of sets $A_1$ through $A_n$.
+%   The intersection $\sANDALL{j=0}{k}{B_j}$ of sets $B_0$ through $B_k$.
+% ------------------------------------------------------------------------------
+\newcommand{\sORALL}[3]{\ensuremath{\bigcup_{#1}^{#2} #3}\xspace}    % Indexed union: \sORALL{i=1}{n}{A_i}
+\newcommand{\sANDALL}[3]{\ensuremath{\bigcap_{#1}^{#2} #3}\xspace}   % Indexed intersection: \sANDALL{i=1}{n}{A_i}
+
+% ------------------------------------------------------------------------------
+% Set Builder Notation
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Command for building sets using set-builder notation.
+%   This command is text-usable with \ensuremath.
+%
+% FEATURES:
+%   - Creates sets with conditions
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%
+% DEPENDENCIES:
+%   <None>
+%
+% USAGE EXAMPLES:
+%   The set $\sBUILD{x}{x > 0}$ of positive real numbers.
+%   The set $\sBUILD{n}{n \in \mathcal{N} \AND n \text{ is even}}$ of even naturals.
+% ------------------------------------------------------------------------------
+\newcommand{\sBUILD}[2]{\ensuremath{\{\,#1 \mid #2\,\}}} % Set builder: {x | P(x)}
+
+
+
+
+
+
+%%%
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% Number Theory Operators
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for number theory operators and functions.
+%   All commands are text-usable with \ensuremath and \xspace.
+%   Operators can be used with or without arguments.
+%
+% FEATURES:
+%   - Standard number theory notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%   - Flexible: no args (symbol only) or with args (formula)
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The floor \FLOOR{x} and ceiling \CEIL{x} of x.
+%   The number 3 \LDIV 6 means 3 divides 6.
+%   The number 4 \NDIV 6 means 4 does not divide 6.
+%   The \LCM{a}{b} and \GCD{a}{b} of a and b.
+%   \FLOOR{x} \CEIL{y} \LDIV{z} \NDIV{w}
+% ------------------------------------------------------------------------------
+\makeatletter % "ENABLE" internal \@... macros
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\FLOOR}{\@ifnextchar\bgroup{\FLOOR@with}{\FLOOR@noarg}}
+\newcommand{\FLOOR@noarg}{\ensuremath{\lfloor\,\rfloor}\xspace}
+\newcommand{\FLOOR@with}[1]{\ensuremath{\lfloor{#1}\rfloor}\xspace}
+
+% UNARY operator: none or 1 braced argument
+\newcommand{\CEIL}{\@ifnextchar\bgroup{\CEIL@with}{\CEIL@noarg}}
+\newcommand{\CEIL@noarg}{\ensuremath{\lceil\,\rceil}\xspace}
+\newcommand{\CEIL@with}[1]{\ensuremath{\lceil{#1}\rceil}\xspace}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\LDIV}{\@ifnextchar\bgroup{\LDIV@with}{\LDIV@noarg}}
+\newcommand{\LDIV@noarg}{\ensuremath{\mathbin{\mid}}\xspace}
+\newcommand{\LDIV@with}[1]{%
+  \@ifnextchar\bgroup{\LDIV@twowith{#1}}{\LDIV@singleerror{#1}}%
+}
+\newcommand{\LDIV@twowith}[2]{\ensuremath{{#1}\mathbin{\mid}{#2}}\xspace}
+\newcommand{\LDIV@singleerror}[1]{%
+  \@latex@error{`\string\LDIV' expects either no arguments or two braced arguments. Use `\string\LDIV{a}{b}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\NDIV}{\@ifnextchar\bgroup{\NDIV@with}{\NDIV@noarg}}
+\newcommand{\NDIV@noarg}{\ensuremath{\mathbin{\nmid}}\xspace}
+\newcommand{\NDIV@with}[1]{%
+  \@ifnextchar\bgroup{\NDIV@twowith{#1}}{\NDIV@singleerror{#1}}%
+}
+\newcommand{\NDIV@twowith}[2]{\ensuremath{{#1}\mathbin{\nmid}{#2}}\xspace}
+\newcommand{\NDIV@singleerror}[1]{%
+  \@latex@error{`\string\NDIV' expects either no arguments or two braced arguments. Use `\string\NDIV{a}{b}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\LCM}{\@ifnextchar\bgroup{\LCM@with}{\LCM@noarg}}
+\newcommand{\LCM@noarg}{\ensuremath{\operatorname{lcm}}\xspace}
+\newcommand{\LCM@with}[1]{%
+  \@ifnextchar\bgroup{\LCM@twowith{#1}}{\LCM@singleerror{#1}}%
+}
+\newcommand{\LCM@twowith}[2]{\ensuremath{\operatorname{lcm}({#1},{#2})}\xspace}
+\newcommand{\LCM@singleerror}[1]{%
+  \@latex@error{`\string\LCM' expects either no arguments or two braced arguments. Use `\string\LCM{a}{b}'}\@ehc
+}
+
+% BINARY operator: none or 2 braced arguments (error if exactly 1)
+\newcommand{\GCD}{\@ifnextchar\bgroup{\GCD@with}{\GCD@noarg}}
+\newcommand{\GCD@noarg}{\ensuremath{\operatorname{gcd}}\xspace}
+\newcommand{\GCD@with}[1]{%
+  \@ifnextchar\bgroup{\GCD@twowith{#1}}{\GCD@singleerror{#1}}%
+}
+\newcommand{\GCD@twowith}[2]{\ensuremath{\operatorname{gcd}({#1},{#2})}\xspace}
+\newcommand{\GCD@singleerror}[1]{%
+  \@latex@error{`\string\GCD' expects either no arguments or two braced arguments. Use `\string\GCD{a}{b}'}\@ehc
+}
+
+\makeatother % "DISABLE" internal \@... macros
+
+% ------------------------------------------------------------------------------
+% Relation Operators
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Commands for mathematical relations and their negations.
+%   All commands are text-usable with \ensuremath and \xspace.
+%   These commands require exactly 2 braced arguments.
+%
+% FEATURES:
+%   - Standard relation notation
+%   - Safe to use in text mode
+%   - Automatically adds proper spacing
+%   - Requires exactly 2 arguments (error if wrong number)
+%
+% DEPENDENCIES:
+%   \usepackage{xspace}
+%
+% USAGE EXAMPLES:
+%   The relation $\relation{a}{b}$ means a is related to b by R.
+%   The negation $\nrelation{a}{b}$ means a is not related to b by R.
+%   \relation{a}{b} \nrelation{c}{d}
+% ------------------------------------------------------------------------------
+\makeatletter % "ENABLE" internal \@... macros
+
+% BINARY operator: exactly 2 braced arguments (error if wrong number)
+\newcommand{\relation}{\@ifnextchar\bgroup{\relation@with}{\relation@noargerror}}
+\newcommand{\relation@with}[1]{%
+  \@ifnextchar\bgroup{\relation@twowith{#1}}{\relation@singleerror{#1}}%
+}
+\newcommand{\relation@twowith}[2]{\ensuremath{{#1}\mathrel{R}{#2}}\xspace}
+\newcommand{\relation@noargerror}{%
+  \@latex@error{`\string\relation' requires exactly two braced arguments. Use `\string\relation{a}{b}'}\@ehc
+}
+\newcommand{\relation@singleerror}[1]{%
+  \@latex@error{`\string\relation' requires exactly two braced arguments. Use `\string\relation{a}{b}'}\@ehc
+}
+
+% BINARY operator: exactly 2 braced arguments (error if wrong number)
+\newcommand{\nrelation}{\@ifnextchar\bgroup{\nrelation@with}{\nrelation@noargerror}}
+\newcommand{\nrelation@with}[1]{%
+  \@ifnextchar\bgroup{\nrelation@twowith{#1}}{\nrelation@singleerror{#1}}%
+}
+\newcommand{\nrelation@twowith}[2]{\ensuremath{{#1}\mathrel{\centernot{R}}{#2}}\xspace}
+\newcommand{\nrelation@noargerror}{%
+  \@latex@error{`\string\nrelation' requires exactly two braced arguments. Use `\string\nrelation{a}{b}'}\@ehc
+}
+\newcommand{\nrelation@singleerror}[1]{%
+  \@latex@error{`\string\nrelation' requires exactly two braced arguments. Use `\string\nrelation{a}{b}'}\@ehc
+}
+
+
+
+% relationinv
+\newcommand{\relationinv}{\@ifnextchar\bgroup{\relationinv@with}{\relationinv@noargerror}}
+\newcommand{\relationinv@with}[1]{%
+  \@ifnextchar\bgroup{\relationinv@twowith{#1}}{\relationinv@singleerror{#1}}%
+}
+\newcommand{\relationinv@twowith}[2]{\ensuremath{{#1}\mathrel{R^{-1}}{#2}}\xspace}
+\newcommand{\relationinv@noargerror}{%
+  \@latex@error{`\string\relationinv' requires exactly two braced arguments. Use `\string\relationinv{a}{b}'}\@ehc
+}
+\newcommand{\relationinv@singleerror}[1]{%
+  \@latex@error{`\string\relationinv' requires exactly two braced arguments. Use `\string\relationinv{a}{b}'}\@ehc
+}
+
+
+
+\makeatother % "DISABLE" internal \@... macros

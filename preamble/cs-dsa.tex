@@ -1,0 +1,68 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/group.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+% \@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+% \@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+% \@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+% \@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+% \@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+% \@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+%   \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+%   \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+%   \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+%   \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+%   \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+%   \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+%   \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+%   \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+%   \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+% }
+% \@ifpackageloaded{graphicx}{}{\usepackage{graphicx}}  % \raisebox, \resizebox
+% \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}  % social media icons
+% \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}  % hyperlinks
+% \@ifpackageloaded{fontenc}{}{\usepackage[T1]{fontenc}}   % better font encoding
+% \@ifpackageloaded{lmodern}{}{\usepackage{lmodern}}       % Latin Modern — scalable replacement for CM
+\@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}
+\@ifpackageloaded{algorithm}{}{\usepackage{algorithm}}
+\@ifpackageloaded{algpseudocode}{}{\usepackage[noend]{algpseudocode}}
+\makeatother
+
+% ------------------------------------------------------------------------------
+% Additional Packages for CS/DSA Content
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   Additional package imports specifically for computer science and data structures
+%   and algorithms content. These packages provide enhanced mathematical typesetting
+%   and algorithm pseudocode formatting capabilities.
+%
+% FEATURES:
+%   - Enhanced mathematical symbol support
+%   - Professional algorithm pseudocode formatting
+%   - Clean algorithm presentation without end statements
+%   - Consistent mathematical notation
+%
+% DEPENDENCIES:
+%   \usepackage{amsmath}        % for enhanced math symbols and environments
+%   \usepackage{algorithm}      % for algorithm environment
+%   \usepackage{algpseudocode}  % for pseudocode formatting
+%
+% USAGE EXAMPLES:
+%   \begin{algorithm}
+%     \caption{Euclidean Algorithm}
+%     \begin{algorithmic}[1]
+%       \Procedure{Euclidean}{$a, b$}
+%         \While{$b \neq 0$}
+%           \State $t \gets b$
+%           \State $b \gets a \bmod b$
+%           \State $a \gets t$
+%         \EndWhile
+%         \State \textbf{return} $a$
+%       \EndProcedure
+%     \end{algorithmic}
+%   \end{algorithm}

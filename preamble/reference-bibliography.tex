@@ -1,0 +1,122 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/reference-bibliography.tex
+% ------------------------------------------------------------------------------
+% Load packages conditionally
+\makeatletter
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}} % helpful for TOC/citations/links
+
+\@ifpackageloaded{dirtytalk}{}{\usepackage[
+    left = “,% 
+    right = ”,% 
+    leftsub = ‘,% 
+    rightsub = ’ %
+]{dirtytalk}}                                               % \say{} quotations
+\makeatother
+
+% Bibliography: biblatex with biber backend (works with pdflatex + biber)
+\usepackage[
+  backend=biber,           % use biber for processing
+  style=numeric,           % bibliography style
+  citestyle=authoryear,    % in-text citations
+  sorting=ynt,             % year-name_of_auther–title order
+  % maxcitenames=2,          % limit authors in citations
+  % bibencoding=utf8         % if your .bib is UTF-8
+]{biblatex}
+\addbibresource{references.bib}
+
+
+% ------------------------------------------------------------------------------
+% USAGE
+% ------------------------------------------------------------------------------
+% Add citations in your document:
+%   % \cite{key}   \parencite{key}   \textcite{key}
+%   % Multiple: \parencites{key1}{key2}
+%
+% Print the bibliography (choose one of the styles):
+%   % \clearpage
+%   % \printbibliography[
+%   %   heading=bibintoc,   % unnumbered entry in TOC
+%   % %   title={References}
+%   % ]
+%
+%   % \clearpage
+%   % \printbibliography[
+%   %   heading=bibnumbered,   % numbered entry in TOC
+%   % %   title={References}
+%   % ]
+
+
+
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \blockcite[<page>]{<citation>}{<quote>}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This command creates a block quote with automatic citation formatting.
+%   It combines the quote with proper citation and page reference.
+%
+% FEATURES:
+%   - Automatically formats the citation
+%   - Optional page number parameter
+%   - Proper punctuation handling
+%
+% PARAMETERS:
+%   [<page>]      Page number (optional, defaults to empty)
+%   <citation>    Citation key (required)
+%   <quote>       The quoted text (required)
+%
+% DEPENDENCIES:
+%   \usepackage{etoolbox}
+%
+% USAGE EXAMPLES:
+%   \blockcite{smith2020}{This is a quote from Smith}
+%   \blockcite[42]{jones2019}{This quote is from page 42}
+% ------------------------------------------------------------------------------
+\NewDocumentCommand{\blockcite}{ O{} m m }{%
+  \begin{quote}
+    \say{#3} %
+    \ifstrempty{#1}
+      {\parencite{#2}.}         % no page given
+      {\parencite[p.~#1]{#2}.}  % page given
+  \end{quote}%
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grouping Shortcuts for VS Code (`View` > `Command Palette` > `Preferences: Open Keyboard Shortcuts (JSON)`)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {
+%   "key": "ctrl+r",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\parencite[p.~${1:#}]{${2:bibid}}"
+%   }
+% },
+% {
+%   "key": "ctrl+alt+r",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\nocite{${1:*}}"
+%   }
+% },
+% {
+%   "key": "ctrl+alt+f",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\footcite[${1:p.~#}]{${2:bibid}}"
+%   }
+% },

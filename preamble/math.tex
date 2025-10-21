@@ -1,0 +1,499 @@
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/math.tex
+% ------------------------------------------------------------------------------
+\makeatletter
+\@ifpackageloaded{amsmath}{}{\usepackage{amsmath}}      % (implicit) math foundations
+\@ifpackageloaded{amssymb}{}{\usepackage{amssymb}}      % \mathfrak{...}, \square, \blacksquare
+% \@ifpackageloaded{mathrsfs}{}{\usepackage{mathrsfs}}    % \mathscr{...}
+% \@ifpackageloaded{amsfonts}{}{\usepackage{amsfonts}}    % math symbols + DeclarePairedDelimiter
+% \@ifpackageloaded{mathtools}{}{\usepackage{mathtools}}  % enhanced math tools
+% \@ifpackageloaded{dsfont}{}{\usepackage{dsfont}}        % \mathds{...}
+% \@ifpackageloaded{xspace}{}{\usepackage{xspace}}        % text-usable macros
+% \@ifpackageloaded{xparse}{}{\usepackage{xparse}}        % define flexible macros (\NewDocumentCommand)
+\@ifpackageloaded{ifthen}{}{\usepackage{ifthen}}        % basic conditional logic (\ifthenelse)
+\@ifpackageloaded{mdframed}{}{\usepackage{mdframed}}    % framed / boxed environments
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}    % hyperlinks and cross-references
+\@ifpackageloaded{xcolor}{}{\usepackage{xcolor}         % color definitions and coloring text/math
+  \definecolor{redcolor}{rgb}{1.0, 0.0, 0.0}            % {\color{redcolor}...}
+  \definecolor{greencolor}{rgb}{0.3, 1.0, 0.3}          % {\color{greencolor}...}
+  \definecolor{bluecolor}{rgb}{0.0, 0.0, 1.0}           % {\color{bluecolor}...}
+  \definecolor{yellowcolor}{rgb}{1.0, 1.0, 0.0}         % {\color{yellowcolor}...}
+  \definecolor{cyancolor}{rgb}{0.0, 1.0, 1.0}           % {\color{cyancolor}...}
+  \definecolor{magentacolor}{rgb}{1.0, 0.0, 1.0}        % {\color{magentacolor}...}
+  \definecolor{blackcolor}{rgb}{0, 0, 0}                % {\color{blackcolor}...}
+  \definecolor{graycolor}{rgb}{0.2, 0.2, 0.2}           % {\color{graycolor}...}
+  \definecolor{darkgreen}{RGB}{0,128,0}                 % {\color{darkgreen}...}
+}
+\makeatother
+
+
+
+
+
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% \begin{define}{<title>}[<label>][<color>] … \end{define}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates a framed definition or theorem with colored background
+%   and border. It provides a visually distinct way to present important concepts.
+%
+% FEATURES:
+%   - Colored frame and background (10% opacity)
+%   - Section symbol (§) followed by title
+%   - Configurable colors for customization
+%   - Proper spacing and typography
+%   - Optional cross-reference label support
+%
+% PARAMETERS:
+%   {<title>}    Title of the definition/theorem (required)
+%   [<label>]    Label for cross-referencing (optional, e.g. "def:continuity").
+%                If provided, enables \nameref{<label>} and \pageref{<label>}.
+%   [<color>]    Background and border color (optional, defaults to graycolor)
+%
+% DEPENDENCIES:
+%   \usepackage{mdframed}
+%   \usepackage{xcolor}
+%   \usepackage{ifthen}
+%
+% USAGE EXAMPLES:
+%   % Case 1: Basic usage - only title, default gray color, no cross-reference
+%   \begin{define}{Definition of Continuity}
+%     A function $f$ is continuous at a point $a$ if for every $\varepsilon > 0$, 
+%     there exists a $\delta > 0$ such that $|f(x) - f(a)| < \varepsilon$ whenever $|x - a| < \delta$.
+%   \end{define}
+%
+%   % Case 2: With cross-reference label but default color
+%   \begin{define}{Fundamental Theorem of Calculus}[thm:fundamental]
+%     If $f$ is continuous on $[a,b]$ and $F$ is an antiderivative of $f$, then
+%     $\int_a^b f(x) \, dx = F(b) - F(a)$.
+%   \end{define}
+%
+%   % Case 3: With both cross-reference label and custom color
+%   \begin{define}{Euler's Identity}[eq:euler][blue]
+%     $e^{i\pi} + 1 = 0$, where $e$ is Euler's number, $i$ is the imaginary unit, 
+%     and $\pi$ is the ratio of a circle's circumference to its diameter.
+%   \end{define}
+%
+%   % Case 4: With custom color but no cross-reference
+%   \begin{define}{Pythagorean Theorem}[][green]
+%     In a right triangle, the square of the hypotenuse equals the sum 
+%     of squares of the other two sides: $a^2 + b^2 = c^2$.
+%   \end{define}
+%
+%   % Case 5: Referencing the labeled definitions
+%   As we saw in \nameref{thm:fundamental}, integration and differentiation 
+%   are inverse operations. The beautiful \nameref{eq:euler} connects 
+%   five fundamental mathematical constants.
+% ------------------------------------------------------------------------------
+\makeatletter % "ENABLE" internal \@... macros
+\NewDocumentEnvironment{define}{ m O{} O{graycolor} }
+  {
+  \vspace{2pt}
+  \begin{mdframed}[backgroundcolor=#3!10, linecolor=#3]
+  \color{#3}
+  % Create cross-reference if label is provided
+  \ifthenelse{\equal{#2}{}}{}{%
+    \phantomsection
+    \def\@currentlabelname{#1}%
+    \label{#2}%
+  }%
+  \textbf{\S~#1}\hspace{6pt}  % Start symbol for definition/theorem with a title
+  \vspace{4pt}
+  }
+{
+  \end{mdframed}
+}
+\makeatother % "DISABLE" internal \@... macros
+% ------------------------------------------------------------------------------
+% \begin{claim}[<label>][<color>] … \end{claim}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates a framed claim or assertion with colored background
+%   and border. It provides a visually distinct way to present important claims.
+%   Titles are automatically generated as "Claim 1", "Claim 2", etc.
+%
+% FEATURES:
+%   - Colored frame and background (10% opacity)
+%   - Section symbol (§) followed by auto-generated title
+%   - Automatic enumeration (Claim 1, Claim 2, ...)
+%   - Configurable colors for customization
+%   - Proper spacing and typography
+%   - Optional cross-reference label support
+%
+% PARAMETERS:
+%   [<label>]    Label for cross-referencing (optional, e.g. "claim:key").
+%                If provided, enables \nameref{<label>} and \pageref{<label>}.
+%   [<color>]    Background and border color (optional, defaults to redcolor)
+%
+% DEPENDENCIES:
+%   \usepackage{mdframed}
+%   \usepackage{xcolor}
+%   \usepackage{ifthen}
+%
+% USAGE EXAMPLES:
+%   % Case 1: Auto-generated title with default red color
+%   \begin{claim}
+%     This is an important claim that needs to be proven.
+%   \end{claim}
+%
+%   % Case 2: Auto-generated title with cross-reference label
+%   \begin{claim}[claim:auto]
+%     This claim will be titled "Claim 1" and can be referenced.
+%   \end{claim}
+%
+%   % Case 3: Auto-generated title with custom color
+%   \begin{claim}[][green]
+%     This claim will be titled "Claim 2" and uses green color.
+%   \end{claim}
+%
+%   % Case 4: Auto-generated title with both label and custom color
+%   \begin{claim}[claim:critical][blue]
+%     This claim is critical and needs immediate attention.
+%   \end{claim}
+%
+%   % Case 5: Referencing the labeled claims
+%   As mentioned in \nameref{claim:critical}, we need to address this issue.
+%   The \nameref{claim:auto} provides additional insight.
+% ------------------------------------------------------------------------------
+\newcounter{claimcounter}
+\makeatletter % "ENABLE" internal \@... macros
+\NewDocumentEnvironment{claim}{ O{} O{redcolor} }
+  {
+  \vspace{2pt}
+  \begin{mdframed}[backgroundcolor=#2!10, linecolor=#2]
+  \color{#2}
+  % Always generate auto title
+  \stepcounter{claimcounter}%
+  \edef\@claimtitle{Claim \arabic{claimcounter}}%
+  % Create cross-reference if label is provided
+  \ifthenelse{\equal{#1}{}}{}{%
+    \phantomsection
+    \edef\@currentlabelname{\@claimtitle}%
+    \label{#1}%
+  }%
+  \textbf{\S~\@claimtitle}\hspace{6pt}  % Start symbol for claim/assertion with a title
+  \vspace{4pt}
+  }
+{
+  \end{mdframed}
+}
+\makeatother % "DISABLE" internal \@... macros
+
+
+
+% ------------------------------------------------------------------------------
+% \begin{state}[<number>]{<title>} ... \end{state}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates a numbered subsection title with automatic counter
+%   management. It formats subsection titles in the style "§<number> (<title>)".
+%
+% FEATURES:
+%   - Automatic counter incrementing
+%   - Optional counter reset to specific value
+%   - Consistent formatting with section symbol (§)
+%   - Unnumbered subsection with custom title format
+%
+% PARAMETERS:
+%   [<number>]    Counter reset value (optional, resets counter to this value)
+%   {<title>}     Title text for the subsection (required)
+%
+% DEPENDENCIES:
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   \begin{state}{First Section}
+%     Content of the first section...
+%   \end{state}
+%
+%   \begin{state}[5]{Reset Section}
+%     Content with counter reset to 5...
+%   \end{state}
+% ------------------------------------------------------------------------------
+\newcounter{statecounter}
+\NewDocumentEnvironment{state}{ o m }{%
+  \IfNoValueTF{#1}{%
+    \stepcounter{statecounter}%
+  }{%
+    \setcounter{statecounter}{\numexpr#1-1\relax}%
+    \stepcounter{statecounter}%
+  }%
+  \subsection*{§\arabic{statecounter} (#2)}%
+}{}
+
+% ------------------------------------------------------------------------------
+% Alias environment "prop" as a wrapper for "state".
+% The following two commands are identical:
+% \begin{state} ... \end{state}
+% \begin{prop} ... \end{prop}
+% ------------------------------------------------------------------------------
+\NewDocumentEnvironment{prop}{ o m }{%
+  % Pass the arguments to the "state" environment.
+  \IfNoValueTF{#1}{%
+    \begin{state}{#2}%
+  }{%
+    \begin{state}[#1]{#2}%
+  }%
+}{%
+  \end{state}%
+}
+
+% ------------------------------------------------------------------------------
+% \begin{subanswer}[<Color>][<isWhite>] … \end{subanswer}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This custom environment displays an "Answer:" label with configurable text color.
+%   It is intended for formatting answers clearly in assignments or solutions.
+%
+% FEATURES:
+%   - Displays "Answer:" in bold, followed by answer content.
+%   - Automatically ends with a square symbol (□) aligned right.
+%   - First optional argument selects text color (default = red).
+%   - Second optional argument overrides to white text when set to true.
+%
+% PARAMETERS (both optional):
+%   [<Color>]    Text color name (e.g. blue, green). Defaults to red.
+%   [<isWhite>]  true  -> force white text (for dark backgrounds)
+%                 false -> use the chosen <Color>. Defaults to false.
+%
+% DEPENDENCIES:
+%   \usepackage{ifthen}
+%   \usepackage{xcolor}
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   % defaults: red text, isWhite = false
+%   \begin{subanswer}
+%     This answer is red.
+%   \end{subanswer}
+%
+%   % blue text, isWhite = false
+%   \begin{subanswer}[blue]
+%     This answer is blue.
+%   \end{subanswer}
+%
+%   % green text, forced white override
+%   \begin{subanswer}[green][true]
+%     This answer is white (on green background).
+%   \end{subanswer}
+% ------------------------------------------------------------------------------
+\NewDocumentEnvironment{subanswer}{ O{red} O{false} }
+{%
+  \par\medskip                     % start a paragraph with a bit of space
+  % choose white if second optional arg is "true", otherwise #1
+  \ifthenelse{\equal{#2}{true}}%
+    {\color{white}}%
+    {\color{#1}}%
+  \noindent\textbf{Answer}:        % no \\ or \newline here
+}
+{%
+  \par\hfill$\square$\par
+}
+
+% ------------------------------------------------------------------------------
+% \begin{subprove}[<Color>][<isWhite>] … \end{subprove}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This custom environment displays a "Proof:" label with configurable text color.
+%   It is intended for formatting mathematical proofs clearly in assignments or solutions.
+%
+% FEATURES:
+%   - Displays "Proof:" in bold, followed by proof content.
+%   - Automatically ends with a filled square symbol (■) aligned right.
+%   - First optional argument selects text color (default = red).
+%   - Second optional argument overrides to white text when set to true.
+%
+% PARAMETERS (both optional):
+%   [<Color>]    Text color name (e.g. blue, green). Defaults to red.
+%   [<isWhite>]  true  -> force white text (for dark backgrounds)
+%                 false -> use the chosen <Color>. Defaults to false.
+%
+% DEPENDENCIES:
+%   \usepackage{ifthen}
+%   \usepackage{xcolor}
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   % defaults: red text, isWhite = false
+%   \begin{subprove}
+%     This proof is red.
+%   \end{subprove}
+%
+%   % blue text, isWhite = false
+%   \begin{subprove}[blue]
+%     This proof is blue.
+%   \end{subprove}
+%
+%   % green text, forced white override
+%   \begin{subprove}[green][true]
+%     This proof is white (on green background).
+%   \end{subprove}
+% ------------------------------------------------------------------------------
+\NewDocumentEnvironment{subprove}{ O{red} O{false} }
+{%
+  \par\medskip                     % start a paragraph with a bit of space
+  % choose white if second optional arg is "true", otherwise #1
+  \ifthenelse{\equal{#2}{true}}%
+    {\color{white}}%
+    {\color{#1}}%
+  \noindent\textbf{Proof}:        % no \\ or \newline here
+}
+{%
+  \par\hfill$\blacksquare$\par
+}
+
+% ------------------------------------------------------------------------------
+% \begin{answer}[<color>] … \end{answer}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates an answer section with optional text color.
+%   It automatically adds a new page after the answer for clean separation.
+%
+% FEATURES:
+%   - Displays "Answer:" in bold with specified color
+%   - Automatically ends with a square symbol (□) aligned right
+%   - Adds a new page after the answer
+%   - Optional color parameter for customization
+%
+% PARAMETERS:
+%   [<color>]    Text color name (optional, defaults to redcolor)
+%
+% DEPENDENCIES:
+%   None (uses basic LaTeX commands)
+%
+% USAGE EXAMPLES:
+%   \begin{answer}
+%     This is a default red answer.
+%   \end{answer}
+%
+%   \begin{answer}[blue]
+%     This is a blue answer.
+%   \end{answer}
+% ------------------------------------------------------------------------------
+\newenvironment{answer}[1][redcolor]
+  {\ \newline \color{#1}\noindent\textbf{Answer}: }
+  {\par\hfill$\square$\newline\newpage}
+
+% ------------------------------------------------------------------------------
+% \begin{prove}[<color>] … \end{prove}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates a proof section with optional text color.
+%   It automatically adds a new page after the proof for clean separation.
+%
+% FEATURES:
+%   - Displays "Proof:" in bold with specified color
+%   - Automatically ends with a filled square symbol (■) aligned right
+%   - Adds a new page after the proof
+%   - Optional color parameter for customization
+%
+% PARAMETERS:
+%   [<color>]    Text color name (optional, defaults to redcolor)
+%
+% DEPENDENCIES:
+%   None (uses basic LaTeX commands)
+%
+% USAGE EXAMPLES:
+%   \begin{prove}
+%     This is a default red proof.
+%   \end{prove}
+%
+%   \begin{prove}[blue]
+%     This is a blue proof.
+%   \end{prove}
+% ------------------------------------------------------------------------------
+\newenvironment{prove}[1][redcolor]
+  {\ \newline \color{#1}\noindent\textbf{Proof}: }
+  {\par\hfill$\blacksquare$\newline\newpage}
+
+% ------------------------------------------------------------------------------
+% \begin{subdisprove}[<Color>][<isWhite>] … \end{subdisprove}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This custom environment displays a "Disproof:" label with configurable text color.
+%   It is intended for formatting mathematical disproofs clearly in assignments or solutions.
+%
+% FEATURES:
+%   - Displays "Disproof:" in bold, followed by disproof content.
+%   - Automatically ends with a filled square symbol (■) aligned right.
+%   - First optional argument selects text color (default = red).
+%   - Second optional argument overrides to white text when set to true.
+%
+% PARAMETERS (both optional):
+%   [<Color>]    Text color name (e.g. blue, green). Defaults to red.
+%   [<isWhite>]  true  -> force white text (for dark backgrounds)
+%                 false -> use the chosen <Color>. Defaults to false.
+%
+% DEPENDENCIES:
+%   \usepackage{ifthen}
+%   \usepackage{xcolor}
+%   \usepackage{xparse}
+%
+% USAGE EXAMPLES:
+%   % defaults: red text, isWhite = false
+%   \begin{subdisprove}
+%     This disproof is red.
+%   \end{subdisprove}
+%
+%   % blue text, isWhite = false
+%   \begin{subdisprove}[blue]
+%     This disproof is blue.
+%   \end{subdisprove}
+%
+%   % green text, forced white override
+%   \begin{subdisprove}[green][true]
+%     This disproof is white (on green background).
+%   \end{subdisprove}
+% ------------------------------------------------------------------------------
+\NewDocumentEnvironment{subdisprove}{ O{red} O{false} }
+{%
+  \par\medskip                     % start a paragraph with a bit of space
+  % choose white if second optional arg is "true", otherwise #1
+  \ifthenelse{\equal{#2}{true}}%
+    {\color{white}}%
+    {\color{#1}}%
+  \noindent\textbf{Disproof}:     % no \\ or \newline here
+}
+{%
+  \par\hfill$\blacksquare$\par
+}
+
+% ------------------------------------------------------------------------------
+% \begin{disprove}[<color>] … \end{disprove}
+% ------------------------------------------------------------------------------
+% DESCRIPTION:
+%   This environment creates a disproof section with optional text color.
+%   It automatically adds a new page after the disproof for clean separation.
+%
+% FEATURES:
+%   - Displays "Disproof:" in bold with specified color
+%   - Automatically ends with a filled square symbol (■) aligned right
+%   - Adds a new page after the disproof
+%   - Optional color parameter for customization
+%
+% PARAMETERS:
+%   [<color>]    Text color name (optional, defaults to redcolor)
+%
+% DEPENDENCIES:
+%   None (uses basic LaTeX commands)
+%
+% USAGE EXAMPLES:
+%   \begin{disprove}
+%     This is a default red disproof.
+%   \end{disprove}
+%
+%   \begin{disprove}[blue]
+%     This is a blue disproof.
+%   \end{disprove}
+% ------------------------------------------------------------------------------
+\newenvironment{disprove}[1][redcolor]
+  {\ \newline \color{#1}\noindent\textbf{Disproof}: }
+  {\par\hfill$\blacksquare$\newline\newpage}
+

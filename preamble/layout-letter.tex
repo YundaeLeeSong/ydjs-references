@@ -1,0 +1,169 @@
+
+% ------------------------------------------------------------------------------
+% Required Packages for preamble/layout-letter.tex
+% ------------------------------------------------------------------------------
+% Other packages can be conditionally loaded
+\makeatletter
+\@ifpackageloaded{eso-pic}{}{\usepackage{eso-pic}}
+\@ifpackageloaded{xcolor}{}{\usepackage{xcolor}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\@ifpackageloaded{ifoddpage}{}{\usepackage{ifoddpage}}
+\@ifpackageloaded{xparse}{}{\usepackage{xparse}}
+\makeatother
+
+
+
+
+
+% geometry should be loaded normally (no makeatletter wrapper needed)
+% Load the geometry package
+\usepackage[
+  % showframe,                        % <--- uncomment for design
+  letterpaper
+]{geometry}
+
+% ------------------------------------------------------------------------------
+% Define commands for the different visual layouts
+% ------------------------------------------------------------------------------
+% DESCRIPTION
+%   These helpers switch between one-sided and two-sided layouts at any point
+%   in the document using \newgeometry to apply margins immediately.
+%
+% COMMANDS
+%   \onesidedpaper  – sets equal inner/outer margins (simulates one-sided printing)
+%   \twosidedpaper  – enables true two-sided layout with margin notes gutter and a
+%                      light vertical guide on the gutter side of each page
+%
+% USAGE EXAMPLES (copy into your document preamble or body as needed)
+%   % Start with one-sided layout
+%   % \onesidedpaper
+%
+%   % Switch to two-sided layout before Chapter 1
+%   % \twosidedpaper
+%
+%   % Show the geometry frame for debugging
+%   % Add `showframe` to the geometry options above and recompile
+%
+% NOTES
+%   - \newgeometry takes effect from the next page break. Place the command
+%     before content that should use the new layout.
+%   - Call \ClearShipoutPictureBG or \AddToShipoutPictureBG only as provided
+%     below; they are handled inside the helpers.
+%   - When mixing with class options (e.g., `twoside`), prefer these helpers to
+%     avoid conflicts.
+%
+% This command simulates a one-sided layout by setting inner and outer margins to the same value.
+\newcommand{\onesidedpaper}{%
+  \newgeometry{
+    % twoside,
+    % includemp,                        % <--- include margin notes in layout calculation
+    top=1.0in,
+    inner=1.0in,outer=1.0in,
+    bottom=1.0in,
+  }%
+  \ClearShipoutPictureBG % stop showing that material
+}
+
+% This command applies a true two-sided layout with different inner and outer margins.
+\newcommand{\twosidedpaper}{%
+  \newgeometry{
+    twoside,
+    includemp,                        % <--- include margin notes in layout calculation
+    top=1.0in,
+    inner=1.0in,marginparsep=0.2in,marginparwidth=1.4in,outer=0.5in,
+    bottom=1.0in,
+  }%
+    \ClearShipoutPictureBG % stop showing that material
+    \AddToShipoutPictureBG{% overlay this material under every page
+    \AtTextLowerLeft{%
+      \begingroup\color{gray!60}%
+        \ifodd\value{page}
+          \hspace*{\dimexpr\textwidth + 0.5\marginparsep\relax}%
+        \else
+          \hspace*{\dimexpr-0.5\marginparsep\relax}%
+        \fi
+        \makebox[0pt][l]{\rule{0.6pt}{1.0\textheight}}%
+      \endgroup
+    }%
+  }%
+}
+
+
+
+
+% ------------------------------------------------------------------------------
+% Documentation and helper: \sidenote
+% ------------------------------------------------------------------------------
+% DESCRIPTION
+%   Places a short note in the margin on the gutter side (inner margin),
+%   adapting automatically to odd/even pages in two-sided layouts. An optional
+%   vertical offset allows fine positioning near the reference point.
+%
+% DEPENDENCIES
+%   marginnote, ifoddpage, xparse (for \NewDocumentCommand)
+%
+% PARAMETERS
+%   [<voffset>]   Optional vertical shift (default: 0pt). Positive moves down.
+%   {<content>}   The text of the sidenote. Typeset in small, emphasized font.
+%
+% USAGE EXAMPLES (copy into your document body)
+%   % Basic note with no offset
+%   % \sidenote{This appears in the inner margin.}
+%
+%   % Nudge the note down by 6pt
+%   % \sidenote[6pt]{Offset note aligned with this paragraph line.}
+%
+%   % Longer note (multi-line is supported)
+%   % \sidenote{A longer sidenote that can span multiple lines and wraps
+%   %   within the margin width.}
+%
+% NOTES
+%   - Works best when the document uses a two-sided layout with a clear gutter.
+%   - The inner-gutter guide added by \twosidedpaper helps visually align notes.
+%   - Avoid very large positive/negative offsets that might collide with header/footer.
+\NewDocumentCommand{\sidenote}{O{0pt} m}{%
+  % Check if the current page is an odd page
+  \checkoddpage
+  % Use a conditional statement to place the note on the correct side
+  \ifoddpage
+    % If it is an odd page (right side), place the note with a right horizontal offset.
+    % We use `\marginnote` with its optional arguments.
+    % The horizontal offset is applied to the right margin note using `\hspace*`.
+    % The vertical offset is applied using the third optional argument of `\marginnote`.
+    % The content is wrapped in a `\parbox` to allow for multi-line shifting.
+    \marginnote[
+      % The optional argument for the left margin note is empty
+      ]{%
+        % The content for the right margin note
+        % Keep box width fixed; shift with zero-width wrapper so positive #2 moves inward
+        \makebox[0pt][l]{%
+          \hspace*{-0.4\marginparwidth}% odd page: inward = left (offset)
+          \parbox[t]{\marginparwidth}{%
+            \raggedright%
+            \small\emph{#2}%
+          }%
+        }%
+      }[#1]%
+  \else
+    % even (left): second optional arg = left tweak
+    \marginnote[
+      % The content for the right margin note
+      \small\emph{#2}
+      ]{}[#1]%
+  \fi
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Grouping Shortcuts for VS Code (`View` > `Command Palette` > `Preferences: Open Keyboard Shortcuts (JSON)`)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% {
+%   "key": "ctrl+shift+s",
+%   "command": "editor.action.insertSnippet",
+%   "when": "editorLangId == 'latex'",
+%   "args": {
+%     "snippet": "\\sidenote[0pt]{${TM_SELECTED_TEXT}}"
+%   }
+% },
