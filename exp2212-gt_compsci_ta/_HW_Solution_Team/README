@@ -1,0 +1,10 @@
+Quick Tutorial
+1. title and author info in "main.tex".
+2. title page logistics in "logistics.tex".
+3. version control in "main.tex"
+4. local workspace in their own directory (Each has their own)
+
+Purpose
+- Version control (github) like effect, Good for Head / Senior TA
+- to have each TA's own workspace that the one does not want to apply to the document.
+- to send students just the part of HWs, not sharing the entire document. (Expected to be easier and more secure)

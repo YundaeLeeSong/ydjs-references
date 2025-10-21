@@ -1,0 +1,245 @@
+\begin{enumerate}
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #1
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #2
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #3
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #4
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #5
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #6
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #7
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #8
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #9
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    
+    \item Consider the following predicates on the variable $x$, where $x \in \{\text{beings}\}.$
+    \begin{enumerate}
+        \item[i.] $A(x):$ $x$ is an algorithm.
+        \item[ii.] $B(x):$ $x$ is a Brontosaurus.
+        \item[iii.] $C(x):$ $x$ is conscious.
+    \end{enumerate}
+    Rewrite each the following English sentences using only mathematical quantifiers. Next, negate the statement (ensuring that all negations appear beside predicates and not quantifiers) and translate it back into English. \pte 8
+    
+    \begin{enumerate}
+        \item No algorithm is conscious.
+        
+        \item There is a brontosaurus who is not an algorithm.
+        
+        \item There exists a conscious algorithm only if some algorithms are brontosauruses.
+        
+        \item All brontosauruses are conscious algorithms.
+    \end{enumerate}
+    
+    \vspace{2mm}
+    \begin{solution}
+    \begin{enumerate}
+        \item Translation: $\forall x (A(x) \rightarrow \neg C(x))$ \\
+        Negated statement: $\exists x (A(x) \land C(x))$ \\
+        Translated negation: There exists a being who is an algorithm and is conscious.
+        \item Translation: $\exists x (B(x) \land \neg A(x))$ \\
+        Negated statement: $\forall x (\neg B(x) \lor A(x))$ \\
+        Translated negation: All beings are not brontosauruses or algorithms
+        \item Translation: $\exists x \exists y ((B(x) \land A(x)) \rightarrow (C(y) \land A(y)))$ \\
+        Negated statement: $\forall x \forall y ((B(x) \land A(x)) \land (C(y) \rightarrow \neg A(y))$ \\
+        Translated negation: All beings are brontosauruses and algorithms, but if they are not conscious, they are not algorithms.
+        \item Translation: $\forall x (B(x) \rightarrow A(x) \land C(x))$ \\
+        Negated statement: $\exists x (B(x) \land (\neg A(x) \lor \neg C(x)))$\\
+        Translated negation: There exists a brontosaurus that is not an algorithm or not conscious.
+    \end{enumerate}
+    \end{solution}
+    
+    \item Consider the following predicates on the variable $x$ and $y$, where $x,y \in \{\text{humans}\}$.
+    \begin{align*}
+        O(x,y) :&= \text{$x$ owes money to $y$}\\
+        C(x) :&= \text{$x$ is a clown}\\
+        F(x) :&= \text{$x$ is a flutist}
+    \end{align*}
+    Rewrite each the following English sentences using only mathematical quantifiers. \pte 4
+    \begin{enumerate}
+        \item Everyone has someone they owe money to.
+        \item Some clown owes everyone money.
+        \item No clown owes money to a flutist.
+        \item Only clowns and flutists owe anyone money.
+    \end{enumerate}
+
+    \vspace{2mm}
+    \begin{solution}
+    \begin{enumerate}
+        \item $\forall x \exists y (O(x,y))$
+        \item $\exists x \forall y (C(x) \land O(x,y))$
+        \item $\forall x \forall y ((C(x) \land F(y)) \rightarrow \neg O(x,y)))$
+        \item $\forall x \forall y (O(x,y) \rightarrow (C(x) \lor F(x))))$
+    \end{enumerate}
+    \end{solution}
+    
+    \item For the following statement, mathematically define the predicates and variable domains however you would like so that the statement is true. \pt 8 \\
+
+    $\exists x \forall y (\neg R(x) \lor \neg S(y))$
+    
+    \vspace{2mm}
+    \begin{solution}
+    Open-ended grading 
+    \end{solution}
+    
+    \item Negate each of the following statements, ensuring that the product is fully simplified. \pte 2
+    
+    \begin{enumerate}
+        \item[a)] $\neg  \forall y (\exists x R(x,y) \lor \neg \forall x S(x,y))$
+        \item[b)] $\neg  \exists x \neg \exists y \neg \exists z (A(x,y) \rightarrow B(x,z))$ 
+        \item[c)] $\neg  \exists x \neg \forall y \forall z (A(x,z) \land B(y,z))$
+        \item[d)] $\neg \forall x \forall y \forall z ((A(x,y) \lor \neg R(y,z)) \longleftrightarrow R(x,z))$
+    \end{enumerate}
+    
+    \vspace{2mm}
+    \begin{solution}
+    \begin{enumerate}
+        \item $\exists y \forall x (\neg R(x,y) \land S(x,y))$
+        \item $\forall x \exists y \forall z (A(x,y) \land \neg B(x,z))$
+        \item $\forall x \forall y \forall z (A(x,z) \land B(y,z))$
+        \item $\exists x \exists y \exists z (((A(x,y) \lor \neg R(y,z)) \land \neg R(x,z)) \lor (R(x,z) \land (\neg A(x,y) \land R(y,z))))$
+    \end{enumerate}
+    \end{solution}
+    
+    \item{Determine the truth value of the statement $\exists x \forall y (x \leq y^{2})$ if the domain for the variables consists of \hfill \color{blue}(2 points each)}\
+    \begin{enumerate}
+    \item the positive real numbers.
+    \item the integers.
+    \item the number 0.
+    \item the nonzero real numbers.
+    \end{enumerate}
+    
+    \vspace{2mm}
+    \begin{solution}
+    \begin{enumerate}
+        \item F
+        \item T
+        \item T
+        \item T
+    \end{enumerate}
+    \end{solution}
+    
+    \item{Show that $\forall x P(x) \lor \forall x Q(x)$ and $\forall x \forall y \neg(\neg P(x) \land \neg Q(y))$, where all quantifiers have the same nonempty domain, are logically equivalent. (The new variable $y$ is used to combine the quantification correctly.)} \pt 8
+
+    \vspace{2mm}
+    \begin{solution}
+    Invoke DeMorgan's law for quantifiers and double negation twice to yield a RHS of $\forall x P(x) \lor \forall y P(y)$. Cite the variable domains and bounds to declare $y$ as an instance of $x$, which makes these statemements logically equivalent.
+    \end{solution}
+    
+    \item{ Find a counterexample, if possible, to these universally quantified statements, where the domain for all variables consists of all real numbers. Otherwise, state that no counterexample exists. } \pte 4
+    \begin{enumerate}
+        \item $\forall x \forall y (x^3 \neq y^2)$
+        \item $\forall x \exists y (y = \frac{x}{2})$
+        \item $\forall x \forall y ((x \geq y) \rightarrow (x^{100} > y))$
+    \end{enumerate}
+    
+    \vspace{2mm}
+    \begin{solution}
+    \begin{enumerate}
+        \item $x = y = 1$
+        \item No counterexample
+        \item $x = y = 1$
+    \end{enumerate}
+    \end{solution}
+    
+    \item{Show that $\neg \forall x(P(x) \land \neg Q(x))$ is logically equivalent to $\exists x (P(x) \rightarrow Q(x))$}. \pt 8
+
+    \vspace{2mm}
+    \begin{solution}
+    \begin{tabular}{c|c}
+        Step & Citation \\
+        \hline
+        $\neg \forall x (P(x) \land \neg Q(x))$ & LHS \\
+        $\exists x \neg (P(x) \land \neg Q(x))$ & DeMorgan's Law \\
+        $\exists x (\neg P(x) \lor \neg \neg Q(x))$ & DeMorgan's Law \\
+        $\exists x (\neg P(x) \lor Q(x)$ & Double Negation Law \\
+        $\exists x (P(x) \rightarrow Q(x))$ & Material Implication \\
+        $\neg \forall x (P(x) \land \neg Q(x)) \equiv \exists x (P(x) \rightarrow Q(x))$ & LHS $\equiv$ RHS \\
+    \end{tabular}
+    \end{solution}
+    
+    
+\end{enumerate}

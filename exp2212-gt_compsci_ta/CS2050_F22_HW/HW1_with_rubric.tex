@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\title{CS2050 Fall 2022 Homework 1}
+\author{Due: September 2}
+\date{Released: August 26}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric} {
+    \par
+    \begin{spacing}{.6}
+    \begin{itshape}
+    \color{red}
+} {
+    \end{itshape}
+    \end{spacing}
+    \par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Friday, September 1, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. \\ 
+
+You should submit a typeset or \emph{neatly} written pdf on Gradescope.  The grading TA should not have to struggle to read what you've written; if your handwriting is hard to decipher, you will be required to typeset your future assignments.\\ 
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\\
+
+Author(s): Akshay Kulkarni
+
+\clearpage
+
+\begin{enumerate}
+
+    \item Rewrite each of the following in the form "if ...., then ...".  (You may adjust verb tense as you wish to make the sentences sound natural.) \pt 6
+    
+    \begin{enumerate}
+        \item A sufficient condition for you to pass is that you get an A.
+        
+        \item You can take the car only if it is charged.
+        
+        \item A graph must be connected and acyclic for it to be a tree.
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 each, AON (All Or Nothing)
+    \end{rubric}
+    
+    \item Evaluate each of the following propositions as True or False. \pt 8
+    \begin{enumerate}
+        \item If squares have four sides, then triangles have nine sides.
+        \item If $0 \geq 0$, then $0 > -1$.
+        \item If $6+2 = 62$, then $2+6=26$.
+        \item If $5$ is not odd, then $4$ is not odd. 
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 each, AON
+    \end{rubric}
+    
+    \item Let $s$ be the proposition ``You eat sushi.", let $h$ be the proposition "You hang out with your fiends.", and let $f$ be the proposition "It is Friday." Expressing the following as English sentences. (Again, you may adjust tense as you like.) \pt 6
+    
+    \begin{enumerate}
+        \item $f \rightarrow s$
+        \item $\lnot f \wedge (h \vee s)$
+    \end{enumerate}
+    
+    \begin{rubric}
+    -3 each, AON
+    \end{rubric}
+    
+    \item Let $l$ be the proposition ``You are late for class.", let $o$ be the proposition ``You oversleep", and let $c$ be the proposition ``You charge your phone." Represent each of the following statements using only $l, o, c$ and logical operators. \pt 6
+    
+    \begin{enumerate}
+        \item You oversleep only when you do not charge your phone.
+        \item You are late for class unless you charge your phone and do not oversleep.
+    \end{enumerate}
+    
+    \begin{rubric}
+    -3 each, AON
+    \end{rubric}
+    
+    \item Give the converse, contrapositive, and inverse of the statement ``I get ice cream whenever I finish my homework." (Don't worry about tense, just get the idea correct.) \pt 6
+    
+    \begin{rubric}
+    -3 each, AON
+    \end{rubric}
+    
+    \item Construct truth tables for the following propositions. Include all intermediate columns, in an appropriate order, for full credit. \pte 8
+    
+    \begin{enumerate}
+        \item $p \rightarrow \lnot q$
+        \item $p \vee (q \wedge \lnot r)$
+        
+        \item $(p \vee q) \leftrightarrow \lnot (p \wedge q)$
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 per missing/extra/incorrect column
+    
+    -1 per incorrect cell in a correct column
+    
+    -2 at least one column to the left of a column it depends on (i.e. $\lnot (p \wedge q)$ to the left of $p \wedge q$).
+    
+    -1 used 0/1 instead of T/F
+    
+    Notes: the book gives a truth table for $\leftrightarrow$, so it is okay if they do not make separate columns for the two unidirectional conditionals.
+    \end{rubric}
+    
+    \item Simplify each of the following to $p$, $q$, $T$ or $F$ using logical equivalences. State the equivalence used at each step. \pte 8
+    
+    \begin{enumerate}
+        \item $p \rightarrow (p \vee q)$
+        \item $((\lnot p \rightarrow \lnot q) \rightarrow q)$
+        \item $(p \rightarrow q) \wedge (p \rightarrow \lnot q)$. (Hint: equivalences can be used in both ``directions".)
+    \end{enumerate}
+    
+    \begin{rubric}
+    -1 per incorrect/missing/uncited step
+    
+    QUESTION: are students required to go from $\lnot p \vee p$ to $p \vee \lnot p$ before negation? What about from $T \vee p$ to $p \vee T$ before domination?
+    \end{rubric}
+    
+    
+    
+    \item Prove that $p\rightarrow(p\wedge q) \equiv (p \rightarrow q)$ in both of the following ways.
+    \begin{enumerate}
+        \item truth table \pt{10}
+        \item logical equivalences \pt{10}
+    \end{enumerate}
+    \begin{rubric}
+    TRUTH TABLE
+    
+    -2 per incorrect/missing column
+    
+    -1 per incorrect cell in a correct column
+    
+    -2 at least one column to the left of a column it depends on (i.e. $\lnot (p \wedge q)$ to the left of $p \wedge q$).
+    
+    -1 used 0/1 instead of T/F
+    
+    -2 no indication of why the table proves the tautology (just circling columns is sufficient).
+    
+    LOGICAL EQUIVALENCIES
+    
+    -1 per incorrect/missing/uncited step
+    
+    -2 no conclusion
+    \end{rubric}
+    
+    
+\end{enumerate}
+
+\end{document}

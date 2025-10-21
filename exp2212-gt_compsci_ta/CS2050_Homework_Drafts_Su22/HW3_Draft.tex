@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{CS2050 Summer 2022 Homework 3}
+\author{Due: June 8}
+\date{Released: June 1}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Wednesday, June 8, 2022}.  On-time submissions receive 3\% extra credit. You may turn it in one day late for 5\% penalty or two days late for a 15\% penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. \\ 
+
+You should submit a typeset or \emph{neatly} written pdf on Gradescope.  The grading TA should not have to struggle to read what you've written; if your handwriting is hard to decipher, you will be required to typeset your future assignments.\\ 
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+
+
+
+\clearpage
+\begin{enumerate}
+\item Determine the rule of inference used in each of the following statements. \pte 2
+\begin{enumerate}
+    \item If you run fast enough, you will start to fly. You did not start to fly. Therefore, you did not run fast enough.
+    \item Most reptiles can talk, but only some fish can talk. Therefore, most reptiles can talk.
+    \item I will have soup. I will have salad. Therefore, I will have soup and salad.
+    \item You are either a freshman, a sophomore, a junior, or a senior. You are not a freshman or a junior or a senior. Therefore, you are a sophomore.
+\end{enumerate}
+
+\begin{rubric}
+-2, AON
+\end{rubric}
+
+\item Using rules of inference, show that the given premises conclude with $d$, citing each step in your argument. \pt{10}
+
+\begin{enumerate}
+    \item[1.] $a \lor b$
+    \item[2.] $(b \lor c) \rightarrow e$
+    \item[3.] $d \lor \neg e$
+    \item[4.] $\neg a \lor c$
+\end{enumerate}
+
+\begin{rubric}
+-2 per incorrect rule invocation
+\end{rubric}
+
+\item Using the rules of inference, show that the following premises conclude with “Yoshi wins the race, and Luigi rides a bike.” Be sure to define all propositional variables for full credit (for example, you may define “$t$: Toad gets lost” as one of your propositional variables). Remember, it is possible that you will use all premises, but it is also possible that some are not needed. \pt{12}
+
+\begin{enumerate}
+    \item[1.] Toad gets lost, and Luigi rides a bike.
+    \item[2.] If Luigi does not ride a bike, then Wario cheats.
+    \item[3.] Rosalina is the best princess in the race.
+    \item[4.] Wario does not cheat, or Toad does not get lost.
+    \item[5.] If Wario does not cheat and Toad gets lost, then Yoshi wins the race.
+\end{enumerate}
+
+\begin{rubric}
+-4, incorrect predicate declarations
+
+-2, incorrect logical equivalence/citation
+
+-6, doesn't reach conclusion
+\end{rubric}
+
+\item The CS 2050 office hours cubicle is moving! The new cubicle has a width of $7x$ and a length of $3y$, where $x, y \in \mathbb{Z}^+$. Prove or disprove that the area of the cubicle is even whenever $x$ is even. Make sure to include the introduction, body, and conclusion of your argument. Clearly state your reasoning for all statements and use a two-column proof for the body whenever possible. \pt{12}
+
+\begin{rubric}
+-1, per missing/incorrect citation (cap at -4)
+
+-1, missing domain
+
+-1, uses p,q without defining them
+
+-2, incorrect logic
+
+-2, doesn't use 2-column format
+
+-2, missing conclusion
+
+-4, doesn't reach conclusion
+\end{rubric}
+
+\item Use a direct proof to show that if $n + 9$ is odd, then $n^2-3n-8$ is even. Make sure to include the introduction, body, and conclusion. Clearly state your reasoning for all statements and use a two-column proof for the body whenever possible. \pt{12}
+
+\begin{rubric}
+-1, per missing/incorrect citation (cap at -4)
+
+-1, missing domain
+
+-1, uses p,q without defining them
+
+-2, incorrect logic
+
+-2, doesn't use 2-column format
+
+-2, missing conclusion
+
+-4, doesn't reach conclusion
+\end{rubric}
+
+\item Let $n$ be an integer. Prove the statement “If $7n^2 + 12$ is even, then $n$ is even.” Make sure to include the introduction, body, and conclusion. Clearly state your reasoning for all statements and use a two-column proof for the body whenever possible. 
+\begin{enumerate}
+    \item Prove the statement using a proof by contrapositive.
+    \item Prove the statement using a proof by contradiction.
+\end{enumerate}
+
+\begin{rubric}
+-1, per missing/incorrect citation (cap at -4)
+
+-1, missing domain
+
+-1, uses p,q without defining them
+
+-2, incorrect logic
+
+-2, doesn't use 2-column format
+
+-2, missing conclusion
+
+-4, doesn't reach conclusion
+\end{rubric}
+
+\item Use a proof by cases to show that $\min(a, \min(b,c)) = \min(\min(a,b),c)$, whenever $a,b,c \in \mathbb{R}$. WLOG or similar should NOT appear in your proof. \pte{12}\pt{12}
+
+\begin{rubric}
+-1, per missing/incorrect citation (cap at -4)
+
+-1, missing domain
+
+-1, uses p,q without defining them
+
+-2, incorrect logic
+
+-2, doesn't use 2-column format
+
+-2, missing conclusion
+
+-4, doesn't reach conclusion
+\end{rubric}
+
+\item Use a proof by contrapositive to show that if $x+y$ is even for $x,y \in \mathbb{Z}$, then $x$ and $y$ have the same parity (i.e. "oddness" or "evenness"). \pt{10}
+
+\begin{rubric}
+-1, per missing/incorrect citation (cap at -4)
+
+-1, missing domain
+
+-1, uses p,q without defining them
+
+-2, incorrect logic
+
+-2, doesn't use 2-column format
+
+-2, missing conclusion
+
+-4, doesn't reach conclusion
+\end{rubric}
+
+\end{enumerate}
+
+\end{document}

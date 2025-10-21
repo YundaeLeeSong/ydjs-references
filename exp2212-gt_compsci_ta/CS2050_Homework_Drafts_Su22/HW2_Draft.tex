@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{amsmath}
+
+\title{CS2050 Summer 2022 Homework 2}
+\author{Due: June 1}
+\date{Released: May 25}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Wednesday, May 25, 2022}.  On-time submissions receive 3\% extra credit. You may turn it in one day late for 5\% penalty or two days late for a 15\% penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. \\ 
+
+You should submit a typeset or \emph{neatly} written pdf on Gradescope.  The grading TA should not have to struggle to read what you've written; if your handwriting is hard to decipher, you will be required to typeset your future assignments.\\ 
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+
+
+
+\clearpage
+
+\begin{enumerate}
+    \item Consider the following predicates on the variable $x$, where $x \in \{\text{beings}\}.$
+    \begin{enumerate}
+        \item[i.] $A(x):$ $x$ is an algorithm.
+        \item[ii.] $B(x):$ $x$ is a Brontosaurus.
+        \item[iii.] $C(x):$ $x$ is conscious.
+    \end{enumerate}
+    Rewrite each the following English sentences using only mathematical quantifiers. Next, negate the statement (ensuring that all negations appear beside predicates and not quantifiers) and translate it back into English. \pte 8
+    
+    \begin{enumerate}
+        \item No algorithm is conscious.
+        
+        \item There is a brontosaurus who is not an algorithm.
+        
+        \item There exists a conscious algorithm only if some algorithms are brontosauruses.
+        
+        \item All brontosauruses are conscious algorithms.
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 for missing English to math
+    
+    -2 for missing negation
+    
+    -2 for unsimplified negation
+    
+    -2 for missing negation to English
+    \end{rubric}
+    
+    \item Consider the following predicates on the variable $x$ and $y$, where $x,y \in \{\text{humans}\}$.
+    \begin{align*}
+        O(x,y) :&= \text{$x$ owes money to $y$}\\
+        C(x) :&= \text{$x$ is a clown}\\
+        F(x) :&= \text{$x$ is a flutist}
+    \end{align*}
+    Rewrite each the following English sentences using only mathematical quantifiers. \pte 4
+    \begin{enumerate}
+        \item Everyone has someone they owe money to.
+        \item Some clown owes everyone money.
+        \item No clown owes money to a flutist.
+        \item Only clowns and flutists owe anyone money.
+    \end{enumerate}
+    
+    \begin{rubric}
+    -4, AON
+    \end{rubric}
+    
+    \item For each of the following statement, mathematically define the predicates and variable domains however you would like so that the statement is true. \pt 8 \\
+
+    $\exists x \forall y (\neg R(x) \lor \neg S(y))$$\forall x \forall y (V(x,y) \longleftrightarrow U(x,y))$
+    
+    \begin{rubric}
+    -4, No predicate definitions
+    
+    -4, No domains
+    
+    -4, Incorrect translations
+    \end{rubric}
+    
+    \item Negate each of the following statements, ensuring that the product is fully simplified. \pte 2
+    
+    \begin{enumerate}
+        \item[a)] $\neg  \forall y (\exists x R(x,y) \lor \neg \forall x S(x,y))$
+        \item[b)] $\neg  \exists x \neg \exists y \neg \exists z (A(x,y) \rightarrow B(x,z))$ 
+        \item[c)] $\neg  \exists x \neg \forall y \forall z (A(x,z) \land B(y,z))$
+        \item[d)] $\neg \forall x \forall y \forall z ((A(x,y) \lor \neg R(y,z)) \longleftrightarrow R(x,z))$
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 each, AON
+    \end{rubric}
+    
+    \item{Determine the truth value of the statement $\exists x \forall y (x \leq y^{2})$ if the domain for the variables consists of \hfill \color{blue}(2 points each)}\
+    \begin{enumerate}
+    \item the positive real numbers.
+    \item the integers.
+    \item the number 0.
+    \item the nonzero real numbers.
+    \end{enumerate}
+    
+    \begin{rubric}
+    -2 each, AON
+    \end{rubric}
+    
+    \item{Show that $\forall x P(x) \lor \forall x Q(x)$ and $\forall x \forall y \neg(\neg P(x) \land \neg Q(y))$, where all quantifiers have the same nonempty domain, are logically equivalent. (The new variable $y$ is used to combine the quantification correctly.)} \pt 8
+    
+    \begin{rubric}
+        -4, failure to cite DeMorgan's law
+        
+        -4, failure to cite variable bounds
+    \end{rubric}
+    
+    \item{ Find a counterexample, if possible, to these universally quantified statements, where the domain for all variables consists of all real numbers. Otherwise, state that no counterexample exists. } \pte 4
+    \begin{enumerate}
+        \item $\forall x \forall y (x^3 \neq y^2)$
+        \item $\forall x \exists y (y = \frac{x}{2})$
+        \item $\forall x \forall y ((x \geq y) \rightarrow (x^{100} > y))$
+    \end{enumerate}
+    
+    \begin{rubric}
+        -4, AON
+    \end{rubric}
+    
+    \item{Show that $\neg \forall x(P(x) \land \neg Q(x))$ is logically equivalent to $\exists x (P(x) \rightarrow Q(x))$}. \pt 8
+    \begin{rubric}
+    -6, incorrect negation
+    
+    -4, failure to cite material implication
+    \end{rubric}
+    
+    
+\end{enumerate}
+
+\end{document}

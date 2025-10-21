@@ -1,0 +1,208 @@
+\begin{enumerate}
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #1
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #2
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #3
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #4
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #5
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #6
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #7
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #8
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #9
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    
+
+\item How many binary strings of length 6 exist that \pte{3}
+\begin{enumerate}
+    \item Contain at least two 0's?
+    \item Are even in base 10?
+    \item Are palindromes?
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+    \item[(a)] $2^6 - {6 \choose 0} - {6 \choose 1}$
+    \item[(b)] $2^5$
+    \item[(c)] $2^3$
+\end{enumerate}
+\end{solution}
+
+\item How many integers between 1000 and 4999 inclusive \pte{3}
+\begin{enumerate}
+    \item have distinct digits?
+    \item are divisible by 5 but not by 7?
+    \item are divisible by both 5 and 7?
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+    \item[(a)] $4 \times 9 \times 8 \times 7$
+    \item[(b)] $800-114$
+    \item[(c)] $114$
+\end{enumerate}
+\end{solution}
+
+
+\item How many possible functions $f:S \rightarrow T$ exist under the following conditions? (Your answer may contain variables) \pte{3}
+\begin{enumerate}
+    \item $|S|=10$ and $|T|=5$
+    \item $|S|=10$ and $|T|=5$ and $f$ is one-to-one
+    \item $|S|=n$, $|T|=m$, $n \leq m$ and $f$ is onto 
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+    \item[(a)] $5^10$
+    \item[(b)] $0$
+    \item[(c)] $n!$
+\end{enumerate}
+\end{solution}
+
+
+\item Georgia Tech course codes include a subject code and a course number separated by a hyphen. The subject code is a random alphabetical string of length 2, 3, or 4. The course number is a a 4-digit numeral that must begin with an integer except 0, 5, or 9. How many possible course codes exist? \pt{8}
+
+\begin{solution}
+(26^4+26^3+26^2) \times 7 \times 10^3
+\end{solution}
+
+\item Show that in a group of five people (where any two people are either friends or enemies), there are not necessarily three mutual friends or three mutual enemies. \pt{8}
+
+\begin{solution}
+Notes that $R(3,3)=6$ or provides visual depiction with explanation/counterexample.
+\end{solution}
+
+\item Show that in a group of six people, if each person is friends with at least one other person, then there are at least two friends in the group with the same number of friends. \pt{8}
+
+\begin{solution}
+By the pigeonhole principle, $\lceil \frac{6}{5} \rceil = 2$.
+\end{solution}
+
+\item A university computer science department offers three sections of a core class: $A$, $B$, and $C$. Suppose that in a typical full-length semester, section $A$ holds about 248 students, $B$ holds 248, and $C$ has 100. \pte{4}
+\begin{enumerate}
+    \item How many ways are there to create three teams by selecting one group of four students from each class?"
+    \item How many ways are there to create one four-person group that may contain students from any class?
+    \item How many ways can sections $A$, $B$, and $C$ be split into groups of four students, such that each student ends up in exactly one group and no group contains students from different classes?
+    \item Once the groups are split, how many ways are there to select a lead strategist and different lead developer for each group?
+    \item Due to a global pandemic, the group-formation policy has changed and there is no longer a restriction on group size. What is the size of the smallest group that is guaranteed to have a member from each section?
+    \item How many students are required to be in a group to guarantee that three of them share the same birthday? Is a group of this size possible under the new policy?
+    \item Students are ranked by grade at the end of the semester. Assuming that no two students end with the same grade, how many such rankings are possible?
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+    \item[(a)] $\frac{248!}{4!^{62}62!} \times \frac{248!}{4!^{62}62!} \times \frac{100!}{4!^{25}25!}$
+    \item[(b)] ${600 \choose 4}$
+    \item[(c)] ${248 \choose 62} \times {248 \choose 62} \times {100 \choose 25}$
+    \item[(d)] $P(4,2)^{149}$
+    \item[(e)] $501$
+    \item[(f)] $731$
+    \item[(g)] $600!$
+\end{enumerate}
+\end{solution}
+
+
+\item A group from the class in the previous question has identified a bug in their code that will take a minimum of 16 tasks $T = \{t_1...t_{16}\}$ to resolve. How many ways are there to assign the tasks if \pte{5}
+\begin{enumerate}
+    \item the tasks are distinguishable?
+    \item the tasks are indistinguishable?
+    \item the tasks are distinguishable and each group member completes the same number of tasks?
+    \item the tasks are indistinguishable and each group member completes the same number of tasks?
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+    \item[(a)] $4^16$
+    \item[(b)] ${19 \choose 15}$
+    \item[(c)] $\frac{16!}{4!^4}$
+\end{enumerate}
+\end{solution}
+\item What has been your favorite unit of CS 2050 so far? Feel free to share why! \pt{1}
+
+\item (Extra Credit) What is the minimum time complexity of an algorithm that checks whether a function $f:S \rightarrow T$ is invertible? \pt{1}
+
+\end{enumerate}

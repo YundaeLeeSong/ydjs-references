@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 4}
+\author{Due: September 30th}
+\date{Released: September 23rd}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Friday, September 30, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. \\ 
+
+You should submit a typeset or \emph{neatly} written pdf on Gradescope.  The grading TA should not have to struggle to read what you've written; if your handwriting is hard to decipher, you will be required to typeset your future assignments.\\ 
+
+Upon submission ensure that questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\\
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty, Nithya Jayakumar
+
+\clearpage
+
+\begin{enumerate}
+    \item
+    We defined the union and intersection of two sets. These definitions can be naturally extended for finitely many sets, recursively adding one new set. (maybe give an example with union of three sets here or something) The union and intersection of $n$ sets is denoted by $\bigcup_{i = 1}^{n} A_{i}$ and $\bigcap_{i = 1}^{n} A_{i}$, respectively.
+    For each collection below, find $$\bigcup_{i = 1}^{n} A_{i} \qquad \bigcap_{i = 1}^{n} A_{i}$$
+    \begin{enumerate}
+        \item for $A_{i} = \{1, 2, \dots i\}$, where $i \in \mathbb{N}$.
+        \item for $A_{i} = \{-i \dots, -1, 0, 1, 2 \dots, i\}$, where $i \in \mathbb{N}$.
+        \item $A_{i} = \emptyset$, where $i = 1$.
+    \end{enumerate}
+    
+    \item Determine whether the following are true or false.
+        \begin{enumerate}
+            \item $a \in \{a\}$
+            \item $\emptyset$ $\subset$ $\emptyset$
+            \item $\emptyset \subseteq \{a\}$
+            \item $\emptyset \in \{a\}$
+            \item $\{\emptyset\} \subset \{\{\emptyset\}, \{\emptyset\}\}$
+            \item $\{\emptyset\} \in \{\emptyset\}$
+        \end{enumerate}
+        
+    \item Determine the cardinality of the following sets
+        \begin{enumerate}
+            \item[a)] $\emptyset$
+            
+            \item[b)] $\{U\}$
+            
+            \item[c)] $\{a,\{b\}, a, b\}$
+            
+            \item[d)] $\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}$
+        
+        \end{enumerate}
+        
+    \item Let $A = \{1, 2, 3, 5, 8, 13\}$,  $B = \{2, 4, 6, 8\}$ and a Universal set consisting of all integers from 1 to 15 inclusive. Find:
+        \begin{enumerate}
+            \item $A \cup B \cup \emptyset$
+            \item $A \cap B$
+            \item $A - B$
+            \item $B - A$
+            \item $(A \cup B) - (A \cap B)$
+            \item $A^c$
+            \item $\mathcal{P}(A)$
+            \item $A \times B$
+        \end{enumerate}
+    
+    \item Show that if X, Y, and Z are sets, then $(X \cap Y) \cup Z = (X \cup Z) \cap (Y \cup Z)$
+    
+    \item List all the elements of $\mathcal{P}(\mathcal{P}(\mathcal{P}(\emptyset))) - \mathcal{P}(\mathcal{P}(\emptyset)) + \mathcal{P}(\emptyset) - \emptyset$
+    \item Let the Universe be the set of all Georgia Tech students. Let $T$ be the set of all students who are TAs, let $S$ be the set of all students who are seniors, and let $C$ be the set of all students. Translate the following statements only using the sets given and set operations
+        \begin{enumerate}
+            \item The set of all TAs who are not seniors
+            \item The set of all students who are a part of a club or are seniors and not both
+            \item The set of all seniors who are TAs and are not a part of a club
+            \item The set of students in a club who are also TAs but have over a year before they graduate.
+        \end{enumerate}
+    \item Find a set, if one exists, such that the set $A$ meets the criteris where $|A| = 3$ and $A \in \mathcal{P}(\mathcal{P}(A))$?
+    
+    \item Prove or disprove the following statements, for all sets A, B, and C such that each set A, B, and C are disjoint sets.
+        \begin{enumerate}
+            \item $\overline{A \cap B} = \bar{A} \cap \bar{B}$
+            \item $A \cup (A \cup C) = A$
+            \item $\mathcal{P}(A) \cup \mathcal{P}(B) = \mathcal{P}(A \cup B)$
+        \end{enumerate}
+    
+    
+\end{enumerate}
+
+\end{document}

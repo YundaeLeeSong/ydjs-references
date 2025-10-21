@@ -1,0 +1,333 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{setspace}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+
+\title{CS 2050 Fall 2022 Homework 3}
+\author{Due: September 16}
+\date{Released: September 9}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Friday, September 16, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. \\ 
+
+You should submit a typeset or \emph{neatly} written pdf on Gradescope.  The grading TA should not have to struggle to read what you've written; if your handwriting is hard to decipher, you will be required to typeset your future assignments.\\ 
+
+Upon submission ensure that questions are correctly assigned on Gradescope. Questions that take up multiple pages should have all pages assigned to that question. Incorrect page assignments can lead to point deductions.
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\\
+
+Author(s): David Teng, Richard Zhao, Sarthak Mohanty
+
+\clearpage
+
+
+\begin{enumerate}
+    \item Using rules of inference, show that the premises conclude with ``Akshay can solve the NYT crossword puzzle today." Be sure to define all propositional variables for full credit. Remember, it is possible that you will use all premises, but it is also possible that some are not needed. \pt{14}
+    \begin{enumerate}
+        \item[a.)] It is not Sunday today if Akshay can't solve the NYT crossword puzzle today.
+        \item[b.)] The NYT crossword puzzle is not expert level.
+        \item[c.)] The NYT crossword puzzle today is not a repeated puzzle.
+        \item[d.)] The NYT newspaper has comics today or the NYT crossword puzzle today is a repeated puzzle.
+        \item[e.)] The NYT newspaper is multilingual whenever it does have comics for the day.
+        \item[f.)] If the NYT newspaper is multilingual or in color, it is a Sunday.
+    \end{enumerate}
+    
+        \begin{solution}
+        \color{blue}
+            \\
+            \\ s: It is Sunday today
+            \\ a: Akshay can solve the crossword puzzle
+            \\ e: The puzzle is not expert level
+            \\ r: The puzzle is a repeated puzzle
+            \\ c: The NYT newspaper has comics today
+            \\ m: The NYT newspaper is multilingual
+            \\ l: The NYT newspaper is in color
+    \color{blue}        
+     \begin{enumerate}
+         \item[1.] $\lnot a \rightarrow \lnot s$ \hfill Premise
+         \item[2.] $\lnot e$ \hfill Premise
+         \item[3.] $\lnot r$ \hfill Premise     
+         \item[4.] $c \lor r$ \hfill Premise
+         \item[5.] $c \rightarrow m$ \hfill Premise
+         \item[6.] $(m \lor l) \rightarrow s$ \hfill Premise
+         \item[7.] $c$ \hfill Disjunctive syllogism using \#3 and \#4
+         \item[8.] $m$ \hfill Modus Ponens using \#6 and \#7
+         \item[9.] $m \lor l$ \hfill Addition using $l$
+         \item[10.] s \hfill Modus Ponens using \#6 and \#9
+         \item[11.] a \hfill Modus Tollens using \#1 and \#10
+     \end{enumerate}
+
+    Therefore, we have shown through rules of inference that Akshay can solve the puzzle today. $\square$
+
+    \end{solution}
+    \newpage
+    \item{Using rules of inference, show that the hypotheses below conclude with b. Give the reason for each step as you show that b is concluded. Each reason should be the name of a rule of inference and include which numbered steps are involved, For example, a reason for a step might be ”Modus ponens using \#2 and \#3”. (Hint: You may use the definition of biconditional and the commutative law).} \pt{16}
+    
+    \begin{enumerate}
+        \item[1)] $y \leftrightarrow x$
+        \item[2)] $x \land (b \lor \lnot d)$
+        \item[3)] $x \land a \rightarrow \lnot b$
+        \item[4)] $(\lnot y \lor x) \land c \rightarrow d$
+        \item[5)] $y \rightarrow c$
+    \end{enumerate}
+    \color{blue}
+        \begin{solution}
+        \begin{enumerate}
+            \item[1.] $x \land (b \lor \lnot d)$ \hfill Premise 
+            \item[2.] $x$ \hfill Simplification of (1)
+            \item[3.] $y$ \hfill Definition of bi-conditional
+            \item[4.] $y \rightarrow c$ \hfill Premise
+            \item[5.] $c$ \hfill Modus Ponens on (4) and (5)
+            \item[6.] $(\lnot y \lor x) \land c \rightarrow d$ \hfill Premise
+            \item[7.] $(\lnot x \lor x) \land c \rightarrow d$ \hfill Definition of bi-conditional
+            \item[8.] $T \land c \rightarrow d$ \hfill Negation Laws on (7)
+            \item[9.] $c \rightarrow d$ \hfill Simplification of (8)
+            \item[10.] $d$ \hfill Modus Ponens on (5) and (9)
+            \item[11.] $b \lor \lnot d$ \hfill Simplification of (1)
+            \item[12.] $b \lor \lnot d \land d$ \hfill Conjunction of (10) and (11)
+            \item[13.] $b \lor F$ \hfill Negation Laws on (12)
+            \item[14.] $b$ \hfill Identity Laws on (13)
+        \end{enumerate}
+    \end{solution}
+    
+    Therefore, we have shown through rules of inference that $b$ is true. $\square$
+    
+    %NYT Rules of inference question
+
+    \iffalse
+    \item Given the following steps, state the errors with following uses of rules of inferences. If no errors are present, state that there is no error. For this question, $A$ represents an arbitrary propositional variable.
+    \begin{enumerate}
+        \item[1)] $F$ \hfill Given
+        \item[2)] $F \lor A$  \hfill Addition on 1
+        \item[3)] $F \lor A \lor \lnot A$ \hfill Addition on 2
+        \item[4)] $F \lor T$ \hfill Negation Law on 3
+        \item[5)] $T$ \hfill Domination Law on 4
+    \end{enumerate}
+    \fi
+    
+    \iffalse
+
+    
+    Let $P(x) = \text{``x has dropped out from Georgia Tech"}$
+    
+    Let $Q(x) = \text{``$x$ knows how to write proofs"}$
+    
+    Let $R(x) = \text{``$x$ can get a high paying job"}$
+    
+
+    \vspace{1.5mm}
+    ``Sarthak, a Georgia Tech dropout, knows how to write proofs. Everyone who can write proofs can get a high-paying job. Therefore, there exists a person who has dropped out from Georgia Tech who can get a high paying job.”
+    
+        
+    Using the appropriate propositional variables and connectives, check the validity of the argument below. You should properly label the rule of inference you use on each step along with the lines to which you apply it.
+    \fi
+    
+    \newpage
+    \color{black}
+    \item{For the following proof, there are blanks in many steps. Please fill out each blank with its correct statement or reason. Note that the domain for $x$ is all people, and Urkel is a person. Include line numbers in your answer. \hfill\hfill \color{blue}(2 points each)}\
+    \begin{center}
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{rc|c}
+        & \textbf{Statement} & \textbf{Reason} \\\hline
+        1. & $\forall x (B(x) \to C(x))$ & Premise \\
+        2. & $A($Urkel$)$ & Premise  \\
+        3. & $\forall x (A(x) \to \lnot C(x))$ & Premise\\
+        4. & $A($Urkel$) \to \lnot C($Urkel$)$ & (a) \rule{4cm}{0.15mm}  \\
+        5. & (b) \rule{4cm}{0.15mm}  & Modus ponens (2, 4)\\
+        6. & $B($Urkel$) \to C($Urkel$)$ & (c) \rule{4cm}{0.15mm}\\
+        7. & $\lnot B($Urkel$)$ & (d) \rule{4cm}{0.15mm}\\
+        8. & (e) \rule{4cm}{0.15mm} & Existential generalization (7)
+    \end{tabular}
+    \end{center}
+    \color{blue}
+    \begin{solution}
+    \begin{center}
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{rc|c}
+        & \textbf{Statement} & \textbf{Reason} \\\hline
+        1. & $\forall x (B(x) \to C(x))$ & Premise \\
+        2. & $A($Urkel$)$ & Premise  \\
+        3. & $\forall x (A(x) \to \lnot C(x))$ & Premise\\
+        4. & $A($Urkel$) \to \lnot C($Urkel$)$ & \underline{Universal instantiation (3)}  \\
+        5. & \underline{$\lnot C$(Urkel)} & Modus ponens (2, 4)\\
+        6. & $B($Urkel$) \to C($Urkel$)$ & \underline{Universal instantiation (1)}\\
+        7. & $\lnot B($Urkel$)$ & \underline{Modus tollens(5, 6)}\\
+        8. & $\underline{\exists x (\lnot B(x))}$ & Existential generalization (7)
+    \end{tabular}
+    \end{center} 
+    \end{solution}
+    \newpage{}
+    \color{black}
+    
+
+    \item{Let $n$ be an integer. Prove the statement ``If $n^3 + 12$ is even, then $n$ is even." Make sure to include the introduction, body, and conclusion. Clearly state your reasoning for all statements and use a two-column proof for the body whenever possible.\hfill\hfill \color{blue}(12 points each)}
+    \begin{enumerate}
+        \item[a)] Prove the statement using a proof by contrapositive.
+        \item[b)] Prove the statement using a proof by contradiction.
+    \end{enumerate}
+    \color{blue}
+    \begin{solution}
+    \\
+    \\ a) Proof: I proceed with a proof by contrapositive. I will prove that if $n$ is odd then $n^3 + 12$ is odd.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $n = 2k + 1$ for some $k \in \mathbb{Z}$ & definition of odd\\
+    2) $n^3 = (2k+1)^3$ & cube both sides of (1)\\
+    3) $n^3 = 8k^3 + 12k^2 + 6k + 1$ & expand (2)\\
+    4) $n^3 + 12 = 8k^3 + 12k^2 + 6k + 13$ & add 12 to both sides\\
+    5) $n^3 = 2(4k^3 + 6k^2 + 3k + 6) + 1$ & factor out 2 from RHS\\
+    6) $t = 4k^3 + 6k^2 + 3k + 6 t \in \mathbb{Z}$ & Closure of multiplication and addition of $\mathbb{Z}$ \\
+    7) $n^3 + 12 = 2t + 1$ & Substitution of (6) into (5)\\
+    8) $n^3 + 12$ is odd & Definition of odd\\
+    \end{tabular}
+    
+    Therefore by proof by contrapositive, I have shown that if $n$ is odd then $n^3 + 12$ is odd. This completes the proof. QED.
+    
+    b) Proof: I proceed with a proof by contradiction. I will prove that if $n^3 + 12$ is even, then $n$ is even. Assume $n$ is odd.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $n = 2k + 1$ for some $k \in \mathbb{Z}$ & definition of odd\\
+    2) $n^3 + 12 = (2k+1)^3 + 12$ & substitute (1) into original equation\\
+    3) $n^3 + 12 = 8k^3 + 12k^2 + 6k + 13$ & expand (2)\\
+    4) $n^3 + 12 = 2(4k^3 + 6k^2 + 3k + 6) + 1$ & factor out 2 from RHS\\
+    5) $t = 4k^3 + 6k^2 + 3k + 6 t \in \mathbb{Z}$ & Closure of multiplication and addition of $\mathbb{Z}$ \\
+    6) $n^3 + 12 = 2t + 1$ & Substitution of (5) into (4)\\
+    7) $n^3 + 12$ is odd & Definition of odd\\
+    \end{tabular}
+    
+    This contradicts the statement that is $n^3 + 12$ is even, thenn $n$ is odd. Therefore by proof by contradiction, I have shown that if $n^3 + 12$ is even, then n is even. This completes the proof. QED
+    
+    \end{solution}
+    \color{black}
+    
+    \iffalse
+    \item{$a_0 = 1, a_1 = 4, a_2 = 16, a_4 = 64, a_{t} = a_{t-1} + a_{t-2} + a_{t-3} + a_{t-4}, t \in \mathbb{Z}^{\geq 4}$. Prove that $a_n \leq 4^n$ for all $n \geq 0$.} \pt{12}
+    \fi
+    \newpage
+    \item Prove or disprove: If $x$ is even then $x^2 + 4x + 2$ is even. \pt{12}
+    \color{blue}
+    \begin{solution}
+    Proof: I proceed with a direct proof. I will prove that if $x$ is even, then $x^2 + 4x + 2$ is even. Assume $x$ is even.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $x = 2k$ for some $k \in \mathbb{Z}$ & definition of even\\
+    2) $x^2 = (2k)^2$ & square both sides of (1)\\
+    3) $x^2 + 4x + 2 = (2k)^2 + 4x + 2$ & add $4x + 2$ to both sides\\
+    4) $x^2 + 4x + 2 = (2k)^2 + 4(2x) + 2$ & substitute (1) into (3)\\
+    5) $x^2 + 4x + 2 = 4k^2 + 4(2x) + 2$ & apply exponent\\
+    6) $x^2 + 4x + 2 = 4k^2 + 8k + 2$ & multiplication\\
+    7) $x^2 + 4x + 2 = 2(2k^2 + 4k + 1)$ & factor 2 from right-hand side of (6)\\
+    8) $2k^2 + 4k + 1 = z \in \mathbb{Z}$ & closure of integer multiplication and addition\\
+    9) $x^2 + 4x + 2 = 2z$ & substition of (8) into (7)\\
+    10) $x^2 + 4x + 2$ is even & definition of even
+    \end{tabular}
+    
+    Therefore by direct proof, I have shown that if $x$ is even, then $x^2 + 4x + 2$ is even. This completes the proof. $\square$
+    
+    \end{solution}
+    \color{black}
+    
+    \item For each of the following questions, determine what method of proof to use, and prove the questions using that method. (Hint: There is at least 1 vacuous proof, and 1 trivial proof. If you are finding any of these too difficult, consider checking if it is either of those two proof methods). \pte{12}
+    \begin{enumerate}
+        \item Given an integer x such that $x^3 - x$ is odd, prove that the x-th term of the Fibonacci sequence is odd.
+        \item Prove that if $x$ is a positive integer such that $1/log(x) = \sqrt[3]{ln(x)}$, then $x^3 +x > x$.
+    \end{enumerate}
+    \color{blue}
+    \begin{solution}
+    
+    a) Proof: I proceed using a vacuous proof. I will prove that given an integer $x$ the number $x^3 - x$ will not be odd.
+    
+    Let $x$ be an arbitrary integer. There are two cases to consider: $x$ can be even or odd, which covers $\mathbb{Z}$.
+
+    Case 1: $x$ is even.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $x$ is even & assumed for Case 1\\
+    2) $x = 2k$ for some $k \in \mathbb{Z}$ & definition of even\\
+    3) $x^3 = (2k)^3$ & raise both sides of (2) to the third power\\
+    4) $x^3 - x = (2k)^3 - x$ & subtract x from both sides\\
+    5) $x^3 - x = (2k)^3 - 2k$ & substitute (2) into (4)\\
+    6) $x^3 - x = 8k^3 - 2k$ & apply exponent\\
+    7) $x^3 - x = 2(4k^3 - k)$ & factor 2 from right-hand side of (6)\\
+    8) $4k^3 - k = z$ for some $z \in \mathbb{Z}$ & closure of integer multiplication and addition\\
+    9) $x^3 - x = 2z$ & substitution of (8) into (7)\\
+    10) $x^3 - x$ is even & definition of even
+    \end{tabular}
+    
+    Case 2: $x$ is odd.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $x$ is even & assumed for Case 1\\
+    2) $x = 2k + 1$ for some $k \in \mathbb{Z}$ & definition of odd\\
+    3) $x^3 = (2k + 1)^3$ & raise both sides of (2) to the third power\\
+    4) $x^3 - x = (2k + 1)^3 - x$ & subtract x from both sides\\
+    5) $x^3 - x = (2k + 1)^3 - (2k + 1)$ & substitute (2) into (4)\\
+    6) $x^3 - x = (8k^3 + 12k^2 + 6k + 1) - (2k + 1)$ & distributive property\\
+    7) $x^3 - x = 8k^3 + 12k^2 + 4k$ & algebra\\
+    8) $x^3 - x = 2(4k^3 + 6k^2 + 2k)$ & factor 2 from right-hand side of (7)\\
+    9) $4k^3 + 6k^2 + 2k = z$ for some $z \in \mathbb{Z}$ & closure of integer multiplication and addition\\
+    10) $x^3 - x = 2z$ & substitution of (9) into (8)\\
+    11) $x^3 - x$ is even & definition of even
+    \end{tabular}
+    
+    I have shown that for every integer $x$, $x^3 - x$ is even and therefore not odd. Therefore by vacuous proof, the conditional "if $x$ is an integer such that $x^3 - x$ is odd, then the $x$-th term of the Fibonacci sequence is odd" is always true because the hypothesis is always false. This completes the proof. QED
+    
+    b) Proof: I proceed using a trivial proof. I will prove that for any positive integer $x$, $x^3 + x > x$ is true.
+    
+    \begin{tabular}{l|l}
+    Statement & Reasoning \\ \hline
+    1) $x > 0$ & definition of positive\\
+    2) $x^3 > 0^3$ & raise both sides to the third power\\
+    3) $x^3 + x > x$ & add $x$ to both sides\\
+    \end{tabular}
+    
+    I have shown that for every positive integer $x$ it is true that $x^3 + x > x$. Therefore by trivial proof, the conditional "if $x$ is a positive integer such that $\frac{1}{log(x)} = \sqrt[3]{ln(x)}$, then $x^3 + x > x$" is always true because the conclusion is always true. This completes the proof. $\square$
+    
+    \end{solution}
+   
+\end{enumerate}
+
+\end{document}

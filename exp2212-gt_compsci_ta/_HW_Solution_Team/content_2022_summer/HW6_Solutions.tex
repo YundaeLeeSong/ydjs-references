@@ -1,0 +1,145 @@
+\begin{enumerate}
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #1
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #2
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #3
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #4
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #5
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #6
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #7
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #8
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Question #9
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%% Rubric %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+    
+
+\item Use mathematical induction to prove that $n^3 +5n -12$ is divisible by $6$ for all positive integers. \pt{20}
+
+\begin{solution}
+\newline
+\textit{Pf.} Let $P(n) = 6 | n^3 + 5n - 12$. We proceed with proof by induction to show that $P(n)$ is true for all $n \in \mathbbb{Z}^+$.
+\begin{enumerate}
+    \item[i.] Basis step. $P(1) = 6 | 1^3 + 5(1) -12 \rightarrow 6 | -6$. Let $k=-1$, then $P(1) = 6|6k$. By the definition of divides, we have shown that our $P(n)$ is true for the least element in $\mathbbb{Z}^+$. Thus, our base case holds.
+    \item[i.] Inductive Step. We will show via direct proof that $P(k) \rightarrow P(k+1)$
+    \begin{tabular}{c|c}
+        Step & Reason \\
+        \hline
+        $6 | k^3 + 5k - 12$ & Assume $P(k)$ \\
+        $k^3 + 5k -12 = 6m$, $m \in \mathbb{Z}$ & Definition of divides\\
+        $k^3+3k-12+3k^2=6m+3k^2$ & Add $3k^2+3k+6$ to both sides \\
+        $k^3+3k^2+8k-6 = 6(m+1+\frac{k^2+k}{2}$ & Factor out 6 \\
+        $n = m+1+\frac{k^2+k}{2}$ & Define new variable
+        $l \in \mathbb{Z}$ & See sub-proof 1
+        
+    \end{tabular}
+\end{enumerate}
+\end{solution}
+
+\item Use mathematical induction to show that $2^n < n!$ for all $n \geq 4$. \pt{20}
+
+\item Use strong induction to prove that every integer amount of postage greater than 14 cents can be formed using only 3-cent and 8-cent coins. \pt{20}
+
+\item A chocolate bar consists of $n$ squares arranged in a rectangular pattern. The entire bar, or any smaller rectangular piece of the bar, can be broken along a vertical or a horizontal line separating the squares. Prove using strong induction that it $n-1$ breaks are required to break a chocolate bar into $n$ pieces. \pt{20}
+
+\item Given an initial base case of $f(0)=1$, find $f(2), f(3)$ and $f(4)$ for the following functions: \pte{3}
+\begin{enumerate}
+    \item $f(n + 1) = nf(n)$
+    \item $f(n + 1) = 2^{f(n)}$
+\end{enumerate}
+
+\item Recursively define each of the following sets: \pte{3}
+\begin{enumerate}
+    \item The set of powers of 2.
+    \item The set of integers congruent to 4 modulo 5.
+    \item The set of bit-strings with an even number of 1's
+\end{enumerate}
+
+\item Recursively define a function $f$ that takes as input a bit-string and flips each of its bits. (e.g. $f(1101)=0010$) \pt{4}
+
+
+
+\end{enumerate}

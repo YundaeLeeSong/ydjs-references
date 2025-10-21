@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\title{CS2050 Fall 2022 Homework 2}
+\author{Due: September 9}
+\date{Released: September 2}
+
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+
+\newenvironment{solution}
+{
+\par
+\color{blue}
+\textbf{Solution:}
+}
+{
+\par
+}
+
+\newenvironment{rubric}
+{
+\par
+\begin{spacing}{.6}
+\begin{itshape}
+\color{red}
+
+}
+{
+\end{itshape}
+\end{spacing}
+\par
+}
+
+\begin{document}
+
+\maketitle
+
+This assignment is due on \textbf{11:59 PM EST, Friday, September 9, 2022}.  On-time submissions receive 2.5 points of extra credit. You may turn it in one day late for a 10 point penalty or two days late for a 25 point penalty. Assignments more than two days late will NOT be accepted.  We will prioritize on-time submissions when grading before an exam. If questions are not properly matched in Gradescope, points will be deducted.\\
+
+While not required, it is recommended that you typeset your solutions using using a typesetting system such as \LaTeX. If the grading trouble has any difficulty in trying to decipher your handwriting, points will be deducted. \\ 
+
+
+You may collaborate with other students, but any written work should be your own. Write the names of the students you work with on the top of your assignment.\\
+
+Always justify your work, even if the problem doesn't specify it. It can help the TA's to give you partial credit.
+\\
+
+Author(s): David Teng, Richard Zhao
+
+\clearpage
+
+\begin{enumerate}
+    \item Knights and Knaves: Each person can either be a Knight or a Knave. A knight always tells the truth and a knave always lies. For the following, determine the roles of Person A, Person B, and Person C or write “Cannot be determined” for that person if there is not enough information. Explain your reasoning for full credit! (You can use a truth table or just plain English to explain.) \pt{11}
+    \begin{enumerate}
+        \item A says: I am a knave or B is a knight.
+        \item B says: C is a knight if A is a knave.
+        \item C says: if A is a knave, then B is a knave.
+    \end{enumerate} 
+    
+    \newpage
+
+    \item Express each of these statements using predicates and quantifiers.\pt{4}
+    \begin{enumerate}
+        \item[a)] All farmers own cows.\\
+
+        Let the domain for x be the set containing all people and the domain of y being the set containing all animals.\\
+        Let $F(x)$: $x$ is a farmer.\\
+        Let $C(y)$: $y$ is a cow.\\
+        Let $O(x, y)$: $x$ owns $y$.\\
+
+        
+        \item[b)] Some monkeys eat bananas.\\
+
+        Let the domain for x be the set containing all animals.\\
+        Let $M(x)$: $x$ is a monkey.\\
+        Let $B(x)$: $x$ eats bananas.\\
+        
+        \item[c)] All squares are rectangles, but not all rectangles are squares.\\
+        
+        Let the domain for x be the set containing all polygons.\\
+        Let $S(x)$: $x$ is a square.\\
+        Let $R(x)$: $x$ is a rectangle.\\
+
+    \end{enumerate}
+    
+    \newpage
+    
+    \item Determine the truth value of each of these statements if the domain of each variable consists of all real numbers. \pt{4}
+    \begin{enumerate}
+        \item[a)] $\exists x \forall y((y = x^2) \rightarrow x + y > y)$\\
+        \item[b)] $\forall y \exists x (\frac{x}{y} > 0)$\\
+        \item[c)] $\forall x \exists y((\sqrt[3]{x} \neq y^2) \rightarrow (x \geq 0))$\\
+        \item[d)] $\exists x \forall y(y > 0 \rightarrow x^y \geq y)$
+    \end{enumerate}
+    
+    \newpage
+    
+    \item Rewrite each of these statements so that no negation is to the left of a quantifier, so that every negation is immediately to the left of a predicate (in other words, push the negation in past the quantifiers). \pt{6}\\
+    \begin{enumerate}
+        \item[a)] $\forall x \neg \exists y \forall z (P(x, y) \lor (\lnot G(y) \land S(y, z)))$\\
+        \item[b)] $\neg \forall x (( \exists y A(x, y) \rightarrow \exists y B(x, y)) \rightarrow \neg \exists y C(x, y)) $\\
+        \item[c)] $\neg  \exists y \forall x (R(x,y) \leftrightarrow \exists z S(z,y))$\\
+    \end{enumerate}
+   
+    \newpage
+     
+    
+    \item Show that $\neg \forall x \exists y ((A(x) \rightarrow B(y)) \lor (C(x, y) \rightarrow B(y)))$ is logically equivalent to $\exists x \forall y ((A(x) \land C(x, y)) \land \neg B(y))$ \pt{10}\\
+    
+    
+    \newpage
+
+    
+    \item Let $P(x)$ be the statement ``x has a pet pig," let $D(x)$ be the statement ``x has a dog," let $C(x)$ be the statement ``x has a cat," and let $A(x)$ be the statement ``x is allergic to animals." Express each of these statements in terms of $P(x)$, $D(x)$, $C(x)$, $A(x)$, quantifiers, and logical connectives. Let the domain consist of all people.\pt{6}
+    \begin{enumerate}
+        \item[a)] Any person with allergies cannot own pigs, dogs, or cats.
+        \item[b)] No one owns all three animals, but everyone owns a pig.
+        \item[c)] Each type of animal (cat, pig, and dog) is owned by at least one person.
+    \end{enumerate}
+    
+    \newpage
+    
+    
+    \item{Find a counterexample, if possible, to these universally quantified statements, where the domain for all variables consists of all real numbers. Otherwise, state that no counterexample exists. \pt{5}}
+    \begin{enumerate}
+        \item $\forall x (x^{-x} \leq x^x)$\\
+        \item $\forall x \exists y (y = \frac{x^3}{5})$ \\
+        \item $\forall x \forall y  ((y \leq x) \to (x^{16} > y))$
+    \end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}

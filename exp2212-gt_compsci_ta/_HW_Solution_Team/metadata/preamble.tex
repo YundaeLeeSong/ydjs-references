@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[letter,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+%% Paragraph (Spacing / Indent)
+\usepackage{setspace}
+\usepackage{amsmath}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Font
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Command - Color
+\usepackage[rgb,dvipsnames]{xcolor}
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+\newcommand{\colorred}[1]{\textcolor{red}{#1}}
+\newcommand{\colorblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\colorgreen}[1]{\textcolor{OliveGreen}{#1}}
+\newcommand{\colorgray}[1]{\textcolor{gray}{#1}}
+%% Quotations: \say command
+\usepackage[
+    left = “,% 
+    right = ”,% 
+    leftsub = ‘,% 
+    rightsub = ’ %
+]{dirtytalk}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Graphic
+%% - Venn Diagram
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Environment
+\usepackage{verbatim}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Macro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Command: Points for Questions
+\newcommand{\pt}[1]{\textcolor{blue}{(#1 points)}}
+\newcommand{\pte}[1]{\textcolor{blue}{(#1 points each)}}
+%% Command: Boolean Values
+\newcommand{\T}{\color{black} \textbf{T}}
+\newcommand{\F}{\color{red} \textbf{F}}
+%% Environment
+\newenvironment{solution} {
+    \par
+    \color{blue}
+    \vspace{2mm}
+    \hline \\
+    \textbf{Solution:}
+} {
+    \vspace{2mm}
+    \newpage
+}
+\newenvironment{solutiondraft} {
+    \par
+    \color{blue}
+    \textbf{Solution:}
+} {
+    \par
+}
+\newenvironment{rubric} {
+    \par
+    \begin{spacing}{.6}
+    \begin{itshape}
+    \color{red}
+} {
+    \end{itshape}
+    \end{spacing}
+    \par
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{CS2050 Summer 2022 Homework 1} % \title{CS2050-Homework-Drafts}
+\author{Due: May 25} % \author{akulkarni318}
+\date{Released: May 18} % \date{May 2022}
