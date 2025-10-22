@@ -2,12 +2,15 @@ private-*.tex
 main.tex
 /main.tex
 
+com*.tex
+
 /cli.tex
 /core.tex
 # /preamble.tex
 auto.sh
 blank.tex
 /macros.tex
+/macro.tex
 cli.pdf
 resume_refs/
 .vscode/
