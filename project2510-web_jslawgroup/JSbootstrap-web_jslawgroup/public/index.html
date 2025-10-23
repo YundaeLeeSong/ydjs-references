@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Changed title to match the law firm -->
+    <title>서조은 법률 그룹 (JS Law Group)</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome 6 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Using Noto Sans Korean for Korean text -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Use Inter by default, Noto Sans KR for Korean */
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        }
+
+        /* Custom padding for the hero section */
+        .hero-section {
+            padding: 10rem 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Ensure navbar padding is correct since it's fixed-top */
+        body {
+            padding-top: 56px;
+        }
+
+        /* Style for feature icons */
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--bs-primary);
+        }
+
+        /* Styles for the Floating Action Button (FAB) */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--bs-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1050; /* Above most content */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+        }
+
+        /* Styles for the full-screen modal overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            z-index: 1055; /* Above FAB */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            color: #333;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <!-- Brand changed to JS LAW GROUP -->
+            <a class="navbar-brand fw-bold" href="#">
+                <!-- Using a law-related icon -->
+                <i class="fa-solid fa-scale-balanced text-primary me-2"></i>
+                서조은 법률 그룹 (JS LAW GROUP)
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" data-i18n-key="nav.home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-i18n-key="nav.about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" data-i18n-key="nav.services">Practice Areas</a>
+                    </li>
+                    <!-- Removed Contact link, replaced by FAB -->
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2 rounded-pill px-3" href="#" id="fabButtonDesktop" data-i18n-key="nav.consultation">Free Consultation</a>
+                    </li>
+                    <!-- Language Selector Dropdown -->
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-globe"></i> Language
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('ko')">한국어 (Korean)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4" data-i18n-key="hero.title">Innovative Solutions, Legal Excellence</h1>
+                    <p class="lead text-muted mb-4" data-i18n-key="hero.subtitle">Your trusted legal advocates for personal injury and criminal defense. We fight for your rights.</p>
+                    <a href="#services" class="btn btn-primary btn-lg rounded-pill px-4 py-2 me-2" data-i18n-key="hero.button1">Our Practice Areas</a>
+                    <a href="#" id="fabButtonHero" class="btn btn-outline-secondary btn-lg rounded-pill px-4 py-2" data-i18n-key="hero.button2">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Services Section (Practice Areas) -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-i18n-key="services.title">Practice Areas</h2>
+                <p class="text-muted" data-i18n-key="services.subtitle">Dedicated expertise in critical areas of law.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1: Personal Injury -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                        <div class="card-body">
+                            <i class="fa-solid fa-car-burst feature-icon mb-3"></i>
+                            <h5 class="card-title fw-bold" data-i18n-key="services.area1.title">Personal Injury</h5>
+                            <p class="card-text text-muted" data-i18n-key="services.area1.desc">Fighting for the compensation you deserve after an accident. Car accidents, slip and fall, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2: Criminal Defense -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                        <div class="card-body">
+                            <i class="fa-solid fa-gavel feature-icon mb-3"></i>
+                            <h5 class="card-title fw-bold" data-i18n-key="services.area2.title">Criminal Defense</h5>
+                            <p class="card-text text-muted" data-i18n-key="services.area2.desc">Aggressive defense for DUI, drug offenses, assault, and other criminal charges.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3: Family Law (Example) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 text-center p-4">
+                        <div class="card-body">
+                            <i class="fa-solid fa-users feature-icon mb-3"></i>
+                            <h5 class="card-title fw-bold" data-i18n-key="services.area3.title">Family Law</h5>
+                            <p class="card-text text-muted" data-i18n-key="services.area3.desc">Compassionate guidance through divorce, custody, and other family matters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. About Section -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <!-- Placeholder image updated -->
+            <img src="images/JSlawGroupLOGO.avif" class="img-fluid rounded-4 shadow" alt="JS Law Group">
+          </div>
+          <div class="col-lg-6">
+            <h2 class="fw-bold mb-3" data-i18n-key="about.title">About JS Law Group</h2>
+            <p class="text-muted mb-4" data-i18n-key="about.desc">We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy and personalized attention.</p>
+            <!-- Feature list updated for law -->
+            <ul class="list-unstyled text-muted">
+              <li class="mb-2"><i class="fa-solid fa-check-circle text-primary me-2"></i><span data-i18n-key="about.feature1">Client-Centric Approach</span></li>
+              <li class="mb-2"><i class="fa-solid fa-check-circle text-primary me-2"></i><span data-i18n-key="about.feature2">Aggressive Representation</span></li>
+              <li class="mb-2"><i class="fa-solid fa-check-circle text-primary me-2"></i><span data-i18n-key="about.feature3">Proven Track Record</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.1 Attorney / Profile Section -->
+    <section id="attorney" class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <img src="images/about_Joan_Suh.avif" class="img-fluid rounded-4 shadow" alt="Joan Suh, 서조은 변호사">
+          </div>
+          <div class="col-lg-7">
+            <h3 class="fw-bold mb-2">Joan Suh</h3>
+            <h5 class="text-primary mb-3">서조은 변호사</h5>
+
+            <p class="text-muted mb-3">
+              We specialize in client-centered legal services, providing expert advice and swift solutions across various legal fields. With a commitment to fairness and justice, our dedicated team prioritizes transparent communication to build trust and ensure effective resolution of legal challenges.
+            </p>
+
+            <p class="text-muted mb-3">
+              Trust us to deliver secure and efficient solutions to your legal matters. Consult with us anytime.
+            </p>
+
+            <p class="text-muted mb-0">Thank you.</p>
+          </div>
+        </div>
+      </div>
+    </section></div>
+
+    <!-- 5. Contact Section REMOVED -->
+    <!-- This is replaced by the FAB and Modal -->
+
+    <!-- 6. Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <div class="mb-3">
+                <!-- Social Media Icons -->
+                <a href="#" class="text-white fs-4 me-3"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-white fs-4 me-3"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jslawgroupllc?igsh=ZTcyb2g5bjAxNWkx" class="text-white fs-4 me-3"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-white fs-4 me-3"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="text-white fs-4"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="text-white-50 mb-0" data-i18n-key="footer.copyright">&copy; 2025 JS LAW GROUP. All rights reserved.</p>
+            <p class="text-white-50">
+                <a href="#" class="text-white-50 text-decoration-none" data-i18n-key="footer.privacy">Privacy Policy</a>
+                &middot;
+                <a href="#" class="text-white-50 text-decoration-none" data-i18n-key="footer.terms">Terms of Use</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button (FAB) -->
+    <div class="fab" id="fabButton">
+        <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <!-- Full-screen Modal Contact Form -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content-wrapper">
+            <button class="modal-close-btn" id="closeModal">&times;</button>
+            <div class="text-center mb-4">
+                <h2 class="fw-bold" data-i18n-key="contact.title">Free Consultation</h2>
+                <p class="text-muted" data-i18n-key="contact.subtitle">Tell us about your case. All information is confidential.</p>
+            </div>
+            <!-- Bootstrap Form inside modal -->
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="modalFirstName" class="form-label" data-i18n-key="contact.firstName">First Name</label>
+                        <input type="text" class="form-control rounded-pill" id="modalFirstName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="modalLastName" class="form-label" data-i18n-key="contact.lastName">Last Name</label>
+                        <input type="text" class="form-control rounded-pill" id="modalLastName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="modalEmail" class="form-label" data-i18n-key="contact.email">Email</label>
+                        <input type="email" class="form-control rounded-pill" id="modalEmail" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="modalPhone" class="form-label" data-i18n-key="contact.phone">Phone</label>
+                        <input type="tel" class="form-control rounded-pill" id="modalPhone">
+                    </div>
+                    <div class="col-12">
+                        <label for="inquiryType" class="form-label" data-i18n-key="contact.inquiryType">Inquiry Type</label>
+                        <select class="form-select rounded-pill" id="inquiryType">
+                            <option value="default" data-i18n-key="contact.selectOne">Please select one...</option>
+                            <option value="pi" data-i18n-key="contact.pi">Personal Injury</option>
+                            <option value="cd" data-i18n-key="contact.cd">Criminal Defense</option>
+                            <option value="fl" data-i18n-key="contact.fl">Family Law</option>
+                            <option value="other" data-i18n-key="contact.other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="modalMessage" class="form-label" data-i18n-key="contact.message">Tell us about your case</label>
+                        <textarea class="form-control" id="modalMessage" rows="5" style="border-radius: 1.5rem;" required data-i18n-key="contact.messagePlaceholder" placeholder="Please provide a brief description of your situation..."></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5" data-i18n-key="contact.submit">Submit Inquiry</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- Bootstrap 5 JS Bundle (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript for i18n and Modal -->
+    <script>
+        // --- Internationalization (i18n) ---
+
+        const translations = {
+            'en': {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.services': 'Practice Areas',
+                'nav.consultation': 'Free Consultation',
+                'hero.title': 'Innovative Solutions, Legal Excellence',
+                'hero.subtitle': 'Your trusted legal advocates for personal injury and criminal defense. We fight for your rights.',
+                'hero.button1': 'Our Practice Areas',
+                'hero.button2': 'Get in Touch',
+                'services.title': 'Practice Areas',
+                'services.subtitle': 'Dedicated expertise in critical areas of law.',
+                'services.area1.title': 'Personal Injury',
+                'services.area1.desc': 'Fighting for the compensation you deserve after an accident. Car accidents, slip and fall, and more.',
+                'services.area2.title': 'Criminal Defense',
+                'services.area2.desc': 'Aggressive defense for DUI, drug offenses, assault, and other criminal charges.',
+                'services.area3.title': 'Family Law',
+                'services.area3.desc': 'Compassionate guidance through divorce, custody, and other family matters.',
+                'about.title': 'About JS Law Group',
+                'about.desc': 'We are a passionate team of legal professionals dedicated to providing top-tier representation. Our focus is on achieving the best possible outcome for every client through tireless advocacy and personalized attention.',
+                'about.feature1': 'Client-Centric Approach',
+                'about.feature2': 'Aggressive Representation',
+                'about.feature3': 'Proven Track Record',
+                'footer.copyright': '&copy; 2025 JS LAW GROUP. All rights reserved.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Use',
+                'contact.title': 'Free Consultation',
+                'contact.subtitle': 'Tell us about your case. All information is confidential.',
+                'contact.firstName': 'First Name',
+                'contact.lastName': 'Last Name',
+                'contact.email': 'Email',
+                'contact.phone': 'Phone',
+                'contact.inquiryType': 'Inquiry Type',
+                'contact.selectOne': 'Please select one...',
+                'contact.pi': 'Personal Injury',
+                'contact.cd': 'Criminal Defense',
+                'contact.fl': 'Family Law',
+                'contact.other': 'Other',
+                'contact.message': 'Tell us about your case',
+                'contact.messagePlaceholder': 'Please provide a brief description of your situation...',
+                'contact.submit': 'Submit Inquiry',
+            },
+            'ko': {
+                'nav.home': '홈',
+                'nav.about': '소개',
+                'nav.services': '전문 분야',
+                'nav.consultation': '무료 상담',
+                'hero.title': '혁신적인 솔루션, 법률적 탁월함',
+                'hero.subtitle': '상해 및 형사 방어 전문 로펌. 저희가 당신의 권리를 위해 싸우겠습니다.',
+                'hero.button1': '전문 분야',
+                'hero.button2': '연락하기',
+                'services.title': '전문 분야',
+                'services.subtitle': '핵심 법률 분야에 대한 전문성.',
+                'services.area1.title': '개인 상해',
+                'services.area1.desc': '사고 후 받아야 할 보상을 위해 싸웁니다. 교통사고, 낙상 사고 등.',
+                'services.area2.title': '형사 방어',
+                'services.area2.desc': 'DUI, 마약, 폭행 및 기타 형사 고발에 대한 적극적인 방어.',
+                'services.area3.title': '가정법',
+                'services.area3.desc': '이혼, 양육권 및 기타 가족 문제에 대한 공감적인 안내.',
+                'about.title': 'JS 로펌 소개',
+                'about.desc': '저희는 최고 수준의 법률 대리를 제공하기 위해 헌신하는 열정적인 법률 전문가 팀입니다. 지칠 줄 모르는 변호와 맞춤형 관심으로 모든 고객에게 최상의 결과를 달성하는 데 중점을 둡니다.',
+                'about.feature1': '고객 중심 접근',
+                'about.feature2': '적극적인 변호',
+                'about.feature3': '입증된 실적',
+                'footer.copyright': '&copy; 2025 JS 로펌. 모든 권리 보유.',
+                'footer.privacy': '개인정보 처리방침',
+                'footer.terms': '이용약관',
+                'contact.title': '무료 상담',
+                'contact.subtitle': '귀하의 케이스에 대해 알려주십시오. 모든 정보는 기밀로 유지됩니다.',
+                'contact.firstName': '이름 (First Name)',
+                'contact.lastName': '성 (Last Name)',
+                'contact.email': '이메일',
+                'contact.phone': '전화번호',
+                'contact.inquiryType': '문의 유형',
+                'contact.selectOne': '하나를 선택해주세요...',
+                'contact.pi': '개인 상해',
+                'contact.cd': '형사 방어',
+                'contact.fl': '가정법',
+                'contact.other': '기타',
+                'contact.message': '케이스에 대해 알려주세요',
+                'contact.messagePlaceholder': '상황에 대해 간략하게 설명해주세요...',
+                'contact.submit': '문의 제출',
+            }
+        };
+
+        // Function to set the language
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.querySelectorAll('[data-i18n-key]').forEach(el => {
+                const key = el.getAttribute('data-i18n-key');
+                const translation = translations[lang][key];
+                if (translation) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        if (el.hasAttribute('placeholder')) {
+                            el.setAttribute('placeholder', translation);
+                        }
+                    } else {
+                        el.innerHTML = translation;
+                    }
+                }
+            });
+            // Set the lang attribute on the <html> tag
+            document.documentElement.lang = lang;
+            // Store preference in localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // --- Modal Control ---
+        const modal = document.getElementById('contactModal');
+        const fab = document.getElementById('fabButton');
+        const fabHero = document.getElementById('fabButtonHero');
+        const fabDesktop = document.getElementById('fabButtonDesktop');
+        const closeModal = document.getElementById('closeModal');
+
+        function openModal() {
+            modal.classList.add('show');
+        }
+
+        function hideModal() {
+            modal.classList.remove('show');
+        }
+
+        // Event Listeners for modal
+        fab.addEventListener('click', openModal);
+        fabHero.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent href="#" from jumping
+            openModal();
+        });
+         fabDesktop.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            openModal();
+        });
+        closeModal.addEventListener('click', hideModal);
+
+        // Close modal if clicking outside the content (on the overlay)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+
+        // Close modal when navigating to a section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if(anchor.id !== 'fabButtonHero') { // Don't make the hero button close it
+                 anchor.addEventListener('click', hideModal);
+            }
+        });
+
+
+        // On page load, check for stored language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(preferredLanguage);
+        });
+
+    </script>
+</body>
+</html>
+
