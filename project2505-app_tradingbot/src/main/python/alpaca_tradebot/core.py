@@ -51,6 +51,7 @@ PURCHASING_POWER = int(os.getenv("PURCHASING_POWER", 240))
 BASE_URL   = os.getenv("APCA_API_BASE_URL")
 API_KEY    = os.getenv("APCA_API_KEY_ID")
 API_SECRET = os.getenv("APCA_API_SECRET_KEY")
+TRADING_USERNAME = os.getenv("TRADING_USERNAME", "null")
 
 if not (API_KEY and API_SECRET):
     BASE_URL="https://paper-api.alpaca.markets"
@@ -994,14 +995,15 @@ def load_activities(activities_file_path: str):
 def report():
     ### [LOAD] Process activities
     today = datetime.now().strftime('%Y%m%d')
-    if (API_KEY == "AKRB25DPQ6CKFBTSNSZO"): 
+    if (TRADING_USERNAME.lower() == "suntae"): 
         file_path = Path("report/_transaction-Tae.xlsx") # 이모부
-    elif (API_KEY == "AKG1VQJCNOXDTNR8Z11W"): 
+    elif (TRADING_USERNAME.lower() == "jaehoon"): 
         file_path = Path("report/_transaction-Jaehoon.xlsx") # Jaehoon
     else:
-        print("API_KEY not recognized, using default path.")
+        print("TRADING_USERNAME not recognized, using default path.")
         file_path = Path("report/_transaction-default.xlsx") # Default path
-    
+
+
     load_trades_activity(
         file_path=Path(f"report/{today}-trades.xlsx"),
         cumulative_file_path=file_path
@@ -1836,9 +1838,12 @@ def logic():
     if (read_check()): 
         print("Shutdown flag detected. Exiting...")
         return
+    
+
+    print(f"Cash/Equity Ratio: {get_cash_equity_ratio():.4f}")
         
     if (get_cash_equity_ratio() > 0.18 and not IS_DEPRESSION): stock_up_yieldmax(rows)
-    if (get_cash_equity_ratio() > 0.12 and not IS_DEPRESSION): trading_logic(rows)
+    if (get_cash_equity_ratio() > 0.06 and not IS_DEPRESSION): trading_logic(rows)
     if (get_cash_equity_ratio() < 0.06 and not IS_DEPRESSION): liquidate(rows) # < 08% (No Cash to Automate)
 
 
@@ -1990,27 +1995,32 @@ def buy_operation():
 
 
 def main():
+    print(f"Hi {TRADING_USERNAME}, Alpaca Tradebot started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+    from .schedular import main as schedular_start
+    schedular_start()
+
     # manual_stockup_init(["SEV"])              # suntae
     # manual_stockup_targeting(["SEV"], 245)     # suntae
 
 
     # cancel_all_orders_in("alpaca_data2/orders.csv")
-    short_operation(is_checking=True)
+    # short_operation(is_checking=True)
     # short_operation()
     # buy_operation()
 
-    
 
 
 
-    rows=fetch()
+
+
+
+    # rows=fetch()
 
     # manual_stockup_init()
     # manual_stockup_targeting(["SEV"], 250)
 
-    # from .schedular import main as schedular_start
-    # schedular_start()
-
+    # manual_stockup_targeting(["SMCI", "UEC", "NVO", "GDX", "SMR", "T", "VZ"], 100)
 
     # index_logic()
 
@@ -2021,11 +2031,10 @@ def main():
 
 
 
-    
-
     # ################# LIQUIDATE
     # rows=fetch()
-    # liquidate(rows, 1.003) ## release all long positions
+    # liquidate(rows, 1.015) ## release all long positions
+
 
     # # ################# STOCK UP - REBALANCE
     # cancel_all_orders_in("alpaca_data2/orders.csv")

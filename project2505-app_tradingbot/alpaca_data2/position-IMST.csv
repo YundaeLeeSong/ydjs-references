@@ -1,2 +1,0 @@
-asset,qty_unit,quantity,time,market_price,purchase_price,total_profit_and_lose,is_profitable,is_at_mid,is_losable,is_stocked,pct_amp,frq
-IMST,1.9,4.0,2025-08-06 00:53:09,44.83,45.68,-1.86,False,True,False,True,7.0,2
