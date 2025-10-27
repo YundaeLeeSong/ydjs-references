@@ -1997,8 +1997,8 @@ def buy_operation():
 def main():
     print(f"Hi {TRADING_USERNAME}, Alpaca Tradebot started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-    from .schedular import main as schedular_start
-    schedular_start()
+    # from .schedular import main as schedular_start
+    # schedular_start()
 
     # manual_stockup_init(["SEV"])              # suntae
     # manual_stockup_targeting(["SEV"], 245)     # suntae
@@ -2031,9 +2031,9 @@ def main():
 
 
 
-    # ################# LIQUIDATE
-    # rows=fetch()
-    # liquidate(rows, 1.015) ## release all long positions
+    ################# LIQUIDATE
+    rows=fetch()
+    liquidate(rows, 1.005) ## release all long positions
 
 
     # # ################# STOCK UP - REBALANCE

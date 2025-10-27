@@ -449,6 +449,12 @@ call :Install-App "Adobe.Acrobat.Reader.64-bit" "Adobe Acrobat Reader DC" "acror
 @REM Example: install GitHub CLI
 call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 
+@REM Example: install MinGW (C/C++/Make)
+call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
+
+@REM Example: install CMake
+call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
+
 
 @REM MiKTeX (short for Micro-Kid TeXLive) is well known for its 
 @REM `on-the-fly` package installation, where 
