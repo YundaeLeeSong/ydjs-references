@@ -37,16 +37,22 @@
 
 # IDE configurations
 .idea/
+.vs/
 .vscode/
 
-# System files
+# Binary files
 [Dd]ist/
+[Dd]ists/
 [Bb]uild/
 [Bb]uilds/
+[Bb]in/
+[Ee]xt/
 
-ext/
-bin/
 *.exe
+*.dll
+*.lib
+
+# System files
 .DS_Store
 Thumbs.db
 *.lnk

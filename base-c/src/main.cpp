@@ -58,6 +58,12 @@
      cmake --build build                        (single-config)
      cmake --build build --config Release       (multi-config, e.g., Visual Studio)
 
+     cmake --build build --config Release
+     cmake --install build --config Release
+
+     export PATH="build/vcpkg_installed/x64-windows/bin:$PATH"
+     ./build/Release/my_app.exe
+
      ./build/my_app             (Linux / macOS)
      ./build/Release/my_app.exe (Windows, Visual Studio)
 */

@@ -42,3 +42,20 @@ target_link_libraries(
     Qt5::Core       # Link the Qt 5 Core library
     Qt5::Widgets    # Link the Qt 5 Widgets library
 )
+
+
+# -----------------------------------------------------------------
+# --- The Modern "Install" Workflow ---
+# -----------------------------------------------------------------
+#
+# This single, standard CMake command is all you need.
+#
+# 1. It tells CMake to install 'my_app.exe' to 'bin'.
+# 2. The vcpkg toolchain automatically detects this and
+#    *also* installs the required dependency DLLs
+#    (like Qt5Core.dll) to the same 'bin' directory.
+#
+install(
+    TARGETS my_app
+    RUNTIME DESTINATION bin  # Copies the .exe
+)
