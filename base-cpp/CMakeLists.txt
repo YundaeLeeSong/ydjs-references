@@ -39,8 +39,7 @@ add_executable(qt_vcpkg_demo
 
 # We link the Qt5 targets, which are named slightly
 # differently (Qt5::Core vs Qt::Core)
-target_link_libraries(
-    qt_vcpkg_demo
+target_link_libraries(qt_vcpkg_demo
     PRIVATE
     fmt::fmt        # Link the fmt library
     Qt5::Core       # Link the Qt 5 Core library
