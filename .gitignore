@@ -40,7 +40,10 @@
 .vscode/
 
 # System files
-dist/
+[Dd]ist/
+[Bb]uild/
+[Bb]uilds/
+
 ext/
 bin/
 *.exe
