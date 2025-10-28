@@ -54,8 +54,7 @@
 
      cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
      
-     rm -rf build
-     cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_APPLOCAL_DEPS_DISABLE=ON
+
 
      cmake --build build                        (single-config)
      cmake --build build --config Release       (multi-config, e.g., Visual Studio)
@@ -72,49 +71,44 @@
 
 
 
+/*
+    < Shortcut > Build / run instructions (concise)
+     rm -rf build
+     cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
+     cmake --build build --config Release
+     ./build/Release/qt_vcpkg_demo.exe
+*/
 
-
-// --- Dependency 1: {fmt} ---
-#include <fmt/core.h>
-
-// --- Dependency 2: Qt 5 ---
 #include <QApplication>
+#include <QPushButton>
 #include <QLabel>
-#include <QString>
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
+#include <QString>
+#include <fmt/format.h>
 
-// Other includes
-#include <string>
-
-int main(int argc, char *argv[]) {
-    // 1. Create the Qt Application
+int main(int argc, char **argv) {
     QApplication app(argc, argv);
 
-    // 2. Create our main window
     QWidget window;
-    window.setWindowTitle("App using fmt + Qt");
-    window.resize(300, 100);
+    window.setWindowTitle("Qt + vcpkg Demo");
 
-    // 3. --- USE BOTH LIBRARIES ---
-    //    Use fmt::format() to create a standard string
-    std::string app_name = "vcpkg";
-    std::string text = fmt::format("Hello from {fmt} and Qt 6 in the same app (powered by {})!", app_name);
+    auto *label = new QLabel("Press the button");
+    auto *button = new QPushButton("Click me");
 
-    //    Convert the std::string to a QString for Qt
-    QString q_text = QString::fromStdString(text);
-    // 4. ------------------------
+    // simple counter using lambda slot
+    QObject::connect(button, &QPushButton::clicked, [&]() {
+        static int count = 0;
+        ++count;
+        std::string s = fmt::format("Clicked {} time{}", count, (count == 1 ? "" : "s"));
+        label->setText(QString::fromStdString(s));
+    });
 
-
-    // 5. Create a Qt label with our formatted string
-    QLabel *label = new QLabel(q_text);
-
-    // 6. Set up the layout and show the window
-    QVBoxLayout *layout = new QVBoxLayout();
+    auto *layout = new QVBoxLayout;
     layout->addWidget(label);
+    layout->addWidget(button);
     window.setLayout(layout);
-    window.show();
 
-    // 7. Start the Qt event loop
+    window.show();
     return app.exec();
 }

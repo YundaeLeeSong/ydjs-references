@@ -21,13 +21,17 @@ find_package(fmt CONFIG REQUIRED)
 # 2. Find Qt5 (this is the main change)
 #    We look for version 5.15 (a common vcpkg version)
 #    and the same components.
-find_package(Qt5 5.15 COMPONENTS Core Widgets REQUIRED)
+# find_package(Qt5 5.15 COMPONENTS Core Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
+
+# Link libraries (Qt via vcpkg export will provide targets like Qt5::Widgets;
+# fmt from vcpkg provides fmt::fmt)
+
 
 # --- Project Setup ---
 
 # Add our executable (this is unchanged)
-add_executable(
-    my_app
+add_executable(qt_vcpkg_demo
     src/main.cpp
 )
 
@@ -36,39 +40,12 @@ add_executable(
 # We link the Qt5 targets, which are named slightly
 # differently (Qt5::Core vs Qt::Core)
 target_link_libraries(
-    my_app
+    qt_vcpkg_demo
     PRIVATE
     fmt::fmt        # Link the fmt library
     Qt5::Core       # Link the Qt 5 Core library
     Qt5::Widgets    # Link the Qt 5 Widgets library
 )
 
-# -----------------------------------------------------------------
-# --- "windeployqt" Automatic Deployment (Explicit Path Fix) ---
-# -----------------------------------------------------------------
-
-# 1. Get the directory where 'Qt5Config.cmake' was found
-#    (e.g., .../build/vcpkg_installed/x64-windows/share/qt5)
-get_filename_component(QT5_CONFIG_DIR "${Qt5_DIR}" DIRECTORY)
-
-# 2. Find the 'windeployqt' tool. We know it lives in a
-#    'tools/qt5/bin' directory relative to the vcpkg install.
-#    We provide this path as a HINT.
-find_program(
-    WINDEPLOYQT_EXECUTABLE windeployqt
-    HINTS "${QT5_CONFIG_DIR}/../../tools/qt5/bin"
-    REQUIRED
-)
-# This will find the full, absolute path to windeployqt.exe
-
-# 3. Add the post-build command, using the full path
-add_custom_command(
-    TARGET my_app POST_BUILD
-    
-    # This now uses the full path, e.g., C:/.../windeployqt.exe
-    COMMAND ${WINDEPLOYQT_EXECUTABLE}
-    
-    ARGS "$<TARGET_FILE:my_app>"
-    WORKING_DIRECTORY "$<TARGET_FILE_DIR:my_app>"
-    COMMENT "Running windeployqt to deploy dependencies..."
-)
+# (Optional) Install rule
+install(TARGETS qt_vcpkg_demo RUNTIME DESTINATION bin)
