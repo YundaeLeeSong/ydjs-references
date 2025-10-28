@@ -488,6 +488,11 @@ call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 
 
 
+
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - C/C++ Development Tools
+@REM ---------------------------------------------------------------------------
+
 @REM install Strawberry Perl for Windows (including GCC, C/C++ compilers)
 call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
 
@@ -503,6 +508,12 @@ call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "make" "MinGW"
 @REM Example: install CMake
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
 
+
+
+
+@REM ---------------------------------------------------------------------------
+@REM Platform Dependents - LaTeX Distribution
+@REM ---------------------------------------------------------------------------
 
 @REM MiKTeX (short for Micro-Kid TeXLive) is well known for its 
 @REM `on-the-fly` package installation, where 
