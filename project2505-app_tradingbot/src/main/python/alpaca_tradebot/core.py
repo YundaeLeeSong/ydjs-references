@@ -1595,11 +1595,15 @@ def liquidate(rows, rate=1.013):
     print("Liquidating all positions...")
     cancel_all_orders_in("alpaca_data2/orders.csv")
     for row in rows:
+        if row['asset'] in NONFRACT_ASSETS: 
+            qty_to_sell = row['quantity']
+        else:
+            qty_to_sell = row['quantity'] - 0.01
         # print(f"{row['asset']}: purchasing price = {row['purchase_price']}, quantity = {row['quantity']}, pnl = {row['total_profit_and_lose']}%")
-        if (row['total_profit_and_lose'] < 0 and row['quantity'] > 0.01): #1.003 / 1.013
-            long_limit_sell(row['asset'], row['quantity'] - 0.01, row['purchase_price'] * rate, isExtHour=True)
-        if (row['total_profit_and_lose'] >= 0 and row['quantity'] > 0.01):
-            long_limit_sell(row['asset'], row['quantity'] - 0.01, row['market_price'] * rate, isExtHour=True)
+        if (row['total_profit_and_lose'] < 0 and qty_to_sell > 0): #1.003 / 1.013
+            long_limit_sell(row['asset'], qty_to_sell, row['purchase_price'] * rate, isExtHour=True)
+        if (row['total_profit_and_lose'] >= 0 and qty_to_sell > 0):
+            long_limit_sell(row['asset'], qty_to_sell, row['market_price'] * rate, isExtHour=True)
 
 
 
@@ -2033,7 +2037,7 @@ def main():
 
     ################# LIQUIDATE
     rows=fetch()
-    liquidate(rows, 1.005) ## release all long positions
+    liquidate(rows, 1.007) ## release all long positions
 
 
     # # ################# STOCK UP - REBALANCE
