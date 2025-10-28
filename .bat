@@ -1,6 +1,6 @@
 @echo off
 @REM ===========================================================================
-@REM File:         .start.bat
+@REM File:         .bat
 @REM Description:
 @REM   This script checks for and installs a list of hard-coded applications
 @REM   using the Windows Package Manager (winget). Set up initial configuration
@@ -437,11 +437,6 @@ call :Install-App "Google.Chrome" "Google Chrome" "chrome" "Google"
 @REM install Visual Studio Code (winget ID: Microsoft.VisualStudioCode, command check: code, program folder: Microsoft VS Code)
 call :Install-App "Microsoft.VisualStudioCode" "Visual Studio Code" "code" "Microsoft VS Code"
 
-
-@REM install Strawberry Perl for Windows
-call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
-
-
 @REM install Adobe Acrobat Reader DC
 call :Install-App "Adobe.Acrobat.Reader.64-bit" "Adobe Acrobat Reader DC" "acrordc.exe" "Adobe"
 
@@ -449,8 +444,13 @@ call :Install-App "Adobe.Acrobat.Reader.64-bit" "Adobe Acrobat Reader DC" "acror
 @REM Example: install GitHub CLI
 call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 
-@REM Example: install MinGW (C/C++/Make)
-call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
+
+
+@REM install Strawberry Perl for Windows (including GCC, C/C++ compilers)
+call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
+
+@REM @REM Example: install MinGW (C/C++/Make)
+@REM call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
 
 @REM Example: install CMake
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"

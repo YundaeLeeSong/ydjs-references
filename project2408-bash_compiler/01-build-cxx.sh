@@ -33,6 +33,10 @@ export PATH="${PATH}:${NSIS_DIR}"
 makensis -version
 
 
+gcc --version
+g++ --version
+make --version
+cmake --version
 
 
 
