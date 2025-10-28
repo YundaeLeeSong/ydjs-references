@@ -449,8 +449,12 @@ call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 @REM install Strawberry Perl for Windows (including GCC, C/C++ compilers)
 call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
 
-@REM @REM Example: install MinGW (C/C++/Make)
-@REM call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
+
+@REM Example: install MinGW (C/C++/Make)
+call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
+
+@REM MinGW provides the GCC compiler (C/C++) and the 'make' utility.
+call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "make" "MinGW"
 
 @REM Example: install CMake
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
