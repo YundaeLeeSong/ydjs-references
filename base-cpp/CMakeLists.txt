@@ -43,19 +43,32 @@ target_link_libraries(
     Qt5::Widgets    # Link the Qt 5 Widgets library
 )
 
+# -----------------------------------------------------------------
+# --- "windeployqt" Automatic Deployment (Explicit Path Fix) ---
+# -----------------------------------------------------------------
 
-# -----------------------------------------------------------------
-# --- The Modern "Install" Workflow ---
-# -----------------------------------------------------------------
-#
-# This single, standard CMake command is all you need.
-#
-# 1. It tells CMake to install 'my_app.exe' to 'bin'.
-# 2. The vcpkg toolchain automatically detects this and
-#    *also* installs the required dependency DLLs
-#    (like Qt5Core.dll) to the same 'bin' directory.
-#
-install(
-    TARGETS my_app
-    RUNTIME DESTINATION bin  # Copies the .exe
+# 1. Get the directory where 'Qt5Config.cmake' was found
+#    (e.g., .../build/vcpkg_installed/x64-windows/share/qt5)
+get_filename_component(QT5_CONFIG_DIR "${Qt5_DIR}" DIRECTORY)
+
+# 2. Find the 'windeployqt' tool. We know it lives in a
+#    'tools/qt5/bin' directory relative to the vcpkg install.
+#    We provide this path as a HINT.
+find_program(
+    WINDEPLOYQT_EXECUTABLE windeployqt
+    HINTS "${QT5_CONFIG_DIR}/../../tools/qt5/bin"
+    REQUIRED
+)
+# This will find the full, absolute path to windeployqt.exe
+
+# 3. Add the post-build command, using the full path
+add_custom_command(
+    TARGET my_app POST_BUILD
+    
+    # This now uses the full path, e.g., C:/.../windeployqt.exe
+    COMMAND ${WINDEPLOYQT_EXECUTABLE}
+    
+    ARGS "$<TARGET_FILE:my_app>"
+    WORKING_DIRECTORY "$<TARGET_FILE_DIR:my_app>"
+    COMMENT "Running windeployqt to deploy dependencies..."
 )

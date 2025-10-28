@@ -52,8 +52,10 @@
      rm -rf build               (Linux / macOS)
      rmdir /s /q build          (Windows, cmd)
 
-     rm -rf build
      cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
+     
+     rm -rf build
+     cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_APPLOCAL_DEPS_DISABLE=ON
 
      cmake --build build                        (single-config)
      cmake --build build --config Release       (multi-config, e.g., Visual Studio)
