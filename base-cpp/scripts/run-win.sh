@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# ./scripts/on_vcpkg-win.sh
+# ./scripts/run-win.sh
 #
 # This is an auto-generated template for your OS-specific logic.
 # It was created by the wrapper script because the file did not exist.
@@ -34,22 +34,9 @@ else
     COLOR_RESET=""
 fi
 
-# go to ../ext directory, ext should be created if there is no ext directory.
-cd ..
-mkdir -p ext
-cd ext
+# --- Logic here! ---
 
-# 1. Clone it, if there is no vcpkg directory.
-if [ ! -d "vcpkg" ]; then
-    echo -e "${COLOR_YELLOW}vcpkg directory not found. Cloning vcpkg...${COLOR_RESET}"
-    git clone https://github.com/microsoft/vcpkg.git
-fi
-
-cd vcpkg
-./bootstrap-vcpkg.bat
-
-
-
-# # 2. Run the bootstrap script (do this only once)
-# ./vcpkg/bootstrap-vcpkg.sh  # On Linux/macOS
-# .\vcpkg\bootstrap-vcpkg.bat # On Windows
+rm -rf build
+cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
+cmake --build build --config Release
+./build/Release/qt_vcpkg_demo.exe

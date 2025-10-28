@@ -71,13 +71,6 @@
 
 
 
-/*
-    < Shortcut > Build / run instructions (concise)
-     rm -rf build
-     cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
-     cmake --build build --config Release
-     ./build/Release/qt_vcpkg_demo.exe
-*/
 
 #include <QApplication>
 #include <QPushButton>
