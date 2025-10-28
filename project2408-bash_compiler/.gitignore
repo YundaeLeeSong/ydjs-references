@@ -1,62 +1,41 @@
-################################################
-### CMake (Build Autoation)
-################################################
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+.vs/
+doc/
+out/
 
 
 
-################################################
-### Precompiled Headers (preprocessor)
-################################################
-*.gch
-*.pch
-################################################
-### Compiled Object files (compiler)
-################################################
+
+# Prerequisites
+*.d
+
+# Object files
 *.o
 *.ko
 *.obj
 *.elf
-# cpp extension
-*.slo
-*.lo
-################################################
-### Libraries (archiver)
-################################################
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
 *.lib
+*.a
+*.la
 *.lo
-# Compiled Dynamic libraries (Shared objects, inc. Windows DLLs)
+
+# Shared objects (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
 *.dylib
-################################################
-### Executables (linker)
-################################################
-# Linker output (.ilk)
-*.ilk
-*.map
-*.exp
-# Debug files (.pdb)
-*.dSYM/
-*.su
-*.idb
-*.pdb
-# Executables (.exe)
+
+# Executables
 *.exe
 *.out
 *.app
@@ -64,13 +43,12 @@ _deps
 *.x86_64
 *.hex
 
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
 
-
-################################################
-### Miscellaneous
-################################################
-# Prerequisites
-*.d
 # Kernel Module Compile Results
 *.mod*
 *.cmd
@@ -79,29 +57,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-# Fortran module files
-*.mod
-*.smod
 
-
-
-################################################
-### Visual Studio (IDE configuration)
-################################################
-# config files
-/.vscode/
-/.idea/
-/.vs/
-CMakePresets.json
-# project solutions
-/[Bb]uild/
-/[Bb]uilds/
-/[Oo]ut/
-/[Oo]uts/
-# documentations
-/[Dd]oc/
-/[Dd]ocs/
-# automation scripts
-deploy.sh
-compile.sh
-run.sh
+# debug information files
+*.dwo
