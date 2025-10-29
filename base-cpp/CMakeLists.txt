@@ -46,15 +46,97 @@ target_link_libraries(qt_vcpkg_demo
     Qt5::Widgets    # Link the Qt 5 Widgets library
 )
 
+
+
+
+
+
+
+
+
+
+
 # -----------------------------------------------------------------
-# --- 1. The "Install" Workflow (Executable) ---
+# --- 4. Define the "Staging" (Install) Step ---
 # -----------------------------------------------------------------
-# This tells CMake to copy the .exe to "install/bin"
+# This is the "preparation" for the distro.
+
+# 4a. Install the main .exe
 install(
     TARGETS qt_vcpkg_demo
-    RUNTIME DESTINATION bin
+    RUNTIME DESTINATION bin  # Copies .exe to "install/bin"
+)
+
+# 4b. Install Qt5 DLLs and dependencies from vcpkg
+#     This ensures all Qt dependencies are included in the distribution
+install(DIRECTORY 
+    "${CMAKE_CURRENT_BINARY_DIR}/vcpkg_installed/x64-windows/bin/"
+    DESTINATION bin
+    FILES_MATCHING 
+    PATTERN "Qt5*.dll"
+    PATTERN "*.dll"
+)
+
+# 4c. Install Qt5 plugins
+install(DIRECTORY 
+    "${CMAKE_CURRENT_BINARY_DIR}/vcpkg_installed/x64-windows/plugins/"
+    DESTINATION bin/plugins
+)
+
+# 4d. Install additional dependencies (fmt, etc.)
+install(DIRECTORY 
+    "${CMAKE_CURRENT_BINARY_DIR}/vcpkg_installed/x64-windows/bin/"
+    DESTINATION bin
+    FILES_MATCHING 
+    PATTERN "fmt*.dll"
+    PATTERN "*.dll"
+    EXCLUDE PATTERN "Qt5*.dll"  # Already installed above
+)
+
+# 4e. Create qt.conf to help Qt find its plugins
+install(FILES 
+    "${CMAKE_CURRENT_BINARY_DIR}/Release/qt.conf"
+    DESTINATION bin
+    OPTIONAL
 )
 
 # -----------------------------------------------------------------
-# --- 2. The "Deploy" Workflow (Qt DLLs) ---
+# --- 5. Define the "Distribution" (CPack) Step ---
 # -----------------------------------------------------------------
+set(CPACK_PACKAGE_NAME "SimpleQtDemo")
+set(CPACK_PACKAGE_VERSION "0.1.0")
+
+# Detect available installer tools
+set(CPACK_GENERATOR "ZIP;TGZ")
+
+# Check for NSIS
+find_program(NSIS_EXECUTABLE makensis)
+if(NSIS_EXECUTABLE)
+    set(CPACK_GENERATOR "NSIS;${CPACK_GENERATOR}")
+    message(STATUS "NSIS found: ${NSIS_EXECUTABLE}")
+endif()
+
+# Check for other common installers
+find_program(INNO_SETUP_EXECUTABLE iscc)
+if(INNO_SETUP_EXECUTABLE)
+    set(CPACK_GENERATOR "INNO;${CPACK_GENERATOR}")
+    message(STATUS "Inno Setup found: ${INNO_SETUP_EXECUTABLE}")
+endif()
+
+# Configure CPack to output to dist/ directory
+set(CPACK_PACKAGE_DIRECTORY "${CMAKE_SOURCE_DIR}/dist")
+
+# Set the install prefix for packaging
+set(CPACK_SET_DESTDIR TRUE)
+set(CPACK_INSTALL_PREFIX "")
+
+# NSIS specific settings
+if(NSIS_EXECUTABLE)
+    set(CPACK_NSIS_DISPLAY_NAME "SimpleQtDemo")
+    set(CPACK_NSIS_PACKAGE_NAME "SimpleQtDemo")
+    set(CPACK_NSIS_CONTACT "your-email@example.com")
+    set(CPACK_NSIS_MODIFY_PATH ON)
+    set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/LICENSE")
+endif()
+
+include(CPack)

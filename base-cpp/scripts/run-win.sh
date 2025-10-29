@@ -36,33 +36,43 @@ fi
 
 # --- Logic here! ---
 
-# if there is build directory, prompt the user if they want to delete it
+# Clean up old build and distribution directories
 if [ -d "build" ]; then
-    echo -e "${COLOR_YELLOW}Build directory already exists.${COLOR_RESET}"
+    echo -e "${COLOR_YELLOW}Build and Distribution directory already exists.${COLOR_RESET}"
     read -p "Do you want to delete it and create a new one? (y/n): " choice
     if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
         rm -rf build
+        rm -rf dist
         echo -e "${COLOR_GREEN}Deleted existing build directory.${COLOR_RESET}"
     else
         echo -e "${COLOR_CYAN}Using existing build directory.${COLOR_RESET}"
     fi
 fi
-cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 
 
 
-
+# # "Developer" Workflow
+# cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
 # cmake --build build --config Release
 # ./build/Release/qt_vcpkg_demo.exe
 
+# # "Distributor" Workflow
+echo -e "${COLOR_CYAN}Configuring project with CMake...${COLOR_RESET}"
+cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+echo -e "${COLOR_CYAN}Building project...${COLOR_RESET}"
+cmake --build build --config Release
+
+
+# cmake --build build --target installer
+
+
+
+
+echo -e "${COLOR_CYAN}Creating distribution package...${COLOR_RESET}"
+cpack --config build/CPackConfig.cmake -C Release
 
 
 # cmake --build build
 # ./build/Debug/qt_vcpkg_demo.exe
-
-
-
-
-cmake --install build --config Release
-
