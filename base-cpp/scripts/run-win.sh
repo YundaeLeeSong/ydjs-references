@@ -36,7 +36,17 @@ fi
 
 # --- Logic here! ---
 
-rm -rf build
+# if there is build directory, prompt the user if they want to delete it
+if [ -d "build" ]; then
+    echo -e "${COLOR_YELLOW}Build directory already exists.${COLOR_RESET}"
+    read -p "Do you want to delete it and create a new one? (y/n): " choice
+    if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+        rm -rf build
+        echo -e "${COLOR_GREEN}Deleted existing build directory.${COLOR_RESET}"
+    else
+        echo -e "${COLOR_CYAN}Using existing build directory.${COLOR_RESET}"
+    fi
+fi
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
 cmake --build build --config Release
 ./build/Release/qt_vcpkg_demo.exe

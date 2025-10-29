@@ -46,5 +46,15 @@ target_link_libraries(qt_vcpkg_demo
     Qt5::Widgets    # Link the Qt 5 Widgets library
 )
 
-# (Optional) Install rule
-install(TARGETS qt_vcpkg_demo RUNTIME DESTINATION bin)
+# -----------------------------------------------------------------
+# --- 1. The "Install" Workflow (Executable) ---
+# -----------------------------------------------------------------
+# This tells CMake to copy the .exe to "install/bin"
+install(
+    TARGETS qt_vcpkg_demo
+    RUNTIME DESTINATION bin
+)
+
+# -----------------------------------------------------------------
+# --- 2. The "Deploy" Workflow (Qt DLLs) ---
+# -----------------------------------------------------------------

@@ -490,12 +490,10 @@ call :Install-App "GitHub.cli" "GitHub CLI" "gh" "GitHub CLI"
 
 
 @REM ---------------------------------------------------------------------------
-@REM Platform Dependents - C/C++ Development Tools
+@REM Platform Dependents - C/C++ Development Tools with Perl
 @REM ---------------------------------------------------------------------------
-
 @REM install Strawberry Perl for Windows (including GCC, C/C++ compilers)
 call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Strawberry"
-
 
 @REM Example: install MinGW (GCC compiler and Make utility)
 @REM MinGW provides the GCC compiler (C/C++) and the 'make' utility.
@@ -509,6 +507,9 @@ call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "make" "MinGW"
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
 
 
+@REM Example: install NSIS (Nullsoft Scriptable Install System)
+@REM Switched from Nullsoft.NSIS to NSIS.NSIS for better repository reliability
+call :Install-App "NSIS.NSIS" "NSIS (Installer Creator)" "makensis" "NSIS"
 
 
 @REM ---------------------------------------------------------------------------
