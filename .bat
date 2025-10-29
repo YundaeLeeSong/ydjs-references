@@ -329,10 +329,25 @@ if !ERRORLEVEL! EQU 0 (
 )
 
 :end_install_app
+"!APP_CMD!" -version >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+  echo.!GREEN!Verifying !APP_NAME! installation...!RESET!
+  echo.!GREEN!!APP_NAME! with !RED!-version!RESET! flag:!RESET!
+  "!APP_CMD!" -version
+)
 "!APP_CMD!" --version >nul 2>&1
 if !ERRORLEVEL! EQU 0 (
+  echo.!GREEN!Verifying !APP_NAME! installation...!RESET!
+  echo.!GREEN!!APP_NAME! with !RED!--version!RESET! flag:!RESET!
   "!APP_CMD!" --version
 )
+"!APP_CMD!" -v >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+  echo.!GREEN!Verifying !APP_NAME! installation...!RESET!
+  echo.!GREEN!!APP_NAME! with !RED!-v!RESET! flag:!RESET!
+  "!APP_CMD!" -v
+)
+
 endlocal
 goto :EOF
 
@@ -497,11 +512,11 @@ call :Install-App "StrawberryPerl.StrawberryPerl" "Strawberry Perl" "perl" "Stra
 
 @REM Example: install MinGW (GCC compiler and Make utility)
 @REM MinGW provides the GCC compiler (C/C++) and the 'make' utility.
-call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "gcc" "MinGW"
-call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "g++" "MinGW"
+call :Install-App "MinGW.MinGW" "C compiler (MinGW)" "gcc" "MinGW"
+call :Install-App "MinGW.MinGW" "C++ compiler (MinGW)" "g++" "MinGW"
 
 call :Duplicate-Make
-call :Install-App "MinGW.MinGW" "MinGW (C/C++/Make)" "make" "MinGW"
+call :Install-App "MinGW.MinGW" "Make (MinGW)" "make" "MinGW"
 
 @REM Example: install CMake
 call :Install-App "Kitware.CMake" "CMake" "cmake" "CMake"
