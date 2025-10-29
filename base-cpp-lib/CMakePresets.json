@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "windows-vcpkg",
+      "displayName": "Windows (vcpkg)",
+      "description": "Configures the project using the external vcpkg toolchain.",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build",
+      "toolchainFile": "${sourceDir}/../ext/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    }
+  ],
+
+  "buildPresets": [
+    {
+      "name": "debug",
+      "displayName": "Build (Debug)",
+      "configurePreset": "windows-vcpkg",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "displayName": "Build (Release)",
+      "configurePreset": "windows-vcpkg",
+      "configuration": "Release"
+    }
+  ],
+
+  "testPresets": [
+    {
+      "name": "debug",
+      "displayName": "Test (Debug)",
+      "configurePreset": "windows-vcpkg",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "release",
+      "displayName": "Test (Release)",
+      "configurePreset": "windows-vcpkg",
+      "configuration": "Release",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}
