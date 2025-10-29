@@ -48,5 +48,21 @@ if [ -d "build" ]; then
     fi
 fi
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=../ext/vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake --build build --config Release
-./build/Release/qt_vcpkg_demo.exe
+
+
+
+
+
+# cmake --build build --config Release
+# ./build/Release/qt_vcpkg_demo.exe
+
+
+
+# cmake --build build
+# ./build/Debug/qt_vcpkg_demo.exe
+
+
+
+
+cmake --install build --config Release
+
