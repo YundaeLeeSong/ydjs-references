@@ -1587,7 +1587,7 @@ def trading_logic(rows):
 
 
 
-def liquidate(rows, rate=1.013):
+def liquidate(rows, rate=1.013, excludes=[]):
     """
     Liquidate all positions by selling them at market price.
     This function cancels all orders and sells all assets in the portfolio.
@@ -1595,6 +1595,8 @@ def liquidate(rows, rate=1.013):
     print("Liquidating all positions...")
     cancel_all_orders_in("alpaca_data2/orders.csv")
     for row in rows:
+        if row['asset'] in excludes:
+            continue
         if row['asset'] in NONFRACT_ASSETS: 
             qty_to_sell = row['quantity']
         else:
@@ -2037,7 +2039,7 @@ def main():
 
     ################# LIQUIDATE
     rows=fetch()
-    liquidate(rows, 1.007) ## release all long positions
+    liquidate(rows, 1.007, excludes=['FBY','CVNY']) ## release all long positions
 
 
     # # ################# STOCK UP - REBALANCE

@@ -2,6 +2,8 @@ private-*.tex
 main.tex
 /main.tex
 
+com*/
+
 com*.tex
 
 /cli.tex
